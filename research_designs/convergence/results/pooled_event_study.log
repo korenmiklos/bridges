@@ -1,0 +1,409 @@
+--------------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Volumes/Home/Dropbox/projects/borders/bridges/research_designs/convergence/results/pooled_event_study.log
+  log type:  text
+ opened on:  15 May 2014, 13:48:42
+
+. 
+. do create_variables  `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' 
+
+. tempfile rivers
+
+. save `rivers', replace emptyok
+(note: dataset contains 0 observations)
+(note: file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 not found)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+
+. foreach river in `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' {
+  2.         di "`1'"
+  3.         insheet using data/`river'.csv, clear
+  4.         gen bridge = _n
+  5.         gen str river = "`river'"
+  6.         reshape long left_ right_, i(bridge) j(year)
+  7.         ren left_ left
+  8.         ren right_ right
+  9.         append using `rivers'
+ 10.         save `rivers', replace
+ 11. }
+arkansas
+(37 vars, 86 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       86   ->    1462
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 20 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       20   ->     340
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 32 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       32   ->     544
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+(note: variable name was str36, now str46 to accommodate using data's values)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 54 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       54   ->     918
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 39 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       39   ->     663
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+(note: variable name was str41, now str50 to accommodate using data's values)
+(note: variable river was str8, now str11 to accommodate using data's values)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 24 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       24   ->     408
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+(note: variable name was str41, now str50 to accommodate using data's values)
+(note: variable river was str6, now str11 to accommodate using data's values)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 150 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      150   ->    2550
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 98 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       98   ->    1666
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+(note: variable name was str42, now str61 to accommodate using data's values)
+(note: variable river was str8, now str11 to accommodate using data's values)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 94 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       94   ->    1598
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+(note: variable name was str45, now str61 to accommodate using data's values)
+(note: variable river was str4, now str11 to accommodate using data's values)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 32 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       32   ->     544
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+(note: variable name was str34, now str61 to accommodate using data's values)
+(note: variable river was str3, now str11 to accommodate using data's values)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 38 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       38   ->     646
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+(note: variable name was str41, now str61 to accommodate using data's values)
+(note: variable river was str5, now str11 to accommodate using data's values)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+arkansas
+(37 vars, 27 obs)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1930 1940 1950)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       27   ->     459
+Number of variables                  39   ->       8
+j variable (17 values)                    ->   year
+xij variables:
+      left_1790 left_1800 ... left_1950   ->   left_
+   right_1790 right_1800 ... right_1950   ->   right_
+-----------------------------------------------------------------------------
+(note: variable name was str57, now str61 to accommodate using data's values)
+(note: variable river was str9, now str11 to accommodate using data's values)
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//S_41754.000001 saved
+
+. egen river_bridge = group(river bridge)
+
+. egen river_year = group(river year)
+
+. gen segment = int(river_mile/10)
+
+. egen river_segment = group(river segment)
+
+. 
+. tsset river_bridge year
+       panel variable:  river_bridge (strongly balanced)
+        time variable:  year, 1790 to 1950, but with gaps
+                delta:  1 unit
+
+. 
+. gen total = left+right
+
+. 
+. gen start_decade = int(start/10)*10
+(765 missing values generated)
+
+. local window 40
+
+. 
+. local sample_window 60
+
+. 
+. * for ease of reading, introduce a round offset for event time
+. scalar offset = 100
+
+. gen event_time = year-start_decade+offset
+(765 missing values generated)
+
+. keep if abs(event_time-offset)<=`sample_window'
+(5616 observations deleted)
+
+. 
+. replace event_time = -`window'+offset if event_time<-`window'+offset
+(1235 real changes made)
+
+. replace event_time = `window'+offset if event_time>`window'+offset
+(423 real changes made)
+
+. 
+. gen byte before = year<start
+
+. gen byte after = year>=start
+
+. 
+. egen left_before = sum(cond(before,left,0)), by(river_bridge)
+
+. egen right_before = sum(cond(before,right,0)), by(river_bridge)
+
+. 
+. gen small_share = cond(left_before<right_before,left,right)/total
+(1244 missing values generated)
+
+. replace small_share=0 if total==0
+(1244 real changes made)
+
+. * if total number of post offices is poisson, the variance is sqrt of mean
+. gen scaled_difference = cond(left_before<right_before,right-left,left-right)/sqrt(total)
+(1244 missing values generated)
+
+. 
+. gen deviation = 0.5-small_share
+
+. tsset river_bridge year
+       panel variable:  river_bridge (unbalanced)
+        time variable:  year, 1790 to 1950, but with gaps
+                delta:  1 unit
+
+. gen change = deviation-L10.deviation
+(649 missing values generated)
+
+. gen lag_deviation = L10.deviation
+(649 missing values generated)
+
+. 
+end of do-file
+
+. 
+. forval r=1/12 {
+  2.         gen river_mile_`r' = river_mile*(river=="``r''")
+  3. }
+
+. 
+. xtpoisson total i.event_time river_mile_*, i(river_year) fe
+warning: existing panel variable is not river_year
+note: 7 groups (7 obs) dropped because of only one obs per group
+note: 21 groups (177 obs) dropped because of all zero outcomes
+
+Iteration 0:   log likelihood =   -18280.1  
+Iteration 1:   log likelihood = -15458.034  
+Iteration 2:   log likelihood = -15428.331  
+Iteration 3:   log likelihood = -15428.226  
+Iteration 4:   log likelihood = -15428.226  
+
+Conditional fixed-effects Poisson regression    Number of obs      =      5998
+Group variable: river_year                      Number of groups   =       163
+
+                                                Obs per group: min =         2
+                                                               avg =      36.8
+                                                               max =       133
+
+                                                Wald chi2(20)      =   5205.98
+Log likelihood  = -15428.226                    Prob > chi2        =    0.0000
+
+-------------------------------------------------------------------------------
+        total |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+--------------+----------------------------------------------------------------
+   event_time |
+          70  |   .0060255   .0201517     0.30   0.765     -.033471     .045522
+          80  |   .0365227    .019623     1.86   0.063    -.0019376    .0749831
+          90  |   .0311697   .0197304     1.58   0.114    -.0075011    .0698406
+         100  |   .0428916   .0198062     2.17   0.030     .0040722    .0817111
+         110  |   .0706981   .0201373     3.51   0.000     .0312297    .1101664
+         120  |   .0752214   .0202954     3.71   0.000     .0354432    .1149996
+         130  |   .1048089   .0212378     4.94   0.000     .0631835    .1464344
+         140  |   .1392568   .0175943     7.91   0.000     .1047726     .173741
+              |
+ river_mile_1 |  -.0031222   .0000962   -32.44   0.000    -.0033109   -.0029336
+ river_mile_2 |  -.0012116   .0002124    -5.70   0.000     -.001628   -.0007952
+ river_mile_3 |  -.0020576   .0001562   -13.17   0.000    -.0023638   -.0017514
+ river_mile_4 |  -.0037251   .0001833   -20.32   0.000    -.0040844   -.0033658
+ river_mile_5 |  -.0051827   .0001973   -26.27   0.000    -.0055694   -.0047961
+ river_mile_6 |  -.0073725   .0001929   -38.23   0.000    -.0077506   -.0069945
+ river_mile_7 |  -.0003077   .0000259   -11.87   0.000    -.0003585   -.0002569
+ river_mile_8 |  -.0006234    .000029   -21.49   0.000    -.0006802   -.0005665
+ river_mile_9 |   .0007875   .0000353    22.32   0.000     .0007184    .0008566
+river_mile_10 |  -.0033033   .0002341   -14.11   0.000    -.0037622   -.0028445
+river_mile_11 |  -.0005237   .0001856    -2.82   0.005    -.0008874     -.00016
+river_mile_12 |   .0012514   .0001672     7.48   0.000     .0009237    .0015791
+-------------------------------------------------------------------------------
+
+. test (110.event_time+120.event_time+130.event_time+140.event_time)/4==(0+70.event_time+80.event_time+90.event_time)/4
+
+ ( 1)  - .25*[total]70.event_time - .25*[total]80.event_time - .25*[total]90.event_time + .25*[total]110.event_time +
+       .25*[total]120.event_time + .25*[total]130.event_time + .25*[total]140.event_time = 0
+
+           chi2(  1) =   45.69
+         Prob > chi2 =    0.0000
+
+. gen po_hat = .
+(6182 missing values generated)
+
+. gen se = .
+(6182 missing values generated)
+
+. foreach t in 70 80 90 100 110 120 130 140 {
+  2.         replace po_hat = _b[`t'.event_time] if event_time==`t'
+  3.         replace se = _se[`t'.event_time] if event_time==`t'
+  4. }
+(601 real changes made)
+(601 real changes made)
+(586 real changes made)
+(586 real changes made)
+(568 real changes made)
+(568 real changes made)
+(534 real changes made)
+(534 real changes made)
+(488 real changes made)
+(488 real changes made)
+(462 real changes made)
+(462 real changes made)
+(382 real changes made)
+(382 real changes made)
+(716 real changes made)
+(716 real changes made)
+
+. replace po_hat = 0 if event_time==60
+(1845 real changes made)
+
+. replace se = 0 if event_time==60
+(1845 real changes made)
+
+. 
+. replace event_time = event_time - offset
+(6182 real changes made)
+
+. label var po_hat "Post office count (log)"
+
+. label var event_time "Years since bridge"
+
+. 
+. gen upper = po_hat + 1.96*se
+
+. gen lower = po_hat - 1.96*se
+
+. tw (area  upper lower event_time, base(-0.05 -0.05) sort astyle( ci plotregion)) (line po_hat event_time, sort),  scheme
+> (s2color) legend(order(1 "95% confidence interval" 3 "Post office count (log)"))
+
+. graph save results/pooled_event_study.gph, replace
+(file results/pooled_event_study.gph saved)
+
+. 
+. 
+. capture log close
