@@ -1,0 +1,387 @@
+% ./preamble.tex
+
+
+= Introduction =
+\widefigure{upper-black-eddy}{The Upper Black Eddy Bridge on the Delaware River}
+== The Upper Black Eddy Bridge on the Delaware River ==
+\textquotedblleft \lbrack T]his new crossing brought additional business to
+this part of the river valley. [...] By 1844, business in the now growing
+town of Milford included three stores, three taverns, twelve to fiteen
+mechanics' shops, a flour mill, and two new sawmills [...] Upper Black Eddy
+on the Pennsylvania side of the river directly opposite Milford was a
+favorite stop for timber raftsmen in the early days. By the mid-nineteenth
+century the bridge brought even more business. Upper Black Eddy was booming,
+too. It had forty houses, three hotels, and several stores and
+shops.\textquotedblright \bigskip \newline
+(Dale, F.:\ Bridges over the Delaware river. A history of crossings)
+
+== Introduction ==
+
+* We build a theory to explain where people agglomerate in space.
+* Stylized but geographically rich environment: a subset of the globe, divided by a river.
+	* Two banks differ in productivity $\to$ have an incentive to trade.
+	* Trade costly, both inland and across the river.
+	* Crossing the river over a bridge is less costly than crossing it by boat.
+* Building a bridge decreases the cost of crossing the river at a point $\to$ increases concentration of economic activity around that point $\to$ brings about benefits from agglomeration.
+
+
+== Predictions ==
+* Model delivers a set of predictions on the spatial distribution of population around rivers and bridges.
+	* Test predictions on high-resolution population data from the U.S.
+* Conduct two additional exercises:
+	* use historical data to check the effect of bridges on population growth,
+	* use model to measure the welfare gains from building a bridge.
+
+== Related literature ==
+
+=== Economic geography models with continuous space ===
+* Two-good Ricardian models with agglomeration externalities:\ Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012),\newline Co\c{s}ar and Fajgelbaum (2012)
+* Neoclassical models with CES\ preferences:\newline Fabinger (2011), Allen and Arkolakis (2013)\bigskip
+
+=== Role of transport infrastructure in development ===
+* Railroads:\ Donaldson (2012), Donaldson and Hornbeck (2012)
+* Roads: Baum-Snow et al. (2012), Duranton et al. (2012)
+* Portage sites:\ Bleakley and Lin (2012)
+* Bridges on Mississippi and Ohio: Tompsett (2013)
+
+== Our contributions ==
+* We take the geometry of bridges and trade seriously, and show that this matters.
+* We use high-resolution historical data to test our theory.
+
+== Outline ==
+1. A spatial model with bridges
+2. Empirical content of our theory
+3. Data
+4. Research designs
+5. Broader implications
+6. Conclusion
+
+
+
+= A spatial model with bridges =
+==	Outline ==
+* We build a model of bridges at fixed locations, and analyze the resulting distribution of economic activity in space.
+* Costly trade: location matters.
+* Free labor mobility: people move to minimize trade costs.
+* Ricardian comparative advantage: people move close to the river to exploit gains from trade.
+
+== Geography ==
+* Continuous space. Two regions, $R\in \left \{ H,F\right \} $,
+separated by a river without meanders.
+* A location is indexed by 
+\[
+\underset{\text{region}}{\underbrace{R}},\underset{\text{distance from river}}{\underbrace{\ell }},\underset{\text{closest river mile}}{\underbrace{h}}, 
+\]
+and is endowed with land $\lambda \left( R,\ell ,h\right) >0$.
+* Bridges at river miles $h_{1},\ldots ,h_{B}$.
+* Two goods, $i\in \left \{ X,M\right \} $.
+
+== ==
+\longfigure{figurem1}{Geography in our model}
+
+== Trade costs ==
+Shipment of goods is costly:
+* land shipping over distance $d$ involves iceberg cost $e^{t_{i}d}$,
+* crossing river by boat costs $e^{\tau _{i}^{0}}$,
+* crossing river over bridge $b$ costs $e^{\tau _{i}^{b}}<e^{\tau_{i}^{0}}$.
+
+== Consumption ==
+* Mass of $N$ consumers, freely mobile across space.
+* Consumer living at $\left( R,\ell ,h\right)$ owns local land, supplies one unit of labor inelastically, and chooses her consumption by maximizing
+\begin{equation*}
+u\left( R,\ell ,h\right) =q_{X}\left( R,\ell ,h\right) ^{\frac{1}{2}%
+}q_{M}\left( R,\ell ,h\right) ^{\frac{1}{2}}.
+\end{equation*}
+
+== Production ==
+* Good $i\in \left \{ X,M\right \}$ produced by perfectly competitive firms combining labor and land under Cobb--Douglas production technology:
+\begin{equation*}
+	\underbrace{q_{i}\left( R,\ell,h\right)}_\text{output per unit of land}
+	=
+	\left[ \underbrace{\overline{a}_{i}^{R}}_\text{unit cost of production}\right] ^{-1}
+\cdot \left. \underbrace{n_{i}\left( R,\ell ,h\right) }_\text{labor per unit of land}\right. ^{1-\alpha }
+\end{equation*}
+* Assume that Home has a ''comparative advantage'' in $X$: $\overline{a}_{M}^{H}/\overline{a}_{X}^{H}$ high enough that no Home location specializes in $M$. Similarly for Foreign.
+
+
+== Equilibrium ==
+An equilibrium is a set of functions $P_{X}$, $P_{M}$, $n_{X}$, $n_{M}$, $n$, $\lambda _{X}$, $\lambda _{M}$, $w$ and $r$, as well as real wages $u^{H}$ and $u^{F}$ such that
+1. Utility of workers is maximized and equalized across locations.
+2. Profits are maximized and driven down to zero.
+3. Local land markets clear.
+4. Local and global labor markets clear.
+5. There is no arbitrage possibility within countries.
+6. There is no arbitrage possibility over the river.
+7. There is no arbitrage possibility over bridges.
+8. Trade is balanced between each pair of locations.
+...
+An equilibrium exists and we conjecture it to be unique.
+
+== Gradients ==
+* Rents, population density depend on relative price $P_X/P_M$.
+* There is no inland trade (Spatial Impossibility Theorem): relative prices depend on distance to other side.
+* Population gradient: population density declines with distance to river.
+
+
+
+==	Spatial distribution ==
+Three types of regions on both sides of river:
+1. autarky
+2. trade by boat
+3. trade via bridge
+
+== Iso-density curves ==
+
+
+= Empirical content of our theory =
+==	Key predictions ==
+1. Bridges reduce trade costs substantially.
+2. They affect parts of space differentially (``space warping").
+3. People agglomerate to minimize trade costs.
+
+== Bridges reduce trade costs ==
+* This is a statement about magnitudes.
+* Especially in early times, when alternative was a ford or a ferry, which was slow and dangerous.
+	* We need historical data.
+
+== Bridges warp space ==
+* Because bridges reduce trade costs in a particular ''point'', some parts of space are disproportionately affected.
+* Unequal reduction in trade costs makes some locations relatively more attractive.
+	* Contrast with: reduction in inland transport costs, linear infrastructure (highways, railroads).
+	* We need high-resolution data.
+* Especially in early (pre-automobile) times, when inland transport is costly.
+
+== ==
+\widefigure{space-warping}{A bridge connecting six locations}
+
+== People move to market access ==
+* This is a feature of many economic geography models.
+* Empirical evidence: Dekle and Eaton (1998), Hanson (1997, 2005), Redding and Sturm (2008), Ahlfeldt, Redding, Sturm and Wolf (2012).
+* Agglomeration effect is magnified via space warping:
+	* People move close to the bridge on the left bank.
+	* This makes the bridge location even more attractive on the right bank.
+	* And vice versa.
+
+==	Alternative hypotheses ==
+=== People agglomerate for other reasons, and build bridges nearby. ===
+* Check for patterns of agglomerations in bridge locations.
+* Use event study to determine which came first.
+* Instrument for bridges (future work).
+
+=== Bridges facilitate trade, but trade does not matter for agglomeration. ===
+* Inconsistent with existing evidence.
+
+
+
+= Data =
+== Data ==
+* We use data on 12 major rivers in the continental U.S.
+* We need precise geospatial data on
+	* rivers,
+	* (historical) bridges,
+	* (historical) population.
+
+== Rivers ==
+* River geocoordinates from ESRI Map of U.S. Major Waters for Arkansas, Colorado, Columbia,
+Connecticut, Delaware, Hudson, Mississippi, Missouri, Ohio, Red River,
+Snake\ River, Tennessee.
+* We use the centerline of the river and index it by river miles.
+
+== Bridges ==
+* Bridge data is from bridgehunter.com, cross-referenced with Wikipedia, National Bridge Inventory, historical sources.
+* For each bridge, we know:
+	* river over which it passes
+	* geocoordinates
+	* year of building
+	* year of decommissioning (if any)
+	* other characteristics: rail, highway, structure, span
+* For the Hudson, we include the tunnels at Manhattan.
+
+== Population ==
+* Current (1995) population come from Version 1 of the Global Rural-Urban Mapping Project population grid. 
+	* Grid cells are $30\times 30$ arc seconds ($\approx 0.5\times 0.5$ km).
+* Historical data from History Database of the Global Environment (HYDE).
+	* Grid cells are $5\times 5$ arc minutes ($\approx 5\times 5$ km).
+* Decennial Censuses since 1790--
+	* county-level (historical county shapes: NHGIS)
+	* township-level (input by hand for select counties)
+* Post offices.
+
+== Using post offices to proxy for population ==
+* We have data on opening dates of post offices (postalhistory.com).
+* Before Rural Free Delivery began (1896--1903), mail was only delivered to post offices. Peoople needed a post office to pick up their mail.
+	* Precise starting dates.
+	* Smaller townships (one office for about every 2,000 people).
+	* Precise geocoordinates (geocoded via geonames.usgs.gov).
+
+== ==
+\widefigure{post-offices-1830}{Population and the number of post offices across counties}
+
+
+== ==
+\widefigure{post_offices_in_bridge_buffers}{Bridges and post offices on the Delaware, 1830}
+\longfigure{river-descriptives}{Earliest bridges}
+\widefigure{post-office-count}{Number of post offices over time}
+
+= Research designs =
+== Research designs ==
+* We have a number of research designs that address:
+	1. simple equilibrium correlations from the model
+	2. two-way link between bridges and agglomeration
+	3. space warping
+
+==	Cross-sectional correlations ==
+1. Density is higher at river.
+2. Density is higher at bridge.
+
+
+== ==
+\widefigure{density-at-rivers}{More people live close to the river}
+\widefigure{clustering-at-bridges}{More people live close to the bridge}
+
+
+
+==	Bridges or agglomeration? ==
+1. Where are bridges located?
+	* There is no more than random clustering of bridges.
+2. Event study
+	* Bridge regions grow faster.
+
+== Where are bridges located? ==
+Let $h_b$ the location (river-mile) of bridge $b$. What is the joint distribution of $h_b$s?
+	* $H_0$: if bridges are random, $h_b$ follows a Poisson process.
+	* $H_1$: if agglomeration forces drive bridges, bridges cluster in certain locations (more so than Poisson).
+	* $H_2$: if bridges are valued for trade costs, they come at regular distances (more so than Poisson).
+
+== A hazard model for bridge location ==
+\[
+\Pr(h_b\le h_{b-1}+z) = 1-\exp\left[
+	\int_0^z \lambda(m)dm
+\right]
+\]
+
+$\lambda(m)$: ''hazard'' of a bridge at $m$ miles from nearest neighbor.
+
+* $H_0$: $\lambda(m)=\lambda$ constant
+* $H_1$: $\lambda(m)'<0$ decreasing
+* $H_2$: $\lambda(m)'>0$ increasing after some distance
+
+
+== ==
+\widefigure{delaware-bridge-hazard}{Hazard of a bridge increases with distance (Delaware)}
+\widefigure{hudson-bridge-hazard}{Hazard of a bridge increases with distance (Hudson)}
+\widefigure{connecticut-bridge-hazard}{Hazard of a bridge increases with distance (Connecticut)}
+
+== Event study ==
+* Using historical post office data, compare bridge neighborhoods before and after the bridge was built.
+	* Also works with (lower-resolution) population data from HYDE.
+* Proxy for population density: number of post offices within 10km of the bridge.
+
+== Estimable equation ==
+Number of post offices within 10km of bridge $b$ on river $r$ in year $t=1890, 1800, 1810, ..., 1950$
+\[
+E ({N_{rbt}})
+		 = \exp
+		 \left[\mu_{rt}+\sum_{s=-40}^{40}\beta_s I(t=T_b+s) + \gamma_r m_{b}\right].
+\]
+* Trends may diverge across rivers ($\mu_{rt}$).
+* Sea proximity increases population ($\gamma<0$), but differentially across rivers ($\gamma_r$).
+* $\beta_s$ compares post office count at year $s$ since the bridge was built to other bridge locations in the same year on the same river.
+* Estimate by Poisson regression.
+
+== ==
+\widefigure{pooled-event-study}{Post office count before and after the bridge}
+
+== Event study results ==
+* Post offices increase by 14 percent 40 years after the bridge ($F=45.69$).
+
+
+==	Warping of space ==
+1. Clustering at rivers
+2. Two-side correlations
+3. Convergence
+	* Two sides of river converges in population levels ''after'' bridge is built
+
+== ==
+\widefigure{space-warping2}{Space is warped more at the river}
+\widefigure{clustering-at-bridges}{Population is clustered more at the river}
+\widefigure{correlation-of-two-sides}{Two sides of the river are correlated}
+
+== Two sides of the river converge after a bridge ==
+* Suppose population is split unevenly on the two sides of the river at a given location.
+* After the bridge, market access becomes similar on the two sides.
+* Populations converge.
+
+== Estimable equation ==
+* Suppose left-bank is less populous before the bridge. Let 
+\[
+s_{rbt}^L = \frac{N_{rbt}^L}{N_{rbt}^L+N_{rbt}^R}
+\]
+denote the share of the smaller side.
+* $H$: $s_{rbt}$ increases (towards 50\%) after the bridge.
+\[
+s_{rbt}		 = 
+ 	\mu_{rt}+\sum_{s=-40}^{40}\beta_s I(t=T_b+s) + e_{rbt}.
+\]
+
+== ==
+\widefigure{pooled-convergence}{Two sides of river become more similar after the bridge}
+
+== Convergence results ==
+* Significant convergence for Columbia, Delaware, Ohio, Missouri..., Mississippi, Snake River,   
+* not for Arkansas, Colorado, Hudson, Connecticut, Red River, Tennessee. 
+* Pooled results: share of smaller side increases from 24 to 30 percent ($F=14.89$).
+
+
+
+= Broader implications =
+== Broader implications ==
+With agglomeration externalities (not currently modeled) our theory would predict
+1. high returns to pointlike transport infrastructure
+2. additional gains from trade
+
+==	Benefits of bridges ==
+1. External effects of transport infrastructure
+	* Akerman (2009): Öresund Bridge increased industry productivity in Malmö via Melitz-type selection.
+2. Delaware calibration
+	* We calibrate the model to the 19th century Delaware river and estimate:
+		* 4 percent welfare gain from first bridge
+		* 15 percent total gain from first 21 bridges
+
+==	The curse of landlocked countries ==
+* Landlocked countries perform much worse than coastal countries.
+* Standard estimates of gains from trade are way too low to explain this.
+* Potential explanation: opening ports and other trading posts has agglomeration benefits.
+
+
+
+= Conclusion =
+== Future work ==
+1. Instrumenting bridges
+2. Medieval bridges
+3. Ports
+
+== Instrumenting bridges ==
+* Challenge: we need a high-resolution instrument that is uncorrelated with local agglomeration demand.
+* Candidates:
+	* local variation in bridge building costs (hydrology, geology) (see Tompsett, 2013)
+	* transit demand for bridge:
+		``The crossing at Easton was referred to as the New York--Harrisburg Crossing, indicating that the ferry here served travellers going to western Pennsylvania, and beyond. The two most frequently used river crossings for this traffic were at Trenton and Easton, and these crossings were where the first bridges over the Delaware were built." (p. 2 of Dale)
+	* structural approach (e.g. bridges are likely 10-20 miles from another bridge)
+
+== Medieval bridges ==
+* Bridges and other crossings may have mattered more when inland transport was more costly.
+* Casual evidence: Oxford, Cambridge, Stratford, Bristol.
+* Challenges: paucity of data (but: place names). Conflicting geographical forces: townships also needed to be defended.
+
+== Ports ==
+* Ports are also pointlike features.
+* A few large ports offer more agglomeration benefits than many small ports.
+* Use variation in geography and maritime technology (larger vessels, container ships) to explain agglomeration. 
+
+== Conclusion ==
+* 2D model of location and trade.
+* Spatial pattern of population around bridges is consistent with the model.
+* Bridge regions grow faster.
+* Two sides of river converge in size after bridge is built.
+* Potentially large welfare gains from early bridges.

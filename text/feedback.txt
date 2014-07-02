@@ -1,0 +1,55 @@
+Costas Arkolakis and Treb Allen
+-------------------------------
+* Use HYDE.
+
+Cynthia Kinnan
+--------------
+
+Esteban Rossi-Hansberg
+----------------------
+* Bridges are endogenous. Think of an alternative mechanism in which population is distributed somehow along the river (maybe depending on the distribution of productivity, so population of the two banks correlated if productivity is correlated) => if large cities are opposite one another, they build a bridge.
+* Bridge might still lead to an increase in trade => even more agglomeration. But it's very hard to separate the two effects. First three predictions of the model are true under the alternative story as well. Fourth one (lower correlation at bridges) maybe not - but have to construct a precise statistical test if want to use that prediction to separate the two stories.
+* Alternative: use instruments. This part of the literature is mainly about finding the right IVs.
+* Showing uniqueness is easy in the case in which land & productivity are evenly distributed within regions - suppose there is a planner in each region; solve the planners' problems of allocating locations to bridges; then decentralize. If land & productivity are not evenly distributed => nonconvexities => multiple equilibria possible. But assuming that land is evenly distributed is okay.
+* About IVs:
+** Supply-side instruments convincing, but problem: no time variation.
+** Connecting large cities with straight lines not convincing b/c this might lead to growth of locations at the crossing point of the straight line and the river, even without bridges.
+** Other instruments: budget spent on building bridges gets tighter / looser at a location for exogenous (federal?) reasons?
+** If don't have one super-strong method of identification, have to provide multiple weaker ones.
+
+People at the Student Trade Workshop, Princeton, Nov 6 2013
+-----------------------------------------------------------
+(Steve Redding, Gene Grossman, Eduardo Morales, Felix Tintelnot, and a bunch of PhD students)
+* Lots of concerns about endogeneity:
+** What about the alternative explanation that bridges link booming cities?
+** Bridges are endogenous. => instruments necessary
+** Why would bridge building be exogenous? Any mechanism that would lead to that?
+** There are some exogenous drivers of bridge creation (regulation, e.g. Tappan Zee Bridge) => could use that?
+** Consider tunnels & mountain passes => maybe more exogenous variation there?
+* Explain better what you do related to existing literature:
+** QJE paper on portage sites - do a careful analysis. What is the difference, what do you add?
+** A bridge is just a point on a road. Why is the effect different from the one of a road?
+* Correlation results:
+** Why are correlations computed on intervals of different length? Is the result still different if you measure correlations at bridges + at non-bridge intervals of the same length? Check correlation for the same interval size, at the bridge & up the river.
+** Falsification test => pick points at random and check if you find the same things as at bridges.
+** Bridges can take up space - if you concentrate on a too narrow interval when measuring the correlation, this 	might bias the results.
+* Regress bridges on population density => will find things there as well. Main problem with event study regressions: both population density and bridges persistent. Plus: if a bridge is built up, it's likely to remain there => nonstationary process. Using time series not very helpful in such an environment. Lags and leads won't help.
+* Heterogenous treatment effects could drive empirical results. Effect of a bridge depends on number of existing bridges.
+
+Gene Grossman
+-------------
+* Supply-side instruments more convincing, but demand-side instruments okay as well. Maybe use road structure as an instrument? (Problem: roads endogenous => historical data on roads?)
+
+Stephen Redding
+---------------
+* Get supply-side instruments from Dams paper (Duflo&Pande, QJE).
+* Use historical data on oldest trading routes & army routes.
+
+People at MKE Conference, Budapest, Dec 20 2013
+-----------------------------------------------
+* Laszlo Halpern: bridges get built up, but difference in productivity between the two banks remains => why cannot productivity cross the river? Productivity = productivity of land?
+* Laszlo Halpern: first railroads were built up at same time as the first bridges => how to separate the two effects?
+* Gabor Simonovits: long-distance transit demand story (to be used for identification) not told by the model. [I think this is wrong; model is silent about whether a specific shipment that crosses the river is long- or short-distance - David]
+* Almos Telegdy: long-distance transit demand clearly affects demand for bridges, but it also directly affects the distribution of population along the river => a weak IV.
+* Peter Harasztosi: do bridges disappear? => if yes, could be used for identification
+* Adam Szeidl: why do we care?

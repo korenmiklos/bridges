@@ -1,0 +1,36 @@
+Motivation
+Literature
+A model of bridges
+	Outline
+	Trade model
+	Spatial equilibrium
+	Comparative statics
+Empirical content
+	Key statements
+		1. Bridges reduce trade costs substantially
+		2. They affect pairs of points differentially (morph space)
+		3. People agglomerate to minimize trade costs
+	Alternative hypotheses
+		People agglomerate for other reasons, and build bridges nearby
+Research designs
+	Cross-sectional correlations
+		Density is higher at river
+		Density is higher at bridge
+	Bridges or agglomeration?
+		Tappan Zee Bridge
+		Hazard of bridges
+			There is no more than random clustering of bridges
+		Event study
+			Bridge regions grow faster
+		Bresnahan-Reiss?
+	Morphing of space
+		Clustering at rivers
+		Convergence
+			Two sides of river converges _after_ bridge is built
+Broader implications
+	Benefits of bridges
+		External effects of transport infrastructure
+		Delaware calibration
+	The curse of landlocked countries
+Future work
+	Instrumenting bridges

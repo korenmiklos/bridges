@@ -1,0 +1,1123 @@
+%2multibyte Version: 5.50.0.2890 CodePage: 1252
+
+\documentclass[12pt]{article}
+\usepackage{amsmath,amsthm,amsfonts}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[onehalfspacing]{setspace}
+
+%TCIDATA{OutputFilter=LATEX.DLL}
+%TCIDATA{Version=5.50.0.2890}
+%TCIDATA{Codepage=1252}
+%TCIDATA{<META NAME="SaveForMode" CONTENT="1">}
+%TCIDATA{BibliographyScheme=Manual}
+%TCIDATA{Created=Sunday, February 17, 2013 16:58:07}
+%TCIDATA{LastRevised=Sunday, April 28, 2013 17:27:32}
+%TCIDATA{<META NAME="GraphicsSave" CONTENT="32">}
+%TCIDATA{<META NAME="DocumentShell" CONTENT="Standard LaTeX\Blank - Standard LaTeX Article">}
+%TCIDATA{CSTFile=40 LaTeX article.cst}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{acknowledgement}[theorem]{Acknowledgement}
+\newtheorem{algorithm}[theorem]{Algorithm}
+\newtheorem{axiom}[theorem]{Axiom}
+\newtheorem{case}[theorem]{Case}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{conclusion}[theorem]{Conclusion}
+\newtheorem{condition}[theorem]{Condition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{criterion}[theorem]{Criterion}
+\newtheorem{definition}{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{lemma}{Lemma}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{problem}[theorem]{Problem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{solution}[theorem]{Solution}
+\newtheorem{summary}[theorem]{Summary}
+
+
+\newcommand{\dofigure}[2]{\begin{figure}[h!]
+\center %$#1$
+\includegraphics[width=0.75\linewidth]{exhibits/#1}
+  \caption{#2\label{fig:#1}}
+\end{figure}}
+
+\newcommand{\dotable}[2]{\begin{table}[h!]
+  \caption{#2\label{tab:#1}}
+\center %$#1$
+\includegraphics{exhibits/#1}
+\end{table}}
+
+\newcommand{\Var}{\mathbf{Var}}
+\newcommand{\Cov}{\mathbf{Cov}}
+
+\begin{document}
+
+\title{Bridges\thanks{%
+We thank Treb Allen, Costas Arkolakis, Jon Vogel and Esteban Rossi-Hansberg for useful comments and B\'{a}lint Menyh\'{e}rt for excellent research assistance. Koren acknowledges funding from European Research Council Starting Grant No. 313164. The paper does not represent the views of the Federal Reserve Bank of Philadelphia or the Federal Reserve System.}}
+\author{Roc Armenter, Mikl\'{o}s Koren and D\'{a}vid Kriszti\'{a}n Nagy%
+\thanks{%
+Armenter: Federal Reserve Bank of Philadelphia. Koren: Central European
+University, IECERS and CEPR. Nagy: Princeton University.}}
+\maketitle
+
+\begin{abstract}
+We build a continuous-space theory of trade in which people in a region
+agglomerate to exploit trading opportunities with another region. The
+regions are separated by a river, which can be crossed anywhere, but more
+cheaply at bridges. In the model, most trade takes place via bridges,
+leading to a key prediction that population density declines with distance
+to the bridge. We derive additional predictions about the spatial
+distribution of population and test them on high-resolution population
+density data around six major American rivers. The data are mostly
+consistent with our model. More generally, our results suggest that
+economies of density arising from transport infrastructure can help explain
+why and where people agglomerate.
+\end{abstract}
+\newpage
+\section{Introduction}
+
+People agglomerate in cities to exploit spatial externalities and other
+economies of density. What are the source of economies of density? Where do
+cities emerge in space? Some locations can be clearly linked to natural
+advantages, whereas others seem to be the outcome of historical accidents.
+
+We build a continuous-space theory of trade to explain why and where people
+agglomerate. There are two forces of agglomeration in our model. First,
+people move close to trading opportunities to minimize transportation cost.
+Second, they strive to exploit economies of density in transportation
+technology. To understand the second motive, consider choosing a location
+next to a river dividing two productive regions. If the river is easily
+navigable, boats may provide a suitable means of transport between the
+regions. As economies of scale in boating are small, traders have no
+incentive to agglomerate and can trade from small villages along the river.
+By contrast, if the river is less navigable, one has to build a bridge to
+cross it. Bridges bring about clear economies of density as locations close
+to the bridge will have lower trade costs with the other side. Traders
+agglomerate near the bridge, and a trading city emerges.
+
+In our model, people choose their location on a homogeneous plane divided by
+a single linear feature (a \textquotedblleft river\textquotedblright ). The
+two sides of the river differ in comparative advantage, providing an
+incentive to trade across the river. Trading, however, is costly. The cost
+increases in the distance travelled, and crossing the river entails
+additional costs. The river can be crossed in two ways: by boat at any
+point, and on existing bridges for a lower cost. For a given set of bridges,
+we study the patterns of specialization and the distribution of population
+(and economic activity) in space.
+
+Our model leads to a number of equilibrium predictions about rivers,
+bridges, and population density. First, population density declines with
+distance to the river. Second, along the river, population density declines
+with distance to closest bridge. Third, population is more clustered along
+the river than far from the river. Fourth, along the river, the population
+densities on the right and the left bank are positively correlated. Fifth,
+this correlation is smaller within the neighborhood of bridges.
+
+Our work is motivated by the historical relevance of crossing points, often
+referenced in city names, such as Ox\emph{ford} and Cam\emph{bridge}.
+Although the emergence of such crossing points is not exogenous, they may
+lead to further and faster economic development and agglomeration. Writing
+about the Upper Black Eddy--Milford bridge on the Delaware, built in 1842,
+Dale (2003, p. 43) concludes that ``[t]his new crossing brought additional
+business to this part of the river valley. It gave farmers and small
+industrualists in the area quick access to the Delaware Canal in
+Pennsylvania. And this increased use brought additional funds in the form of
+dividends to the stockholders of the Upper Black Eddy-Milford Bridge. By
+1844, business in the now growing town of Milford included three stores,
+three taverns, twelve to fiteen mechanics' shops, a flour mill, and two new
+sawmills that made lumber trade, here, an especially important business. The
+town also had many non-commercial structures, including forty-five homes,
+two churches, and a fine school. Upper Black Eddy on the Pennsylvania side
+of the river directly opposite Milford was a favorite stop for timber
+raftsmen in the early days. By the mid-nineteenth century the bridge brought
+even more business. Upper Black Eddy was booming, too. It had forty houses,
+three hotels, and several stores and shops.''
+
+To evaluate the model more systematically, we test its predictions on six
+major North American rivers: the Hudson, the Delaware, the Mississippi, the
+Missouri, the Ohio, and the Tennessee. In doing so, we rely on
+high-resolution population density data, the precise path of rivers and the
+locations of bridges.
+
+First, we estimate how population density varies with distance to the river
+and distance to the nearest bridge. It declines with distance to the Hudson,
+the Mississippi, the Missouri, the Ohio, and the Tennessee, but not with
+distance to the Delaware. Except for the Hudson, population density declines
+with distance to the nearest bridge on the other five rivers.
+
+Second, we check whether population is more clustered at the river. We
+calculate the coefficient of variation of population density within 10 miles
+of the river, and find that it is higher than between 20 and 30 miles from
+the river. That is, there is more variation in population along the river
+than inland, as predicted by the model.
+
+Third, we measure the correlation of population densities between the left
+and the right bank with and without taking bridges into account. For all six
+rivers, the correlation between the two banks is strongly positive (with an
+average of 0.48), suggesting that people agglomerate near the same points on
+either side of the river. When looking at bridges only, however, we find
+that correlations are substantially lower (average 0.37) between the two
+sides of the bridge. This is consistent with the model, where population
+density is a decreasing function of trade costs. Moving away from a bridge
+along the river, trade costs increase both on the left and on the right bank
+of the river, leading to a comovement in population density across the two
+banks. Therefore, starting from a bridge, the longer the interval over which
+we calculate the correlation coefficient, the larger value we find.
+
+\bigskip
+
+Our paper is related to two strands of the literature. First, it is related
+to an increasing number of papers which model space as ordered and
+continuous -- a much more realistic assumption than the ones used in
+classical economic geography models.\ Rossi-Hansberg (2005), Desmet and
+Rossi-Hansberg (2012), and Co\c{s}ar and Fajgelbaum\ (2012) characterize the
+spatial distribution of economic activity over a line segment in Ricardian
+models with agglomeration externalities. Fabinger (2011) and Allen and
+Arkolakis (2013), on the other hand, examine the implications of
+neoclassical models with CES\ preferences on the geographic distribution of
+economic activity.\ All of these papers come to the conclusion that \textit{%
+lower-dimensional trade barriers and trade infrastructure} -- ports in Co%
+\c{s}ar and Fajgelbaum (2012), borders in Rossi-Hansberg (2005) and Fabinger
+(2011), and highways and waterways in Allen and Arkolakis (2013) -- might
+have a significant impact on how population, income, and other relevant
+economic variables are distributed in space. In most of the cases, trade
+infrastructure has an agglomeration-creating effect since people want to
+exploit spatial proximity to trading opportunities, while trade barriers
+repel agglomeration in these models.\footnote{%
+Rossi-Hansberg (2005), however, points to a case in which more trade
+restrictions on the border are responsible for creating agglomeration.} Our
+main contribution to this literature is that, to the best of our knowledge,
+we are the first to study the role of bridges, or other point-like transport
+infrastructure, in creating agglomeration.
+
+The second literature related to this paper studies the role of transport
+infrastructure in development in more empirical settings. Donaldson (2012)
+and Donaldson and Hornbeck (2012) come to the conclusion that the expansion
+of railroads in the 19th century was a crucial determinant of local
+development in India and the U.S., respectively.\ Baum-Snow et al. (2012)
+and Duranton et al. (2012), on the other hand, find that highways have been
+playing an important role in city development in China and the U.S. The fact
+that these effects are likely to be long-lasting is pointed out by Bleakley
+and Lin (2012), who find that pre-19th-century portage sites remain
+population centers, despite the fact that their advantage in transportation
+have been obsolete for long. Relative to this second strand of the
+literature, we identify a new mechanism for agglomeration. In these papers,
+transport infrastructure is assumed to reduce trade costs, but is not a
+source of agglomeration itself. In our model, bridges not only make trade
+between two regions cheaper, but also serve as focal points of agglomeration.
+
+\bigskip 
+
+The structure of the paper is as follows. Section 2 describes the model
+together with the set of predictions that the model provides, while Section
+3 presents the data, the empirical strategy, and the results. Section 4
+concludes.
+
+\section{A model of trading across a river}
+
+We model production and trade in continuous space. There are a continuum of
+workers freely choosing location on a plane that is separated by a river.
+They produce two goods, using land and their labor. The two sides of the
+river differ in relative productivities, leading to Ricardian gains from
+trade across the river. There are no gains from within-region trade. (Most
+of our results survive if all agents specialize fully, such as in Allen and
+Arkolakis, 2013.) Transportation is costly, giving incentives to move close
+to trade opportunities.
+
+We study how the relative price of the two goods varies in space, and the
+patterns of specialization and agglomeration. For a fixed set of bridges, we
+derive a handful of predictions on the equilibrium distribution of
+population around the river and bridges.
+
+\subsection{Geography}
+
+Space is continuous. We concentrate on a compact and connected subset $S$ of
+the sphere that represents the globe. A circle segment called the \textit{%
+river} divides $S$ into two parts: the Home country ($H$) and the Foreign
+country ($F$) -- see Figure \ref{fig:figurem1}.\footnote{%
+A\ circle on the sphere is equivalent to a straight line on the plane:\ it
+is the shortest path between any two points that lie on it. Also notice that
+the river is assumed to have zero width. However, this assumption is without
+loss of generality because the only relevant geographical feature of the
+river in our model is the cost of crossing it, which is given exogenously.}
+Locations (i.e., points in $S$) are indexed by the triplet $\left( C,\ell
+,h\right) $, where $C\in \left \{ H,F\right \} $ is the country which the
+location belongs to, $\ell $ is the distance of the location from the river,
+and $h$ is the distance of the location from an arbitrarily chosen circle $%
+h=0$ that is perpendicular to the river. (In other words, $h$ represents the river mile.) For simplicity, we refer to $\ell $
+as \textquotedblleft longitude,\textquotedblright \ and to $h$ as
+\textquotedblleft latitude.\textquotedblright \ Finally, there is a finite
+set of latitudes $h_{1},\ldots ,h_{B}$ at which \textit{bridges} span the
+river.
+
+\dofigure{figurem1}{Geography of the river}
+
+There are two goods, denoted by $X$ and $M$.\ Shipment of goods is costly.
+Land shipping of good $i$ involves an iceberg cost of $e^{t_{i}d}$, where $%
+t_{i}$ is a positive constant, and $d$ is total distance traveled. Crossing
+the river entails additional costs. The river can be crossed in two ways:\
+(1) by boat at any point, at an iceberg cost of $e^{\tau _{i}^{0}}$, or\ (2)
+through bridge $b\in \left \{ 1,\ldots ,B\right \} $, at an iceberg cost of $%
+e^{\tau _{i}^{b}}$, where $\tau _{i}^{0},\tau _{i}^{b}>0$, and the value of $%
+\tau _{i}^{b}$ can potentially vary with $b$.
+
+Productivity is distributed evenly within countries, but can differ across
+countries. Let $a_{i}^{C}$ be the unit cost of production in sector $i\in
+\left \{ X,M\right \} $ of country $C\in \left \{ H,F\right \} $.\ Then the
+autarky price of the $X$-good relative to the $M$-good is given by $%
+p_{A}^{C}=\frac{a_{X}^{C}}{a_{M}^{C}}$ in country $C$.
+
+Finally, the spatial distribution of factor endowments is as follows.\ There
+is a mass of $N^{C}$ workers in country $C$, each of them supplying one unit
+of labor inelastically. Workers are freely mobile within countries, but
+cannot migrate from one country to the other.\ Also, each location $\left(
+C,\ell ,h\right) $ is endowed with a strictly positive amount of land $%
+\lambda \left( C,\ell ,h\right) $. Land is owned by local landlords.
+
+\subsection{Consumption}
+
+Workers have Cobb--Douglas preferences over goods $X$ and $M$, spending half
+of their income on each good. Therefore, the representative worker at
+location $\left( C,\ell ,h\right) $ has indirect utility%
+\begin{equation}
+u\left( C,\ell ,h\right) =\frac{w\left( C,\ell ,h\right) }{P_{X}\left(
+C,\ell ,h\right) ^{\frac{1}{2}}P_{M}\left( C,\ell ,h\right) ^{\frac{1}{2}}},
+\end{equation}%
+where $w\left( C,\ell ,h\right) $ is the wage at $\left( C,\ell ,h\right) $,
+and $P_{X}\left( C,\ell ,h\right) $ and $P_{M}\left( C,\ell ,h\right) $ are
+the local prices of the $X$- and $M$-goods, respectively. Within each
+country, workers move to the location at which their indirect utility is
+largest.
+
+Landlords have the same preferences as workers. Landlords are immobile, and
+do not work. We assume that the number of landlords is small enough that we
+can approximate total population by the number of workers at each location.
+
+\subsection{Production}
+
+Both goods are produced under constant returns to scale, using labor and
+land. The production function is Cobb--Douglas with an $\alpha $ share of
+labor in both sectors. Both sectors are characterized by perfect competition
+at each location. Therefore, a firm that operates in the $i$-sector at $%
+\left( C,\ell ,h\right) $ solves the problem%
+\begin{equation*}
+\max_{n_{i}\left( C,\ell ,h\right) }P_{i}\left( C,\ell ,h\right) \frac{%
+n_{i}\left( C,\ell ,h\right) ^{\alpha }}{a_{i}^{C}}-w\left( C,\ell ,h\right)
+n_{i}\left( C,\ell ,h\right) -r\left( C,\ell ,h\right) ,
+\end{equation*}%
+where $n_{i}\left( C,\ell ,h\right) $ is labor usage \textit{per unit of land%
+}, and $r\left( C,\ell ,h\right) $ is the rent per unit unit of land.
+
+The first-order condition to the firm's\ maximization problem implies%
+\begin{equation}
+n_{i}\left( C,\ell ,h\right) =\alpha ^{\frac{1}{1-\alpha }}\left(
+a_{i}^{C}\right) ^{-\frac{1}{1-\alpha }}\left[ \frac{P_{i}\left( C,\ell
+,h\right) }{w\left( C,\ell ,h\right) }\right] ^{\frac{1}{1-\alpha }}.
+\end{equation}%
+Hence, if a good is produced at location $\left( C,\ell ,h\right) $, then
+the mass of workers in the good's production is positively linked to the
+good's local price relative to the nominal wage.
+
+\subsection{Equilibrium}
+
+Now we define a competitive equilibrium in this economy.
+
+\begin{definition}
+An equilibrium is a set of functions $P_{X}$, $P_{M}$, $n_{X}$, $n_{M}$, $n$%
+, $\lambda _{X}$, $\lambda _{M}$, $w$ and $r$, as well as real wages $u^{H}$
+and $u^{F}$ such that
+
+(1) utility of workers is maximized and equalized across locations:%
+\begin{equation*}
+\frac{w\left( C,\ell ,h\right) }{P_{X}\left( C,\ell ,h\right) ^{\frac{1}{2}%
+}P_{M}\left( C,\ell ,h\right) ^{\frac{1}{2}}}=u^{C}
+\end{equation*}%
+for all $C\in \left \{ H,F\right \} $, $\ell $, and $h$,
+
+(2) profits are maximized and driven down to zero:%
+\begin{equation*}
+P_{i}\left( C,\ell ,h\right) \frac{n_{i}\left( C,\ell ,h\right) ^{\alpha }}{%
+a_{i}^{C}}-w\left( C,\ell ,h\right) n_{i}\left( C,\ell ,h\right) -r\left(
+C,\ell ,h\right) =0
+\end{equation*}%
+for all $C\in \left \{ H,F\right \} $, $\ell $, and $h$,
+
+(3) local land markets clear:%
+\begin{equation*}
+\lambda _{X}\left( C,\ell ,h\right) +\lambda _{M}\left( C,\ell ,h\right)
+=\lambda \left( C,\ell ,h\right)
+\end{equation*}%
+for all $C\in \left \{ H,F\right \} $, $\ell $, and $h$, where $\lambda
+_{i}\left( C,\ell ,h\right) $ denotes local land usage by sector $i$,
+
+(4) local and global labor markets clear:%
+\begin{eqnarray*}
+\frac{\lambda _{X}\left( C,\ell ,h\right) n_{X}\left( C,\ell ,h\right)
++\lambda _{M}\left( C,\ell ,h\right) n_{M}\left( C,\ell ,h\right) }{\lambda
+\left( C,\ell ,h\right) } &=&n\left( C,\ell ,h\right) \\
+\int_{C}\lambda \left( C,\ell ,h\right) n\left( C,\ell ,h\right) ds &=&N^{C}
+\end{eqnarray*}%
+for all $C\in \left \{ H,F\right \} $, $\ell $, and $h$,
+
+(5)\ there is no arbitrage possibility within countries:%
+\begin{equation*}
+P_{i}\left( C,\ell ,h\right) \leq e^{t_{i}d\left[ \left( C,\ell ,h\right)
+,\left( C,\ell ^{\prime },h^{\prime }\right) \right] }P_{i}\left( C,\ell
+^{\prime },h^{\prime }\right)
+\end{equation*}%
+for all $\left( C,\ell ,h\right) $ and $\left( C,\ell ^{\prime },h^{\prime
+}\right) $, where $d\left[ \left( C,\ell ,h\right) ,\left( C,\ell ^{\prime
+},h^{\prime }\right) \right] $ denotes the distance between the two
+locations, and we have equality if $\left( C,\ell ^{\prime },h^{\prime
+}\right) $ ships good $i$ through $\left( C,\ell ,h\right) $,
+
+(6) there is no arbitrage possibility over the river:%
+\begin{equation*}
+P_{i}\left( C,0,h\right) \leq e^{\tau _{i}^{0}}P_{i}\left( C^{\prime
+},0,h\right)
+\end{equation*}%
+for all $C$, $C^{\prime }$ and $h$, and we have equality if country $%
+C^{\prime }$ exports good $i$ at $h$ by boat,
+
+(7) there is no arbitrage possibility over bridges:%
+\begin{equation*}
+P_{i}\left( C,0,h_{b}\right) \leq e^{\tau _{i}^{b}}P_{i}\left( C^{\prime
+},0,h_{b}\right)
+\end{equation*}%
+for all $C$, $C^{\prime }$ and $b\in \left \{ 1,\ldots ,B\right \} $, and we
+have equality if country $C^{\prime }$ exports good $i$ through bridge $b$,
+
+(8) trade is balanced between each pair of locations.
+\end{definition}
+
+Let us introduce the notation $p\left( C,\ell ,h\right) =\frac{P_{X}\left(
+C,\ell ,h\right) }{P_{M}\left( C,\ell ,h\right) }$, that is, $p\left( C,\ell
+,h\right) $ is the \textit{relative price} of the $X$-good at location $%
+\left( C,\ell ,h\right) $. What is the pattern of specialization in
+equilibrium? By constant returns to scale, this only depends on the
+relationship between the equilibrium relative price and the autarky
+relative price. In particular,
+
+\begin{itemize}
+\item $\left( C,\ell ,h\right) $ is fully specialized in good $X$ if $%
+p\left( C,\ell ,h\right) >p_{A}^{C}$, implying $n\left( C,\ell ,h\right)
+=n_{X}\left( C,\ell ,h\right) $,
+
+\item $\left( C,\ell ,h\right) $ is fully specialized in good $M$ if $%
+p\left( C,\ell ,h\right) <p_{A}^{C}$, implying $n\left( C,\ell ,h\right)
+=n_{M}\left( C,\ell ,h\right) $,
+
+\item if $\left( C,\ell ,h\right) $ is incompletely specialized, then $%
+p\left( C,\ell ,h\right) =p_{A}^{C}$, and $n\left( C,\ell ,h\right)
+=n_{X}\left( C,\ell ,h\right) =n_{M}\left( C,\ell ,h\right) $ by (2).
+\end{itemize}
+
+Also notice that, due to trade costs, any location that is incompletely
+specialized is necessarily in autarky:\ a consumer at such a place would
+never find it optimal to buy any of the two goods from another location.
+
+We assume that Home has a comparative advantage in $X$. In other words, no Home location specializes in good $M$, and no Foreign
+location specializes in good $X$. Given the trade costs, 
+a sufficient condition for this is%
+\begin{equation*}
+p_{A}^{H}<p_{A}^{F}e^{-\max \left \{ \max_{b}\left( \tau _{X}^{b}+\tau
+_{M}^{b}\right) ,\tau _{X}^{0}+\tau _{M}^{0}\right \} }.
+\end{equation*}%
+Also notice that there can be no within-country trade in equilibrium:
+locations that are in autarky do not trade at all, whereas locations
+specialized in the country's export good only trade with the other country.
+
+We then have the following proposition that is a generalization of
+Proposition $2$ in Co\c{s}ar and Fajgelbaum (2012).
+
+\begin{proposition}
+In any equilibrium, each country $C$ is a union of two disjoint sets
+("regions") $T^{C}$ and $A^{C}$ such that
+
+(i) all locations in region $T^{C}$ trade with the other country,
+
+(ii) all locations in region $A^{C}$ that are not on the boundary of $T^{C}$
+are in autarky, and
+
+(iii) locations in $A^{C}$ that are on the boundary of $T^{C}$ are
+indifferent between trade and autarky.
+
+Moreover, for each country $C$ and latitude $h$, there exists a longitude $%
+\widehat{\ell }\left( C,h\right) $ such that $\left( C,\ell ,h\right) \in
+T^{C}$ for all $\ell <\widehat{\ell }\left( C,h\right) $, and $\left( C,\ell
+,h\right) \in A^{C}$ for all $\ell >\widehat{\ell }\left( C,h\right) $.
+\end{proposition}
+
+\begin{proof}
+See Appendix.
+\end{proof}
+
+Figure \ref{fig:figurem2} is a graphical illustration of Proposition $1$.\
+As one can see, locations in the trading region $T^{C}$ are closer to the
+river than locations in the autarky region $A^{C}$ for each latitude.
+
+\dofigure{figurem2}{Spatial specialization}
+
+Combining equations (1) and (2), and using the equalization of utility in
+equilibrium, we can relate the equilibrium spatial distribution of
+population to the equilibrium spatial distribution of relative prices:%
+\begin{equation}
+n\left( H,\ell ,h\right) =n_{X}\left( H,\ell ,h\right) =\alpha ^{\frac{1}{%
+1-\alpha }}\left( u^{H}a_{X}^{H}\right) ^{-\frac{1}{1-\alpha }}p\left(
+H,\ell ,h\right) ^{\frac{1}{2\left( 1-\alpha \right) }}
+\end{equation}%
+and%
+\begin{equation}
+n\left( F,\ell ,h\right) =n_{M}\left( F,\ell ,h\right) =\alpha ^{\frac{1}{%
+1-\alpha }}\left( u^{F}a_{M}^{F}\right) ^{-\frac{1}{1-\alpha }}p\left(
+F,\ell ,h\right) ^{-\frac{1}{2\left( 1-\alpha \right) }}.
+\end{equation}
+
+That is, within-country differences in population density are solely
+driven by differences in the relative price.\ At Home, locations that have a
+high $p$ offer a high price of the export good and a low price of the import
+good. Hence, many people decide to move to these locations.\ On the
+contrary, a location with a high $p$ is not attractive in the Foreign
+country; thus, such locations are characterized by low population density in
+equilibrium.
+
+Using equations (3) and (4), the model generates two predictions on the
+distribution of population, summarized in Propositions $2$ and $3$.\footnote{%
+The Appendix contains the proofs of these propositions.}
+
+\begin{proposition}[Concentration at the river]
+Take a country $C$, and restrict attention to a ``rectangular'' subset of
+locations $\left \{ \left( C,\ell ,h\right) :\underline{\ell }\leq \ell \leq 
+\overline{\ell },\underline{h}\leq h\leq \overline{h}\right \} \subset C$.
+Then average population density of locations at distance $\ell $ from the
+river is at least as high as average population density of locations at
+distance $\ell ^{\prime }>\ell $ from the river.
+\end{proposition}
+
+\begin{proposition}[Concentration at bridges]
+In any country $C$, take two locations $\left( C,\ell ,h\right) $ and $%
+\left( C,\ell ^{\prime },h^{\prime }\right) $ which trade over the same
+bridge. Then $n\left( C,\ell ,h\right) >n\left( C,\ell ^{\prime },h^{\prime
+}\right) $ if and only if $\left( C,\ell ,h\right) $ is closer to the bridge
+than $\left( C,\ell ^{\prime },h^{\prime }\right) $. As a consequence,
+locations at bridges over which trade takes place are the only local maxima
+of $n\left( C,\ell ,h\right) $ if boat trade is prohibitively costly.
+\end{proposition}
+
+\subsection{Random variations in productivity}
+
+This section presents a generalization of the model in which productivity is
+not necessarily evenly distributed within countries. We do this to account for idiosyncratic variation in population density in equilibrium.
+
+Let $a_{i}\left( C,\ell
+,h\right) $ be the unit cost of production in sector $i\in \left \{
+X,M\right \} $ at location $\left( C,\ell ,h\right) $.\ We assume that $%
+a_{i}\left( C,\ell ,h\right) $ are random variables, each with marginal cdf $%
+G_{i}^{C}\left( \cdot \right) $, but not necessarily independent. That is,
+our specification allows for both spatial and cross-industry correlation of
+productivity draws.\ Finally, we assume that $G_{M}^{H}\left( \cdot \right) $
+and $G_{X}^{F}\left( \cdot \right) $ are such that Home locations specialize
+in the $X$-good, and Foreign locations specialize in the $M$-good with
+probability one.\footnote{%
+The easiest way to satisfy this restriction is to assume that $a_{M}\left(
+H,\ell ,h\right) $, or $a_{X}\left( F,\ell ,h\right) $, or both, are ``very
+large'' with probability one.}
+
+Under these assumptions, equations\ (3) and (4) can be written as%
+\begin{equation}
+n\left( H,\ell ,h\right) =n_{X}\left( H,\ell ,h\right) =\alpha ^{\frac{1}{%
+1-\alpha }}\left( u^{H}\right) ^{-\frac{1}{1-\alpha }}a_{X}\left( H,\ell
+,h\right) ^{-\frac{1}{1-\alpha }}p\left( H,\ell ,h\right) ^{\frac{1}{2\left(
+1-\alpha \right) }}  \tag{3'}
+\end{equation}%
+and%
+\begin{equation}
+n\left( F,\ell ,h\right) =n_{M}\left( F,\ell ,h\right) =\alpha ^{\frac{1}{%
+1-\alpha }}\left( u^{F}\right) ^{-\frac{1}{1-\alpha }}a_{M}\left( F,\ell
+,h\right) ^{-\frac{1}{1-\alpha }}p\left( F,\ell ,h\right) ^{-\frac{1}{%
+2\left( 1-\alpha \right) }}.  \tag{4'}
+\end{equation}
+
+Equations (3') and (4') imply that Propositions $2$ and $3$ still hold in
+expectation, i.e., if one replaces \textquotedblleft population
+density\textquotedblright \ at a given location, $n\left( C,\ell ,h\right) $%
+, by \textquotedblleft expected population density\textquotedblright \ at
+the location, $\mathbf{E}n\left( C,\ell ,h\right) $.
+
+Generalizing the distribution of productivitycomes at the expense of more restrictions on geographical structure. First, we assume that the
+two countries are mirror images of each other, that is, (1) $\left( H,\ell
+,h\right) \in H$ if and only if $\left( F,\ell ,h\right) \in F$ for all $%
+\ell $ and $h$, (2) Home and Foreign are endowed with the same number of
+workers ($N^{H}=N^{F}$), (3) the distribution of land is such that $\lambda
+\left( H,\ell ,h\right) =\lambda \left( F,\ell ,h\right) $ for all $\ell $
+and $h$. Second, we assume that the productivity of the good the country
+specializes in (good $X$ at Home, and good $M$ in Foreign) is drawn from the
+same distribution in the two countries, that is, $G_{X}^{H}\left( \cdot
+\right) =G_{M}^{F}\left( \cdot \right) $. Third, we assume that trade over
+every bridge has the same iceberg cost:\ $\tau _{i}^{b}=\tau _{i}$, and boat
+trade is prohibitively costly.
+
+Under these assumptions, one can show that the distribution of relative
+prices along the river takes the form%
+\begin{eqnarray*}
+p\left( H,0,h\right) &=&e^{2p-\left( t_{X}+t_{M}\right) \delta \left(
+h\right) } \\
+p\left( F,0,h\right) &=&e^{2p+\tau _{X}+\tau _{M}+\left( t_{X}+t_{M}\right)
+\delta \left( h\right) },
+\end{eqnarray*}%
+where $p$ is a constant, and $\delta \left( h\right) $ denotes the distance
+of location $\left( 0,h\right) $ from the closest bridge. Denote $\tau =%
+\frac{\tau _{X}+\tau _{M}}{2}$\ and $t=\frac{t_{X}+t_{M}}{2}$. Then (3') and
+(4') yield, in logs,%
+\begin{eqnarray*}
+\log n\left( H,0,h\right) &=&\frac{1}{1-\alpha }\left[ \log \alpha -\log
+u^{H}+p-\log a_{X}\left( H,0,h\right) -t\delta \left( h\right) \right] \\
+\log n\left( F,0,h\right) &=&\frac{1}{1-\alpha }\left[ \log \alpha -\log
+u^{F}-p-\tau -\log a_{M}\left( F,0,h\right) -t\delta \left( h\right) \right]
+.
+\end{eqnarray*}
+
+Therefore,%
+\begin{equation*}
+\Cov\left[ \log n\left( H,0,h\right) ,\log n\left( F,0,h\right) \right] =%
+\frac{1}{\left( 1-\alpha \right) ^{2}}\left[ C_{LR}+t^{2}\Var\left[ \delta
+\left( h\right) \right] \right]
+\end{equation*}%
+where $C_{LR}=\Cov\left[ \log a_{X}\left( H,0,h\right) ,\log a_{M}\left(
+F,0,h\right) \right] $ is the covariance between productivity realizations
+of the two banks of the river. Now since%
+\begin{equation*}
+\Var\left[ \log n\left( H,0,h\right) \right] =\frac{1}{\left( 1-\alpha
+\right) ^{2}}\left[ \sigma ^{2}+t^{2}\Var\left( \delta \left( h\right)
+\right) \right] =\Var\left[ \log n\left( F,0,h\right) \right]
+\end{equation*}%
+where $\sigma ^{2}$ is the common variance of $\log a_{X}\left( H,0,h\right) 
+$ and $\log a_{M}\left( F,0,h\right) $, we obtain that the correlation
+between left- and right-bank log population density is%
+\begin{equation}
+\rho =\frac{C_{LR}+t^{2}\Var\left[ \delta \left( h\right) \right] }{\sigma
+^{2}+t^{2}\Var\left[ \delta \left( h\right) \right] }=1-\frac{\sigma
+^{2}-C_{LR}}{\sigma ^{2}+t^{2}\Var\left[ \delta \left( h\right) \right] }.
+\end{equation}
+
+This equation allows us to provide the following two predictions on the
+distribution of population along the river.
+
+\begin{proposition}[Left- and right-bank density positively correlated]
+If left- and right-bank log productivities are positively correlated or
+uncorrelated, then the correlation between left- and right-bank log
+population density is positive.
+\end{proposition}
+
+\begin{proof}
+If log productivities are positively correlated or uncorrelated, then $%
+C_{LR}\geq 0$. Then equation (5)\ immediately implies%
+\[
+\rho \geq 1-\frac{\sigma ^{2}}{\sigma ^{2}+t^{2}\Var\left[ \delta \left(
+h\right) \right] }>0\text{.}
+\]
+\end{proof}
+
+\begin{proposition}[Lower correlation at bridges]
+The correlation between left- and right-bank population density is lower at
+(trading) bridges than in general.
+\end{proposition}
+
+\begin{proof}
+Calculating the correlation coefficient at trading bridges only, we find%
+\[
+\rho _{bridges}=1-\frac{\sigma ^{2}-C_{LR}}{\sigma ^{2}}=\frac{C_{LR}}{%
+\sigma ^{2}}
+\]%
+because $\delta \left( h\right) \equiv 0$, hence $\Var\left[ \delta \left(
+h\right) \right] =0$ in this case. $\rho _{bridges}<\rho $ follows from
+comparing this to equation (5).
+\end{proof}
+
+The intuition for Proposition 5 is as follows.\ As we move away from a
+bridge along the river, trade costs increase by as much on the left bank as
+on the right bank of the river. This leads to a comovement in the terms of
+trade ($p$ in Home, and $p^{-1}$ in Foreign) on the two banks, and
+hence to a comovement in\ Home and Foreign population density (which are
+increasing power functions of the terms of trade). This comovement in
+densities acts against the variation caused by fluctuations in productivity.
+Thus, starting from a bridge, the longer the interval over which we
+calculate the correlation coefficient, the larger value we find for $\rho $.
+
+Notice that the existence of bridges over which trade takes place is crucial
+for this result: the above mentioned comovement in trade costs is absent
+whenever people trade by boat, or are in autarky. Hence, the fact that this
+prediction is verified in the data can be taken as a clear indication that
+bridges matter for the spatial distribution of economic activity.
+
+\section{Rivers and population density}
+
+We test the model's predictions on six major North American rivers, the
+Delaware, the Hudson, the Mississippi, the Missouri, the Ohio and the
+Tennessee.
+
+\subsection{Mapping model to data}
+
+In the model, each location is on either side of the river is characterized by two coordinates: its
+distance from the river (longitude) and its distance along the river from a
+chosen rivermile (latitude). In
+reality, rivers are not straight lines. To calculate these two relevant
+coordinates, we proceed as follows.
+
+Let river $R:\mathbb{R}\to \mathbb{R}^2$ be a parametric
+curve mapping rivermiles into points ons the plane. $R(0)$ is the
+vector of geocoordinates of the river's mouth, $R(1)$ is the geocoordinate
+of the first rivermile, etc. For any point $(x,y)$, we can determine the
+river-coordinates as follows 
+\begin{align*}
+\ell(x,y,R) &\equiv \min_m d[(x,y),R(m)], \\
+h(x,y,R) &\equiv \arg \min_m d[(x,y),R(m)],
+\end{align*}
+where $d:\mathbb{R}^4\to \mathbb{R}^+$ measures the distance between a pair
+of points.
+
+That is, distance is measured as distance to the nearest point of the river,
+and $h$ is measured as the rivermile of this neaerst point. For straight
+rivers, these measures exactly correspond to the ones used in the model.
+
+Note that the $(x,y)\rightarrow (\ell ,h)$ mapping is not a bijection. While
+there is only one nearest point with probability one, there may be multiple $%
+(x,y)$ points on the plane for which $m$ is the closest rivermile.
+
+The use of this mapping is illustrated in Figure \ref%
+{fig:delaware_leftrightdensity}, which plots population density on the left
+and right bank of the Delaware as a function of rivermiles. The high-density
+areas of Philadelphia (mostly right bank) and Trenton (mostly left bank) are
+clearly visible.
+
+\dofigure{delaware_leftrightdensity}{Bridges and population density on the two banks of the Delaware}
+
+\subsection{Data}
+
+To measure population density, we use Version 1 of the Global Rural-Urban
+Mapping Project population density grid. This dataset provides population
+count (and density) estimates for each 30 arc-second by 30 arc-second
+gridcell of the U.S. (The are of these gridcells is around 0.25 km${}^2$.) We use the values from year 2000.
+
+We take the geocoordinates of rivers from the ESRI Map of U.S.~Major Waters,
+containing polygons of 29,167 water surfaces, including rivers and lakes. We
+selected the Delaware, the Hudson, the Mississippi, the Missouri, the Ohio
+and the Tennessee. After making the necessary topological corrections
+(connecting segments of the river and intermittent lakes), we determine the
+left and right bank of each river. For the Delaware, we exclude Philadelphia
+and for the Hudson, we exclude New York City from the analysis. Our results
+are stronger with these cities included.
+
+The location of major bridges comes from Wikipedia. For the Delaware, we
+have more detailed data on bridges, including year of construction. Figure %
+\ref{fig:rivermap} shows the location of the rivers, the bridges, and the
+population density map of the United States.
+
+\dofigure{rivermap}{Map of the six rivers, their bridges, and population density}
+
+\subsection{Testing the five predictions}
+
+\dotable{fact1}{Population density and distance to the river}
+
+Table \ref{tab:fact1} shows how population density varies with distance to
+the six major rivers. We measure population density within 10-miles bands
+along the river. On five out of the six rivers, population density between
+10 and 20 miles from the river is strictly lower than within 0 and 10 miles,
+and on four rivers, it further reduces as we move farther away to 20 to 30
+miles. This is consistent with the model, where trading opportunities on the
+other side of the river lead to a density gradient.
+
+The exceptions are the Delaware and the Hudson, where population density
+does not show a clear declining pattern. The two rivers are very close to
+each other, and their 30-mile neighborhood may be affected by the
+metropolitan areas of New York City and Philadelphia.
+
+%% comment: Delaware is close to NYC
+
+\dotable{fact2}{Population density and distance to the nearest bridge}
+
+Table \ref{tab:fact2} shows the correlation coefficient of log population
+density along the river with distance to the nearest bridge. With the
+exception of the Hudson, the other five rivers display very strong negative
+correlation. In the model, as bridges are the focal points of agglomeration,
+population density falls with distance, consistently with the facts.
+
+Figures \ref{fig:delaware_kernel} through \ref{fig:tennessee_kernel} (in the Appendix) plot the distribution of population density near and away from bridges. For each river, the red line plots the kernel density of log population densities at gridcells that have a bridge within 3 miles. (We calculated average population density between 0 and 10 miles from the river.) The blue line plots the kernel estimate of log population densities for gridcells more than 3 miles from a bridge.
+
+For all rivers except the Hudson, the distribution of population densities near bridges is shifted to the right. That is, average population density is higher within 3 miles of the bridge than outside this distance. (This is consistent with the correlations reported in Table \ref{tab:fact2}.) 
+
+We also see that there is a large variation in population densities both near and away from bridges. In particular, some locations without a bridge are as densely populated as some of those with one. This suggests that building bridges involves nontrivial costs, and not every community can overcome these costs, severly limiting their access to the other side of the river.
+
+\dotable{fact3}{Clustering close and far from the river}
+
+Table \ref{tab:fact3} displays a measure of clustering at various distances
+to the river. We calculate the coefficient of variation of population
+density. This measure is high when population density varies a lot, between,
+say, a large a city and sparse surroundings. It is low when many small
+cities or towns are roughly evenly distributed in space. Note that the
+coefficient of variation is unaffected by the overall mean population
+density, which we have reported in Table \ref{tab:fact1}.
+
+As we move farther away from the river, the coefficient of variation tends
+to fall. This is in line with our theory, where the agglomerating force of
+bridges can only be felt close to the river, and not farther from where
+multiple bridges are equally easily accessible.
+
+\dotable{fact4}{Correlation between the two banks of the river}
+
+Table \ref{tab:fact4} reports the correlation of population density between
+the left and the right bank of the river. The model predicts that population
+is going to cluster on both sides of the bridge, leading to positive
+correlation across the two banks. On all six rivers, the correlation is
+highly positive, with an average of 0.48. Part of this correlation is driven
+by the mere presence of bridges. Bridges are surrounded by people on either
+side of the river, whereas areas far from bridges tend to be more sparse.
+Table \ref{tab:fact5} measures this correlation at the bridges. More
+specifically, we ask how population on the two sides of the bridge is
+correlated. As predicted by the model, these correlations are positive, but
+smaller than the unconditional correlations.\footnote{%
+The results are very similar if we use log population density when
+calculating correlations.}
+
+\dotable{fact5}{Correlation between the two sides of bridges}
+
+\section{Conclusion}
+
+We built a continuous-space theory of trade to explain why and where people
+agglomerate. We tested the equilibrium predictions of our model on data from
+six major American rivers, finding that spatial patterns of population
+density are consistent with our model.
+
+Taken together with agglomeration externalities (not currently modeled), our
+theory can relate to the question of whether and how trade causes
+development. There are two puzzling facts about trade and development.
+First, the macro correlations between trade and development (even those
+using plausibly exogenous variation in trade, as Feyrer, 2009a and b) are
+much larger than model-based meausures of gains from trade (Alvarez and
+Lucas, 2007, Arkolakis, Costinot and Rodr\'{\i}guez-Clare, 2012). Second,
+land-locked countries are much less developed than coastal countries, even
+though transportation costs make up only a small fraction of broader trade
+costs (Anderson and van Wincoop, 2004).
+
+Our theory has the potential to explain these facts because trade increases
+the incentives to agglomerate, which leads to external effects. These
+external effects represent a multiplier of trade on development (consistent
+with Fact 1). They are also stronger in coastal countries, where ports
+provide a natural focal point of agglomeration (consistent with Fact 2).
+
+In future work, we intend to estimate the agglomeration effect of bridges. The crucial identification concern is that both the location of bridges and population density are correlated with unobserved local amenities. We plan to use variation in building costs (geographical and hydrological measures) and transit traffic demand to instrument bridge location. 
+
+\begin{thebibliography}{99}
+\bibitem{} Allen, Treb and Arkolakis, Costas, 2013. ``Trade and Topography of
+the Spatial Economy.'' Working paper.
+
+\bibitem{} Alvarez, Fernando and Lucas, Robert E. Jr., 2007. ``General
+Equilibrium Analysis of the Eaton--Kortum Model of International Trade.''
+Journal of Monetary Economics, 54(6): 1726--1768.
+
+\bibitem{} Anderson, James E. and van Wincoop, Eric, 2004. ``Trade Costs.''\
+Journal of Economic Literature, 42(3):\ 691--751.
+
+\bibitem{} Arkolakis, Costas, Arnaud Costinot, and Andr\'{e}s Rodr\'{\i}%
+guez-Clare, 2012. \textquotedblleft New Trade Models, Same Old
+Gains?\textquotedblright \ American Economic Review, 102(1): 94--130.
+
+\bibitem{} Baum-Snow, Nathaniel, Brandt, Loren, Henderson, J.\ Vernon,
+Turner, Matthew A., and Zhang, Qinghua, 2012. ``Roads, Railroads and
+Decentralization of Chinese Cities.''\ Working paper.
+
+\bibitem{} Bleakley, Hoyt and Jeffrey Lin, 2012. \textquotedblleft Portage
+and Path Dependence.''\ Quarterly Journal of Economics, 1--58.
+
+\bibitem{} Co\c{s}ar, A. Kerem and Pablo D. Fajgelbaum, 2012.
+\textquotedblleft Internal Geography, International Trade, and Regional
+Outcomes.\textquotedblright \ Working paper.
+
+\bibitem{} Dale, Frank T., 2003. \textquotedblleft Bridges over the Delaware
+River: A History of Crossings.\textquotedblright \ Rutgers University Press.
+
+\bibitem{} Desmet, Klaus and Rossi-Hansberg,\ Esteban, 2012. ``Spatial
+Development.'' Working paper.
+
+\bibitem{} Donaldson, Dave, 2012. ``Railroads of the Raj:\ Estimating the
+Impact of Transportation Infrastructure.''\ American Economic Review,
+forthcoming.
+
+\bibitem{} Donaldson, Dave and Hornbeck, Richard, 2012. ``Railroads and
+American Economic Growth:\ A\ `Market Access' Approach.'' Working paper.
+
+\bibitem{} Duranton,\ Gilles, Morrow, Peter M., and Turner, Matthew A.,
+2012. ``Urban Growth and Transportation.'' Review of Economic Studies, 79(4):
+1407--1440.
+
+\bibitem{} Fabinger, Michal, 2011. \textquotedblleft Trade and
+Interdependence in a Spatially Complex World.\textquotedblright \ Working
+paper.
+
+\bibitem{} Feyrer, James, 2009a. ``Distance, Trade, and Income -- The 1967 to
+1975 Closing of the Suez Canal as a Natural Experiment.''\ NBER\ Working
+Paper 15557.
+
+\bibitem{} Feyrer, James, 2009b. ``Trade and Income -- Exploiting Time Series
+in Geography.'' NBER\ Working Paper 14910.
+
+\bibitem{} GRUMP, 2000. Global Rural-Urban Mapping Project, Version 1
+(GRUMPv1): Population Density Grid. Palisades, NY: Socioeconomic Data and
+Applications Center (SEDAC), Columbia University.
+
+\bibitem{} Rossi-Hansberg, Esteban, 2005. ``A\ Spatial Theory of Trade.''
+American Economic Review, 95(5): 1464--1491.
+\end{thebibliography}
+
+%TCIMACRO{%
+%\TeXButton{appendix}{\appendix
+%\section*{Appendix}}}%
+%BeginExpansion
+\appendix
+\section*{Appendix}%
+%EndExpansion
+
+\section{Proofs}
+
+We first state the following lemma that we use in the proofs of Propositions 
+$1$ and $2$.
+
+\begin{lemma}
+Take two locations $\left( C,\ell ,h\right) $ and $\left( C,\ell ^{\prime
+},h\right) $ such that $\ell ^{\prime }>\ell $.\ Then $p\left( C,\ell
+^{\prime },h\right) \leq p\left( C,\ell ,h\right) $ if $C=H$, and $p\left(
+C,\ell ^{\prime },h\right) \geq p\left( C,\ell ,h\right) $ if $C=F$.
+\end{lemma}
+
+\begin{proof}[Lemma 1]
+We prove the lemma for $C=H$; the proof for $C=F$ involves the exact same
+steps. Notice first that $p\left( H,\ell ,h\right) \geq p_{A}^{H}$ and $%
+p\left( H,\ell ^{\prime },h\right) \geq p_{A}^{H}$ by the assumption that no
+Home location specializes in good $M$. If $p\left( H,\ell ^{\prime
+},h\right) =p_{A}^{H}$, then the result is immediate. So suppose $p\left(
+H,\ell ^{\prime },h\right) >p_{A}^{H}$.\ Then $\left( H,\ell ^{\prime
+},h\right) $ is fully specialized in $X$, and trades with the Foreign
+country.\ As a consequence, there must exist a location at the river $\left(
+H,0,\widehat{h}\right) $ such that $\left( H,\ell ^{\prime },h\right) $
+trades through it.
+
+Equilibrium condition (5) then implies%
+\begin{equation*}
+P_{X}\left( H,0,\widehat{h}\right) =e^{t_{X}d\left[ \left( H,0,\widehat{h}%
+\right) ,\left( H,\ell ^{\prime },h\right) \right] }P_{X}\left( H,\ell
+^{\prime },h\right) 
+\end{equation*}%
+and%
+\begin{equation*}
+P_{M}\left( H,0,\widehat{h}\right) =e^{-t_{M}d\left[ \left( H,0,\widehat{h}%
+\right) ,\left( H,\ell ^{\prime },h\right) \right] }P_{M}\left( H,\ell
+^{\prime },h\right) .
+\end{equation*}%
+Dividing these two equations yields%
+\begin{equation}
+p\left( H,0,\widehat{h}\right) =e^{\left( t_{X}+t_{M}\right) d\left[ \left(
+H,0,\widehat{h}\right) ,\left( H,\ell ^{\prime },h\right) \right] }p\left(
+H,\ell ^{\prime },h\right) .
+\end{equation}
+
+Similarly, by equilibrium condition (5),%
+\begin{equation*}
+P_{X}\left( H,0,\widehat{h}\right) \leq e^{t_{X}d\left[ \left( H,0,\widehat{h%
+}\right) ,\left( H,\ell ,h\right) \right] }P_{X}\left( H,\ell ,h\right) 
+\end{equation*}%
+and%
+\begin{equation*}
+P_{M}\left( H,0,\widehat{h}\right) \leq e^{-t_{M}d\left[ \left( H,0,\widehat{%
+h}\right) ,\left( H,\ell ,h\right) \right] }P_{M}\left( H,\ell ,h\right) ,
+\end{equation*}%
+irrespectively of whether $\left( H,0,\widehat{h}\right) $ and $\left(
+H,\ell ,h\right) $ trade or not. Dividing the last two inequalities, we get%
+\begin{eqnarray*}
+p\left( H,0,\widehat{h}\right)  &\leq &e^{\left( t_{X}+t_{M}\right) d\left[
+\left( H,0,\widehat{h}\right) ,\left( H,\ell ,h\right) \right] }p\left(
+H,\ell ,h\right)  \\
+&\leq &e^{\left( t_{X}+t_{M}\right) d\left[ \left( H,0,\widehat{h}\right)
+,\left( H,\ell ^{\prime },h\right) \right] }p\left( H,\ell ,h\right) ,
+\end{eqnarray*}%
+where the second inequality follows from $\ell ^{\prime }>\ell $.\ Combining
+this with equation (6) and cancelling $e^{\left( t_{X}+t_{M}\right) d\left[
+\left( H,0,\widehat{h}\right) ,\left( H,\ell ^{\prime },h\right) \right] }$
+on both sides yields the result.
+\end{proof}
+
+Now we are ready to prove Propositions 1 to 3.
+
+\begin{proof}[Proposition 1]
+Define%
+\begin{equation*}
+T^{C}=\left \{ \left( C,\ell ,h\right) :p\left( C,\ell ,h\right) \neq
+p_{A}^{C}\right \} ,
+\end{equation*}%
+and%
+\begin{equation*}
+A^{C}=\left \{ \left( C,\ell ,h\right) :p\left( C,\ell ,h\right)
+=p_{A}^{C}\right \} .
+\end{equation*}
+
+$C=T^{C}\cup A^{C}$ and $T^{C}\cap A^{C}$ follow directly from the
+definitions.\ To see (i), notice that $p\left( C,\ell ,h\right) \neq
+p_{A}^{C}$ necessarily implies that location $\left( C,\ell ,h\right) $ is
+fully specialized, hence it trades with the other country.
+
+For (ii), suppose that a location $\left( H,\ell ,h\right) $ from the
+interior of $A^{H}$ is not in autarky, thus it trades with the Foreign
+country. Then there must exist another location $\left( H,\ell ^{\prime
+},h^{\prime }\right) \in A^{H}$ such that location $\left( H,\ell ,h\right) $
+trades through it.\ By equilibrium condition (5), this implies%
+\begin{equation*}
+p\left( H,\ell ^{\prime },h^{\prime }\right) =p\left( H,\ell ,h\right)
+e^{\left( t_{X}+t_{M}\right) d\left[ \left( C,\ell ,h\right) ,\left( C,\ell
+^{\prime },h^{\prime }\right) \right] }>p\left( H,\ell ,h\right) ,
+\end{equation*}%
+which contradicts the fact that $p\left( H,\ell ^{\prime },h^{\prime
+}\right) =p\left( H,\ell ,h\right) =p_{A}^{H}$.\ The argument is similar for 
+$C=F$.
+
+For (iii), we first prove that $p\left( C,\cdot ,\cdot \right) $ is a
+continuous function. By equilibrium condition (5), we have%
+\begin{equation*}
+p\left( C,\ell ,h\right) \leq p\left( C,\ell ^{\prime },h^{\prime }\right)
+e^{\left( t_{X}+t_{M}\right) d}
+\end{equation*}%
+and%
+\begin{equation*}
+p\left( C,\ell ^{\prime },h^{\prime }\right) \leq p\left( C,\ell ,h\right)
+e^{\left( t_{X}+t_{M}\right) d}
+\end{equation*}%
+for any $\left( C,\ell ,h\right) $ and $\left( C,\ell ^{\prime },h^{\prime
+}\right) $, where $d:=d\left[ \left( C,\ell ,h\right) ,\left( C,\ell
+^{\prime },h^{\prime }\right) \right] $.\ Combining these two inequalities
+yields%
+\begin{equation*}
+e^{-\left( t_{X}+t_{M}\right) d}\leq \frac{p\left( C,\ell ,h\right) }{%
+p\left( C,\ell ^{\prime },h^{\prime }\right) }\leq e^{\left(
+t_{X}+t_{M}\right) d}.
+\end{equation*}%
+Hence, in the limit as $\left( C,\ell ^{\prime },h^{\prime }\right)
+\rightarrow \left( C,\ell ,h\right) $ (and thus $d\rightarrow 0$), we obtain 
+$\frac{p\left( C,\ell ,h\right) }{p\left( C,\ell ^{\prime },h^{\prime
+}\right) }\rightarrow 1$, that is, $p\left( C,\ell ^{\prime },h^{\prime
+}\right) \rightarrow p\left( C,\ell ,h\right) $.\ This proves that $p\left(
+C,\cdot ,\cdot \right) $ is continuous.
+
+Now pick a location $\left( H,\ell ,h\right) \in A^{H}$ that is on the
+boundary of $T^{H}$; the proof is similar for $C=F$. Clearly, location $%
+\left( H,\ell ,h\right) $ weakly prefers autarky over trade as $p\left(
+H,\ell ,h\right) =p_{A}^{H}$. Assume that $\left( H,\ell ,h\right) $
+strictly prefers autarky over trade; this means $p\left( H,\ell ,h\right)
+>p\left( H,\ell ^{\prime },h^{\prime }\right) e^{-\left( t_{X}+t_{M}\right) d%
+\left[ \left( C,\ell ,h\right) ,\left( C,\ell ^{\prime },h^{\prime }\right) %
+\right] }$ for all trading locations $\left( H,\ell ^{\prime },h^{\prime
+}\right) \in T^{H}$. However, by the compactness and connectedness of $C$,
+there exists a sequence of locations $\left \{ \left( H,\ell
+_{m},h_{m}\right) \in T^{H}\right \} $ converging to $\left( H,\ell ,h\right) 
+$.\ By continuity of $p\left( C,\cdot ,\cdot \right) $, there must exist a
+large enough $m$ such that $p\left( H,\ell _{m},h_{m}\right) >p\left( H,\ell
+^{\prime },h^{\prime }\right) e^{-\left( t_{X}+t_{M}\right) d\left[ \left(
+C,\ell ,h\right) ,\left( C,\ell ^{\prime },h^{\prime }\right) \right] }$,
+implying that $\left( H,\ell _{m},h_{m}\right) $ prefers autarky over
+trade. But this contradicts the fact that $\left( H,\ell _{m},h_{m}\right)
+\in T^{H}$.
+
+For the final part, let $\widehat{\ell }\left( C,h\right) =\sup_{\ell
+}\left \{ \left( C,\ell ,h\right) \in C:p\left( C,\ell ,h\right) \neq
+p_{A}^{C}\right \} $ if there exists an $\ell $ such that $p\left( C,\ell
+,h\right) \neq p_{A}^{H}$, and $\widehat{\ell }\left( C,h\right) =0$
+otherwise.\ Then Lemma 1 implies that $p\left( H,\ell ,h\right) >p_{A}^{H}$
+if $\ell <\widehat{\ell }\left( H,h\right) $, hence $\left( H,\ell ,h\right)
+\in T^{H}$; and $p\left( H,\ell ,h\right) =p_{A}^{H}$ if $\ell >\widehat{%
+\ell }\left( H,h\right) $, hence $\left( H,\ell ,h\right) \in A^{H}$.\ For
+Foreign, $\ell <\widehat{\ell }\left( F,h\right) $ implies $p\left( F,\ell
+,h\right) <p_{A}^{F}$, so $\left( F,\ell ,h\right) \in T^{F}$; and $\ell >%
+\widehat{\ell }\left( F,h\right) $ implies $p\left( F,\ell ,h\right)
+=p_{A}^{F}$, so $\left( F,\ell ,h\right) \in A^{F}$. This concludes the
+proof.
+\end{proof}
+
+\begin{proof}[Proposition 2]
+Average population density at distance $\ell $ from the river is%
+\begin{equation*}
+\int_{\underline{h}}^{\overline{h}}n\left( C,\ell ,h\right) dS\left( C,\ell
+,h\right) ,
+\end{equation*}%
+and average population density at distance $\ell ^{\prime }$ is%
+\begin{equation*}
+\int_{\underline{h}}^{\overline{h}}n\left( C,\ell ^{\prime },h\right)
+dS\left( C,\ell ^{\prime },h\right) .
+\end{equation*}
+
+Suppose $C=H$.\ Then, by Lemma 1, $p\left( C,\ell ,h\right) \geq p\left(
+C,\ell ^{\prime },h\right) $, which, together with equation (3), implies $%
+n\left( C,\ell ,h\right) \geq n\left( C,\ell ^{\prime },h\right) $ for all $%
+h\in \left[ \underline{h},\overline{h}\right] $.\ As a consequence,%
+\begin{equation*}
+\int_{\underline{h}}^{\overline{h}}n\left( C,\ell ,h\right) dS\left( C,\ell
+,h\right) \geq \int_{\underline{h}}^{\overline{h}}n\left( C,\ell ^{\prime
+},h\right) dS\left( C,\ell ^{\prime },h\right) .
+\end{equation*}
+
+Now suppose $C=F$. Then Lemma 1 implies $p\left( C,\ell ,h\right) \leq
+p\left( C,\ell ^{\prime },h\right) $, so by equation (4), $n\left( C,\ell
+,h\right) \geq n\left( C,\ell ^{\prime },h\right) $ for all $h\in \left[ 
+\underline{h},\overline{h}\right] $. Hence,%
+\begin{equation*}
+\int_{\underline{h}}^{\overline{h}}n\left( C,\ell ,h\right) dS\left( C,\ell
+,h\right) \geq \int_{\underline{h}}^{\overline{h}}n\left( C,\ell ^{\prime
+},h\right) dS\left( C,\ell ^{\prime },h\right) .
+\end{equation*}
+\end{proof}
+
+\begin{proof}[Proposition 3]
+If $C=H$, and $\left( C,\ell ,h\right) $ and $\left( C,\ell ^{\prime
+},h^{\prime }\right) $ both trade over bridge $b$, then we have%
+\begin{equation*}
+p\left( C,0,h_{b}\right) =p\left( C,\ell ,h\right) e^{\left(
+t_{X}+t_{M}\right) d\left[ \left( C,\ell ,h\right) ,\left( C,0,h_{b}\right) %
+\right] }
+\end{equation*}%
+and%
+\begin{equation*}
+p\left( C,0,h_{b}\right) =p\left( C,\ell ^{\prime },h^{\prime }\right)
+e^{\left( t_{X}+t_{M}\right) d\left[ \left( C,\ell ^{\prime },h^{\prime
+}\right) ,\left( C,0,h_{b}\right) \right] }
+\end{equation*}%
+by equilibrium condition (5).
+
+Then the fact that $\left( C,\ell ,h\right) $ is closer to the bridge than $%
+\left( C,\ell ^{\prime },h^{\prime }\right) $ is equivalent to $p\left(
+C,\ell ,h\right) >p\left( C,\ell ^{\prime },h^{\prime }\right) $, which, by
+equation (3), is equivalent to $n\left( C,\ell ,h\right) >n\left( C,\ell
+^{\prime },h^{\prime }\right) $.
+
+If $C=F$, equilibrium condition (5) yields $p\left( C,\ell ,h\right)
+<p\left( C,\ell ^{\prime },h^{\prime }\right) $ if and only if $\left(
+C,\ell ,h\right) $ is closer to the bridge than $\left( C,\ell ^{\prime
+},h^{\prime }\right) $, which is equivalent to $n\left( C,\ell ,h\right)
+>n\left( C,\ell ^{\prime },h^{\prime }\right) $ by equation (4).
+\end{proof}
+
+\section{Additional Figures}
+% start from B1
+\setcounter{figure}{0}
+\renewcommand{\thefigure}{\thesection\arabic{figure}}
+
+\dofigure{delaware_kernel}{The distribution of population densities near and far of bridges: Delaware}
+\dofigure{hudson_kernel}{The distribution of population densities near and far of bridges: Hudson}
+\dofigure{mississippi_kernel}{The distribution of population densities near and far of bridges: Mississippi}
+\dofigure{missouri_kernel}{The distribution of population densities near and far of bridges: Missouri}
+\dofigure{ohio_kernel}{The distribution of population densities near and far of bridges: Ohio}
+\dofigure{tennessee_kernel}{The distribution of population densities near and far of bridges: Tennessee}
+
+
+
+\end{document}

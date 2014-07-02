@@ -1,0 +1,31 @@
+Results
+=======
+
+- There is increase in the bump around rm 27. Which city?
+- We cannot go below rm 20 because townships on the NY side are missing.
+- There is strong repellence of bridges. On Delaware, hazard is pretty much flat, but peaks at 15 miles. On Hudson, hazard is increasing until 25 miles. Dense bridges could just as well be random, they are not more clustered than predicted by Poisson.
+
+Alternative hypotheses
+======================
+- Bridges are just pointlike amenities: they are nice to have, but do not reduce trade costs.
+- The trade cost reduction is quantiatively small.
+- The cost of building a bridge is small.
+
+Ideas for structural identification
+===================================
+- Second closes bridges does affect your trade cost and hence does not matter in our model.
+- Frequent bridges are indicative of amenities.
+- Demand for bridges proportional to population.
+- Trade across bridges follows the gravity equation: when the two sides are more similar, more trade is going to occur.
+- Bridges are subject to agglomeration shadow because of competition: no bridges are built very close to one another.
+- In contrast, amenities are continuous and subject to positive spatial correlation.
+- Based on Bresnahan and Reiss: first bridge should come early because there is no competition. Ratio of population of 1/0 towns should be smaller than 2/1 towns.
+	- competing bridges steal business from one another
+	- however, they also generate externality by lowering trade costs
+	- key difference to BR: free mobility of labor
+
+Methods
+=======
+- Use survival analysis to model distance between bridges.
+	- space is continuous
+	- once I built a bridge, I am the closest. probability has to be conditioned on no bridge having been found yet at earlier rivermiles (hazard).

@@ -1,0 +1,485 @@
+\documentclass[compress,mathserif]{beamer}
+\usepackage[utf8]{inputenc}
+%\usepackage[absolute]{textpos}
+%\documentclass[handout,compress,mathserif]{beamer}
+%\setbeameroption{show notes}
+
+% This file is a solution template for:
+
+% - Talk at a conference/colloquium.
+% - Talk length is about 20min.
+% - Style is ornate.
+
+
+
+% Copyright 2004 by Till Tantau <tantau@users.sourceforge.net>.
+%
+% In principle, this file can be redistributed and/or modified under
+% the terms of the GNU Public License, version 2.
+%
+% However, this file is supposed to be a template to be modified
+% for your own needs. For this reason, if you use this file as a
+% template and not specifically distribute it as part of a another
+% package/program, I grant the extra permission to freely copy and
+% modify this file as you see fit and even to delete this copyright
+% notice.
+
+
+\mode<presentation>
+{
+%  \usetheme{pittsburgh}
+  % or ...
+
+  \setbeamercovered{invisible}
+  % or whatever (possibly just delete it)
+}
+
+
+\usepackage[USenglish]{babel}
+\usepackage{ifthen,array}
+\usepackage{amsthm}
+
+
+\pretolerance5000 \hyphenpenalty9999
+%\setlength{\TPHorizModule}{0.5cm} \setlength{\TPVertModule}{0.5cm}
+%\textblockorigin{20mm}{20mm} % start everything near the top-left corner
+
+\newcounter{ora}
+\newcounter{perc}
+\newcounter{kezdoora}
+\newcounter{kezdoperc}
+\newcounter{percek}
+\setcounter{percek}{15}
+\setcounter{kezdoora}{4} % for 1.35pm as the starting time
+
+\providecommand{\leadingzero}[1]{\ifthenelse{\value{#1}<10}{0\arabic{#1}}{\arabic{#1}}}
+\providecommand{\oradisplay}[1]{\ifthenelse{\value{#1}<60}{\arabic{kezdoora}:\leadingzero{#1}}{\setcounter{perc}{\value{#1}}\addtocounter{perc}{-60}\setcounter{ora}{\value{kezdoora}}\addtocounter{ora}{1}\arabic{ora}:\leadingzero{perc}}}
+
+\providecommand{\notes}[1]{{\tiny\textbf{Note:} #1}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hasznos matek makrok
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\QED}{{}\hfill$\Box$}
+\newcommand{\intl}[4]{\int_{#1}^{#2} \! {#3} \, \mathrm d{#4}}
+\newcommand{\period}{\text{.}} % Ez azert kell, mert a matek . mashogy nez ki, mint a szovege.
+\newcommand{\comma}{\text{,}}  % Ez azert kell, mert a matek , mashogy nez ki, mint a szovege.
+\newcommand{\dist}{\,\mathop{\operatorname{\sim\,}}\limits}
+\newcommand{\D}{\,\mathop{\operatorname{d}}\!}
+%\newcommand{\E}{\mathop{\operatorname{E}}\nolimits}
+\newcommand{\Lag}{\mathop{\operatorname{L}}}
+\newcommand{\plim}{\mathop{\operatorname{plim}}\limits_{T\to\infty}\,}
+\newcommand{\CES}[3]{\mathop{\operatorname{CES}}\left(\left\{#1\right\},\left\{#2\right\},#3\right)}
+\newcommand{\cestwo}[5]{\left[#1^\frac1{#5}\,#2^\frac{#5-1}{#5}+#3^\frac1{#5}\,#4^\frac{#5-1}{#5}\right]^\frac{#5}{#5-1}}
+\newcommand{\cesmore}[4]{\left[\sum_{#3}#1_{#3}^\frac1{#4}\,{#2}_{#3}^\frac{#4-1}{#4}\right]^\frac{#4}{#4-1}}
+\newcommand{\cesPtwo}[5]{\left[#1\,#2^{1-#5}+#3\,#4^{1-#5}\right]^\frac{1}{1-#5}}
+\newcommand{\cesPmore}[4]{\left[\sum_{#3}#1_{#3}\,#2_{#3}^{1-#4}\right]^\frac{1}{1-#4}}
+\newcommand{\diff}[2]{\frac{\D #1}{\D #2}}
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\convex}[2]{\lambda #1 + (1-\lambda)#2}
+\newcommand{\ABS}[1]{\left| #1 \right|}
+\newcommand{\suchthat}{:\hskip1em}
+\newcommand{\dispfrac}[2]{\frac{\displaystyle #1}{\displaystyle #2}} % Emeletes tortekhez hasznos.
+
+\newcommand{\diag}{\mathop{\mathrm{diag\mathstrut}}}
+\newcommand{\tr}{\mathop{\mathrm{tr\mathstrut}}}
+\newcommand{\E}{\mathop{\mathrm{E\mathstrut}}}
+\newcommand{\Var}{\mathop{\mathrm{Var\mathstrut}}\nolimits}
+\newcommand{\Cov}{\mathop{\mathrm{Cov\mathstrut}}}
+\newcommand{\sgn}{\mathop{\operatorname{sgn\mathstrut}}}
+
+\newcommand{\covmat}{\mathbf\Sigma}
+\newcommand{\ones}{\mathbf 1}
+\newcommand{\zeros}{\mathbf 0}
+\newcommand{\BAR}[1]{\overline{#1}}
+
+\renewcommand{\time}[1]{\addtocounter{percek}{#1}}
+
+\newlength{\tempsep}
+
+\newenvironment{subeqs}{\setlength{\tempsep}{\arraycolsep}
+\setlength{\arraycolsep}{0.13889em} % Ez azert kell, hogy ne hagyjon tul sok helyet az = korul.
+\begin{subequations}\begin{eqnarray}}
+{\end{eqnarray}\end{subequations}
+\setlength{\arraycolsep}{\tempsep}}
+
+\newenvironment{tapad}{\setlength{\tempsep}{\arraycolsep}
+\setlength{\arraycolsep}{0.13889em}} % Ez azert kell, hogy ne hagyjon tul sok helyet az = korul.
+{\setlength{\arraycolsep}{\tempsep}}
+
+\newenvironment{eqnarr}{\setlength{\tempsep}{\arraycolsep}
+\setlength{\arraycolsep}{0.13889em} % Ez azert kell, hogy ne hagyjon tul sok helyet az = korul.
+\begin{eqnarray}}
+{\end{eqnarray} \setlength{\arraycolsep}{\tempsep}}
+
+\newenvironment{eqnarr*}{\setlength{\tempsep}{\arraycolsep}
+\setlength{\arraycolsep}{0.13889em} % Ez azert kell, hogy ne hagyjon tul sok helyet az = korul.
+\begin{eqnarray*}}
+{\end{eqnarray*} \setlength{\arraycolsep}{\tempsep}}
+
+
+%\usepackage[active]{srcltx} % SRC Specials: DVI [Inverse] Search
+% Fuzz --- -------------------------------------------------------
+\hfuzz5pt % Don't bother to report over-full boxes < 5pt
+\vfuzz5pt % Don't bother to report over-full boxes < 5pt
+% THEOREMS -------------------------------------------------------
+% MATH -----------------------------------------------------------
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\BX}{\mathbf{B}(X)}
+\newcommand{\A}{\mathcal{A}}
+
+
+
+
+\newcommand{\directory}{exhibits}
+\newcommand*{\newtitle}{\egroup\begin{frame}\frametitle}
+
+\newcommand{\fullpagefigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[height=0.9\textheight]{\directory/#1}\end{center}}}\end{frame}}
+\newcommand{\widefigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[width=\linewidth]{\directory/#1}\end{center}}}\end{frame}}
+\newcommand{\longfigure}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[height=0.8\textheight]{\directory/#1}\end{center}}}\end{frame}}
+\newcommand{\widetable}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[width=\linewidth]{tables/#1}\end{center}}}\end{frame}}
+\newcommand{\longtable}[2]{\begin{frame}\frametitle{\hyperlink{#1back}{#2}}\hypertarget{#1}{{\begin{center}\includegraphics[height=0.8\textheight]{tables/#1}\end{center}}}\end{frame}}
+\newcommand{\answer}[1]{\begin{itemize}\item #1\end{itemize}}
+
+
+\newcommand{\jumpto}[2]{\hypertarget{#1back}{\hyperlink{#1}{#2}}}
+\newcommand{\backto}[2]{\hypertarget{#1}{\hyperlink{#1back}{#2}}}
+
+\begin{document}
+\title{Bridges}
+\author{Roc Armenter (Philly Fed)\\
+Miklós Koren (CEU, KRTK, CEPR)\\
+Dávid Krisztián Nagy (Princeton)}
+\date{MKE 2013}
+\maketitle
+
+\section{Introduction}
+\widefigure{upper-black-eddy}{The Upper Black Eddy Bridge on the Delaware River}
+
+\begin{frame}
+\frametitle{The Upper Black Eddy Bridge on the Delaware River}
+
+\textquotedblleft \lbrack T]his new crossing brought additional business to
+this part of the river valley. [...] By 1844, business in the now growing
+town of Milford included three stores, three taverns, twelve to fiteen
+mechanics' shops, a flour mill, and two new sawmills [...] Upper Black Eddy
+on the Pennsylvania side of the river directly opposite Milford was a
+favorite stop for timber raftsmen in the early days. By the mid-nineteenth
+century the bridge brought even more business. Upper Black Eddy was booming,
+too. It had forty houses, three hotels, and several stores and
+shops.\textquotedblright \bigskip \newline
+(Dale, F.:\ Bridges over the Delaware river. A history of crossings)
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\frametitle{Introduction}
+
+\begin{itemize}
+\item Build a theory to explain where people agglomerate in space.
+
+\item Stylized but geographically rich environment:\ a subset of the globe,
+divided by a river.
+
+\begin{itemize}
+\item Two banks differ in productivity $\Longrightarrow $ have an incentive
+to trade.
+
+\item Trade costly, both inland and across the river.
+
+\item Crossing the river over a bridge is less costly than crossing it by
+boat.
+\end{itemize}
+
+\item Building a bridge decreases the cost of crossing the river at a point $%
+\Longrightarrow $ increases concentration of economic activity around that
+point $\Longrightarrow $ brings about benefits from agglomeration.
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}\frametitle{Predictions}
+\begin{itemize}
+\item Model delivers a set of predictions on the spatial distribution of
+population around rivers and bridges.
+
+\begin{itemize}
+\item Test predictions on high-resolution population data from the U.S.
+\end{itemize}
+
+\item Conduct two additional exercises:
+
+\begin{itemize}
+\item use historical data to check the effect of bridges on population
+growth,
+
+\item use model to measure the welfare gains from building a bridge.
+\end{itemize}
+\end{itemize}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\frametitle{Related literature}
+
+Economic geography models with continuous space.
+
+\begin{itemize}
+\item Two-good Ricardian models with agglomeration externalities:\
+Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012),\newline
+Co\c{s}ar and Fajgelbaum (2012)
+
+\item Neoclassical models with CES\ preferences:\newline
+Fabinger (2011), Allen and Arkolakis (2013)\bigskip
+\end{itemize}
+
+Role of transport infrastructure in development.
+
+\begin{itemize}
+\item Railroads:\ Donaldson (2012), Donaldson and Hornbeck (2012)
+
+\item Roads: Baum-Snow et al. (2012), Duranton et al. (2012)
+
+\item Portage sites:\ Bleakley and Lin (2012)
+
+\item Bridges on Mississippi and Ohio: Tompsett (2013)
+\end{itemize}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\section{A spatial model with bridges}
+
+\begin{frame}%
+\frametitle{Geography}
+
+\begin{itemize}
+\item Continuous space. Two regions, $R\in \left \{ H,F\right \} $,
+separated by a river without meanders.
+
+\item A location is indexed by $\underset{\text{region}}{\underbrace{R}},%
+\underset{\text{distance from river}}{\underbrace{\ell }},\underset{\text{%
+closest river mile}}{\underbrace{h}}$,\newline
+\newline
+and is endowed with land $\lambda \left( R,\ell ,h\right) >0$.
+
+\item Bridges at river miles $h_{1},\ldots ,h_{B}$.
+
+\item Two goods, $i\in \left \{ X,M\right \} $.
+
+Shipment of goods is costly:
+
+\begin{itemize}
+\item land shipping over distance $d$ involves iceberg cost $e^{t_{i}d}$,
+
+\item crossing river by boat costs $e^{\tau _{i}^{0}}$,
+
+\item crossing river over bridge $b$ costs $e^{\tau _{i}^{b}}<e^{\tau
+_{i}^{0}}$.
+\end{itemize}
+\end{itemize}
+
+\end{frame}%
+%EndExpansion
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\frametitle{Consumption and production}
+\begin{itemize}
+\item Mass of $N$ consumers, freely mobile across space.
+
+\item Consumer living at $\left( R,\ell ,h\right) $ owns local land,
+supplies one unit of labor inelastically, and chooses her consumption by
+maximizing%
+\begin{equation*}
+u\left( R,\ell ,h\right) =q_{X}\left( R,\ell ,h\right) ^{\frac{1}{2}%
+}q_{M}\left( R,\ell ,h\right) ^{\frac{1}{2}}.
+\end{equation*}
+
+\item Good $i\in \left \{ X,M\right \} $ produced by perfectly competitive
+firms combining labor and land under Cobb--Douglas production technology:%
+\begin{equation*}
+\underset{\text{output per unit of land}}{\underbrace{q_{i}\left( R,\ell
+,h\right) }}=\left[ \underset{\text{unit cost of production}}{\underbrace{%
+\overline{a}_{i}^{R}}}\right] ^{-1}\underset{\text{labor per unit of land}}{%
+\cdot \left. \underbrace{n_{i}\left( R,\ell .h\right) }\right. ^{1-\alpha }}
+\end{equation*}
+
+\item Assume that Home has a \textit{comparative advantage} in $X$: $%
+\overline{a}_{M}^{H}/\overline{a}_{X}^{H}$ high enough that no Home location
+specializes in $M$. Similarly for Foreign.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\frametitle{Two predictions}
+
+%TCIMACRO{%
+%\TeXButton{TeX field}{\begin{block}[Concentration at the river]}}%
+%BeginExpansion
+\begin{block}{Concentration at the river}
+%EndExpansion
+In equilibrium, average population density is decreasing in distance from
+the river.%
+%TCIMACRO{\TeXButton{TeX field}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{TeX field}{\begin{block}[Concentration at bridges]}}%
+%BeginExpansion
+\begin{block}{Concentration at bridges}%
+%EndExpansion
+In any region $R$, take two locations $\left( R,\ell ,h\right) $ and $\left(
+R,\ell ^{\prime },h^{\prime }\right) $ that trade over the same bridge.
+Then, in equilibrium, $n\left( R,\ell ,h\right) >n\left( R,\ell ^{\prime
+},h^{\prime }\right) $ iff $\left( R,\ell ,h\right) $ is closer to the
+bridge than $\left( R,\ell ^{\prime },h^{\prime }\right) $.%
+%TCIMACRO{\TeXButton{TeX field}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\frametitle{Two more predictions}
+
+%TCIMACRO{%
+%\TeXButton{TeX field}{\begin{block}[Left- and right-bank density positively correlated]}}%
+%BeginExpansion
+\begin{block}{Left- and right-bank density positively correlated}%
+%EndExpansion
+If the correlation between left- and right-bank log productivities is not
+too low, then the correlation between left- and right-bank log population
+densities is strictly positive.%
+%TCIMACRO{\TeXButton{TeX field}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{%
+%\TeXButton{TeX field}{\begin{block}[Lower correlation at bridges]}}%
+%BeginExpansion
+\begin{block}{Lower correlation at bridges}%
+%EndExpansion
+The correlation between left- and right-bank log population densities is
+lower at (trading) bridges than in general.%
+%TCIMACRO{\TeXButton{TeX field}{\end{block}}}%
+%BeginExpansion
+\end{block}%
+%EndExpansion
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+\begin{frame}%
+%EndExpansion
+
+\frametitle{Data}
+
+Data on $12$ main rivers of the U.S.\ (Arkansas, Colorado, Columbia,
+Connecticut, Delaware, Hudson, Mississippi, Missouri, Ohio, Red River,
+Snake\ River, Tennessee).
+
+\begin{itemize}
+\item Geocoordinates of rivers come from ESRI\ Map of U.S. Major Waters.
+
+\item Bridge data (location, year of construction) come from \textit{%
+bridgehunter.com}.
+
+\item Data on current population come from Version 1 of the Global
+Rural-Urban Mapping Project population grid. (Historical data from HYDE.)
+
+\begin{itemize}
+\item Grid cells are $30\times 30$ arc seconds ($\approx 0.5\times 0.5$ km).
+\end{itemize}
+\end{itemize}
+
+Create mapping between model and data:
+
+\begin{itemize}
+\item Measure $R$ (left or right bank), $\ell $ (distance from river), and $h
+$\newline
+(closest river mile) for each population grid cell.
+
+\item Measure $h$ (river mile) for each bridge.
+\end{itemize}
+
+%TCIMACRO{\TeXButton{EndFrame}{\end{frame}}}%
+%BeginExpansion
+\end{frame}%
+%EndExpansion
+%TCIMACRO{\TeXButton{BeginFrame}{\begin{frame}}}%
+%BeginExpansion
+
+
+\widefigure{density-at-rivers}{Population density is higher at the river}
+\widefigure{clustering-at-bridges}{Population \emph{clusters} at bridges}
+\widefigure{correlation-of-two-sides}{Bridges increase correlation across sides}
+
+\begin{frame}\frametitle{Population density before and after the bridge}
+Log population density,
+\[
+\ln (N_{mt}/A_{mt}) = \mu_m+\nu_t+ \beta \text{bridge}_{mt}+e_{mt}.
+\]
+
+$m$: 5-mile sections of river
+
+$t=1800, 1810, ..., 2000$
+\end{frame}
+
+\widefigure{regressions}{Population density before and after the bridges}
+
+\begin{frame}\frametitle{Conclusion}
+
+\begin{itemize}
+\item 2D model of location and trade.
+\item Spatial pattern of population around bridges is consistent with the model.
+\item Bridge regions grow faster.
+\item (Not shown today.) Potentially large welfare gains from early bridges.
+\item (Todo.) Instrument for bridges.
+\end{itemize}
+
+\end{frame}
+\end{document}
