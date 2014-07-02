@@ -1,9 +1,9 @@
-----------------------------------------------------------------------------------
+-------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  /Users/koren/Dropbox/projects/borders/bridges/research_designs/conver
-> gence/results/pooled.log
+       log:  /Users/koren/Dropbox (CEU MicroData)/projects/borders/bridges/rese
+> arch_designs/convergence/results/pooled.log
   log type:  text
- opened on:  15 May 2014, 23:43:25
+ opened on:   2 Jul 2014, 12:09:08
 
 . 
 . do create_variables  `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' 
@@ -12,9 +12,9 @@
 
 . save `rivers', replace emptyok
 (note: dataset contains 0 observations)
-(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 not f
-> ound)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 no
+> t found)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 
 . foreach river in `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' {
   2.         di "`1'"
@@ -29,8 +29,8 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
  11. }
 arkansas
 (37 vars, 86 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -41,11 +41,11 @@ xij variables:
       left_1790 left_1800 ... left_1950   ->   left_
    right_1790 right_1800 ... right_1950   ->   right_
 -----------------------------------------------------------------------------
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 20 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -56,11 +56,11 @@ xij variables:
       left_1790 left_1800 ... left_1950   ->   left_
    right_1790 right_1800 ... right_1950   ->   right_
 -----------------------------------------------------------------------------
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 32 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -72,11 +72,11 @@ xij variables:
    right_1790 right_1800 ... right_1950   ->   right_
 -----------------------------------------------------------------------------
 (note: variable name was str36, now str46 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 54 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -87,11 +87,11 @@ xij variables:
       left_1790 left_1800 ... left_1950   ->   left_
    right_1790 right_1800 ... right_1950   ->   right_
 -----------------------------------------------------------------------------
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 39 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -104,11 +104,11 @@ xij variables:
 -----------------------------------------------------------------------------
 (note: variable name was str41, now str50 to accommodate using data's values)
 (note: variable river was str8, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 24 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -121,11 +121,11 @@ xij variables:
 -----------------------------------------------------------------------------
 (note: variable name was str41, now str50 to accommodate using data's values)
 (note: variable river was str6, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 150 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -136,11 +136,11 @@ xij variables:
       left_1790 left_1800 ... left_1950   ->   left_
    right_1790 right_1800 ... right_1950   ->   right_
 -----------------------------------------------------------------------------
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 98 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -153,11 +153,11 @@ xij variables:
 -----------------------------------------------------------------------------
 (note: variable name was str42, now str61 to accommodate using data's values)
 (note: variable river was str8, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 94 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -170,11 +170,11 @@ xij variables:
 -----------------------------------------------------------------------------
 (note: variable name was str45, now str61 to accommodate using data's values)
 (note: variable river was str4, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 32 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -187,11 +187,11 @@ xij variables:
 -----------------------------------------------------------------------------
 (note: variable name was str34, now str61 to accommodate using data's values)
 (note: variable river was str3, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 38 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -204,11 +204,11 @@ xij variables:
 -----------------------------------------------------------------------------
 (note: variable name was str41, now str61 to accommodate using data's values)
 (note: variable river was str5, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 arkansas
 (37 vars, 27 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 1920 1
-> 930 1940 1950)
+(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
+> 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
@@ -221,7 +221,7 @@ xij variables:
 -----------------------------------------------------------------------------
 (note: variable name was str57, now str61 to accommodate using data's values)
 (note: variable river was str9, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50464.000001 saved
 
 . egen river_bridge = group(river bridge)
 
@@ -282,25 +282,25 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//S_13766.000001 saved
 . gen large = cond(left_before<right_before,right,left)
 
 . gen log_small = ln(small)
-(2125 missing values generated)
+(1960 missing values generated)
 
 . gen log_large = ln(large)
-(1289 missing values generated)
+(1285 missing values generated)
 
 . 
 . gen river_mile_sq = river_mile^2
 
 . 
 . gen small_share = small/total
-(1244 missing values generated)
+(1237 missing values generated)
 
 . replace small_share=0 if total==0
-(1244 real changes made)
+(1237 real changes made)
 
 . * if total number of post offices is poisson, the variance is sqrt of mean
-. gen scaled_difference = cond(left_before<right_before,right-left,left-right)/sqr
-> t(total)
-(1244 missing values generated)
+. gen scaled_difference = cond(left_before<right_before,right-left,left-right)/
+> sqrt(total)
+(1237 missing values generated)
 
 . 
 . gen deviation = 0.5-small_share
@@ -323,11 +323,11 @@ end of do-file
 . areg small_share i.event_time , a(river_year) cluster(river_segment)
 
 Linear regression, absorbing indicators           Number of obs   =       6182
-                                                  F(   8,    325) =       3.39
-                                                  Prob > F        =     0.0009
-                                                  R-squared       =     0.2984
-                                                  Adj R-squared   =     0.2752
-                                                  Root MSE        =     0.1842
+                                                  F(   8,    325) =       3.97
+                                                  Prob > F        =     0.0002
+                                                  R-squared       =     0.3125
+                                                  Adj R-squared   =     0.2897
+                                                  Root MSE        =     0.1806
 
                         (Std. Err. adjusted for 326 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -335,27 +335,27 @@ Linear regression, absorbing indicators           Number of obs   =       6182
  small_share |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
   event_time |
-         70  |   .0048776   .0064837     0.75   0.452    -.0078777    .0176328
-         80  |  -.0025451    .008021    -0.32   0.751    -.0183248    .0132345
-         90  |  -.0010977    .009224    -0.12   0.905     -.019244    .0170485
-        100  |   .0029034   .0104453     0.28   0.781    -.0176456    .0234524
-        110  |   .0333419   .0127015     2.63   0.009     .0083543    .0583295
-        120  |    .037588   .0133843     2.81   0.005     .0112573    .0639188
-        130  |   .0446938   .0154533     2.89   0.004     .0142926    .0750949
-        140  |    .064958   .0179662     3.62   0.000     .0296133    .1003027
+         70  |   .0022196   .0062036     0.36   0.721    -.0099847    .0144239
+         80  |  -.0016201   .0076666    -0.21   0.833    -.0167026    .0134624
+         90  |  -.0013863   .0089626    -0.15   0.877    -.0190183    .0162458
+        100  |   .0014993   .0104623     0.14   0.886     -.019083    .0220817
+        110  |   .0316134   .0118518     2.67   0.008     .0082975    .0549293
+        120  |   .0356157   .0127594     2.79   0.006     .0105144    .0607171
+        130  |   .0432857   .0144811     2.99   0.003     .0147971    .0717743
+        140  |   .0665941   .0171703     3.88   0.000     .0328152     .100373
              |
-       _cons |   .2377137   .0112864    21.06   0.000     .2155101    .2599174
+       _cons |   .2517381   .0112797    22.32   0.000     .2295477    .2739285
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                     (191 categories)
 
-. test (110.event_time+120.event_time+130.event_time+140.event_time)/4==(0+70.even
-> t_time+80.event_time+90.event_time)/4
+. test (110.event_time+120.event_time+130.event_time+140.event_time)/4==(0+70.e
+> vent_time+80.event_time+90.event_time)/4
 
  ( 1)  - .25*70.event_time - .25*80.event_time - .25*90.event_time +
        .25*110.event_time + .25*120.event_time + .25*130.event_time +
        .25*140.event_time = 0
 
-       F(  1,   325) =   14.89
+       F(  1,   325) =   16.37
             Prob > F =    0.0001
 
 . predict small_share_hat, xb
@@ -384,23 +384,23 @@ i.after           _Iafter_0-1         (naturally coded; _Iafter_0 omitted)
 i.after*lag_d~n   _IaftXlag_d_#       (coded as above)
 
 Linear regression, absorbing indicators           Number of obs   =       5533
-                                                  F(   3,    321) =      35.36
+                                                  F(   3,    321) =      39.54
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.1712
-                                                  Adj R-squared   =     0.1432
-                                                  Root MSE        =     0.1063
+                                                  R-squared       =     0.1971
+                                                  Adj R-squared   =     0.1699
+                                                  Root MSE        =     0.1066
 
-                         (Std. Err. adjusted for 322 clusters in river_segment)
--------------------------------------------------------------------------------
-              |               Robust
-       change |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
---------------+----------------------------------------------------------------
-    _Iafter_1 |  -.0381649   .0058756    -6.50   0.000    -.0497244   -.0266054
-lag_deviation |  -.2189947    .023873    -9.17   0.000     -.265962   -.1720273
-_IaftXlag_d_1 |   .0943023   .0279377     3.38   0.001     .0393383    .1492664
-        _cons |   .0464218    .005641     8.23   0.000     .0353237    .0575199
---------------+----------------------------------------------------------------
-   river_year |   absorbed                                     (179 categories)
+                        (Std. Err. adjusted for 322 clusters in river_segment)
+------------------------------------------------------------------------------
+             |               Robust
+      change |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+   _Iafter_1 |   -.038812   .0057781    -6.72   0.000    -.0501798   -.0274442
+lag_deviat~n |  -.2392301   .0249063    -9.61   0.000    -.2882303   -.1902299
+_IaftXlag_~1 |   .0999493   .0290682     3.44   0.001      .042761    .1571377
+       _cons |   .0491712   .0056133     8.76   0.000     .0381276    .0602147
+-------------+----------------------------------------------------------------
+  river_year |   absorbed                                     (179 categories)
 
 . tempvar hat
 
@@ -410,8 +410,8 @@ _IaftXlag_d_1 |   .0943023   .0279377     3.38   0.001     .0393383    .1492664
 
 . forval t=-4/4 {
   2.         di in ye "`t'0"
-  3.         areg small L10.large L10.small if event_time==`t'*10+offset, a(river_
-> year) cluster(river_segment)
+  3.         areg small L10.large L10.small if event_time==`t'*10+offset, a(riv
+> er_year) cluster(river_segment)
   4.         predict `hat', xb
   5.         replace fitted=`hat' if event_time==`t'*10+offset
   6.         drop `hat'
@@ -419,11 +419,11 @@ _IaftXlag_d_1 |   .0943023   .0279377     3.38   0.001     .0393383    .1492664
 -40
 
 Linear regression, absorbing indicators           Number of obs   =       1213
-                                                  F(   2,    312) =     785.95
+                                                  F(   2,    312) =     719.24
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9674
-                                                  Adj R-squared   =     0.9624
-                                                  Root MSE        =     0.5779
+                                                  R-squared       =     0.9689
+                                                  Adj R-squared   =     0.9642
+                                                  Root MSE        =     0.6055
 
                         (Std. Err. adjusted for 313 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -431,12 +431,12 @@ Linear regression, absorbing indicators           Number of obs   =       1213
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |   .0496186    .016861     2.94   0.003      .016443    .0827942
+        L10. |   .0367619   .0220688     1.67   0.097    -.0066607    .0801844
              |
        small |
-        L10. |   1.021446    .026893    37.98   0.000     .9685309     1.07436
+        L10. |   1.050977   .0318816    32.97   0.000     .9882472    1.113707
              |
-       _cons |   .0957698   .0525626     1.82   0.069    -.0076521    .1991917
+       _cons |   .1009402   .0577881     1.75   0.082    -.0127635    .2146439
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                     (158 categories)
 (649 missing values generated)
@@ -444,11 +444,11 @@ Linear regression, absorbing indicators           Number of obs   =       1213
 -30
 
 Linear regression, absorbing indicators           Number of obs   =        600
-                                                  F(   2,    312) =    2338.39
+                                                  F(   2,    312) =    2006.28
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9734
-                                                  Adj R-squared   =     0.9655
-                                                  Root MSE        =     0.6034
+                                                  R-squared       =     0.9761
+                                                  Adj R-squared   =     0.9689
+                                                  Root MSE        =     0.6131
 
                         (Std. Err. adjusted for 313 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -456,12 +456,12 @@ Linear regression, absorbing indicators           Number of obs   =        600
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |   .0470287   .0200815     2.34   0.020     .0075164    .0865411
+        L10. |    .059333   .0231073     2.57   0.011     .0138672    .1047989
              |
        small |
-        L10. |    1.02256   .0238703    42.84   0.000     .9755933    1.069527
+        L10. |   .9914535   .0239318    41.43   0.000     .9443654    1.038542
              |
-       _cons |   .1358782   .0522042     2.60   0.010     .0331613    .2385951
+       _cons |   .1454881   .0589014     2.47   0.014     .0295938    .2613823
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                     (137 categories)
 (649 missing values generated)
@@ -469,11 +469,11 @@ Linear regression, absorbing indicators           Number of obs   =        600
 -20
 
 Linear regression, absorbing indicators           Number of obs   =        581
-                                                  F(   2,    307) =     608.03
+                                                  F(   2,    307) =     706.33
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9742
-                                                  Adj R-squared   =     0.9665
-                                                  Root MSE        =     0.6681
+                                                  R-squared       =     0.9759
+                                                  Adj R-squared   =     0.9688
+                                                  Root MSE        =     0.6759
 
                         (Std. Err. adjusted for 308 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -481,12 +481,12 @@ Linear regression, absorbing indicators           Number of obs   =        581
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |   .0601331   .0184496     3.26   0.001     .0238294    .0964367
+        L10. |   .0398319   .0200837     1.98   0.048     .0003127    .0793511
              |
        small |
-        L10. |    1.06465   .0325802    32.68   0.000     1.000541    1.128759
+        L10. |   1.064306   .0312677    34.04   0.000      1.00278    1.125832
              |
-       _cons |  -.0599925   .0800369    -0.75   0.454    -.2174828    .0974977
+       _cons |   .0322923   .0793262     0.41   0.684    -.1237996    .1883843
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                     (132 categories)
 (649 missing values generated)
@@ -494,11 +494,11 @@ Linear regression, absorbing indicators           Number of obs   =        581
 -10
 
 Linear regression, absorbing indicators           Number of obs   =        559
-                                                  F(   2,    300) =    1759.02
+                                                  F(   2,    300) =     575.32
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9769
-                                                  Adj R-squared   =     0.9701
-                                                  Root MSE        =     0.6331
+                                                  R-squared       =     0.9724
+                                                  Adj R-squared   =     0.9643
+                                                  Root MSE        =     0.7209
 
                         (Std. Err. adjusted for 301 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -506,12 +506,12 @@ Linear regression, absorbing indicators           Number of obs   =        559
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |   .0443845   .0196791     2.26   0.025      .005658     .083111
+        L10. |   .0421104    .023977     1.76   0.080     -.005074    .0892948
              |
        small |
-        L10. |   1.036735   .0227482    45.57   0.000     .9919689    1.081501
+        L10. |   1.049955   .0330717    31.75   0.000     .9848729    1.115037
              |
-       _cons |   .0647565   .0616328     1.05   0.294    -.0565309    .1860439
+       _cons |   .0450846   .1016403     0.44   0.658    -.1549337     .245103
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                     (126 categories)
 (649 missing values generated)
@@ -519,11 +519,11 @@ Linear regression, absorbing indicators           Number of obs   =        559
 00
 
 Linear regression, absorbing indicators           Number of obs   =        533
-                                                  F(   2,    289) =    1092.90
+                                                  F(   2,    289) =    1221.92
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9757
-                                                  Adj R-squared   =     0.9685
-                                                  Root MSE        =     0.7141
+                                                  R-squared       =     0.9755
+                                                  Adj R-squared   =     0.9683
+                                                  Root MSE        =     0.7414
 
                         (Std. Err. adjusted for 290 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -531,12 +531,12 @@ Linear regression, absorbing indicators           Number of obs   =        533
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |    .036404   .0200455     1.82   0.070    -.0030497    .0758578
+        L10. |   .0217135   .0229971     0.94   0.346    -.0235497    .0669766
              |
        small |
-        L10. |   1.090717   .0256597    42.51   0.000     1.040213     1.14122
+        L10. |   1.092087   .0276884    39.44   0.000      1.03759    1.146583
              |
-       _cons |  -.0388649    .075153    -0.52   0.605    -.1867816    .1090518
+       _cons |   .0188626   .0747635     0.25   0.801    -.1282874    .1660125
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                     (120 categories)
 (649 missing values generated)
@@ -544,11 +544,11 @@ Linear regression, absorbing indicators           Number of obs   =        533
 10
 
 Linear regression, absorbing indicators           Number of obs   =        487
-                                                  F(   2,    265) =    1756.65
+                                                  F(   2,    265) =     913.78
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9779
-                                                  Adj R-squared   =     0.9714
-                                                  Root MSE        =     0.7200
+                                                  R-squared       =     0.9785
+                                                  Adj R-squared   =     0.9722
+                                                  Root MSE        =     0.7253
 
                         (Std. Err. adjusted for 266 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -556,12 +556,12 @@ Linear regression, absorbing indicators           Number of obs   =        487
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |   .0150521   .0270751     0.56   0.579    -.0382576    .0683618
+        L10. |   .0037678    .017286     0.22   0.828    -.0302675    .0378031
              |
        small |
-        L10. |   1.057943   .0243427    43.46   0.000     1.010013    1.105873
+        L10. |   1.064569   .0283135    37.60   0.000     1.008821    1.120317
              |
-       _cons |   .1916862   .0970373     1.98   0.049     .0006241    .3827483
+       _cons |   .2485416   .0874362     2.84   0.005     .0763835    .4206996
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                     (109 categories)
 (649 missing values generated)
@@ -569,11 +569,11 @@ Linear regression, absorbing indicators           Number of obs   =        487
 20
 
 Linear regression, absorbing indicators           Number of obs   =        462
-                                                  F(   2,    254) =     654.66
+                                                  F(   2,    254) =     326.74
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9828
-                                                  Adj R-squared   =     0.9779
-                                                  Root MSE        =     0.6938
+                                                  R-squared       =     0.9749
+                                                  Adj R-squared   =     0.9678
+                                                  Root MSE        =     0.9223
 
                         (Std. Err. adjusted for 255 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -581,12 +581,12 @@ Linear regression, absorbing indicators           Number of obs   =        462
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |    .028602   .0347804     0.82   0.412    -.0398928    .0970967
+        L10. |   .0135815    .030958     0.44   0.661    -.0473857    .0745486
              |
        small |
-        L10. |   1.053538   .0299784    35.14   0.000     .9945003    1.112576
+        L10. |   1.179543   .0463439    25.45   0.000     1.088276     1.27081
              |
-       _cons |   .0116714   .1685254     0.07   0.945    -.3202137    .3435565
+       _cons |  -.2929313   .2236559    -1.31   0.191    -.7333875    .1475249
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                     (101 categories)
 (649 missing values generated)
@@ -594,11 +594,11 @@ Linear regression, absorbing indicators           Number of obs   =        462
 30
 
 Linear regression, absorbing indicators           Number of obs   =        382
-                                                  F(   2,    214) =     911.78
+                                                  F(   2,    214) =     840.46
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9881
-                                                  Adj R-squared   =     0.9844
-                                                  Root MSE        =     0.5247
+                                                  R-squared       =     0.9884
+                                                  Adj R-squared   =     0.9848
+                                                  Root MSE        =     0.5324
 
                         (Std. Err. adjusted for 215 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -606,12 +606,12 @@ Linear regression, absorbing indicators           Number of obs   =        382
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |   .0053745   .0112309     0.48   0.633    -.0167629    .0275118
+        L10. |   .0043874   .0123581     0.36   0.723    -.0199718    .0287466
              |
        small |
-        L10. |   1.067461   .0255419    41.79   0.000     1.017115    1.117807
+        L10. |   1.066148    .026005    41.00   0.000     1.014889    1.117407
              |
-       _cons |   .0221617   .1099652     0.20   0.840     -.194592    .2389153
+       _cons |    .031681   .1125051     0.28   0.779    -.1900791    .2534411
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                      (89 categories)
 (649 missing values generated)
@@ -619,11 +619,11 @@ Linear regression, absorbing indicators           Number of obs   =        382
 40
 
 Linear regression, absorbing indicators           Number of obs   =        716
-                                                  F(   2,    171) =     418.71
+                                                  F(   2,    171) =     392.21
                                                   Prob > F        =     0.0000
-                                                  R-squared       =     0.9804
-                                                  Adj R-squared   =     0.9775
-                                                  Root MSE        =     0.6536
+                                                  R-squared       =     0.9809
+                                                  Adj R-squared   =     0.9782
+                                                  Root MSE        =     0.6773
 
                         (Std. Err. adjusted for 172 clusters in river_segment)
 ------------------------------------------------------------------------------
@@ -631,12 +631,12 @@ Linear regression, absorbing indicators           Number of obs   =        716
        small |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
        large |
-        L10. |    .004656   .0109344     0.43   0.671    -.0169277    .0262397
+        L10. |   .0021247   .0121603     0.17   0.862     -.021879    .0261284
              |
        small |
-        L10. |   1.079589   .0398466    27.09   0.000     1.000935    1.158244
+        L10. |   1.083456   .0386908    28.00   0.000     1.007083    1.159829
              |
-       _cons |  -.0926171   .1728757    -0.54   0.593    -.4338622    .2486281
+       _cons |  -.1010831   .1667301    -0.61   0.545    -.4301973    .2280312
 -------------+----------------------------------------------------------------
   river_year |   absorbed                                      (89 categories)
 (649 missing values generated)
@@ -647,382 +647,4 @@ unrecognized command:  BRK
 r(199);
 
 end of do-file
-
 r(199);
-
-. areg after left right, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       6182
-                                                  F(   2,   5989) =       2.85
-                                                  Prob > F        =     0.0580
-                                                  R-squared       =     0.2980
-                                                  Adj R-squared   =     0.2755
-                                                  Root MSE        =     0.4039
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-        left |  -.0011049   .0016351    -0.68   0.499    -.0043102    .0021005
-       right |    .004233   .0018253     2.32   0.020     .0006547    .0078113
-       _cons |   .3321231    .008025    41.39   0.000     .3163913     .347855
--------------+----------------------------------------------------------------
-  river_year |      F(190, 5989) =     11.896   0.000         (191 categories)
-
-. areg after small large, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       6182
-                                                  F(   2,   5989) =      16.90
-                                                  Prob > F        =     0.0000
-                                                  R-squared       =     0.3012
-                                                  Adj R-squared   =     0.2788
-                                                  Root MSE        =     0.4030
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       small |   .0153811   .0026491     5.81   0.000     .0101879    .0205743
-       large |  -.0084092   .0019481    -4.32   0.000    -.0122283   -.0045901
-       _cons |   .3404849   .0081309    41.88   0.000     .3245454    .3564244
--------------+----------------------------------------------------------------
-  river_year |      F(190, 5989) =     12.123   0.000         (191 categories)
-
-. areg after small large if L10.before, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       4559
-                                                  F(   2,   4366) =       2.66
-                                                  Prob > F        =     0.0701
-                                                  R-squared       =     0.1377
-                                                  Adj R-squared   =     0.0998
-                                                  Root MSE        =     0.2947
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       small |    .004958   .0026035     1.90   0.057    -.0001462    .0100622
-       large |  -.0042065   .0018522    -2.27   0.023    -.0078378   -.0005752
-       _cons |   .1141327   .0068421    16.68   0.000     .1007186    .1275468
--------------+----------------------------------------------------------------
-  river_year |      F(190, 4366) =      3.477   0.000         (191 categories)
-
-. areg after left right if L10.before, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       4559
-                                                  F(   2,   4366) =       0.83
-                                                  Prob > F        =     0.4360
-                                                  R-squared       =     0.1370
-                                                  Adj R-squared   =     0.0990
-                                                  Root MSE        =     0.2948
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-        left |  -.0019153   .0014891    -1.29   0.198    -.0048346    .0010041
-       right |   .0012055   .0017454     0.69   0.490    -.0022164    .0046273
-       _cons |   .1109933   .0067442    16.46   0.000     .0977712    .1242155
--------------+----------------------------------------------------------------
-  river_year |      F(190, 4366) =      3.451   0.000         (191 categories)
-
-. areg after small large if L10.before, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       4559
-                                                  F(   2,   4366) =       2.66
-                                                  Prob > F        =     0.0701
-                                                  R-squared       =     0.1377
-                                                  Adj R-squared   =     0.0998
-                                                  Root MSE        =     0.2947
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       small |    .004958   .0026035     1.90   0.057    -.0001462    .0100622
-       large |  -.0042065   .0018522    -2.27   0.023    -.0078378   -.0005752
-       _cons |   .1141327   .0068421    16.68   0.000     .1007186    .1275468
--------------+----------------------------------------------------------------
-  river_year |      F(190, 4366) =      3.477   0.000         (191 categories)
-
-. areg after total small_share if L10.before, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       4559
-                                                  F(   2,   4366) =       5.77
-                                                  Prob > F        =     0.0031
-                                                  R-squared       =     0.1389
-                                                  Adj R-squared   =     0.1010
-                                                  Root MSE        =     0.2945
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       total |   -.001167   .0008381    -1.39   0.164    -.0028101    .0004762
- small_share |   .0849061   .0254533     3.34   0.001     .0350048    .1348075
-       _cons |   .0960748   .0081475    11.79   0.000     .0801016     .112048
--------------+----------------------------------------------------------------
-  river_year |      F(190, 4366) =      3.342   0.000         (191 categories)
-
-. areg after total if L10.before, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       4559
-                                                  F(   1,   4367) =       0.41
-                                                  Prob > F        =     0.5231
-                                                  R-squared       =     0.1367
-                                                  Adj R-squared   =     0.0989
-                                                  Root MSE        =     0.2948
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       total |  -.0005213   .0008164    -0.64   0.523    -.0021219    .0010792
-       _cons |   .1114115   .0067341    16.54   0.000     .0982092    .1246137
--------------+----------------------------------------------------------------
-  river_year |      F(190, 4367) =      3.454   0.000         (191 categories)
-
-. gen log_total = ln(total)
-(1244 missing values generated)
-
-. areg after log_total small_share if L10.before, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       3456
-                                                  F(   2,   3291) =       3.76
-                                                  Prob > F        =     0.0234
-                                                  R-squared       =     0.1225
-                                                  Adj R-squared   =     0.0787
-                                                  Root MSE        =     0.3206
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-   log_total |  -.0025181   .0094547    -0.27   0.790    -.0210558    .0160195
- small_share |    .086569   .0321704     2.69   0.007      .023493    .1496449
-       _cons |   .1061197   .0171868     6.17   0.000     .0724217    .1398176
--------------+----------------------------------------------------------------
-  river_year |      F(162, 3291) =      2.710   0.000         (163 categories)
-
-. areg after log_total small_share river_mile if L10.before, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       3456
-                                                  F(   3,   3290) =       7.60
-                                                  Prob > F        =     0.0000
-                                                  R-squared       =     0.1265
-                                                  Adj R-squared   =     0.0827
-                                                  Root MSE        =     0.3199
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-   log_total |   .0022378   .0095126     0.24   0.814    -.0164133     .020889
- small_share |   .0922464   .0321339     2.87   0.004      .029242    .1552508
-  river_mile |   .0000658   .0000168     3.90   0.000     .0000327    .0000988
-       _cons |   .0568165   .0212962     2.67   0.008     .0150613    .0985716
--------------+----------------------------------------------------------------
-  river_year |      F(162, 3290) =      2.779   0.000         (163 categories)
-
-. areg after log_total small_share i.river_segment if L10.before, a(river_year)
-note: 39.river_segment omitted because of collinearity
-note: 61.river_segment omitted because of collinearity
-note: 87.river_segment omitted because of collinearity
-note: 109.river_segment omitted because of collinearity
-note: 126.river_segment omitted because of collinearity
-note: 189.river_segment omitted because of collinearity
-note: 239.river_segment omitted because of collinearity
-note: 281.river_segment omitted because of collinearity
-note: 292.river_segment omitted because of collinearity
-note: 319.river_segment omitted because of collinearity
-note: 337.river_segment omitted because of collinearity
-
-Linear regression, absorbing indicators           Number of obs   =       3456
-                                                  F( 301,   2992) =       1.18
-                                                  Prob > F        =     0.0225
-                                                  R-squared       =     0.2138
-                                                  Adj R-squared   =     0.0921
-                                                  Root MSE        =     0.3183
-
--------------------------------------------------------------------------------
-        after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
---------------+----------------------------------------------------------------
-    log_total |   .0321073   .0218918     1.47   0.143    -.0108172    .0750318
-  small_share |   .1218354   .0466985     2.61   0.009      .030271    .2133999
-              |
-river_segment |
-           2  |   -.019078    .155239    -0.12   0.902    -.3234641     .285308
-           3  |  -.4785239   .2124657    -2.25   0.024    -.8951175   -.0619303
-           4  |  -.0874834   .1406106    -0.62   0.534    -.3631867    .1882198
-           5  |  -.0659057   .1727177    -0.38   0.703    -.4045632    .2727518
-           6  |  -.1364435   .1728891    -0.79   0.430    -.4754371    .2025501
-           7  |  -.4654629   .2119261    -2.20   0.028    -.8809986   -.0499272
-           8  |  -.1298404     .17811    -0.73   0.466    -.4790709    .2193901
-           9  |  -.1202057   .1402222    -0.86   0.391    -.3951474    .1547361
---Break--
-r(1);
-
-. areg after total small_share i.river_segment if L10.before, a(river_year)
-note: 40.river_segment omitted because of collinearity
-note: 61.river_segment omitted because of collinearity
-note: 87.river_segment omitted because of collinearity
-note: 109.river_segment omitted because of collinearity
-note: 126.river_segment omitted because of collinearity
-note: 190.river_segment omitted because of collinearity
-note: 239.river_segment omitted because of collinearity
-note: 281.river_segment omitted because of collinearity
-note: 298.river_segment omitted because of collinearity
-note: 320.river_segment omitted because of collinearity
-note: 337.river_segment omitted because of collinearity
-
-Linear regression, absorbing indicators           Number of obs   =       4559
-                                                  F( 316,   4052) =       1.09
-                                                  Prob > F        =     0.1513
-                                                  R-squared       =     0.2040
-                                                  Adj R-squared   =     0.1046
-                                                  Root MSE        =     0.2939
-
--------------------------------------------------------------------------------
-        after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
---------------+----------------------------------------------------------------
-        total |   -.001818   .0017706    -1.03   0.305    -.0052894    .0016534
-  small_share |   .1441414   .0352397     4.09   0.000     .0750523    .2132306
-              |
-river_segment |
-           2  |   .0041993   .1278299     0.03   0.974    -.2464176    .2548162
-           3  |  -.4095828    .183852    -2.23   0.026    -.7700337   -.0491319
-           4  |  -.0459457   .1132266    -0.41   0.685    -.2679322    .1760407
-           5  |  -.0413155   .1473081    -0.28   0.779    -.3301202    .2474893
-           6  |   -.104101   .1476163    -0.71   0.481    -.3935101    .1853082
-           7  |  -.4158522   .1835643    -2.27   0.024     -.775739   -.0559654
-           8  |  -.1156807   .1528914    -0.76   0.449     -.415432    .1840705
-           9  |   -.082643   .1133999    -0.73   0.466    -.3049692    .1396832
---Break--
-r(1);
-
-. areg F10.after total small_share i.river_segment if before, a(river_year)
-note: 40.river_segment omitted because of collinearity
-note: 61.river_segment omitted because of collinearity
-note: 87.river_segment omitted because of collinearity
-note: 109.river_segment omitted because of collinearity
-note: 126.river_segment omitted because of collinearity
-note: 190.river_segment omitted because of collinearity
-note: 239.river_segment omitted because of collinearity
-note: 281.river_segment omitted because of collinearity
-note: 298.river_segment omitted because of collinearity
-note: 320.river_segment omitted because of collinearity
-note: 337.river_segment omitted because of collinearity
-
-Linear regression, absorbing indicators           Number of obs   =       3910
-                                                  F( 312,   3419) =       1.00
-                                                  Prob > F        =     0.5028
-                                                  R-squared       =     0.2091
-                                                  Adj R-squared   =     0.0958
-                                                  Root MSE        =     0.3154
-
--------------------------------------------------------------------------------
-    F10.after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
---------------+----------------------------------------------------------------
-        total |  -.0043229   .0021764    -1.99   0.047    -.0085901   -.0000557
-  small_share |  -.0295474   .0421042    -0.70   0.483    -.1120994    .0530046
-              |
-river_segment |
-           2  |   .0088849   .1467677     0.06   0.952    -.2788764    .2966461
-           3  |  -.4636548   .2233019    -2.08   0.038    -.9014735   -.0258361
-           4  |  -.0685386   .1301175    -0.53   0.598    -.3236545    .1865774
-           5  |  -.0386427   .1690813    -0.23   0.819    -.3701534    .2928679
-           6  |  -.1188111   .1695102    -0.70   0.483    -.4511627    .2135405
-           7  |  -.4782181   .2229651    -2.14   0.032    -.9153765   -.0410597
-           8  |  -.1335114   .1765601    -0.76   0.450    -.4796854    .2126627
-           9  |  -.0550251   .1303172    -0.42   0.673    -.3105327    .2004824
---Break--
-r(1);
-
-. areg after L10.total L10.small_share i.river_segment if L10.before, a(river_year
-> )
-note: 40.river_segment omitted because of collinearity
-note: 61.river_segment omitted because of collinearity
-note: 87.river_segment omitted because of collinearity
-note: 109.river_segment omitted because of collinearity
-note: 126.river_segment omitted because of collinearity
-note: 190.river_segment omitted because of collinearity
-note: 239.river_segment omitted because of collinearity
-note: 281.river_segment omitted because of collinearity
-note: 298.river_segment omitted because of collinearity
-note: 320.river_segment omitted because of collinearity
-note: 337.river_segment omitted because of collinearity
-
-Linear regression, absorbing indicators           Number of obs   =       3910
-                                                  F( 312,   3419) =       1.00
-                                                  Prob > F        =     0.5028
-                                                  R-squared       =     0.2091
-                                                  Adj R-squared   =     0.0958
-                                                  Root MSE        =     0.3154
-
--------------------------------------------------------------------------------
-        after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
---------------+----------------------------------------------------------------
-        total |
-         L10. |  -.0043229   .0021764    -1.99   0.047    -.0085901   -.0000557
-              |
-  small_share |
-         L10. |  -.0295474   .0421042    -0.70   0.483    -.1120994    .0530046
-              |
-river_segment |
-           2  |   .0088849   .1467677     0.06   0.952    -.2788764    .2966461
-           3  |  -.4636548   .2233019    -2.08   0.038    -.9014735   -.0258361
-           4  |  -.0685386   .1301175    -0.53   0.598    -.3236545    .1865774
-           5  |  -.0386427   .1690813    -0.23   0.819    -.3701534    .2928679
-           6  |  -.1188111   .1695102    -0.70   0.483    -.4511627    .2135405
---Break--
-r(1);
-
-. areg after L10.total L10.small_share  if L10.before, a(river_year)
-
-Linear regression, absorbing indicators           Number of obs   =       3910
-                                                  F(   2,   3729) =       0.77
-                                                  Prob > F        =     0.4614
-                                                  R-squared       =     0.1375
-                                                  Adj R-squared   =     0.0958
-                                                  Root MSE        =     0.3154
-
-------------------------------------------------------------------------------
-       after |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       total |
-        L10. |  -.0011348   .0010465    -1.08   0.278    -.0031865    .0009169
-             |
- small_share |
-        L10. |   -.009893   .0300007    -0.33   0.742    -.0687124    .0489264
-             |
-       _cons |   .1345526   .0092474    14.55   0.000     .1164222    .1526829
--------------+----------------------------------------------------------------
-  river_year |      F(178, 3729) =      3.181   0.000         (179 categories)
-
-. 
-. cd
-/Users/koren
-
-. cd Documents/projects/prod-debug/code
-/Users/koren/Documents/projects/prod-debug/code
-
-. ls
-
-total 456
--rw-r--r--   1 koren  staff    486 May  7 10:44 bootstrap_this.do
--rw-r--r--   1 koren  staff   5773 May  7 10:44 cbmerge.do
--rw-r--r--   1 koren  staff   1359 May  7 10:44 constrained_spline.ado
--rw-r--r--   1 koren  staff   1638 May  7 10:44 counterfactual.do
--rw-r--r--   1 koren  staff    500 May  7 10:44 county_demand_regression.do
--rw-r--r--   1 koren  staff   3431 May  7 10:44 decomposition.do
--rw-r--r--   1 koren  staff   3031 May  7 10:44 descriptives.do
--rw-r--r--   1 koren  staff    994 May  7 10:44 estimate_Gn.do
--rw-r--r--   1 koren  staff   1303 May  7 10:44 estimate_specification.do
--rw-r--r--   1 koren  staff   4111 May  7 10:44 fixedcost.do
--rw-r--r--   1 koren  staff   2593 May  7 10:44 fixedcost_experiments.do
--rw-r--r--   1 koren  staff   3178 May  7 10:44 foreign_experiments.do
--rw-r--r--   1 koren  staff   2658 May  7 10:44 import_decomposition.do
--rw-r--r--   1 koren  staff   2878 May  7 10:44 import_margins.do
--rw-r--r--   1 koren  staff   2017 May  7 10:44 intermediaries.do
--rw-r--r--   1 koren  staff   3394 May  7 10:44 load_parameters.do
--rw-r--r--   1 koren  staff   3708 May  7 10:44 load_specification.do
-drwxr-xr-x  12 koren  staff    408 May  7 10:44 map/
--rw-r--r--   1 koren  staff   3746 May  7 10:44 prepare_for_estimation.do
--rw-r--r--   1 koren  staff   5341 May  7 10:44 prices.do
---Break--
-r(1);
-
-. do switcher_event_study
-
-. capture log close

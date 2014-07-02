@@ -4,6 +4,7 @@ from quadtree import QuadTree, Feature, point_in_rectangle
 from shapely.geometry import shape, Polygon 
 from shapely import speedups
 import sys
+from project_geojson import ProjectedFeature
 
 speedups.enable()
 
@@ -22,8 +23,9 @@ writer.writeheader()
 post_offices = QuadTree(geojson['features'])
 
 for bridge in bridges:
-	left_side = shape(left_bank).buffer(0).intersection(shape(bridge['geometry']).buffer(0.1))
-	right_side = shape(right_bank).buffer(0).intersection(shape(bridge['geometry']).buffer(0.1))
+	bridge_disc = ProjectedFeature(ProjectedFeature(bridge['geometry'], 'wgs84').lcc.buffer(10000.0), 'lcc').wgs84
+	left_side = shape(left_bank).buffer(0).intersection(bridge_disc)
+	right_side = shape(right_bank).buffer(0).intersection(bridge_disc)
 	bridge['properties']['post_office_count'] = {}
 	for year in decades:
 		po_count_left = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=left_side)) if po['properties']['from']<=year])
