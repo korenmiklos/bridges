@@ -3,7 +3,7 @@
        log:  /Users/koren/Dropbox (CEU MicroData)/projects/borders/bridges/rese
 > arch_designs/convergence/results/arkansas.log
   log type:  text
- opened on:   2 Jul 2014, 12:08:19
+ opened on:   2 Jul 2014, 16:34:56
 
 . 
 . do create_variables `1'
@@ -12,9 +12,9 @@
 
 . save `rivers', replace emptyok
 (note: dataset contains 0 observations)
-(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50378.000001 no
+(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54511.000001 no
 > t found)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50378.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54511.000001 saved
 
 . foreach river in `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' {
   2.         di "`1'"
@@ -28,20 +28,20 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50378.000001 saved
  10.         save `rivers', replace
  11. }
 arkansas
-(37 vars, 86 obs)
+(37 vars, 145 obs)
 (note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
 > 0 1930 1940 1950)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
-Number of obs.                       86   ->    1462
+Number of obs.                      145   ->    2465
 Number of variables                  39   ->       8
 j variable (17 values)                    ->   year
 xij variables:
       left_1790 left_1800 ... left_1950   ->   left_
    right_1790 right_1800 ... right_1950   ->   right_
 -----------------------------------------------------------------------------
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50378.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54511.000001 saved
 
 . egen river_bridge = group(river bridge)
 
@@ -62,39 +62,56 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50378.000001 saved
 
 . 
 . gen start_decade = int(start/10)*10
-(204 missing values generated)
+(1207 missing values generated)
 
-. local window 40
+. local dec 3
+
+. local window `dec'0
 
 . 
-. local sample_window 60
+. local sample_window 40
+
+. local latest 1900
 
 . 
 . * for ease of reading, introduce a round offset for event time
 . scalar offset = 100
 
 . gen event_time = year-start_decade+offset
-(204 missing values generated)
+(1207 missing values generated)
 
-. keep if abs(event_time-offset)<=`sample_window'
-(742 observations deleted)
+. * also keep control regions
+. keep if abs(event_time-offset)<=`sample_window' | missing(start)
+(717 observations deleted)
+
+. * only use 19th century, when post offices are relevant
+. keep if year<=`latest' & (start_decade<=`latest' | missing(start))
+(774 observations deleted)
 
 . 
 . replace event_time = -`window'+offset if event_time<-`window'+offset
-(148 real changes made)
+(21 real changes made)
 
-. replace event_time = `window'+offset if event_time>`window'+offset
-(31 real changes made)
+. replace event_time = `window'+offset if event_time>`window'+offset & !missing
+> (event_time)
+(0 real changes made)
 
 . 
-. gen byte before = year<start
+. forval t = 7/13 {
+  2.         gen byte treatment`t'0 = (event_time==`t'0)
+  3. }
+
+. 
+. gen byte no_bridge = missing(start)
+
+. gen byte before = year<start & !no_bridge
 
 . gen byte after = year>=start
 
 . 
-. egen left_before = sum(cond(before,left,0)), by(river_bridge)
+. egen left_before = sum(cond(!after,left,0)), by(river_bridge)
 
-. egen right_before = sum(cond(before,right,0)), by(river_bridge)
+. egen right_before = sum(cond(!after,right,0)), by(river_bridge)
 
 . 
 . gen small = cond(left_before<right_before,left,right)
@@ -102,269 +119,124 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St50378.000001 saved
 . gen large = cond(left_before<right_before,right,left)
 
 . gen log_small = ln(small)
-(435 missing values generated)
+(808 missing values generated)
 
 . gen log_large = ln(large)
-(349 missing values generated)
+(651 missing values generated)
 
 . 
 . gen river_mile_sq = river_mile^2
 
 . 
 . gen small_share = small/total
-(346 missing values generated)
+(648 missing values generated)
 
 . replace small_share=0 if total==0
-(346 real changes made)
+(648 real changes made)
 
 . * if total number of post offices is poisson, the variance is sqrt of mean
 . gen scaled_difference = cond(left_before<right_before,right-left,left-right)/
 > sqrt(total)
-(346 missing values generated)
+(648 missing values generated)
 
 . 
 . gen deviation = 0.5-small_share
 
 . tsset river_bridge year
        panel variable:  river_bridge (unbalanced)
-        time variable:  year, 1810 to 1950, but with gaps
+        time variable:  year, 1790 to 1900, but with gaps
                 delta:  1 unit
 
 . gen change = deviation-L10.deviation
-(74 missing values generated)
+(92 missing values generated)
 
 . gen lag_deviation = L10.deviation
-(74 missing values generated)
+(92 missing values generated)
 
 . 
 end of do-file
 
-. 
-. xtreg left i.event_time i.year, i(river_bridge) fe
+. do estimate_and_plot
 
-Fixed-effects (within) regression               Number of obs      =       720
-Group variable: river_bridge                    Number of groups   =        74
+. areg small_share treatment*, a(river_year) cluster(river_segment)
 
-R-sq:  within  = 0.3883                         Obs per group: min =         2
-       between = 0.0136                                        avg =       9.7
-       overall = 0.0991                                        max =        13
+Linear regression, absorbing indicators           Number of obs   =        974
+                                                  F(   7,     49) =       9.19
+                                                  Prob > F        =     0.0000
+                                                  R-squared       =     0.2677
+                                                  Adj R-squared   =     0.2539
+                                                  Root MSE        =     0.1421
 
-                                                F(22,624)          =     18.01
-corr(u_i, Xb)  = -0.0672                        Prob > F           =    0.0000
-
-------------------------------------------------------------------------------
-        left |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-  event_time |
-         70  |  -.1045669   .1735492    -0.60   0.547    -.4453782    .2362444
-         80  |  -.2158559   .2288643    -0.94   0.346    -.6652933    .2335816
-         90  |  -.2427655   .2886922    -0.84   0.401    -.8096915    .3241605
-        100  |  -.1892259   .3525118    -0.54   0.592     -.881479    .5030272
-        110  |  -.1900497   .4174751    -0.46   0.649    -1.009876    .6297767
-        120  |  -.2642255   .4821513    -0.55   0.584    -1.211061    .6826103
-        130  |  -.3535292   .5475883    -0.65   0.519    -1.428868      .72181
-        140  |  -.4049575   .6460586    -0.63   0.531     -1.67367    .8637549
-             |
-        year |
-       1820  |   .7798717   .7233812     1.08   0.281    -.6406848    2.200428
-       1830  |   1.341103   .6801884     1.97   0.049      .005367    2.676838
-       1840  |   2.203087   .6659102     3.31   0.001      .895391    3.510784
-       1850  |   2.360408    .670606     3.52   0.000      1.04349    3.677326
-       1860  |   2.452687   .6840704     3.59   0.000     1.109328    3.796046
-       1870  |   2.494738   .7044432     3.54   0.000     1.111372    3.878105
-       1880  |   2.936621   .7333527     4.00   0.000     1.496483    4.376759
-       1890  |   3.378888   .7737402     4.37   0.000     1.859438    4.898338
-       1900  |   3.662231   .8159272     4.49   0.000     2.059936    5.264527
-       1910  |   3.872223   .8576858     4.51   0.000     2.187923    5.556523
-       1920  |   4.076824   .9051495     4.50   0.000     2.299316    5.854332
-       1930  |   4.216408   .9538496     4.42   0.000     2.343264    6.089552
-       1940  |   4.230554   1.003792     4.21   0.000     2.259335    6.201774
-       1950  |   4.279654   1.053578     4.06   0.000     2.210666    6.348641
-             |
-       _cons |   -1.91901   .6812909    -2.82   0.005    -3.256911   -.5811097
--------------+----------------------------------------------------------------
-     sigma_u |  1.7828053
-     sigma_e |  .84895072
-         rho |   .8151586   (fraction of variance due to u_i)
-------------------------------------------------------------------------------
-F test that all u_i=0:     F(73, 624) =    37.47             Prob > F = 0.0000
-
-. xtreg right i.event_time i.year, i(river_bridge) fe
-
-Fixed-effects (within) regression               Number of obs      =       720
-Group variable: river_bridge                    Number of groups   =        74
-
-R-sq:  within  = 0.3991                         Obs per group: min =         2
-       between = 0.0336                                        avg =       9.7
-       overall = 0.1371                                        max =        13
-
-                                                F(22,624)          =     18.84
-corr(u_i, Xb)  = -0.0390                        Prob > F           =    0.0000
-
-------------------------------------------------------------------------------
-       right |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-  event_time |
-         70  |  -.1070562   .1734893    -0.62   0.537    -.4477499    .2336375
-         80  |   -.241044   .2287853    -1.05   0.292    -.6903263    .2082384
-         90  |  -.2801734   .2885926    -0.97   0.332    -.8469037     .286557
-        100  |  -.3149805   .3523902    -0.89   0.372    -1.006995    .3770337
-        110  |  -.3702664   .4173311    -0.89   0.375     -1.18981    .4492771
-        120  |  -.2263862    .481985    -0.47   0.639    -1.172895    .7201229
-        130  |  -.1662502   .5473994    -0.30   0.761    -1.241218    .9087179
-        140  |   .0355524   .6458357     0.06   0.956    -1.232722    1.303827
-             |
-        year |
-       1820  |  -.6902129   .7231317    -0.95   0.340    -2.110279    .7298535
-       1830  |  -.3006112   .6799537    -0.44   0.659    -1.635886    1.034664
-       1840  |    .675148   .6656804     1.01   0.311    -.6320972    1.982393
-       1850  |   .8607715   .6703746     1.28   0.200     -.455692    2.177235
-       1860  |   .9037425   .6838344     1.32   0.187     -.439153    2.246638
-       1870  |   1.022626   .7042002     1.45   0.147    -.3602635    2.405515
-       1880  |   1.218318   .7330997     1.66   0.097     -.221323     2.65796
-       1890  |    1.79342   .7734732     2.32   0.021      .274494    3.312346
-       1900  |   2.063219   .8156457     2.53   0.012     .4614761    3.664962
-       1910  |   2.489249   .8573899     2.90   0.004     .8055298    4.172968
-       1920  |   2.536453   .9048372     2.80   0.005     .7595577    4.313347
-       1930  |   2.527377   .9535205     2.65   0.008     .6548795    4.399875
-       1940  |   2.545387   1.003446     2.54   0.011     .5748474    4.515927
-       1950  |   2.421276   1.053214     2.30   0.022     .3530024     4.48955
-             |
-       _cons |  -.5121684   .6810558    -0.75   0.452    -1.849607    .8252706
--------------+----------------------------------------------------------------
-     sigma_u |  1.5060066
-     sigma_e |   .8486578
-         rho |  .75898476   (fraction of variance due to u_i)
-------------------------------------------------------------------------------
-F test that all u_i=0:     F(73, 624) =    27.67             Prob > F = 0.0000
-
-. 
-. xtreg small_share after i.year, i(river_bridge) fe
-
-Fixed-effects (within) regression               Number of obs      =       720
-Group variable: river_bridge                    Number of groups   =        74
-
-R-sq:  within  = 0.1756                         Obs per group: min =         2
-       between = 0.0079                                        avg =       9.7
-       overall = 0.0525                                        max =        13
-
-                                                F(15,631)          =      8.96
-corr(u_i, Xb)  = -0.0348                        Prob > F           =    0.0000
-
-------------------------------------------------------------------------------
- small_share |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
--------------+----------------------------------------------------------------
-       after |   .0089149   .0185716     0.48   0.631    -.0275547    .0453846
-             |
-        year |
-       1820  |  -.0748875   .1021125    -0.73   0.464    -.2754089    .1256339
-       1830  |   .0825443   .0955122     0.86   0.388    -.1050159    .2701045
-       1840  |   .1426089   .0919695     1.55   0.121    -.0379943    .3232122
-       1850  |   .1819637   .0907109     2.01   0.045     .0038319    .3600955
-       1860  |   .1931728   .0902242     2.14   0.033     .0159968    .3703488
-       1870  |   .1900491   .0900922     2.11   0.035     .0131324    .3669659
-       1880  |   .2101336   .0901156     2.33   0.020     .0331708    .3870964
-       1890  |   .2779138   .0901941     3.08   0.002     .1007968    .4550307
-       1900  |   .2525688   .0904017     2.79   0.005     .0750443    .4300933
-       1910  |   .2797068   .0908943     3.08   0.002      .101215    .4581987
-       1920  |   .2780302   .0915015     3.04   0.002      .098346    .4577145
-       1930  |    .280325   .0924982     3.03   0.003     .0986835    .4619665
-       1940  |   .2784954   .0930153     2.99   0.003     .0958385    .4611523
-       1950  |   .2759017   .0933458     2.96   0.003     .0925956    .4592077
-             |
-       _cons |  -.0838616   .0887596    -0.94   0.345    -.2581615    .0904383
--------------+----------------------------------------------------------------
-     sigma_u |   .1817088
-     sigma_e |  .11997823
-         rho |  .69639513   (fraction of variance due to u_i)
-------------------------------------------------------------------------------
-F test that all u_i=0:     F(73, 631) =    21.46             Prob > F = 0.0000
-
-. areg small_share i.event_time, a(year) cluster(river_segment)
-
-Linear regression, absorbing indicators           Number of obs   =        720
-                                                  F(   8,     23) =       5.43
-                                                  Prob > F        =     0.0007
-                                                  R-squared       =     0.0693
-                                                  Adj R-squared   =     0.0400
-                                                  Root MSE        =     0.2125
-
-                         (Std. Err. adjusted for 24 clusters in river_segment)
+                         (Std. Err. adjusted for 50 clusters in river_segment)
 ------------------------------------------------------------------------------
              |               Robust
  small_share |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-  event_time |
-         70  |    .019709   .0263562     0.75   0.462    -.0348131     .074231
-         80  |  -.0066771   .0269845    -0.25   0.807    -.0624988    .0491446
-         90  |  -.0277937   .0281639    -0.99   0.334    -.0860552    .0304678
-        100  |  -.0368484   .0374821    -0.98   0.336     -.114386    .0406891
-        110  |   -.044565   .0442212    -1.01   0.324    -.1360434    .0469135
-        120  |   -.039008   .0523674    -0.74   0.464    -.1473382    .0693221
-        130  |   -.056134   .0584439    -0.96   0.347    -.1770344    .0647664
-        140  |   -.015255   .0771024    -0.20   0.845    -.1747534    .1442435
-             |
-       _cons |   .1786072   .0656315     2.72   0.012     .0428382    .3143763
+ treatment70 |   .0255507   .0576884     0.44   0.660    -.0903784    .1414798
+ treatment80 |  -.0013718   .0734737    -0.02   0.985    -.1490228    .1462791
+ treatment90 |  -.0476066   .0773724    -0.62   0.541    -.2030922    .1078791
+treatment100 |  -.0562534    .090634    -0.62   0.538    -.2383892    .1258824
+treatment110 |   .1047343   .0795167     1.32   0.194    -.0550605    .2645291
+treatment120 |    .152541    .103486     1.47   0.147     -.055422    .3605039
+treatment130 |    .131594   .1721478     0.76   0.448      -.21435     .477538
+       _cons |   .0676272   .0104632     6.46   0.000     .0466005    .0886539
 -------------+----------------------------------------------------------------
-        year |   absorbed                                      (15 categories)
+  river_year |   absorbed                                      (12 categories)
 
-. test (110.event_time+120.event_time+130.event_time+140.event_time)/4==(0+70.e
-> vent_time+80.event_time+90.event_time)/4
+. test (treatment70+treatment80+treatment80)/3==(treatment110+treatment120+trea
+> tment130)/3
 
- ( 1)  - .25*70.event_time - .25*80.event_time - .25*90.event_time +
-       .25*110.event_time + .25*120.event_time + .25*130.event_time +
-       .25*140.event_time = 0
+ ( 1)  .3333333*treatment70 + .6666667*treatment80 - .3333333*treatment110 -
+       .3333333*treatment120 - .3333333*treatment130 = 0
 
-       F(  1,    23) =    0.56
-            Prob > F =    0.4610
+       F(  1,    49) =    1.22
+            Prob > F =    0.2739
 
 . predict small_share_hat, xb
 
 . gen se = .
-(720 missing values generated)
+(974 missing values generated)
 
-. foreach t in 70 80 90 100 110 120 130 140 {
-  2.         replace se = _se[`t'.event_time] if event_time==`t'
+. foreach t in 80 90 100 110 120 130 {
+  2.         replace se = _se[treatment`t'] if event_time==`t'
   3. }
-(71 real changes made)
-(68 real changes made)
-(67 real changes made)
-(63 real changes made)
-(59 real changes made)
-(56 real changes made)
-(49 real changes made)
-(66 real changes made)
+(21 real changes made)
+(21 real changes made)
+(21 real changes made)
+(10 real changes made)
+(5 real changes made)
+(2 real changes made)
 
-. replace se = _se[_cons] if event_time==60
-(221 real changes made)
+. replace se = _se[_cons] if event_time==70
+(42 real changes made)
 
 . 
 . xi: areg change i.after*lag_deviation, a(river_year)  cluster(river_segment)
 i.after           _Iafter_0-1         (naturally coded; _Iafter_0 omitted)
 i.after*lag_d~n   _IaftXlag_d_#       (coded as above)
 
-Linear regression, absorbing indicators           Number of obs   =        646
-                                                  F(   3,     23) =      10.62
-                                                  Prob > F        =     0.0001
-                                                  R-squared       =     0.1249
-                                                  Adj R-squared   =     0.1027
-                                                  Root MSE        =     0.0947
+Linear regression, absorbing indicators           Number of obs   =        882
+                                                  F(   3,     49) =       5.06
+                                                  Prob > F        =     0.0039
+                                                  R-squared       =     0.1451
+                                                  Adj R-squared   =     0.1323
+                                                  Root MSE        =     0.1140
 
-                         (Std. Err. adjusted for 24 clusters in river_segment)
+                         (Std. Err. adjusted for 50 clusters in river_segment)
 ------------------------------------------------------------------------------
              |               Robust
       change |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-   _Iafter_1 |  -.0449689    .009729    -4.62   0.000    -.0650948    -.024843
-lag_deviat~n |  -.1461369   .0592817    -2.47   0.022    -.2687705   -.0235033
-_IaftXlag_~1 |   .1429888   .0448007     3.19   0.004     .0503114    .2356662
-       _cons |   .0366811   .0104734     3.50   0.002     .0150152     .058347
+   _Iafter_1 |   -.038868   .0520087    -0.75   0.458    -.1433835    .0656475
+lag_deviat~n |  -.2881081   .0741663    -3.88   0.000    -.4371508   -.1390653
+_IaftXlag_~1 |   .0261201   .1497595     0.17   0.862    -.2748329    .3270731
+       _cons |   .1057154   .0305864     3.46   0.001     .0442498     .167181
 -------------+----------------------------------------------------------------
-  river_year |   absorbed                                      (14 categories)
+  river_year |   absorbed                                      (11 categories)
 
 . 
 . replace event_time = event_time - offset
-(720 real changes made)
+(122 real changes made)
 
 . label var small_share_hat "Share of smaller side of the river"
 
@@ -372,12 +244,17 @@ _IaftXlag_~1 |   .1429888   .0448007     3.19   0.004     .0503114    .2356662
 
 . 
 . gen upper = small_share_hat + 1.96*se
+(852 missing values generated)
 
 . gen lower = small_share_hat - 1.96*se
+(852 missing values generated)
 
 . tw (area  upper lower event_time, sort astyle( ci plotregion)) (line small_sh
 > are_hat event_time, sort),  scheme(s2color) legend(order(1 "95% confidence in
 > terval" 3 "Share of smaller side of the river"))
+
+. 
+end of do-file
 
 . graph save results/`1'.gph, replace
 (file results/arkansas.gph saved)

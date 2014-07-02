@@ -21,23 +21,33 @@ tsset river_bridge year
 gen total = left+right
 
 gen start_decade = int(start/10)*10
-local window 40
+local dec 3
+local window `dec'0
 
-local sample_window 60
+local sample_window 40
+local latest 1900
 
 * for ease of reading, introduce a round offset for event time
 scalar offset = 100
 gen event_time = year-start_decade+offset
-keep if abs(event_time-offset)<=`sample_window'
+* also keep control regions
+keep if abs(event_time-offset)<=`sample_window' | missing(start)
+* only use 19th century, when post offices are relevant
+keep if year<=`latest' & (start_decade<=`latest' | missing(start))
 
 replace event_time = -`window'+offset if event_time<-`window'+offset
-replace event_time = `window'+offset if event_time>`window'+offset
+replace event_time = `window'+offset if event_time>`window'+offset & !missing(event_time)
 
-gen byte before = year<start
+forval t = 7/13 {
+	gen byte treatment`t'0 = (event_time==`t'0)
+}
+
+gen byte no_bridge = missing(start)
+gen byte before = year<start & !no_bridge
 gen byte after = year>=start
 
-egen left_before = sum(cond(before,left,0)), by(river_bridge)
-egen right_before = sum(cond(before,right,0)), by(river_bridge)
+egen left_before = sum(cond(!after,left,0)), by(river_bridge)
+egen right_before = sum(cond(!after,right,0)), by(river_bridge)
 
 gen small = cond(left_before<right_before,left,right)
 gen large = cond(left_before<right_before,right,left)
