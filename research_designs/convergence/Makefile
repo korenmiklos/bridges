@@ -1,9 +1,9 @@
 RIVERS = arkansas colorado columbia connecticut delaware hudson mississippi missouri ohio red snake tennessee
 results: $(foreach river,$(RIVERS),results/$(river).gph) results/pooled.gph results/pooled_event_study.gph
 count: $(foreach river,$(RIVERS),data/$(river).csv)
-results/%.log results/%.gph: data/%.csv convergence.do create_variables.do
+results/%.log results/%.gph: data/%.csv convergence.do create_variables.do estimate_and_plot.do
 	stata-mp -b do convergence $(basename $(notdir $@))
-results/pooled.log results/pooled.gph: $(foreach river,$(RIVERS),data/$(river).csv) pooled.do create_variables.do
+results/pooled.log results/pooled.gph: $(foreach river,$(RIVERS),data/$(river).csv) pooled.do create_variables.do estimate_and_plot.do
 	stata-mp -b do pooled $(foreach river,$(RIVERS),$(river))
 results/pooled_event_study.log results/pooled_event_study.gph: $(foreach river,$(RIVERS),data/$(river).csv) event_study.do create_variables.do
 	stata-mp -b do event_study $(foreach river,$(RIVERS),$(river))
