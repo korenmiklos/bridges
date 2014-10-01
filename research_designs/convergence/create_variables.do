@@ -29,7 +29,7 @@ local latest 1900
 
 * for ease of reading, introduce a round offset for event time
 scalar offset = 100
-gen event_time = year-start_decade+offset
+gen event_time = year-start+offset
 * also keep control regions
 keep if abs(event_time-offset)<=`sample_window' | missing(start)
 * only use 19th century, when post offices are relevant
@@ -38,8 +38,8 @@ keep if year<=`latest' & (start_decade<=`latest' | missing(start))
 replace event_time = -`window'+offset if event_time<-`window'+offset
 replace event_time = `window'+offset if event_time>`window'+offset & !missing(event_time)
 
-forval t = 7/13 {
-	gen byte treatment`t'0 = (event_time==`t'0)
+forval t = 70/130 {
+	gen byte treatment`t' = (event_time==`t')
 }
 
 gen byte no_bridge = missing(start)
@@ -63,5 +63,5 @@ gen scaled_difference = cond(left_before<right_before,right-left,left-right)/sqr
 
 gen deviation = 0.5-small_share
 tsset river_bridge year
-gen change = deviation-L10.deviation
-gen lag_deviation = L10.deviation
+gen change = deviation-L1.deviation
+gen lag_deviation = L1.deviation

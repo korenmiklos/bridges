@@ -21,7 +21,7 @@ def get_every_10k_points(line_in_meters):
 speedups.enable()
 
 river = sys.argv[1]
-decades = [str(year) for year in range(1790,1960,10)]
+decades = [str(year) for year in range(1790,1960,1)]
 
 geojson = json.load(open("../../data/us-postal-history/consistent/postoffices.geojson"))
 bridges = json.load(open("../../data/rivers/%s/bridges.geojson" % river))['features']

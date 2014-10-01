@@ -10,10 +10,10 @@ forval r=1/12 {
 }
 
 xtpoisson total treatment* river_mile_*, i(river_year) fe
-test (treatment70+treatment80+treatment80)/3==(treatment110+treatment120+treatment130)/3
+*test (treatment70+treatment80+treatment80)/3==(treatment110+treatment120+treatment130)/3
 gen po_hat = .
 gen se = .
-foreach t in 70 80 90 100 110 120 130 {
+forval t=70/130 {
 	replace po_hat = _b[treatment`t'] if event_time==`t'
 	replace se = _se[treatment`t'] if event_time==`t'
 }
