@@ -1,13 +1,13 @@
 set more off
 set matsize 5000, permanently
-local RIVERS arkansas colorado columbia connecticut delaware hudson  missouri ohio red snake tennessee
-
+local RIVERS arkansas colorado columbia connecticut delaware hudson ohio red snake tennessee missouri  mississippi
 tempfile rivers
 clear
 save `rivers', replace emptyok
 
 foreach river in `RIVERS' {
-	insheet using data/`river'.csv, clear
+	insheet using output/`river'.csv, clear
+	gen location = _n
 	gen str river = "`river'"
 	append using `rivers'
 	save `rivers', replace
@@ -26,9 +26,15 @@ gen segment = int(river_mile*1.6/30)
 egen cluster = group(river segment)
 
 gen log_post_office_count = log(post_office_count)
+gen byte has_bridge = bridges>0 & !missing(bridges)
 
-reg bridges river_mile_* water_covered_area, cluster(cluster) 
-ivreg log_post_office_count (bridges = water_covered_area) river_mile_*,  cluster(cluster) 
+tsset river_number location
+
+reg bridges river_mile_* water_covered_area crossing_points, robust
+test water_covered_area crossing_points
+ 
+ivregress 2sls log_post_office_count (bridges = water_covered_area L.water_covered_area F.water_covered_area crossing_points F.crossing_points L.crossing_points) river_mile_*, robust first
+ivregress 2sls log_post_office_count (has_bridge = water_covered_area L.water_covered_area F.water_covered_area crossing_points F.crossing_points L.crossing_points) river_mile_*, robust first
 
 /*
 Instrumental variables (2SLS) regression               Number of obs =     907
