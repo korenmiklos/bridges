@@ -49,7 +49,7 @@ bridges = json.load(open("../../data/rivers/%s/bridges.geojson" % river))['featu
 bridge_collection = ProjectedFeature(MultiPoint([shape(bridge['geometry']) for bridge in bridges]), projection='wgs84').lcc
 segments = [dict(river_mile=point['river_mile'], 
 	geometry=disc_5km(point['geometry'])) for point in get_every_10k_points(river_line_meters)]
-water_body_fc = json.load(open("../../data/rivers/%s/river_poly.geojson" % river))
+water_body_fc = json.load(open("input/%s/river_poly.geojson" % river))
 water_body = ProjectedFeature(feature_collection_to_multipolygon(water_body_fc), projection='epsg3975').lcc
 
 writer = csv.DictWriter(sys.stdout, fieldnames=['river_mile', 'water_covered_area', 'bridges', 'post_office_count'])

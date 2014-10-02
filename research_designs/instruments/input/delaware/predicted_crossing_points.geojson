@@ -1,0 +1,37 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3975" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7232605.0883275876, 4744955.868805049 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7227926.9965886343, 4738381.606276365 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7244845.167100071, 4796701.1282846732 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7254788.1697724415, 4763233.7347973948 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7254788.1697724415, 4763233.7347973948 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7232605.0883275876, 4744955.868805049 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7249571.0774424672, 4802089.0021682298 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7244379.7015942317, 4806230.8882301431 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7244845.167100071, 4796701.1282846732 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7235131.0686538778, 4813584.4360787841 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7230495.1840148168, 4817258.2158452701 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 18.000000 }, "geometry": { "type": "Point", "coordinates": [ -7227631.4618357755, 4819523.5612789411 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7249378.089474665, 4802904.9001043849 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7249571.0774424672, 4802089.0021682298 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7246290.1592637207, 4805351.5106073441 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7244379.7015942317, 4806230.8882301431 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7235317.2229915429, 4814016.5178256612 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7235131.0686538778, 4813584.4360787841 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7233096.0041269604, 4815765.0554343611 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7230495.1840148168, 4817258.2158452701 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7227631.4618357755, 4819523.5612789411 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 17.000000 }, "geometry": { "type": "Point", "coordinates": [ -7226017.1396699883, 4821325.2200065134 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 6.000000 }, "geometry": { "type": "Point", "coordinates": [ -7289541.6585227707, 4664568.009374463 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 6.000000 }, "geometry": { "type": "Point", "coordinates": [ -7280283.8710870314, 4644292.5244309753 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 6.000000 }, "geometry": { "type": "Point", "coordinates": [ -7289541.6585227707, 4664568.009374463 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 6.000000 }, "geometry": { "type": "Point", "coordinates": [ -7212597.0603029709, 4725445.3631299222 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 6.000000 }, "geometry": { "type": "Point", "coordinates": [ -7222562.097253046, 4733996.4161348706 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 6.000000 }, "geometry": { "type": "Point", "coordinates": [ -7212597.0603029709, 4725445.3631299222 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 10.000000 }, "geometry": { "type": "Point", "coordinates": [ -7227926.9965886343, 4738381.606276365 ] } },
+{ "type": "Feature", "properties": { "river_mile": 330, "POINTA_2": 10.000000 }, "geometry": { "type": "Point", "coordinates": [ -7222562.097253046, 4733996.4161348706 ] } }
+]
+}

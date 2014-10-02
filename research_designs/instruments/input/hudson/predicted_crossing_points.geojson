@@ -1,0 +1,20 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::3975" } },
+                                                                                
+"features": [
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 12.000000 }, "geometry": { "type": "Point", "coordinates": [ -7135145.5256911004, 4885079.290704092 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 12.000000 }, "geometry": { "type": "Point", "coordinates": [ -7135117.4474995295, 4883452.6452281382 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 7.000000 }, "geometry": { "type": "Point", "coordinates": [ -7135117.4474995295, 4883452.6452281382 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 7.000000 }, "geometry": { "type": "Point", "coordinates": [ -7134560.8964546872, 4870700.6386206755 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 7.000000 }, "geometry": { "type": "Point", "coordinates": [ -7134560.8964546872, 4870700.6386206755 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 7.000000 }, "geometry": { "type": "Point", "coordinates": [ -7129897.7593668755, 4813048.4871790381 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 3.000000 }, "geometry": { "type": "Point", "coordinates": [ -7141928.9745374555, 4778905.0087066879 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 3.000000 }, "geometry": { "type": "Point", "coordinates": [ -7141928.9745374555, 4778905.0087066879 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 3.000000 }, "geometry": { "type": "Point", "coordinates": [ -7135682.4046164369, 4789630.6807161812 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 7.000000 }, "geometry": { "type": "Point", "coordinates": [ -7135682.4046164369, 4789630.6807161812 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 7.000000 }, "geometry": { "type": "Point", "coordinates": [ -7131030.3871082608, 4800207.6050123246 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 7.000000 }, "geometry": { "type": "Point", "coordinates": [ -7129897.7593668755, 4813048.4871790381 ] } },
+{ "type": "Feature", "properties": { "rivermile_": 290, "POINTA_2": 7.000000 }, "geometry": { "type": "Point", "coordinates": [ -7131030.3871082608, 4800207.6050123246 ] } }
+]
+}
