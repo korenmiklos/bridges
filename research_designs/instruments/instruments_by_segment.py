@@ -32,6 +32,15 @@ def feature_collection_to_multipolygon(fc):
 		list_of_polygons.extend(poly)
 	return MultiPolygon(list_of_polygons)
 
+def simple_count(multi_point, polygon):
+	inside = polygon.intersection(multi_point)
+	if inside.is_empty:
+		return 0
+	elif inside.geom_type=='Point':
+		return 1
+	else:
+		return len(inside.geoms)
+
 speedups.enable()
 
 river = sys.argv[1]
@@ -51,21 +60,21 @@ segments = [dict(river_mile=point['river_mile'],
 	geometry=disc_5km(point['geometry'])) for point in get_every_10k_points(river_line_meters)]
 water_body_fc = json.load(open("input/%s/river_poly.geojson" % river))
 water_body = ProjectedFeature(feature_collection_to_multipolygon(water_body_fc), projection='epsg3975').lcc
+predicted_crossing_points = MultiPoint([
+	ProjectedFeature(shape(point['geometry']), projection='epsg3975').lcc for point in 
+	json.load(open("input/%s/predicted_crossing_points.geojson" % river))['features']])
 
-writer = csv.DictWriter(sys.stdout, fieldnames=['river_mile', 'water_covered_area', 'bridges', 'post_office_count'])
+writer = csv.DictWriter(sys.stdout, fieldnames=['river_mile', 'water_covered_area', 'bridges', 'post_office_count', 'crossing_points'])
 writer.writeheader()
 
 for segment in segments:
 	water_covered_area = segment['geometry'].intersection(water_body.buffer(0)).area
-	bridges = segment['geometry'].intersection(bridge_collection)
+	bridges = simple_count(bridge_collection, segment['geometry'])
+	crossing_points = simple_count(predicted_crossing_points, segment['geometry'])
 	post_office_count = post_offices.count_overlapping_points(Feature(geometry=segment['geometry']))
-	if bridges.is_empty:
-		number = 0
-	elif bridges.geom_type=='Point':
-		number = 1
-	else:
-		number = len(bridges.geoms)
 	writer.writerow(dict(river_mile=segment['river_mile'], 
 		water_covered_area=water_covered_area/segment['geometry'].area,
-		bridges=number,
-		post_office_count=post_office_count))
+		bridges=bridges,
+		crossing_points=crossing_points,
+		post_office_count=post_office_count
+		))
