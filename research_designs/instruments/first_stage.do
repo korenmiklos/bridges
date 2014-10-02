@@ -29,18 +29,19 @@ gen log_post_office_count = log(post_office_count)
 
 reg bridges river_mile_* water_covered_area, cluster(cluster) 
 ivreg log_post_office_count (bridges = water_covered_area) river_mile_*,  cluster(cluster) 
-/*
-Instrumental variables (2SLS) regression               Number of obs =    1206
-                                                       F( 23,   424) =   56.35
-                                                       Prob > F      =  0.0000
-                                                       R-squared     =  0.5867
-                                                       Root MSE      =  .64549
 
-                                  (Std. Err. adjusted for 425 clusters in cluster)
+/*
+Instrumental variables (2SLS) regression               Number of obs =     907
+                                                       F( 23,   399) =   27.03
+                                                       Prob > F      =  0.0000
+                                                       R-squared     =  0.4739
+                                                       Root MSE      =  .56372
+
+                                  (Std. Err. adjusted for 400 clusters in cluster)
 ----------------------------------------------------------------------------------
                  |               Robust
 log_post_offic~t |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -----------------+----------------------------------------------------------------
-         bridges |   .2954681    .164803     1.79   0.074    -.0284645    .6194006
+         bridges |    .136285   .2181477     0.62   0.533    -.2925776    .5651476
 
 */

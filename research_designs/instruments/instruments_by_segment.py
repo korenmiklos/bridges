@@ -6,8 +6,8 @@ import sys
 from project_geojson import ProjectedFeature
 from quadtree import QuadTree, Feature, point_in_rectangle
 
-def disc_10km(geometry_in_meters):
-	return geometry_in_meters.buffer(10000.0)
+def disc_5km(geometry_in_meters):
+	return geometry_in_meters.buffer(5000.0)
 
 def get_every_10k_points(line_in_meters):
 	length = line_in_meters.length
@@ -48,7 +48,7 @@ river_line_meters = ProjectedFeature(json.load(open("../../data/rivers/%s/river.
 bridges = json.load(open("../../data/rivers/%s/bridges.geojson" % river))['features']
 bridge_collection = ProjectedFeature(MultiPoint([shape(bridge['geometry']) for bridge in bridges]), projection='wgs84').lcc
 segments = [dict(river_mile=point['river_mile'], 
-	geometry=disc_10km(point['geometry'])) for point in get_every_10k_points(river_line_meters)]
+	geometry=disc_5km(point['geometry'])) for point in get_every_10k_points(river_line_meters)]
 water_body_fc = json.load(open("../../data/rivers/%s/river_poly.geojson" % river))
 water_body = ProjectedFeature(feature_collection_to_multipolygon(water_body_fc), projection='epsg3975').lcc
 
