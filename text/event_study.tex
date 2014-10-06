@@ -1,0 +1,63 @@
+\section{A historical event study}
+The cross-sectional patterns reported in the previous section are consistent with the model. However, they do not address a key identification concern. If local amenities are heterogeneous in space, than equilibrium population density will also vary in space. There will be more habitable locations on the river that are more populous. If bridges are subject to economies of scale (that is, one cannot build a smaller bridge serving half the people for half the cost), then it is these more populous places where bridges will be built.
+
+To partially address this identification concern, we conduct an event study using historical data on early bridges. We study the neighborhood of bridge locations before and after the bridge was built. We say ``partially address'' because our model is not dynamic and so does not speak directly to the exercises reported below. We can, however, ask whether bridge regions are already more populous before the bridge is built, or grow faster only after the bridge.
+
+We study the 19th century bridges on the twelve rivers. Table \ref{tab:river-descriptives} lists the rivers by the time of the first bridge, the total number of bridges by 1900, and their length.
+
+\dotable{river-descriptives}{Number and date of bridges}
+
+\subsection{Post offices and population}
+To study the evolution of population before and after the bridge, we need population data in high resolution both in space and time. The decennial census is usually reported by counties, which, especially in 19th century, may encompass large areas with several townships and several bridges.
+
+To proxy for population, we have built and use a dataset on historical post offices.\footnote{See Armenter, Koren, Menyhért, Nagy and Vujic (2014) for details.} Before the start of Rural Free Delivery in 1896, rural residents could only pick up their mail at post offices. Therefore, a post office was a crucial milestone in a township's life. 
+
+We use the opening date of the post office as the birth date of a large enough settlement. More specifically, in any given year, we can count the number of post offices in a region to proxy for development.
+
+Figure \ref{fig:post-office-count} reports the number of post offices over time. The number has grown steadily throughout the 19th century. 
+
+\dofigure{post-office-count}{Number of post offices over time}
+
+To illustrate the correlation between population and post offices, Figure \ref{fig:post-offices-1830} plots the number of offices by county against their 1830 population. There is a strong correlation between the two until a county population of about 50,000. That is, using post offices for rural counties seems like a valid proxy for population. The relationship breaks down for large counties.
+
+\dofigure{post-offices-1830}{Population and the number of post offices across countries}
+
+
+\subsection{Event study}
+The units of observation are actual or potential bridge locations along each of the twelve rivers. The outcome variable is the number of post offices within 10kms of the bridge location $b$ at time $t$ on river $r$. Because this number is often zero, we estimate a Poisson model.
+
+Figure \ref{fig:post_offices_in_bridge_buffers} shows how the outcome variable was constructed. It plots a section of Delaware river in 1830, highlighting a 10km band on either side. The bridges are surrounded by 10km discs and the post offices are denoted by dots. For each bridge, we count the post offices within the 10km disc.
+%% NB: future bridges would be even better control groups
+As a control group, we also include locations with no bridge. We include every 10th kilometer of the river as a control group if there is no bridge on that section.
+
+\dofigure{post_offices_in_bridge_buffers}{Bridges and post offices around the Delaware in 1830}
+
+The expected number of post offices depends on the time since the bridge was built. The key parameters of interest are $\beta_s$, denoting the proportional difference in the number of post offices relative to non-bridge locations.
+
+We include river-decade dummies $\mu_{rt}$ because rivers became populated at different times. We control for the rivermile associated with a location $b$, because it may be correlated with local amenities. For example, the downstream segment of the river may be more navigable. Because rivers differ in their hydrological features, we let the effect of rivermiles vary by river.
+\begin{equation}
+\label{eq:poisson}
+E ({n_{rbt}})
+		 = \exp
+		 \left[\mu_{rt}+\sum_{s=-40}^{40}\beta_s I(t=T_b+s) + \gamma_r m_{b}\right].
+\end{equation}
+Figure \ref{fig:pooled_event_study} plots the estimated $\beta_s$ coefficients together with their 95-percent confidence interval. Bridge locations have, on average, 40 percent more post offices than non-bridge locations even before the bridge is built. After an initial jump, the number of post offices gradually increases. Three decades after the bridge, these locations have 50 percent more post offices. That is, while there is evidence for strong pre-selection of bridge sites, we also see a marked additional development in the decades following bridge construction.\footnote{The F-test rejects that 10--30 years after the bridge the number of post offices is the same as 10--30 years before the bridge, with a $p$-value of 0.045.}
+
+\dofigure{pooled_event_study}{Poisson estimates for post office count before and after the bridge}
+
+\subsection{Convergence}
+To test whether the development is related to the bridge, we also study the two sides of the river separately. In particular, we ask if the less populous side catches up to the more populous side after the bridge is built. While we did not prove this prediction in the model, we can argue that this is a plausible prediction. Suppose a bridge is built connecting a small and a large city. By the gravity equation, the increased trade opportunity will be more important for the small city, so it will grow faster than the large one. The size difference between the two sides will decrease.
+
+We use a similar research design as above, but with a different outcome variable. Let $s_{rbt}$ denote the share of post offices within 10kms of location $b$ on river $r$ on the ``smaller'' side. We classify the left side as smaller if the total number of post offices on the left side of the river before the bridge is built is smaller than on the right side of the river. By construction $s_{rbt}\le 0.5$.
+
+We ask whether the share of the smaller side converges toward 50 percent, by estimating
+\[
+s_{rbt}		 = 
+ 	\mu_{rt}+\sum_{s=-40}^{40}\beta_s I(t=T_b+s) + e_{rbt}.
+\]
+Again, $\beta_s$ are the treatment effects over time and we include river-decade fixed effects.
+
+%% NB: we could do higher frequency in time
+Figure \ref{fig:pooled_convergence} plots the estimated $\beta_s$s from 30 years before the bridge to 30 years after, together with their 95 percent confidence intervals. At an average bridge location, the smaller side holds about 15 percent of the post offices before the bridge is built, with 85 percent on the other side. That is, the typical bridge location is rather asymmetric.\footnote{Non-bridge locations are even more asymmetric. They feature an 8--92 percent split.} Shortly after the bridge is built, the share of the smaller side increases dramatically to 22 percent. While very far from complete convergence (which would be captured by a 50 percent share), the two sides become significantly more similar after the bridge.\footnote{The F-test rejects that 10--30 years after the bridge the number of post offices is the same as 10--30 years before the bridge, with a $p$-value of 0.002.}
+
+\dofigure{pooled_convergence}{Share of smaller side of the river around the bridge}
