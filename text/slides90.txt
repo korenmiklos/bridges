@@ -23,13 +23,13 @@ shops.\textquotedblright \bigskip \newline
 * New economic geography promises to explain agglomeration with transportation costs (``market access").
 	* But market access varies little in space.
 	* You need additional agglomeration forces (interacting with distance) to explain cities.
+...
 * We show that the topology of space matters for market access.
 * Bridges, in particular, make market access more uneven, hence leading to strong agglomeration.
 
 == What we do ==
 * We build a theory to explain where people agglomerate in space.
 * Stylized but geographically rich environment: a subset of the globe, divided by a river.
-	* Two banks differ in productivity $\to$ have an incentive to trade.
 	* Trade costly, both inland and across the river.
 	* Crossing the river over a bridge is less costly than crossing it by boat.
 * Building a bridge decreases the cost of crossing the river at a point $\to$ increases concentration of economic activity around that point $\to$ brings about benefits from agglomeration.
@@ -40,12 +40,13 @@ shops.\textquotedblright \bigskip \newline
 	* Test predictions on high-resolution population data from the U.S.
 * Conduct two additional exercises:
 	* use historical data to check the effect of bridges on population growth,
-	* use model to measure the welfare gains from building a bridge.
+	* estimate the causal effects of bridges with instrumental variables.
 
 == Related literature ==
 === Models with a rich space topology ===
 	* \textit{Ricardian trade}: Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012), Co\c{s}ar and Fajgelbaum (2012).
 	* \textit{Neoclassical under Armington assumption}: Fabinger (2011), Allen and Arkolakis (2014).
+
 === Transport infrastructure ===
 	* Baum-Snow, Brandt, Henderson, Turner and Zhang (2013).
 	* Baum-Snow (2007),Donaldson (2012), Donaldson and Hornbeck (2013), Duranton and Turner (2014).
@@ -59,9 +60,8 @@ shops.\textquotedblright \bigskip \newline
 
 == Outline ==
 1. A spatial model with bridges
-3. Data
+3. Data on rivers and bridges
 4. Research designs
-5. Broader implications
 6. Conclusion
 
 
@@ -72,19 +72,16 @@ shops.\textquotedblright \bigskip \newline
 * We build a model of bridges at fixed locations, and analyze the resulting distribution of economic activity in space.
 * Costly trade: location matters.
 * Free labor mobility: people move to minimize trade costs.
-* Ricardian comparative advantage: people move close to the river to exploit gains from trade.
-	* Very similar predictions with a gravity-based model.
 
 == Geography ==
 * Continuous space. Two regions, $R\in \left \{ H,F\right \} $,
 separated by a river without meanders.
 * A location is indexed by 
 \[
-\underset{\text{region}}{\underbrace{R}},\underset{\text{distance from river}}{\underbrace{\ell }},\underset{\text{closest river mile}}{\underbrace{h}}, 
+z = \underset{\text{region}}{\underbrace{R}},\underset{\text{distance from river}}{\underbrace{\ell }},\underset{\text{closest river mile}}{\underbrace{h}}, 
 \]
-and is endowed with land $\lambda \left( R,\ell ,h\right) >0$.
+and is endowed with land $\lambda \left(z\right) >0$.
 * Bridges at river miles $h_{1},\ldots ,h_{B}$.
-* Two goods, $i\in \left \{ X,M\right \} $.
 
 == ==
 \longfigure{figurem1}{Geography in our model}
@@ -97,25 +94,28 @@ Shipment of goods is costly:
 
 == Consumption ==
 * Mass of $N$ consumers, freely mobile across space.
-* Consumer living at $\left( R,\ell ,h\right)$ owns local land, supplies one unit of labor inelastically, and chooses her consumption by maximizing
+* They value goods produced at each location (Armington): gravity equation of trade.
+* Consumer living at $z$ owns local land, supplies one unit of labor inelastically, and chooses her consumption by maximizing
 \begin{equation*}
-u\left( R,\ell ,h\right) =q_{X}\left( R,\ell ,h\right) ^{\frac{1}{2}%
-}q_{M}\left( R,\ell ,h\right) ^{\frac{1}{2}}.
+u\left(z\right) = \int_{z'} q_{z'}\left(z \right)^{1-1/\sigma}dz.
 \end{equation*}
+* Utility-based price index
+\begin{equation*}
+P\left(z\right) = \int_{z'} [p_{z'}\tau(z',z)]^{1-1/\sigma}dz,
+\end{equation*}
+where $\tau(z',z)$ is the minimum transportation cost between $z'$ and $z$.
 
 == Production ==
-* Good $i\in \left \{ X,M\right \}$ produced by perfectly competitive firms combining labor and land under Cobb--Douglas production technology:
+* Good $z$ produced by perfectly competitive firms combining labor and land under Cobb--Douglas production technology:
 \begin{equation*}
-	\underbrace{q_{i}\left( R,\ell,h\right)}_\text{output per unit of land}
+	\underbrace{q\left(z\right)}_\text{output per unit of land}
 	=
-	\left[ \underbrace{\overline{a}_{i}^{R}}_\text{unit cost of production}\right] ^{-1}
-\cdot \left. \underbrace{n_{i}\left( R,\ell ,h\right) }_\text{labor per unit of land}\right. ^{1-\alpha }
+	\left[ \underbrace{\overline{a}\left(z\right)}_\text{unit cost of production}\right] ^{-1}
+\cdot \left. \underbrace{n\left(z\right) }_\text{labor per unit of land}\right. ^{1-\alpha }
 \end{equation*}
-* Assume that Home has a ''comparative advantage'' in $X$: $\overline{a}_{M}^{H}/\overline{a}_{X}^{H}$ high enough that no Home location specializes in $M$. Similarly for Foreign.
-
 
 == Equilibrium ==
-An equilibrium is a set of functions $P_{X}$, $P_{M}$, $n_{X}$, $n_{M}$, $n$, $\lambda _{X}$, $\lambda _{M}$, $w$ and $r$, as well as real wages $u^{H}$ and $u^{F}$ such that
+An equilibrium is a set of functions $p(z)$, $P(z)$, $n(z)$, $w(z)$ and $r$, such that
 1. Utility of workers is maximized and equalized across locations.
 2. Profits are maximized and driven down to zero.
 3. Local land markets clear.
@@ -124,23 +124,8 @@ An equilibrium is a set of functions $P_{X}$, $P_{M}$, $n_{X}$, $n_{M}$, $n$, $\
 6. There is no arbitrage possibility over the river.
 7. There is no arbitrage possibility over bridges.
 8. Trade is balanced between each pair of locations.
-...
-An equilibrium exists and we conjecture it to be unique.
 
-== Gradients ==
-* Rents, population density depend on relative price $P_X/P_M$.
-* There is no inland trade (Spatial Impossibility Theorem): relative prices depend on distance to other side.
-* Population gradient: population density declines with distance to river.
-
-
-
-==	Spatial distribution ==
-Three types of regions on both sides of river:
-1. autarky
-2. trade by boat
-3. trade via bridge
-
-== Iso-density curves ==
+%% discuss equilibrium here
 
 
 
@@ -167,17 +152,6 @@ To illustrate how bridges contribute to spatial heterogeneity, we explore a simp
 ...
 * Especially in early times, when alternative was a ford or a ferry, which was slow and dangerous and when inland transportation was costly.
 	* We need high-resolution historical data.
-
-
-
-==	Alternative hypotheses ==
-=== People agglomerate for other reasons, and build bridges nearby. ===
-* Check for patterns of agglomerations in bridge locations.
-* Use event study to determine which came first.
-* Instrument for bridges (future work).
-
-=== Bridges facilitate trade, but trade does not matter for agglomeration. ===
-* Inconsistent with existing evidence.
 
 
 
@@ -248,7 +222,7 @@ Snake\ River, Tennessee.
 
 
 
-==	Bridges or agglomeration? ==
+==	Which came first: bridges or agglomeration? ==
 1. Event study
 	* Bridge regions grow faster.
 2. Instrumenting for bridges
@@ -277,9 +251,9 @@ E ({N_{rbt}})
 == Event study results ==
 * Post offices increase by 14 percent 40 years after the bridge ($F=45.69$).
 
+
 == Instrumenting bridges ==
 * Local demand for bridges may be correlated with subsequent development.
-== Instrumenting bridges ==
 * Challenge: we need a high-resolution instrument that is uncorrelated with local agglomeration demand.
 * Candidates:
 	* local variation in bridge building costs (hydrology, geology) (see Tompsett, 2013)
