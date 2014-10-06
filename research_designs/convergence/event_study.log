@@ -1,3 +1,34 @@
+
+  ___  ____  ____  ____  ____ (R)
+ /__    /   ____/   /   ____/
+___/   /   /___/   /   /___/   13.1   Copyright 1985-2013 StataCorp LP
+  Statistics/Data Analysis            StataCorp
+                                      4905 Lakeway Drive
+     MP - Parallel Edition            College Station, Texas 77845 USA
+                                      800-STATA-PC        http://www.stata.com
+                                      979-696-4600        stata@stata.com
+                                      979-696-4601 (fax)
+
+Single-user 2-core Stata perpetual license:
+       Serial number:  501306004724
+         Licensed to:  Miklos Koren
+                       Central European University
+
+Notes:
+      1.  (-v# option or -set maxvar-) 5000 maximum variables
+      2.  Command line editing disabled
+      3.  Stata running in batch mode
+
+. do event_study arkansas colorado columbia connecticut delaware hudson mississ
+> ippi missouri ohio red snake tennessee 
+
+. clear
+
+. set more off
+
+. capture log close
+
+. log using results/pooled_event_study.log, text replace
 -------------------------------------------------------------------------------
       name:  <unnamed>
        log:  /Volumes/Home/Dropbox/projects/borders/bridges/research_designs/co
@@ -720,3 +751,6 @@ river_mil~12 |   .0003532   .0000677     5.22   0.000     .0002206    .0004859
 . 
 . 
 . capture log close
+
+. 
+end of do-file

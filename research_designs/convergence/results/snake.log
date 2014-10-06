@@ -1,9 +1,9 @@
 -------------------------------------------------------------------------------
       name:  <unnamed>
-       log:  /Users/koren/Dropbox (CEU MicroData)/projects/borders/bridges/rese
-> arch_designs/convergence/results/snake.log
+       log:  /Volumes/Home/Dropbox/projects/borders/bridges/research_designs/co
+> nvergence/results/snake.log
   log type:  text
- opened on:   2 Jul 2014, 16:35:03
+ opened on:   6 Oct 2014, 09:24:57
 
 . 
 . do create_variables `1'
@@ -12,9 +12,9 @@
 
 . save `rivers', replace emptyok
 (note: dataset contains 0 observations)
-(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54573.000001 no
+(note: file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//St06381.000001 no
 > t found)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54573.000001 saved
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//St06381.000001 saved
 
 . foreach river in `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' {
   2.         di "`1'"
@@ -28,20 +28,30 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54573.000001 saved
  10.         save `rivers', replace
  11. }
 snake
-(37 vars, 128 obs)
-(note: j = 1790 1800 1810 1820 1830 1840 1850 1860 1870 1880 1890 1900 1910 192
-> 0 1930 1940 1950)
+(343 vars, 128 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899 1900 1901 1902 1903 1904 1905 1906 1907 1908 1909 1910 19
+> 11 1912 1913 1914 1915 1916 1917 1918 1919 1920 1921 1922 1923 1924 1925 1926
+>  1927 1928 1929 1930 1931 1932 1933 1934 1935 1936 1937 1938 1939 1940 1941 1
+> 942 1943 1944 1945 1946 1947 1948 1949 1950 1951 1952 1953 1954 1955 1956 195
+> 7 1958 1959)
 
 Data                               wide   ->   long
 -----------------------------------------------------------------------------
-Number of obs.                      128   ->    2176
-Number of variables                  39   ->       8
-j variable (17 values)                    ->   year
+Number of obs.                      128   ->   21760
+Number of variables                 345   ->       8
+j variable (170 values)                   ->   year
 xij variables:
-      left_1790 left_1800 ... left_1950   ->   left_
-   right_1790 right_1800 ... right_1950   ->   right_
+      left_1790 left_1791 ... left_1959   ->   left_
+   right_1790 right_1791 ... right_1959   ->   right_
 -----------------------------------------------------------------------------
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54573.000001 saved
+file /var/folders/3z/vtnw_t3n5rj8d9vqpx133bsh0000gn/T//St06381.000001 saved
 
 . egen river_bridge = group(river bridge)
 
@@ -54,7 +64,7 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54573.000001 saved
 . 
 . tsset river_bridge year
        panel variable:  river_bridge (strongly balanced)
-        time variable:  year, 1790 to 1950, but with gaps
+        time variable:  year, 1790 to 1959
                 delta:  1 unit
 
 . 
@@ -62,7 +72,7 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54573.000001 saved
 
 . 
 . gen start_decade = int(start/10)*10
-(1683 missing values generated)
+(16830 missing values generated)
 
 . local dec 3
 
@@ -77,28 +87,28 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54573.000001 saved
 . * for ease of reading, introduce a round offset for event time
 . scalar offset = 100
 
-. gen event_time = year-start_decade+offset
-(1683 missing values generated)
+. gen event_time = year-start+offset
+(16830 missing values generated)
 
 . * also keep control regions
 . keep if abs(event_time-offset)<=`sample_window' | missing(start)
-(267 observations deleted)
+(2857 observations deleted)
 
 . * only use 19th century, when post offices are relevant
 . keep if year<=`latest' & (start_decade<=`latest' | missing(start))
-(654 observations deleted)
+(7384 observations deleted)
 
 . 
 . replace event_time = -`window'+offset if event_time<-`window'+offset
-(11 real changes made)
+(110 real changes made)
 
 . replace event_time = `window'+offset if event_time>`window'+offset & !missing
 > (event_time)
 (0 real changes made)
 
 . 
-. forval t = 7/13 {
-  2.         gen byte treatment`t'0 = (event_time==`t'0)
+. forval t = 70/130 {
+  2.         gen byte treatment`t' = (event_time==`t')
   3. }
 
 . 
@@ -119,38 +129,38 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St54573.000001 saved
 . gen large = cond(left_before<right_before,right,left)
 
 . gen log_small = ln(small)
-(1206 missing values generated)
+(11206 missing values generated)
 
 . gen log_large = ln(large)
-(1115 missing values generated)
+(10484 missing values generated)
 
 . 
 . gen river_mile_sq = river_mile^2
 
 . 
 . gen small_share = small/total
-(1112 missing values generated)
+(10457 missing values generated)
 
 . replace small_share=0 if total==0
-(1112 real changes made)
+(10457 real changes made)
 
 . * if total number of post offices is poisson, the variance is sqrt of mean
 . gen scaled_difference = cond(left_before<right_before,right-left,left-right)/
 > sqrt(total)
-(1112 missing values generated)
+(10457 missing values generated)
 
 . 
 . gen deviation = 0.5-small_share
 
 . tsset river_bridge year
        panel variable:  river_bridge (unbalanced)
-        time variable:  year, 1790 to 1900, but with gaps
+        time variable:  year, 1790 to 1900
                 delta:  1 unit
 
-. gen change = deviation-L10.deviation
+. gen change = deviation-L1.deviation
 (110 missing values generated)
 
-. gen lag_deviation = L10.deviation
+. gen lag_deviation = L1.deviation
 (110 missing values generated)
 
 . 
@@ -160,83 +170,183 @@ end of do-file
 
 . areg small_share treatment*, a(river_year) cluster(river_segment)
 
-Linear regression, absorbing indicators           Number of obs   =       1255
-                                                  F(   7,     71) =     257.47
-                                                  Prob > F        =     0.0000
-                                                  R-squared       =     0.3042
-                                                  Adj R-squared   =     0.2941
-                                                  Root MSE        =     0.0872
+Linear regression, absorbing indicators           Number of obs   =      11519
+                                                  F(  20,     71) =          .
+                                                  Prob > F        =          .
+                                                  R-squared       =     0.2441
+                                                  Adj R-squared   =     0.2327
+                                                  Root MSE        =     0.0772
 
                          (Std. Err. adjusted for 72 clusters in river_segment)
 ------------------------------------------------------------------------------
              |               Robust
  small_share |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
- treatment70 |   .0002394   .0003353     0.71   0.478    -.0004292     .000908
- treatment80 |  -.0006948   .0024864    -0.28   0.781    -.0056525    .0042629
- treatment90 |   .0302208   .0460917     0.66   0.514    -.0616834    .1221249
-treatment100 |   .1156272   .0741395     1.56   0.123    -.0322029    .2634572
-treatment110 |   .2422626   .1105135     2.19   0.032      .021905    .4626202
-treatment120 |   .4134207     .38037     1.09   0.281    -.3450156    1.171857
-treatment130 |   .8817609   .0241778    36.47   0.000     .8335517    .9299701
-       _cons |   .0157803   .0036984     4.27   0.000      .008406    .0231547
+ treatment70 |   -.000037   .0014356    -0.03   0.980    -.0028995    .0028255
+ treatment71 |  -.0008607    .002947    -0.29   0.771    -.0067369    .0050154
+ treatment72 |   .0001625   .0019274     0.08   0.933    -.0036807    .0040057
+ treatment73 |  -.0012413   .0035366    -0.35   0.727     -.008293    .0058104
+ treatment74 |   -.002694   .0046053    -0.58   0.560    -.0118766    .0064887
+ treatment75 |  -.0026279   .0045789    -0.57   0.568     -.011758    .0065021
+ treatment76 |  -.0040305   .0066425    -0.61   0.546    -.0172752    .0092143
+ treatment77 |   -.005951   .0082995    -0.72   0.476    -.0224996    .0105977
+ treatment78 |  -.0065508   .0082592    -0.79   0.430    -.0230192    .0099176
+ treatment79 |   .0352172   .0462457     0.76   0.449    -.0569941    .1274285
+ treatment80 |    .034549   .0471925     0.73   0.467    -.0595503    .1286483
+ treatment81 |   .0343564   .0469263     0.73   0.466     -.059212    .1279248
+ treatment82 |    .035279   .0465924     0.76   0.451    -.0576236    .1281816
+ treatment83 |    .032495   .0475652     0.68   0.497    -.0623473    .1273373
+ treatment84 |   .0304911    .046792     0.65   0.517    -.0628095    .1237917
+ treatment85 |   .0475061   .0605791     0.78   0.436    -.0732853    .1682975
+ treatment86 |   .0461444   .0609995     0.76   0.452    -.0754851     .167774
+ treatment87 |   .0875928    .070098     1.25   0.216    -.0521787    .2273642
+ treatment88 |    .084049   .0682565     1.23   0.222    -.0520507    .2201486
+ treatment89 |   .0814469   .0684467     1.19   0.238     -.055032    .2179259
+ treatment90 |   .0761609   .0683248     1.11   0.269    -.0600749    .2123967
+ treatment91 |   .0729068   .0680233     1.07   0.287    -.0627278    .2085414
+ treatment92 |   .0693761   .0687298     1.01   0.316    -.0676672    .2064194
+ treatment93 |   .0628181   .0688236     0.91   0.364    -.0744123    .2000484
+ treatment94 |   .0287787   .0647621     0.44   0.658    -.1003533    .1579106
+ treatment95 |   .0271642    .063851     0.43   0.672    -.1001511    .1544796
+ treatment96 |   .0893371   .0725182     1.23   0.222      -.05526    .2339343
+ treatment97 |   .0816942   .0718749     1.14   0.260    -.0616203    .2250086
+ treatment98 |   .0769277   .0708541     1.09   0.281    -.0643514    .2182069
+ treatment99 |   .0653972   .0668811     0.98   0.331    -.0679599    .1987542
+treatment100 |   .1736294   .1081205     1.61   0.113    -.0419568    .3892156
+treatment101 |    .143455   .1114639     1.29   0.202    -.0787978    .3657077
+treatment102 |   .1104019   .1210323     0.91   0.365    -.1309296    .3517335
+treatment103 |   .0990688   .1193369     0.83   0.409    -.1388822    .3370199
+treatment104 |  -.0215543   .0565058    -0.38   0.704    -.1342236     .091115
+treatment105 |  -.0048221   .0637919    -0.08   0.940    -.1320195    .1223753
+treatment106 |    .180485   .1050381     1.72   0.090    -.0289551     .389925
+treatment107 |   .0780117   .1136259     0.69   0.495    -.1485519    .3045754
+treatment108 |   .0697797    .112529     0.62   0.537    -.1545967    .2941562
+treatment109 |   .0722362   .1123418     0.64   0.522    -.1517669    .2962393
+treatment110 |   .0573291   .1113105     0.52   0.608    -.1646178     .279276
+treatment111 |  -.0403992   .0263127    -1.54   0.129    -.0928653    .0120668
+treatment112 |   -.042932    .028032    -1.53   0.130    -.0988262    .0129621
+treatment113 |  -.0513895   .0320778    -1.60   0.114    -.1153508    .0125719
+treatment114 |  -.0601379   .0353576    -1.70   0.093    -.1306389    .0103632
+treatment115 |  -.0598766   .0350855    -1.71   0.092    -.1298352     .010082
+treatment116 |  -.0801515   .0398664    -2.01   0.048    -.1596428   -.0006602
+treatment117 |  -.0463913    .015755    -2.94   0.004    -.0778059   -.0149766
+treatment118 |  -.0483303   .0155122    -3.12   0.003    -.0792608   -.0173999
+treatment119 |  -.0499506    .015161    -3.29   0.002    -.0801807   -.0197205
+treatment120 |   .9487423   .0166627    56.94   0.000     .9155179    .9819667
+treatment121 |   .9421134   .0168536    55.90   0.000     .9085084    .9757184
+treatment122 |   .9416573   .0169204    55.65   0.000      .907919    .9753955
+treatment123 |   .9401524   .0167346    56.18   0.000     .9067845    .9735202
+treatment124 |   .9305532   .0186745    49.83   0.000     .8933173    .9677892
+treatment125 |   .9251964   .0187938    49.23   0.000     .8877226    .9626702
+treatment126 |   .9201998   .0218281    42.16   0.000     .8766757    .9637238
+treatment127 |   .9063554   .0217856    41.60   0.000     .8629161    .9497946
+treatment128 |    .892448   .0225894    39.51   0.000      .847406      .93749
+treatment129 |     .89325   .0224347    39.82   0.000     .8485166    .9379835
+treatment130 |    .868113   .0248523    34.93   0.000     .8185589    .9176672
+       _cons |   .0114988   .0034841     3.30   0.002     .0045517     .018446
 -------------+----------------------------------------------------------------
-  river_year |   absorbed                                      (12 categories)
+  river_year |   absorbed                                     (111 categories)
 
-. test (treatment70+treatment80+treatment80)/3==(treatment110+treatment120+trea
-> tment130)/3
-
- ( 1)  .3333333*treatment70 + .6666667*treatment80 - .3333333*treatment110 -
-       .3333333*treatment120 - .3333333*treatment130 = 0
-
-       F(  1,    71) =   14.90
-            Prob > F =    0.0002
-
+. *test (treatment70+treatment80+treatment80)/3==(treatment110+treatment120+tre
+> atment130)/3
 . predict small_share_hat, xb
 
 . gen se = .
-(1255 missing values generated)
+(11519 missing values generated)
 
-. foreach t in 80 90 100 110 120 130 {
+. forval t=70/130 {
   2.         replace se = _se[treatment`t'] if event_time==`t'
   3. }
+(121 real changes made)
 (11 real changes made)
 (11 real changes made)
 (11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(11 real changes made)
+(10 real changes made)
+(10 real changes made)
+(10 real changes made)
+(10 real changes made)
+(10 real changes made)
+(10 real changes made)
+(10 real changes made)
 (9 real changes made)
+(8 real changes made)
+(8 real changes made)
+(7 real changes made)
+(6 real changes made)
+(6 real changes made)
+(4 real changes made)
+(4 real changes made)
+(4 real changes made)
+(4 real changes made)
+(2 real changes made)
+(2 real changes made)
+(2 real changes made)
+(2 real changes made)
+(2 real changes made)
 (2 real changes made)
 (1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
+(1 real change made)
 
-. replace se = _se[_cons] if event_time==70
-(22 real changes made)
-
+. *replace se = _se[_cons] if event_time==70
 . 
 . xi: areg change i.after*lag_deviation, a(river_year)  cluster(river_segment)
 i.after           _Iafter_0-1         (naturally coded; _Iafter_0 omitted)
 i.after*lag_d~n   _IaftXlag_d_#       (coded as above)
 
-Linear regression, absorbing indicators           Number of obs   =       1145
-                                                  F(   3,     71) =       5.03
-                                                  Prob > F        =     0.0032
-                                                  R-squared       =     0.1773
-                                                  Adj R-squared   =     0.1679
-                                                  Root MSE        =     0.0804
+Linear regression, absorbing indicators           Number of obs   =      11409
+                                                  F(   3,     71) =       3.58
+                                                  Prob > F        =     0.0180
+                                                  R-squared       =     0.0364
+                                                  Adj R-squared   =     0.0268
+                                                  Root MSE        =     0.0306
 
                          (Std. Err. adjusted for 72 clusters in river_segment)
 ------------------------------------------------------------------------------
              |               Robust
       change |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-   _Iafter_1 |  -.0871808   .0783679    -1.11   0.270    -.2434419    .0690803
-lag_deviat~n |  -.1306249   .0686843    -1.90   0.061    -.2675775    .0063276
-_IaftXlag_~1 |  -.2843434    .180067    -1.58   0.119    -.6433868    .0747001
-       _cons |   .0527964   .0332009     1.59   0.116    -.0134044    .1189971
+   _Iafter_1 |   -.021832   .0118875    -1.84   0.070     -.045535     .001871
+lag_deviat~n |  -.0283406   .0133089    -2.13   0.037    -.0548779   -.0018033
+_IaftXlag_~1 |   -.027152   .0279474    -0.97   0.335    -.0828775    .0285735
+       _cons |   .0126395   .0064085     1.97   0.052    -.0001387    .0254176
 -------------+----------------------------------------------------------------
-  river_year |   absorbed                                      (11 categories)
+  river_year |   absorbed                                     (110 categories)
 
 . 
 . replace event_time = event_time - offset
-(67 real changes made)
+(530 real changes made)
 
 . label var small_share_hat "Share of smaller side of the river"
 
@@ -244,10 +354,10 @@ _IaftXlag_~1 |  -.2843434    .180067    -1.58   0.119    -.6433868    .0747001
 
 . 
 . gen upper = small_share_hat + 1.96*se
-(1188 missing values generated)
+(10989 missing values generated)
 
 . gen lower = small_share_hat - 1.96*se
-(1188 missing values generated)
+(10989 missing values generated)
 
 . tw (area  upper lower event_time, sort astyle( ci plotregion)) (line small_sh
 > are_hat event_time, sort),  scheme(s2color) legend(order(1 "95% confidence in
