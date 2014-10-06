@@ -32,9 +32,24 @@ tsset river_number location
 
 reg bridges river_mile_* water_covered_area crossing_points, robust
 test water_covered_area crossing_points
+
+label var log_post_office_count "Number of post offices (log)"
+label var bridges "Number of bridges"
+label var has_bridge "Segment has a bridge (dummy)"
+label var water_covered_area "Width of the river"
+label var crossing_points "Number of predicted crossing points"
+
+reg bridges water_covered_area L.water_covered_area F.water_covered_area crossing_points F.crossing_points L.crossing_points river_mile_*, robust
+outreg2 using output/bridges_first_stage.tex, tex(frag) replace label
+
+reg has_bridge water_covered_area L.water_covered_area F.water_covered_area crossing_points F.crossing_points L.crossing_points river_mile_*, robust
+outreg2 using output/bridges_first_stage, tex(frag) append label
  
-ivregress 2sls log_post_office_count (bridges = water_covered_area L.water_covered_area F.water_covered_area crossing_points F.crossing_points L.crossing_points) river_mile_*, robust first
-ivregress 2sls log_post_office_count (has_bridge = water_covered_area L.water_covered_area F.water_covered_area crossing_points F.crossing_points L.crossing_points) river_mile_*, robust first
+ivregress 2sls log_post_office_count (bridges = water_covered_area L.water_covered_area F.water_covered_area crossing_points F.crossing_points L.crossing_points) river_mile_*, robust
+outreg2 using output/bridges_iv.tex, tex(frag) replace label
+
+ivregress 2sls log_post_office_count (has_bridge = water_covered_area L.water_covered_area F.water_covered_area crossing_points F.crossing_points L.crossing_points) river_mile_*, robust
+outreg2 using output/bridges_iv.tex, tex(frag) append label
 
 /*
 Instrumental variables (2SLS) regression               Number of obs =     907
