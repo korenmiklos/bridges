@@ -15,8 +15,18 @@ too. It had forty houses, three hotels, and several stores and
 shops.\textquotedblright \bigskip \newline
 (Dale, F.:\ Bridges over the Delaware river. A history of crossings)
 
-== Introduction ==
+== ==
+\longfigure{US_population_map_2}{Agglomeration is very uneven in space}
 
+== Introduction ==
+* People agglomerate in space to minimize trade costs (broadly defined).
+* New economic geography promises to explain agglomeration with transportation costs (``market access").
+	* But market access varies little in space.
+	* You need additional agglomeration forces (interacting with distance) to explain cities.
+* We show that the topology of space matters for market access.
+* Bridges, in particular, make market access more uneven, hence leading to strong agglomeration.
+
+== What we do ==
 * We build a theory to explain where people agglomerate in space.
 * Stylized but geographically rich environment: a subset of the globe, divided by a river.
 	* Two banks differ in productivity $\to$ have an incentive to trade.
@@ -25,7 +35,7 @@ shops.\textquotedblright \bigskip \newline
 * Building a bridge decreases the cost of crossing the river at a point $\to$ increases concentration of economic activity around that point $\to$ brings about benefits from agglomeration.
 
 
-== Predictions ==
+== Results ==
 * Model delivers a set of predictions on the spatial distribution of population around rivers and bridges.
 	* Test predictions on high-resolution population data from the U.S.
 * Conduct two additional exercises:
@@ -33,16 +43,15 @@ shops.\textquotedblright \bigskip \newline
 	* use model to measure the welfare gains from building a bridge.
 
 == Related literature ==
+=== Models with a rich space topology ===
+	* \textit{Ricardian trade}: Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012), Co\c{s}ar and Fajgelbaum (2012).
+	* \textit{Neoclassical under Armington assumption}: Fabinger (2011), Allen and Arkolakis (2014).
+=== Transport infrastructure ===
+	* Baum-Snow, Brandt, Henderson, Turner and Zhang (2013).
+	* Baum-Snow (2007),Donaldson (2012), Donaldson and Hornbeck (2013), Duranton and Turner (2014).
+	* Redding, Sturn, and Wolf (2011).
+	* Tompsett (2013).
 
-=== Economic geography models with continuous space ===
-* Two-good Ricardian models with agglomeration externalities:\ Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012),\newline Co\c{s}ar and Fajgelbaum (2012)
-* Neoclassical models with CES\ preferences:\newline Fabinger (2011), Allen and Arkolakis (2013)\bigskip
-
-=== Role of transport infrastructure in development ===
-* Railroads:\ Donaldson (2012), Donaldson and Hornbeck (2012)
-* Roads: Baum-Snow et al. (2012), Duranton et al. (2012)
-* Portage sites:\ Bleakley and Lin (2012)
-* Bridges on Mississippi and Ohio: Tompsett (2013)
 
 == Our contributions ==
 * We take the geometry of bridges and trade seriously, and show that this matters.
@@ -50,11 +59,11 @@ shops.\textquotedblright \bigskip \newline
 
 == Outline ==
 1. A spatial model with bridges
-2. Empirical content of our theory
 3. Data
 4. Research designs
 5. Broader implications
 6. Conclusion
+
 
 
 
@@ -64,6 +73,7 @@ shops.\textquotedblright \bigskip \newline
 * Costly trade: location matters.
 * Free labor mobility: people move to minimize trade costs.
 * Ricardian comparative advantage: people move close to the river to exploit gains from trade.
+	* Very similar predictions with a gravity-based model.
 
 == Geography ==
 * Continuous space. Two regions, $R\in \left \{ H,F\right \} $,
@@ -133,34 +143,32 @@ Three types of regions on both sides of river:
 == Iso-density curves ==
 
 
-= Empirical content of our theory =
-==	Key predictions ==
-1. Bridges reduce trade costs substantially.
-2. They affect parts of space differentially (``space warping").
-3. People agglomerate to minimize trade costs.
 
-== Bridges reduce trade costs ==
-* This is a statement about magnitudes.
-* Especially in early times, when alternative was a ford or a ferry, which was slow and dangerous.
-	* We need historical data.
-
-== Bridges warp space ==
-* Because bridges reduce trade costs in a particular ''point'', some parts of space are disproportionately affected.
-* Unequal reduction in trade costs makes some locations relatively more attractive.
-	* Contrast with: reduction in inland transport costs, linear infrastructure (highways, railroads).
-	* We need high-resolution data.
-* Especially in early (pre-automobile) times, when inland transport is costly.
+= Space warping =
+== How do bridges warp space? ==
+To illustrate how bridges contribute to spatial heterogeneity, we explore a simple example step by step. How does a bridge change
+1. bilateral and multilateral distances?
+2. market access---as a direct result?
+3. market access---due to labor mobility?
 
 == ==
-\widefigure{space-warping}{A bridge connecting six locations}
+\longfigure{map_random}{Cities around a bridge (1)}
+\longfigure{acrossriver_random}{Bilateral distance becomes more skewed after bridge}
+\longfigure{change_random}{Winners were already close before the bridge\\
+\small Market access becomes more uneven}
+\longfigure{map_linedancers7}{Cities around a bridge (2)}
+\longfigure{lines_bridgeandnarrow}{Bridges lead to more clustering than a comparable decline in river crossing costs}
+\longfigure{rounds_bridge}{Labor mobility improves bridge location even further}
 
-== People move to market access ==
-* This is a feature of many economic geography models.
-* Empirical evidence: Dekle and Eaton (1998), Hanson (1997, 2005), Redding and Sturm (2008), Ahlfeldt, Redding, Sturm and Wolf (2012).
-* Agglomeration effect is magnified via space warping:
-	* People move close to the bridge on the left bank.
-	* This makes the bridge location even more attractive on the right bank.
-	* And vice versa.
+== Summary ==
+1. Bridges make market access more skewed in space.
+2. Labor mobility reinforces this skewness.
+3. This effect may be quantitatively important for spatial agglomeration patterns.
+...
+* Especially in early times, when alternative was a ford or a ferry, which was slow and dangerous and when inland transportation was costly.
+	* We need high-resolution historical data.
+
+
 
 ==	Alternative hypotheses ==
 === People agglomerate for other reasons, and build bridges nearby. ===
@@ -170,6 +178,7 @@ Three types of regions on both sides of river:
 
 === Bridges facilitate trade, but trade does not matter for agglomeration. ===
 * Inconsistent with existing evidence.
+
 
 
 
@@ -202,10 +211,7 @@ Snake\ River, Tennessee.
 	* Grid cells are $30\times 30$ arc seconds ($\approx 0.5\times 0.5$ km).
 * Historical data from History Database of the Global Environment (HYDE).
 	* Grid cells are $5\times 5$ arc minutes ($\approx 5\times 5$ km).
-* Decennial Censuses since 1790--
-	* county-level (historical county shapes: NHGIS)
-	* township-level (input by hand for select counties)
-* Post offices.
+* Post offices to proxy for settlements.
 
 == Using post offices to proxy for population ==
 * We have data on opening dates of post offices (postalhistory.com).
@@ -222,6 +228,7 @@ Snake\ River, Tennessee.
 \widefigure{post_offices_in_bridge_buffers}{Bridges and post offices on the Delaware, 1830}
 \longfigure{river-descriptives}{Earliest bridges}
 \widefigure{post-office-count}{Number of post offices over time}
+
 
 = Research designs =
 == Research designs ==
@@ -242,35 +249,10 @@ Snake\ River, Tennessee.
 
 
 ==	Bridges or agglomeration? ==
-1. Where are bridges located?
-	* There is no more than random clustering of bridges.
-2. Event study
+1. Event study
 	* Bridge regions grow faster.
-
-== Where are bridges located? ==
-Let $h_b$ the location (river-mile) of bridge $b$. What is the joint distribution of $h_b$s?
-	* $H_0$: if bridges are random, $h_b$ follows a Poisson process.
-	* $H_1$: if agglomeration forces drive bridges, bridges cluster in certain locations (more so than Poisson).
-	* $H_2$: if bridges are valued for trade costs, they come at regular distances (more so than Poisson).
-
-== A hazard model for bridge location ==
-\[
-\Pr(h_b\le h_{b-1}+z) = 1-\exp\left[
-	\int_0^z \lambda(m)dm
-\right]
-\]
-
-$\lambda(m)$: ''hazard'' of a bridge at $m$ miles from nearest neighbor.
-
-* $H_0$: $\lambda(m)=\lambda$ constant
-* $H_1$: $\lambda(m)'<0$ decreasing
-* $H_2$: $\lambda(m)'>0$ increasing after some distance
-
-
-== ==
-\widefigure{delaware-bridge-hazard}{Hazard of a bridge increases with distance (Delaware)}
-\widefigure{hudson-bridge-hazard}{Hazard of a bridge increases with distance (Hudson)}
-\widefigure{connecticut-bridge-hazard}{Hazard of a bridge increases with distance (Connecticut)}
+2. Instrumenting for bridges
+	* Places with ``exogenous" bridges have more post offices.
 
 == Event study ==
 * Using historical post office data, compare bridge neighborhoods before and after the bridge was built.
@@ -278,7 +260,7 @@ $\lambda(m)$: ''hazard'' of a bridge at $m$ miles from nearest neighbor.
 * Proxy for population density: number of post offices within 10km of the bridge.
 
 == Estimable equation ==
-Number of post offices within 10km of bridge $b$ on river $r$ in year $t=1890, 1800, 1810, ..., 1950$
+Number of post offices within 10km of bridge $b$ on river $r$ in year $t=1890, ..., 1950$
 \[
 E ({N_{rbt}})
 		 = \exp
@@ -290,10 +272,66 @@ E ({N_{rbt}})
 * Estimate by Poisson regression.
 
 == ==
-\widefigure{pooled-event-study}{Post office count before and after the bridge}
+\widefigure{pooled_event_study}{Post office count before and after the bridge}
 
 == Event study results ==
 * Post offices increase by 14 percent 40 years after the bridge ($F=45.69$).
+
+== Instrumenting bridges ==
+* Local demand for bridges may be correlated with subsequent development.
+== Instrumenting bridges ==
+* Challenge: we need a high-resolution instrument that is uncorrelated with local agglomeration demand.
+* Candidates:
+	* local variation in bridge building costs (hydrology, geology) (see Tompsett, 2013)
+	* transit demand for bridge:
+		``The crossing at Easton was referred to as the New York--Harrisburg Crossing, indicating that the ferry here served travellers going to western Pennsylvania, and beyond. The two most frequently used river crossings for this traffic were at Trenton and Easton, and these crossings were where the first bridges over the Delaware were built." (p. 2 of Dale)
+	* structural approach (e.g. bridges are likely 10-20 miles from another bridge)
+
+== ==
+\widefigure{columbia}{Delaunay triangles connecting old post offices}
+
+== Transit demand for crossing ==
+* Use post office locations 20 years prior to first bridge.
+* Exclude post offices within 20km of river.
+* Connect them with Delaunay triangles.
+* Count predicted crossing points in each segment.
+
+== First stage ==
+\begin{tabular}{lcc} \hline
+ & (1) & (2) \\
+ & bridges & has\_bridge \\ \hline
+ &  &  \\
+Width of the river & -0.686** & -0.210 \\
+ & (0.304) & (0.135) \\
+---10km downriver & -0.313 & -0.133 \\
+ & (0.194) & (0.113) \\
+---10km upriver & 0.398 & 0.0837 \\
+ & (0.300) & (0.110) \\
+Number of predicted crossing points & 0.0520 & -0.0125 \\
+ & (0.0538) & (0.0237) \\
+---10km downriver & -0.00258 & 0.00152 \\
+ & (0.0547) & (0.0222) \\
+---10km upriver & 0.0457 & 0.0199 \\
+ & (0.0550) & (0.0222) \\
+Observations & 1,646 & 1,646 \\
+ R-squared & 0.083 & 0.116 \\ \hline
+\multicolumn{3}{c}{ Robust standard errors in parentheses} \\
+\multicolumn{3}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
+
+== Second stage ==
+\begin{tabular}{lcc} \hline
+ & log\_post\_office\_count & log\_post\_office\_count \\ \hline
+ &  &  \\
+Number of bridges & 0.232* &  \\
+ & (0.125) &  \\
+Segment has a bridge (dummy) &  & 0.580 \\
+ &  & (0.367) \\
+Observations & 1,155 & 1,155 \\
+ R-squared & 0.367 & 0.367 \\ \hline
+\multicolumn{3}{c}{ Robust standard errors in parentheses} \\
+\multicolumn{3}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
+\end{tabular}
 
 
 ==	Warping of space ==
@@ -303,7 +341,6 @@ E ({N_{rbt}})
 	* Two sides of river converges in population levels ''after'' bridge is built
 
 == ==
-\widefigure{space-warping2}{Space is warped more at the river}
 \widefigure{clustering-at-bridges}{Population is clustered more at the river}
 \widefigure{correlation-of-two-sides}{Two sides of the river are correlated}
 
@@ -325,7 +362,7 @@ s_{rbt}		 =
 \]
 
 == ==
-\widefigure{pooled-convergence}{Two sides of river become more similar after the bridge}
+\widefigure{pooled_convergence}{Two sides of river become more similar after the bridge}
 
 == Convergence results ==
 * Significant convergence for Columbia, Delaware, Ohio, Missouri..., Mississippi, Snake River,   
@@ -356,29 +393,6 @@ With agglomeration externalities (not currently modeled) our theory would predic
 
 
 = Conclusion =
-== Future work ==
-1. Instrumenting bridges
-2. Medieval bridges
-3. Ports
-
-== Instrumenting bridges ==
-* Challenge: we need a high-resolution instrument that is uncorrelated with local agglomeration demand.
-* Candidates:
-	* local variation in bridge building costs (hydrology, geology) (see Tompsett, 2013)
-	* transit demand for bridge:
-		``The crossing at Easton was referred to as the New York--Harrisburg Crossing, indicating that the ferry here served travellers going to western Pennsylvania, and beyond. The two most frequently used river crossings for this traffic were at Trenton and Easton, and these crossings were where the first bridges over the Delaware were built." (p. 2 of Dale)
-	* structural approach (e.g. bridges are likely 10-20 miles from another bridge)
-
-== Medieval bridges ==
-* Bridges and other crossings may have mattered more when inland transport was more costly.
-* Casual evidence: Oxford, Cambridge, Stratford, Bristol.
-* Challenges: paucity of data (but: place names). Conflicting geographical forces: townships also needed to be defended.
-
-== Ports ==
-* Ports are also pointlike features.
-* A few large ports offer more agglomeration benefits than many small ports.
-* Use variation in geography and maritime technology (larger vessels, container ships) to explain agglomeration. 
-
 == Conclusion ==
 * 2D model of location and trade.
 * Spatial pattern of population around bridges is consistent with the model.
