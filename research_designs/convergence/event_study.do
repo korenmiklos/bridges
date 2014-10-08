@@ -6,10 +6,12 @@ log using results/pooled_event_study.log, text replace
 do create_variables  `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' 
 
 forval r=1/12 {
-	gen river_mile_`r' = river_mile*(river=="``r''")
+	foreach X of var river_mile lon lat {
+		gen `X'_`r' = `X'*(river=="``r''")
+	}
 }
 
-xtpoisson total treatment* river_mile_*, i(river_year) fe
+xtpoisson total treatment* river_mile_* lon_* lat_*, i(river_year) fe
 *test (treatment70+treatment80+treatment80)/3==(treatment110+treatment120+treatment130)/3
 gen po_hat = .
 gen se = .
