@@ -1,0 +1,825 @@
+-------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  /Users/koren/Dropbox (CEU MicroData)/projects/borders/bridges/rese
+> arch_designs/convergence/results/clustering.log
+  log type:  text
+ opened on:   9 Oct 2014, 00:01:33
+
+. 
+. do create_variables  `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' 
+
+. tempfile rivers
+
+. save `rivers', replace emptyok
+(note: dataset contains 0 observations)
+(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 no
+> t found)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+
+. foreach river in `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' {
+  2.         di "`1'"
+  3.         insheet using data/`river'.csv, clear
+  4.         gen bridge = _n
+  5.         gen str river = "`river'"
+  6.         reshape long left_5km_ right_5km_ left_10km_ right_10km_, i(bridge
+> ) j(year)
+  7.         foreach X in left_5km right_5km left_10km right_10km {
+  8.                 ren `X'_ `X'
+  9.         }
+ 10.         append using `rivers'
+ 11.         save `rivers', replace
+ 12. }
+arkansas
+(445 vars, 145 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      145   ->   15950
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 159 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      159   ->   17490
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 104 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      104   ->   11440
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+(note: variable name was str36, now str46 to accommodate using data's values)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 55 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       55   ->    6050
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 53 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       53   ->    5830
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+(note: variable name was str41, now str50 to accommodate using data's values)
+(note: variable river was str8, now str11 to accommodate using data's values)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 33 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       33   ->    3630
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+(note: variable name was str41, now str50 to accommodate using data's values)
+(note: variable river was str6, now str11 to accommodate using data's values)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 335 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      335   ->   36850
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 335 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      335   ->   36850
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+(note: variable name was str42, now str61 to accommodate using data's values)
+(note: variable river was str8, now str11 to accommodate using data's values)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 164 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      164   ->   18040
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+(note: variable name was str45, now str61 to accommodate using data's values)
+(note: variable river was str4, now str11 to accommodate using data's values)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 126 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      126   ->   13860
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+(note: variable name was str34, now str61 to accommodate using data's values)
+(note: variable river was str3, now str11 to accommodate using data's values)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 128 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                      128   ->   14080
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+(note: variable name was str41, now str61 to accommodate using data's values)
+(note: variable river was str5, now str11 to accommodate using data's values)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+arkansas
+(445 vars, 75 obs)
+(note: j = 1790 1791 1792 1793 1794 1795 1796 1797 1798 1799 1800 1801 1802 180
+> 3 1804 1805 1806 1807 1808 1809 1810 1811 1812 1813 1814 1815 1816 1817 1818 
+> 1819 1820 1821 1822 1823 1824 1825 1826 1827 1828 1829 1830 1831 1832 1833 18
+> 34 1835 1836 1837 1838 1839 1840 1841 1842 1843 1844 1845 1846 1847 1848 1849
+>  1850 1851 1852 1853 1854 1855 1856 1857 1858 1859 1860 1861 1862 1863 1864 1
+> 865 1866 1867 1868 1869 1870 1871 1872 1873 1874 1875 1876 1877 1878 1879 188
+> 0 1881 1882 1883 1884 1885 1886 1887 1888 1889 1890 1891 1892 1893 1894 1895 
+> 1896 1897 1898 1899)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                       75   ->    8250
+Number of variables                 447   ->      12
+j variable (110 values)                   ->   year
+xij variables:
+left_5km_1790 left_5km_1791 ... left_5km_1899->left_5km_
+right_5km_1790 right_5km_1791 ... right_5km_1899->right_5km_
+left_10km_1790 left_10km_1791 ... left_10km_1899->left_10km_
+right_10km_1790 right_10km_1791 ... right_10km_1899->right_10km_
+-----------------------------------------------------------------------------
+(note: variable name was str57, now str61 to accommodate using data's values)
+(note: variable river was str9, now str11 to accommodate using data's values)
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St14688.000001 saved
+
+. egen river_bridge = group(river bridge)
+
+. egen river_year = group(river year)
+
+. gen segment = int(river_mile/10)
+
+. egen river_segment = group(river segment)
+
+. 
+. tsset river_bridge year
+       panel variable:  river_bridge (strongly balanced)
+        time variable:  year, 1790 to 1899
+                delta:  1 unit
+
+. 
+. * replicate previous results with 10km disc
+. gen left = left_10km
+
+. gen right = right_10km
+
+. 
+. * measures of clustering
+. gen center = left_5km+right_5km
+
+. gen ring = left_10km+right_10km-center
+
+. 
+. gen total = left+right
+
+. 
+. gen start_decade = int(start/10)*10
+(116930 missing values generated)
+
+. local dec 3
+
+. local window `dec'0
+
+. 
+. local sample_window 40
+
+. local latest 1900
+
+. 
+. * for ease of reading, introduce a round offset for event time
+. scalar offset = 100
+
+. gen event_time = year-start+offset
+(116930 missing values generated)
+
+. * also keep control regions
+. keep if abs(event_time-offset)<=`sample_window' | missing(start)
+(55338 observations deleted)
+
+. * only use 19th century, when post offices are relevant
+. keep if year<=`latest' & (start_decade<=`latest' | missing(start))
+(3241 observations deleted)
+
+. 
+. replace event_time = -`window'+offset if event_time<-`window'+offset
+(2208 real changes made)
+
+. replace event_time = `window'+offset if event_time>`window'+offset & !missing
+> (event_time)
+(417 real changes made)
+
+. 
+. forval t = 70/130 {
+  2.         gen byte treatment`t' = (event_time==`t')
+  3. }
+
+. 
+. gen byte no_bridge = missing(start)
+
+. gen byte before = year<start & !no_bridge
+
+. gen byte after = year>=start
+
+. 
+. egen left_before = sum(cond(!after,left,0)), by(river_bridge)
+
+. egen right_before = sum(cond(!after,right,0)), by(river_bridge)
+
+. 
+. gen small = cond(left_before<right_before,left,right)
+
+. gen large = cond(left_before<right_before,right,left)
+
+. gen log_small = ln(small)
+(103160 missing values generated)
+
+. gen log_large = ln(large)
+(87287 missing values generated)
+
+. 
+. gen river_mile_sq = river_mile^2
+
+. 
+. gen small_share = small/total
+(85902 missing values generated)
+
+. replace small_share=0 if total==0
+(85902 real changes made)
+
+. * if total number of post offices is poisson, the variance is sqrt of mean
+. gen scaled_difference = cond(left_before<right_before,right-left,left-right)/
+> sqrt(total)
+(85902 missing values generated)
+
+. 
+. gen deviation = 0.5-small_share
+
+. tsset river_bridge year
+       panel variable:  river_bridge (unbalanced)
+        time variable:  year, 1790 to 1899
+                delta:  1 unit
+
+. gen change = deviation-L1.deviation
+(1300 missing values generated)
+
+. gen lag_deviation = L1.deviation
+(1300 missing values generated)
+
+. 
+end of do-file
+
+. 
+. drop left_* right_* left right total
+
+. ren center count1
+
+. ren ring count0
+
+. reshape long count, i(river bridge year) j(center)
+(note: j = 0 1)
+
+Data                               wide   ->   long
+-----------------------------------------------------------------------------
+Number of obs.                   129741   ->  259482
+Number of variables                  90   ->      90
+j variable (2 values)                     ->   center
+xij variables:
+                          count0 count1   ->   count
+-----------------------------------------------------------------------------
+
+. 
+. forval r=1/12 {
+  2.         foreach X of var river_mile lon lat {
+  3.                 gen `X'_`r' = `X'*(river=="``r''")
+  4.         }
+  5. }
+
+. foreach X of var treatment* {
+  2.         gen center_`X' = center*`X'
+  3. }
+
+. 
+. egen river_center_year = group(river center year)
+
+. 
+. xtpoisson count center center_* treatment* river_mile_* lon_* lat_*, i(river_
+> center_year) fe
+warning: existing panel variable is not river_center_year
+note: 673 groups (75609 obs) dropped because of all zero outcomes
+note: center dropped because it is constant within group
+
+Iteration 0:   log likelihood = -193711.62  
+Iteration 1:   log likelihood = -162243.75  
+Iteration 2:   log likelihood = -159883.77  
+Iteration 3:   log likelihood = -159639.49  
+Iteration 4:   log likelihood = -159566.08  
+Iteration 5:   log likelihood = -159560.42  
+Iteration 6:   log likelihood = -159560.42  
+
+Conditional fixed-effects Poisson regression    Number of obs      =    183873
+Group variable: river_center~r                  Number of groups   =      1967
+
+                                                Obs per group: min =        10
+                                                               avg =      93.5
+                                                               max =       278
+
+                                                Wald chi2(159)     =  47960.62
+Log likelihood  = -159560.42                    Prob > chi2        =    0.0000
+
+------------------------------------------------------------------------------
+       count |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+center_tr~70 |   .4115109   .0269605    15.26   0.000     .3586693    .4643526
+center_tr~71 |   .4242188   .0761721     5.57   0.000     .2749243    .5735133
+center_tr~72 |   .4169609    .075134     5.55   0.000     .2697011    .5642208
+center_tr~73 |   .3989262   .0740207     5.39   0.000     .2538484    .5440041
+center_tr~74 |   .3926873   .0729214     5.39   0.000      .249764    .5356107
+center_tr~75 |   .3777525   .0719134     5.25   0.000     .2368048    .5187001
+center_tr~76 |   .3702142    .071005     5.21   0.000      .231047    .5093814
+center_tr~77 |   .3835443   .0696977     5.50   0.000     .2469392    .5201494
+center_tr~78 |   .3760395   .0687545     5.47   0.000     .2412831    .5107958
+center_tr~79 |   .3736157   .0679189     5.50   0.000      .240497    .5067343
+center_tr~80 |   .3718781   .0672522     5.53   0.000     .2400662      .50369
+center_tr~81 |   .3558939   .0662756     5.37   0.000     .2259962    .4857917
+center_tr~82 |   .3552705   .0654827     5.43   0.000     .2269268    .4836143
+center_tr~83 |    .357107   .0644745     5.54   0.000     .2307392    .4834748
+center_tr~84 |    .348669   .0636255     5.48   0.000     .2239654    .4733726
+center_tr~85 |   .3442201   .0628724     5.47   0.000     .2209926    .4674477
+center_tr~86 |   .3526511   .0621825     5.67   0.000     .2307756    .4745266
+center_tr~87 |   .3476352   .0613334     5.67   0.000     .2274239    .4678465
+center_tr~88 |   .3636767   .0604216     6.02   0.000     .2452525    .4821009
+center_tr~89 |   .3587202   .0597387     6.00   0.000     .2416345    .4758059
+center_tr~90 |   .3554916   .0589539     6.03   0.000     .2399441     .471039
+center_tr~91 |   .3517362   .0591943     5.94   0.000     .2357175    .4677549
+center_tr~92 |   .3645897   .0592219     6.16   0.000      .248517    .4806624
+center_tr~93 |    .356712    .059148     6.03   0.000      .240784      .47264
+center_tr~94 |    .352727   .0591954     5.96   0.000     .2367061     .468748
+center_tr~95 |   .3760475   .0599228     6.28   0.000      .258601     .493494
+center_tr~96 |    .360817   .0599837     6.02   0.000     .2432511    .4783829
+center_tr~97 |   .4000179   .0602922     6.63   0.000     .2818473    .5181885
+center_tr~98 |    .419185   .0609673     6.88   0.000     .2996913    .5386787
+center_tr~99 |   .4292664   .0604374     7.10   0.000     .3108113    .5477215
+center_t~100 |   .4435241   .0598174     7.41   0.000     .3262842    .5607641
+center_t~101 |   .4380813   .0601143     7.29   0.000     .3202594    .5559031
+center_t~102 |   .4188031   .0594685     7.04   0.000      .302247    .5353593
+center_t~103 |   .4105061   .0591515     6.94   0.000     .2945714    .5264409
+center_t~104 |   .4054585     .05908     6.86   0.000     .2896639    .5212532
+center_t~105 |   .3760861   .0600691     6.26   0.000      .258353    .4938193
+center_t~106 |   .3629911    .060815     5.97   0.000     .2437958    .4821863
+center_t~107 |   .3560618   .0607731     5.86   0.000     .2369487    .4751749
+center_t~108 |   .3456051   .0617531     5.60   0.000     .2245712     .466639
+center_t~109 |   .3657175   .0645541     5.67   0.000     .2391938    .4922411
+center_t~110 |   .3485319   .0672456     5.18   0.000     .2167329    .4803309
+center_t~111 |   .3448217   .0683682     5.04   0.000     .2108225     .478821
+center_t~112 |   .3563049   .0705097     5.05   0.000     .2181084    .4945013
+center_t~113 |   .3401232   .0726828     4.68   0.000     .1976675    .4825789
+center_t~114 |   .3297617   .0736286     4.48   0.000     .1854522    .4740712
+center_t~115 |   .3395857   .0738062     4.60   0.000     .1949283    .4842432
+center_t~116 |    .315929   .0748554     4.22   0.000      .169215    .4626429
+center_t~117 |   .3237271   .0749255     4.32   0.000     .1768759    .4705784
+center_t~118 |    .306638   .0742782     4.13   0.000     .1610555    .4522206
+center_t~119 |   .2945138   .0738131     3.99   0.000     .1498428    .4391848
+center_t~120 |   .3245896   .0763019     4.25   0.000     .1750406    .4741386
+center_t~121 |   .2962861   .0758612     3.91   0.000     .1476009    .4449712
+center_t~122 |    .270156   .0770854     3.50   0.000     .1190715    .4212406
+center_t~123 |   .2840936   .0787783     3.61   0.000      .129691    .4384963
+center_t~124 |   .2927475   .0785466     3.73   0.000      .138799     .446696
+center_t~125 |    .271025   .0776169     3.49   0.000     .1188986    .4231513
+center_t~126 |   .2455142   .0786649     3.12   0.002     .0913338    .3996946
+center_t~127 |   .2247679   .0817565     2.75   0.006      .064528    .3850077
+center_t~128 |   .2522703   .0839273     3.01   0.003     .0877758    .4167649
+center_t~129 |   .2413397   .0876829     2.75   0.006     .0694844     .413195
+center_t~130 |   .2611505   .0337814     7.73   0.000     .1949401    .3273609
+ treatment70 |   .2824966   .0178484    15.83   0.000     .2475144    .3174789
+ treatment71 |   .2692105   .0492596     5.47   0.000     .1726634    .3657575
+ treatment72 |   .2729524   .0484336     5.64   0.000     .1780243    .3678805
+ treatment73 |   .2855956   .0474585     6.02   0.000     .1925787    .3786124
+ treatment74 |   .2935583   .0466762     6.29   0.000     .2020747     .385042
+ treatment75 |   .3026399   .0458019     6.61   0.000     .2128698      .39241
+ treatment76 |   .3080519   .0450584     6.84   0.000     .2197389    .3963648
+ treatment77 |   .3109093   .0443822     7.01   0.000     .2239218    .3978969
+ treatment78 |   .3141025   .0437007     7.19   0.000     .2284507    .3997543
+ treatment79 |   .3120777   .0430845     7.24   0.000     .2276337    .3965218
+ treatment80 |   .3061565   .0426295     7.18   0.000     .2226041    .3897088
+ treatment81 |   .3146251   .0418232     7.52   0.000     .2326531    .3965971
+ treatment82 |   .3078288   .0412812     7.46   0.000     .2269191    .3887384
+ treatment83 |   .3054834   .0406649     7.51   0.000     .2257816    .3851851
+ treatment84 |    .305188   .0399879     7.63   0.000     .2268132    .3835628
+ treatment85 |   .3010224   .0394283     7.63   0.000     .2237445    .3783004
+ treatment86 |   .2857336   .0390232     7.32   0.000     .2092495    .3622177
+ treatment87 |    .285643   .0384038     7.44   0.000      .210373     .360913
+ treatment88 |     .27727   .0379559     7.31   0.000     .2028778    .3516621
+ treatment89 |   .2747296   .0374285     7.34   0.000     .2013712    .3480881
+ treatment90 |   .2765621   .0368335     7.51   0.000     .2043698    .3487543
+ treatment91 |   .2771614    .036911     7.51   0.000     .2048172    .3495055
+ treatment92 |   .2713184   .0369901     7.33   0.000     .1988192    .3438176
+ treatment93 |   .2650641     .03682     7.20   0.000     .1928983    .3372299
+ treatment94 |    .270486   .0367706     7.36   0.000     .1984168    .3425551
+ treatment95 |   .2766804   .0374628     7.39   0.000     .2032546    .3501062
+ treatment96 |   .2918762   .0372853     7.83   0.000     .2187984     .364954
+ treatment97 |   .2863814    .037952     7.55   0.000     .2119969     .360766
+ treatment98 |   .2707067   .0386578     7.00   0.000     .1949388    .3464746
+ treatment99 |    .262869   .0384134     6.84   0.000     .1875801    .3381579
+treatment100 |   .2733207   .0381101     7.17   0.000     .1986264    .3480151
+treatment101 |   .2818884   .0382239     7.37   0.000     .2069709    .3568059
+treatment102 |   .2899842   .0375633     7.72   0.000     .2163614    .3636071
+treatment103 |   .3214205    .037251     8.63   0.000       .24841    .3944311
+treatment104 |   .3362395   .0370734     9.07   0.000      .263577     .408902
+treatment105 |   .3477899   .0373531     9.31   0.000     .2745791    .4210007
+treatment106 |   .3383191    .037643     8.99   0.000     .2645402     .412098
+treatment107 |   .3450457   .0375007     9.20   0.000     .2715457    .4185456
+treatment108 |   .3549742   .0378861     9.37   0.000     .2807189    .4292295
+treatment109 |    .329976   .0397917     8.29   0.000     .2519856    .4079663
+treatment110 |   .3315543   .0412283     8.04   0.000     .2507483    .4123602
+treatment111 |   .3450727   .0420097     8.21   0.000     .2627352    .4274102
+treatment112 |   .3622839   .0433679     8.35   0.000     .2772844    .4472835
+treatment113 |   .3862352    .044336     8.71   0.000     .2993383    .4731321
+treatment114 |   .3939623   .0447436     8.80   0.000     .3062664    .4816582
+treatment115 |   .3857166   .0448858     8.59   0.000     .2977421    .4736912
+treatment116 |   .3890688   .0451994     8.61   0.000     .3004795     .477658
+treatment117 |   .3930955   .0452647     8.68   0.000     .3043784    .4818126
+treatment118 |   .4123679   .0445684     9.25   0.000     .3250154    .4997204
+treatment119 |   .4097262   .0440761     9.30   0.000     .3233387    .4961137
+treatment120 |   .3672066   .0458581     8.01   0.000     .2773263    .4570869
+treatment121 |   .3732521   .0451525     8.27   0.000     .2847549    .4617493
+treatment122 |    .404161   .0454879     8.89   0.000     .3150063    .4933156
+treatment123 |   .3888211   .0467207     8.32   0.000     .2972502    .4803921
+treatment124 |    .379222   .0466347     8.13   0.000     .2878196    .4706243
+treatment125 |   .3973175   .0457201     8.69   0.000     .3077078    .4869271
+treatment126 |   .4081397   .0458284     8.91   0.000     .3183177    .4979616
+treatment127 |   .4390189   .0471875     9.30   0.000     .3465331    .5315047
+treatment128 |   .4096551   .0488042     8.39   0.000     .3140007    .5053095
+treatment129 |   .4476405    .050515     8.86   0.000     .3486329     .546648
+treatment130 |   .4410957   .0197558    22.33   0.000     .4023749    .4798164
+river_mile~q |  -1.09e-06   1.98e-08   -55.25   0.000    -1.13e-06   -1.05e-06
+river_mile_1 |   .0063464   .0007681     8.26   0.000     .0048408    .0078519
+river_mile_2 |  -.0234606   .0011371   -20.63   0.000    -.0256892   -.0212319
+river_mile_3 |   .0013776   .0005895     2.34   0.019     .0002222    .0025331
+river_mile_4 |   .0728274   .0029184    24.95   0.000     .0671074    .0785474
+river_mile_5 |  -.0713463   .0015973   -44.67   0.000    -.0744769   -.0682157
+river_mile_6 |  -.0313824   .0028969   -10.83   0.000    -.0370602   -.0257047
+river_mile_7 |  -.0009212   .0003227    -2.85   0.004    -.0015537   -.0002886
+river_mile_8 |   .0101096   .0002245    45.02   0.000     .0096695    .0105497
+river_mile_9 |  -.0006105   .0005839    -1.05   0.296    -.0017549     .000534
+river_mil~10 |  -.0116333   .0010665   -10.91   0.000    -.0137236    -.009543
+river_mil~11 |   .0208629    .001059    19.70   0.000     .0187873    .0229386
+river_mil~12 |    .004461   .0004325    10.32   0.000     .0036134    .0053087
+       lon_1 |   1.314516    .059441    22.11   0.000     1.198014    1.431018
+       lon_2 |   1.670788   .0680645    24.55   0.000     1.537384    1.804192
+       lon_3 |  -.6207787   .0420007   -14.78   0.000    -.7030985   -.5384589
+       lon_4 |  -2.768778   .0817444   -33.87   0.000    -2.928994   -2.608562
+       lon_5 |  -.9173184   .0437541   -20.97   0.000    -1.003075   -.8315619
+       lon_6 |   1.619122   .1254762    12.90   0.000     1.373193    1.865051
+       lon_7 |  -.0865561   .0059501   -14.55   0.000    -.0982181   -.0748942
+       lon_8 |   .4813619   .0185403    25.96   0.000     .4450236    .5177001
+       lon_9 |   .0931585   .0520973     1.79   0.074    -.0089503    .1952674
+      lon_10 |  -.8758179   .0868903   -10.08   0.000     -1.04612    -.705516
+      lon_11 |  -1.547206   .0754469   -20.51   0.000    -1.695079   -1.399333
+      lon_12 |  -.3569504    .039511    -9.03   0.000    -.4343906   -.2795102
+       lat_1 |   1.005304   .0571901    17.58   0.000     .8932131    1.117394
+       lat_2 |   1.819779   .1132262    16.07   0.000      1.59786    2.041698
+       lat_3 |  -.2634446   .0703806    -3.74   0.000    -.4013881   -.1255012
+       lat_4 |  -5.300385   .2215179   -23.93   0.000    -5.734553   -4.866218
+       lat_5 |   8.204687   .1724841    47.57   0.000     7.866625     8.54275
+       lat_6 |   1.813019   .2412832     7.51   0.000     1.340113    2.285925
+       lat_7 |   .2944337   .0331151     8.89   0.000     .2295293     .359338
+       lat_8 |   -.969707   .0118269   -81.99   0.000    -.9928873   -.9465267
+       lat_9 |   .5072102   .0315179    16.09   0.000     .4454362    .5689841
+      lat_10 |   .1954012     .02845     6.87   0.000     .1396403    .2511621
+      lat_11 |    1.12954   .0692282    16.32   0.000     .9938547    1.265224
+      lat_12 |   .2026111   .0272147     7.44   0.000     .1492713    .2559509
+------------------------------------------------------------------------------
+
+. *test (treatment70+treatment80+treatment80)/3==(treatment110+treatment120+tre
+> atment130)/3
+. gen po_hat_ring = .
+(259482 missing values generated)
+
+. gen po_hat_center = .
+(259482 missing values generated)
+
+. forval t=70/130 {
+  2.         replace po_hat_ring = _b[treatment`t'] if event_time==`t'
+  3.         replace po_hat_center = _b[treatment`t']+_b[center_treatment`t'] i
+> f event_time==`t'
+  4. }
+(4858 real changes made)
+(4858 real changes made)
+(444 real changes made)
+(444 real changes made)
+(444 real changes made)
+(444 real changes made)
+(444 real changes made)
+(444 real changes made)
+(444 real changes made)
+(444 real changes made)
+(444 real changes made)
+(444 real changes made)
+(448 real changes made)
+(448 real changes made)
+(448 real changes made)
+(448 real changes made)
+(448 real changes made)
+(448 real changes made)
+(450 real changes made)
+(450 real changes made)
+(452 real changes made)
+(452 real changes made)
+(452 real changes made)
+(452 real changes made)
+(452 real changes made)
+(452 real changes made)
+(454 real changes made)
+(454 real changes made)
+(458 real changes made)
+(458 real changes made)
+(462 real changes made)
+(462 real changes made)
+(466 real changes made)
+(466 real changes made)
+(468 real changes made)
+(468 real changes made)
+(470 real changes made)
+(470 real changes made)
+(470 real changes made)
+(470 real changes made)
+(470 real changes made)
+(470 real changes made)
+(456 real changes made)
+(456 real changes made)
+(438 real changes made)
+(438 real changes made)
+(428 real changes made)
+(428 real changes made)
+(414 real changes made)
+(414 real changes made)
+(404 real changes made)
+(404 real changes made)
+(398 real changes made)
+(398 real changes made)
+(388 real changes made)
+(388 real changes made)
+(380 real changes made)
+(380 real changes made)
+(378 real changes made)
+(378 real changes made)
+(370 real changes made)
+(370 real changes made)
+(358 real changes made)
+(358 real changes made)
+(358 real changes made)
+(358 real changes made)
+(350 real changes made)
+(350 real changes made)
+(340 real changes made)
+(340 real changes made)
+(330 real changes made)
+(330 real changes made)
+(322 real changes made)
+(322 real changes made)
+(316 real changes made)
+(316 real changes made)
+(304 real changes made)
+(304 real changes made)
+(284 real changes made)
+(284 real changes made)
+(260 real changes made)
+(260 real changes made)
+(252 real changes made)
+(252 real changes made)
+(236 real changes made)
+(236 real changes made)
+(222 real changes made)
+(222 real changes made)
+(212 real changes made)
+(212 real changes made)
+(206 real changes made)
+(206 real changes made)
+(198 real changes made)
+(198 real changes made)
+(192 real changes made)
+(192 real changes made)
+(188 real changes made)
+(188 real changes made)
+(188 real changes made)
+(188 real changes made)
+(178 real changes made)
+(178 real changes made)
+(176 real changes made)
+(176 real changes made)
+(170 real changes made)
+(170 real changes made)
+(164 real changes made)
+(164 real changes made)
+(160 real changes made)
+(160 real changes made)
+(160 real changes made)
+(160 real changes made)
+(154 real changes made)
+(154 real changes made)
+(142 real changes made)
+(142 real changes made)
+(134 real changes made)
+(134 real changes made)
+(122 real changes made)
+(122 real changes made)
+(946 real changes made)
+(946 real changes made)
+
+. replace event_time = event_time - offset
+(25622 real changes made)
+
+. label var po_hat_ring "5-10km from bridge"
+
+. label var po_hat_center "0-5km from bridge"
+
+. label var event_time "Years since bridge"
+
+. 
+. tw (line po_hat_* event_time, sort),  ytitle("Post office count (log)") schem
+> e(s2color)
+
+. graph save results/clustering.gph, replace
+(file results/clustering.gph saved)
+
+. 
+. 
+. capture log close
