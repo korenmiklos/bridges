@@ -6,8 +6,8 @@ from shapely import speedups
 import sys
 from project_geojson import ProjectedFeature
 
-def disc_10km(geometry):
-	return ProjectedFeature(ProjectedFeature(geometry, 'wgs84').lcc.buffer(10000.0), 'lcc').wgs84
+def disc(geometry, radius=5.0):
+	return ProjectedFeature(ProjectedFeature(geometry, 'wgs84').lcc.buffer(radius*1000.0), 'lcc').wgs84
 
 def get_every_10k_points(line_in_meters):
 	length = line_in_meters.length
@@ -21,55 +21,67 @@ def get_every_10k_points(line_in_meters):
 speedups.enable()
 
 river = sys.argv[1]
-decades = [str(year) for year in range(1790,1960,1)]
+# we will not use any of the later post offices, so stop in 1900
+decades = [str(year) for year in range(1790,1900,1)]
 
 geojson = json.load(open("../../data/us-postal-history/consistent/postoffices.geojson"))
 bridges = json.load(open("../../data/rivers/%s/bridges.geojson" % river))['features']
 bridge_collection = MultiPoint([shape(bridge['geometry']) for bridge in bridges])
 river_line_meters = ProjectedFeature(json.load(open("../../data/rivers/%s/river.geojson" % river))['features'][0]['geometry'], 'wgs84').lcc
 potential_control_regions = [dict(river_mile=point['river_mile'], 
-	geometry=disc_10km(ProjectedFeature(point['geometry'],'lcc').wgs84)) for point in get_every_10k_points(river_line_meters)]
+	geometry=ProjectedFeature(point['geometry'],'lcc')) for point in get_every_10k_points(river_line_meters)]
 
-control_regions = [disc for disc in potential_control_regions if not disc['geometry'].intersects(bridge_collection)]
+# control regions have no bridge within 10km
+control_regions_10 = [region for region in potential_control_regions if not disc(region['geometry'].geometry, radius=10.0).intersects(bridge_collection)]
+# we also want to look at the 5km center of these regions
 
 left_bank = json.load(open("../../data/rivers/%s/left_bank.geojson" % river))['geometry']
 right_bank = json.load(open("../../data/rivers/%s/right_bank.geojson" % river))['geometry']
 
-keep = ['name', 'start', 'river_mile']
-writer = csv.DictWriter(sys.stdout, fieldnames=keep+['left_%s' % decade for decade in decades]+['right_%s' % decade for decade in decades])
+keep = ['name', 'start', 'river_mile', 'lat', 'lon']
+writer = csv.DictWriter(sys.stdout, 
+	fieldnames=keep+
+	['left_5km_%s' % decade for decade in decades]+
+	['right_5km_%s' % decade for decade in decades]+
+	['left_10km_%s' % decade for decade in decades]+
+	['right_10km_%s' % decade for decade in decades]
+	)
 writer.writeheader()
 
 post_offices = QuadTree(geojson['features'])
+records = []
 
 for bridge in bridges:
-	bridge_disc = disc_10km(bridge['geometry']) 
-	left_side = shape(left_bank).buffer(0).intersection(bridge_disc)
-	right_side = shape(right_bank).buffer(0).intersection(bridge_disc)
-	bridge['properties']['post_office_count'] = {}
-	for year in decades:
-		po_count_left = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=left_side)) if po['properties']['from']<=year])
-		po_count_right = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=right_side)) if po['properties']['from']<=year])
-		bridge['properties']['post_office_count'][year] = (po_count_left, po_count_right)
-
 	record = {}
-	for field in keep:
+	record['geometry'] = shape(bridge['geometry'])
+	for field in ['name', 'start', 'river_mile']:
 		record[field] = bridge['properties'][field]
-	for decade in decades:
-		record['left_%s' % decade] = bridge['properties']['post_office_count'][decade][0]
-		record['right_%s' % decade] = bridge['properties']['post_office_count'][decade][1]
-	writer.writerow(record)
+	records.append(record)
 
-for region in control_regions:
-	data = {}
-	left_side = shape(left_bank).buffer(0).intersection(region['geometry'])
-	right_side = shape(right_bank).buffer(0).intersection(region['geometry'])
-	for year in decades:
-		po_count_left = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=left_side)) if po['properties']['from']<=year])
-		po_count_right = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=right_side)) if po['properties']['from']<=year])
-		data[year] = (po_count_left, po_count_right)
-
+for region in control_regions_10:
+	record = {}
 	record = dict(name='Control region with no bridge', river_mile=region['river_mile'])
+	record['geometry'] = region['geometry'].geometry
+	records.append(record)
+
+for record in records:
+	# save lat lon for future use
+	record['lon'] = record['geometry'].x
+	record['lat'] = record['geometry'].y
+
+	bridge_disc_5 = disc(record['geometry'], radius=5.0) 
+	bridge_disc_10 = disc(record['geometry'], radius=10.0) 
+
+	left_side_5 = shape(left_bank).buffer(0).intersection(bridge_disc_5)
+	right_side_5 = shape(right_bank).buffer(0).intersection(bridge_disc_5)
+	left_side_10 = shape(left_bank).buffer(0).intersection(bridge_disc_10)
+	right_side_10 = shape(right_bank).buffer(0).intersection(bridge_disc_10)
+
 	for decade in decades:
-		record['left_%s' % decade] = data[decade][0]
-		record['right_%s' % decade] = data[decade][1]
+		record['left_5km_%s' % decade] = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=left_side_5)) if po['properties']['from']<=decade])
+		record['right_5km_%s' % decade] = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=right_side_5)) if po['properties']['from']<=decade])
+		record['left_10km_%s' % decade] = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=left_side_10)) if po['properties']['from']<=decade])
+		record['right_10km_%s' % decade] = sum([1 for po in post_offices.get_overlapping_points(Feature(geometry=right_side_10)) if po['properties']['from']<=decade])
+	del record['geometry']
 	writer.writerow(record)
+

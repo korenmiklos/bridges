@@ -5,9 +5,10 @@ foreach river in `1' `2' `3' `4' `5' `6' `7' `8' `9' `10' `11' `12' {
 	insheet using data/`river'.csv, clear
 	gen bridge = _n
 	gen str river = "`river'"
-	reshape long left_ right_, i(bridge) j(year)
-	ren left_ left
-	ren right_ right
+	reshape long left_5km_ right_5km_ left_10km_ right_10km_, i(bridge) j(year)
+	foreach X in left_5km right_5km left_10km right_10km {
+		ren `X'_ `X'
+	}
 	append using `rivers'
 	save `rivers', replace
 }
@@ -17,6 +18,14 @@ gen segment = int(river_mile/10)
 egen river_segment = group(river segment)
 
 tsset river_bridge year
+
+* replicate previous results with 10km disc
+gen left = left_10km
+gen right = right_10km
+
+* measures of clustering
+gen center = left_5km+right_5km
+gen ring = left_10km+right_10km-center
 
 gen total = left+right
 
