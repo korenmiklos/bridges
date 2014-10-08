@@ -20,11 +20,11 @@ shops.\textquotedblright \bigskip \newline
 
 == Introduction ==
 * People agglomerate in space to minimize trade costs (broadly defined).
-* New economic geography promises to explain agglomeration with transportation costs (``market access").
-	* But market access varies little in space.
-	* You need additional agglomeration forces (interacting with distance) to explain cities.
+* Being close to ''one another'' does not explain
+	* ''where'' people locate 
+	* ''magnitude'' of agglomeration.
 ...
-* We show that the topology of space matters for market access.
+* We show that the topology of space matters for agglomeration forces.
 * Bridges, in particular, make market access more uneven, hence leading to strong agglomeration.
 
 == What we do ==
