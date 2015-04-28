@@ -53,3 +53,32 @@ People at MKE Conference, Budapest, Dec 20 2013
 * Almos Telegdy: long-distance transit demand clearly affects demand for bridges, but it also directly affects the distribution of population along the river => a weak IV.
 * Peter Harasztosi: do bridges disappear? => if yes, could be used for identification
 * Adam Szeidl: why do we care?
+
+Helsinki
+--------
+
+Brown
+-----
+- Is this paper about bridges, or is bridge an example?
+- Jonathan: What about optimal bridges? You could model the global distribution of bridges.
+- Arnaud: Is there second-round magnification in the Ricardian model? Everything goes through prices, so I do not care how many people live on the other side.
+
+ECARES
+------
+
+UC Louvain
+----------
+- Correct typos on consumer slide. dz', 1-1/sigma
+- Florian Mayneris: In new economic geography models with IRS, you would have divergence. The big place can grow even bigger.
+- Elena??: There may be people working on bridge construction, generating local demand.
+	- We should look at business censuses of the time to look at what type of businesses were there in these locations.
+- Florian: In convergence study, show that both sides gain, only that small side gains more.
+
+CREI
+----
+- In the edgeless space, are there multiple equilibria? (Jaume) I presented the gravity version, but I am not sure of its precises properties, we should tie up loose ends.
+- Simple model loses richeness of "new economic geography" models of the 1990s. (Gino) This I personally don't mind.
+- If sigma<1, do you still want to move close to others? (Jaume)
+- Separate highway and railway bridges. Railways may be more driven by transit. They only have local effect if there is also a station close to the bridge. (Giacomo and others)
+- Include more controls in the event study. We hurt ourselves by comparing bridge locations to uninhabitable locations. This is going to look like selection in the event study.
+- The Mississippi was first bridged when steel bridges appeared in 1870. (Check facts.) At the veray least, in the IV we could interact width of river with a post 1870 dummy.
