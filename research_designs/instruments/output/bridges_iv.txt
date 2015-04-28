@@ -1,62 +1,62 @@
 		(1)	(2)
-VARIABLES	LABELS	log_post_office_count	log_post_office_count
+VARIABLES	LABELS	Number of post offices (log)	Number of post offices (log)
 			
-bridges	Number of bridges	0.232*	
-		(0.125)	
-river_mile_1		-0.00282***	-0.00284***
-		(0.000582)	(0.000621)
-river_mile_sq_1		2.58e-06***	2.53e-06***
-		(9.11e-07)	(9.37e-07)
-river_mile_2		-0.00382***	-0.00363***
-		(0.000738)	(0.000734)
-river_mile_sq_2		3.15e-06***	2.88e-06***
-		(7.64e-07)	(7.71e-07)
-river_mile_3		-0.00178***	-0.00190***
-		(0.000656)	(0.000676)
-river_mile_sq_3		1.63e-06	1.81e-06
-		(1.10e-06)	(1.16e-06)
-river_mile_4		0.00329	0.00360
-		(0.00328)	(0.00355)
-river_mile_sq_4		-1.53e-05	-1.85e-05
-		(1.42e-05)	(1.45e-05)
-river_mile_5		0.0110***	0.00990***
-		(0.00225)	(0.00282)
-river_mile_sq_5		-3.72e-05***	-3.45e-05***
-		(8.10e-06)	(9.23e-06)
-river_mile_6		0.0183***	0.0179***
-		(0.00271)	(0.00304)
-river_mile_sq_6		-8.64e-05***	-8.73e-05***
-		(1.41e-05)	(1.57e-05)
-river_mile_7		-0.000470**	-0.000403**
-		(0.000183)	(0.000189)
-river_mile_sq_7		9.26e-08	7.59e-08
-		(1.18e-07)	(1.23e-07)
-river_mile_8		-0.00124***	-0.00120***
-		(0.000157)	(0.000160)
-river_mile_sq_8		4.56e-07***	4.40e-07***
-		(8.22e-08)	(8.46e-08)
-river_mile_9		0.000289	0.000357
-		(0.000452)	(0.000424)
-river_mile_sq_9		5.31e-07	4.38e-07
-		(5.68e-07)	(5.57e-07)
-river_mile_10		-0.00177**	-0.00161**
-		(0.000724)	(0.000775)
-river_mile_sq_10		5.04e-07	2.47e-07
-		(1.17e-06)	(1.22e-06)
-river_mile_11		-0.00410***	-0.00414***
-		(0.000641)	(0.000665)
-river_mile_sq_11		4.60e-06***	4.62e-06***
-		(1.07e-06)	(1.10e-06)
-river_mile_12		-0.000595	-0.000796
-		(0.00105)	(0.00111)
-river_mile_sq_12		-1.01e-06	-4.75e-07
-		(2.52e-06)	(2.65e-06)
-has_bridge	Segment has a bridge (dummy)		0.580
-			(0.367)
-Constant	Constant	1.008***	0.960***
-		(0.0692)	(0.0964)
+bridges	Number of bridges	0.371***	
+		(0.118)	
+river_mile_1	river_mile_1	-0.00314***	-0.00327***
+		(0.000646)	(0.000852)
+river_mile_sq_1	river_mile_sq_1	2.91e-06***	2.84e-06**
+		(1.02e-06)	(1.33e-06)
+o.river_mile_2	river_mile_2 = o,	-	-
 			
-Observations		1,155	1,155
-R-squared		0.367	0.367
+o.river_mile_sq_2	river_mile_sq_2 = o,	-	-
+			
+o.river_mile_3	river_mile_3 = o,	-	-
+			
+o.river_mile_sq_3	river_mile_sq_3 = o,	-	-
+			
+river_mile_4	river_mile_4	0.000728	-0.000887
+		(0.00331)	(0.00428)
+river_mile_sq_4	river_mile_sq_4	-6.30e-06	-5.31e-06
+		(1.41e-05)	(1.68e-05)
+river_mile_5	river_mile_5	0.00944***	0.00546
+		(0.00239)	(0.00345)
+river_mile_sq_5	river_mile_sq_5	-3.28e-05***	-2.26e-05*
+		(8.64e-06)	(1.18e-05)
+river_mile_6	river_mile_6	0.0175***	0.0166***
+		(0.00290)	(0.00418)
+river_mile_sq_6	river_mile_sq_6	-8.43e-05***	-8.72e-05***
+		(1.51e-05)	(2.19e-05)
+river_mile_7	river_mile_7	-0.000513**	-0.000271
+		(0.000220)	(0.000268)
+river_mile_sq_7	river_mile_sq_7	7.61e-08	-4.89e-08
+		(1.40e-07)	(1.69e-07)
+river_mile_8	river_mile_8	-0.00133***	-0.00123***
+		(0.000181)	(0.000221)
+river_mile_sq_8	river_mile_sq_8	5.01e-07***	4.70e-07***
+		(9.17e-08)	(1.15e-07)
+river_mile_9	river_mile_9	0.000226	0.000570
+		(0.000556)	(0.000578)
+river_mile_sq_9	river_mile_sq_9	4.31e-07	-1.45e-07
+		(7.01e-07)	(7.46e-07)
+o.river_mile_10	river_mile_10 = o,	-	-
+			
+o.river_mile_sq_10	river_mile_sq_10 = o,	-	-
+			
+o.river_mile_11	river_mile_11 = o,	-	-
+			
+o.river_mile_sq_11	river_mile_sq_11 = o,	-	-
+			
+river_mile_12	river_mile_12	-0.000821	-0.00107
+		(0.00112)	(0.00142)
+river_mile_sq_12	river_mile_sq_12	-5.55e-07	4.13e-07
+		(2.60e-06)	(3.25e-06)
+has_bridge	Segment has a bridge (dummy)		1.382***
+			(0.453)
+Constant	Constant	0.984***	0.773***
+		(0.0823)	(0.139)
+			
+Observations		892	892
+R-squared		0.211	
 Robust standard errors in parentheses			
 *** p<0.01, ** p<0.05, * p<0.1			

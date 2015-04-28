@@ -97,16 +97,26 @@ Shipment of goods is costly:
 * They value goods produced at each location (Armington): gravity equation of trade.
 * Consumer living at $z$ owns local land, supplies one unit of labor inelastically, and chooses her consumption by maximizing
 \begin{equation*}
-u\left(z\right) = \int_{z'} q_{z'}\left(z \right)^{1-1/\sigma}dz.
+u\left(z\right) = \int_{z'} q_{z'}\left(z \right)^{1-1/\sigma}dz'.
 \end{equation*}
 * Utility-based price index
 \begin{equation*}
-P\left(z\right) = \int_{z'} [p_{z'}\tau(z',z)]^{1-1/\sigma}dz,
+P\left(z\right) = \left[\int_{z'} [p_{z'}\tau(z',z)]^{1-1/\sigma}dz\right]^{\sigma/(\sigma-1)},
 \end{equation*}
 where $\tau(z',z)$ is the minimum transportation cost between $z'$ and $z$.
+	* We are interested in how bridges change $\tau(z',z)$.
 
 == Production ==
 * Good $z$ produced by perfectly competitive firms combining labor and land under Cobb--Douglas production technology:
+\[
+	{Q(z)}
+= \frac 
+	1
+	{a(z)}
+	L(z)^\alpha
+	N(z)^{1-\alpha}
+\]
+* In intensive form,
 \begin{equation*}
 	\underbrace{q\left(z\right)}_\text{output per unit of land}
 	=
@@ -261,34 +271,34 @@ E ({N_{rbt}})
 		``The crossing at Easton was referred to as the New York--Harrisburg Crossing, indicating that the ferry here served travellers going to western Pennsylvania, and beyond. The two most frequently used river crossings for this traffic were at Trenton and Easton, and these crossings were where the first bridges over the Delaware were built." (p. 2 of Dale)
 	* structural approach (e.g. bridges are likely 10-20 miles from another bridge)
 
-== ==
-\widefigure{columbia}{Delaunay triangles connecting old post offices}
-
 == Transit demand for crossing ==
-* Use post office locations 20 years prior to first bridge.
-* Exclude post offices within 20km of river.
-* Connect them with Delaunay triangles.
-* Count predicted crossing points in each segment.
+* Use historical exploration routes from 1675 (Eastern rivers) and 1800 (Western rivers).
+* Where did these cross rivers?
+* How far is a location from the historical crossing point? (There may be nonlinearities.)
+
+== ==
+\longfigure{exploration1675}{Exploration routes by 1675}
 
 == First stage ==
 \begin{tabular}{lcc} \hline
  & (1) & (2) \\
  & bridges & has\_bridge \\ \hline
  &  &  \\
-Width of the river & -0.686** & -0.210 \\
- & (0.304) & (0.135) \\
----10km downriver & -0.313 & -0.133 \\
- & (0.194) & (0.113) \\
----10km upriver & 0.398 & 0.0837 \\
- & (0.300) & (0.110) \\
-Number of predicted crossing points & 0.0520 & -0.0125 \\
- & (0.0538) & (0.0237) \\
----10km downriver & -0.00258 & 0.00152 \\
- & (0.0547) & (0.0222) \\
----10km upriver & 0.0457 & 0.0199 \\
- & (0.0550) & (0.0222) \\
-Observations & 1,646 & 1,646 \\
- R-squared & 0.083 & 0.116 \\ \hline
+Width of the river & -1.222*** & -0.390** \\
+ & (0.422) & (0.174) \\
+---10km downriver & -0.194 & 0.0171 \\
+ & (0.260) & (0.140) \\
+--10km upriver & 0.692 & 0.101 \\
+ & (0.457) & (0.144) \\
+Distance to historical crossing & -0.0862** & -0.0163* \\
+ & (0.0405) & (0.00979) \\
+--10km downriver & 0.0439** & 0.00816 \\
+ & (0.0201) & (0.00507) \\
+--10km upriver & 0.0416** & 0.00784 \\
+ & (0.0206) & (0.00504) \\
+ &  &  \\
+Observations & 1,121 & 1,121 \\
+ R-squared & 0.085 & 0.122 \\ \hline
 \multicolumn{3}{c}{ Robust standard errors in parentheses} \\
 \multicolumn{3}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
 \end{tabular}
@@ -297,12 +307,13 @@ Observations & 1,646 & 1,646 \\
 \begin{tabular}{lcc} \hline
  & log\_post\_office\_count & log\_post\_office\_count \\ \hline
  &  &  \\
-Number of bridges & 0.232* &  \\
- & (0.125) &  \\
-Segment has a bridge (dummy) &  & 0.580 \\
- &  & (0.367) \\
-Observations & 1,155 & 1,155 \\
- R-squared & 0.367 & 0.367 \\ \hline
+Number of bridges & 0.371*** &  \\
+ & (0.118) &  \\
+Segment has a bridge &  & 1.382*** \\
+ &  & (0.453) \\
+ &  &  \\
+Observations & 892 & 892 \\
+ R-squared & 0.211 &  \\ \hline
 \multicolumn{3}{c}{ Robust standard errors in parentheses} \\
 \multicolumn{3}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
 \end{tabular}
@@ -364,7 +375,8 @@ With agglomeration externalities (not currently modeled) our theory would predic
 * Standard estimates of gains from trade are way too low to explain this.
 * Potential explanation: opening ports and other trading posts has agglomeration benefits.
 
-
+== ==
+\widefigure{allborders}{Population density around country borders}
 
 = Conclusion =
 == Conclusion ==
