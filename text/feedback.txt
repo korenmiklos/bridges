@@ -74,6 +74,10 @@ UC Louvain
 	- We should look at business censuses of the time to look at what type of businesses were there in these locations.
 - Florian: In convergence study, show that both sides gain, only that small side gains more.
 
+Tilburg
+-------
+- Existing paper on the importance of pointlike CBDs.
+
 CREI
 ----
 - In the edgeless space, are there multiple equilibria? (Jaume) I presented the gravity version, but I am not sure of its precises properties, we should tie up loose ends.
@@ -82,3 +86,19 @@ CREI
 - Separate highway and railway bridges. Railways may be more driven by transit. They only have local effect if there is also a station close to the bridge. (Giacomo and others)
 - Include more controls in the event study. We hurt ourselves by comparing bridge locations to uninhabitable locations. This is going to look like selection in the event study.
 - The Mississippi was first bridged when steel bridges appeared in 1870. (Check facts.) At the veray least, in the IV we could interact width of river with a post 1870 dummy.
+- What is the alternative model you are testing against? Surely bridges are used to cross rivers.
+	- That bridges have no or negligible effect.
+	- Alternatively, we could do comparative statics and test them. For examples, bridges matter more when inland transportation is more costly.
+- The same applies to borders and border crossing points. (Jaume and Jordi) EU accession is an exogenous shock, making the border crossing regions more relevant (France-Spain border). Moreover:
+	- Tariff reduction only reduces trade costs at crossing points. (shorter bridge)
+	- Schengen reduces trade costs along the entire border (narrower river)  
+
+Mannheim
+--------
+
+Bayreuth
+--------
+- Competition between bridges. The our local prediction is not clear cut.
+- Historical crossing meant this places were already used for crossing in the past. This may invalidate the IV.
+	- One way to deal with the would be to look at placebo bridges: with same propensity to build, but was not built.
+- Eerie Canal

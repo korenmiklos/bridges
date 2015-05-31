@@ -23,13 +23,14 @@ shops.\textquotedblright \bigskip \newline
 * Being close to ''one another'' does not explain
 	* ''where'' people locate 
 	* ''magnitude'' of agglomeration.
+		* Holmes and Lee (2010): 46 percent of people live on 1.7 percent of the populated area of the U.S.
 ...
 * We show that the topology of space matters for agglomeration forces.
 * Bridges, in particular, make market access more uneven, hence leading to strong agglomeration.
 
 == What we do ==
 * We build a theory to explain where people agglomerate in space.
-* Stylized but geographically rich environment: a subset of the globe, divided by a river.
+* Stylized but geographically rich environment: a subset of a plain, divided by a river.
 	* Trade costly, both inland and across the river.
 	* Crossing the river over a bridge is less costly than crossing it by boat.
 * Building a bridge decreases the cost of crossing the river at a point $\to$ increases concentration of economic activity around that point $\to$ brings about benefits from agglomeration.
@@ -37,14 +38,13 @@ shops.\textquotedblright \bigskip \newline
 
 == Results ==
 * Model delivers a set of predictions on the spatial distribution of population around rivers and bridges.
-	* Test predictions on high-resolution population data from the U.S.
-* Conduct two additional exercises:
+* Conduct two empirical exercises:
 	* use historical data to check the effect of bridges on population growth,
 	* estimate the causal effects of bridges with instrumental variables.
 
 == Related literature ==
 === Models with a rich space topology ===
-	* \textit{Ricardian trade}: Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012), Co\c{s}ar and Fajgelbaum (2012).
+	* \textit{Ricardian trade}: Fujita, Krugman and Venables (1999), Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012), Co\c{s}ar and Fajgelbaum (2012).
 	* \textit{Neoclassical under Armington assumption}: Fabinger (2011), Allen and Arkolakis (2014).
 
 === Transport infrastructure ===
@@ -73,63 +73,67 @@ shops.\textquotedblright \bigskip \newline
 * Costly trade: location matters.
 * Free labor mobility: people move to minimize trade costs.
 
-== Geography ==
-* Continuous space. Two regions, $R\in \left \{ H,F\right \} $,
-separated by a river without meanders.
-* A location is indexed by 
-\[
-z = \underset{\text{region}}{\underbrace{R}},\underset{\text{distance from river}}{\underbrace{\ell }},\underset{\text{closest river mile}}{\underbrace{h}}, 
-\]
-and is endowed with land $\lambda \left(z\right) >0$.
-* Bridges at river miles $h_{1},\ldots ,h_{B}$.
+== Geography: A tale of two banks ==
+* We focus on just the two banks of the river.
+	* There may be other mechanisms why people move ''towards'' the river.
+	* We have closed form solutions for the distribution of population.
+	* Favorable to models withouth bridges: agglomeration in the middle.
+* Two banks, $L$ and $R$. River is bounded between $[-k,k]$.
+	* Location is indexed by bank and rivermile, $S=\{L,R\}\times [-k,k]$.
+* We study the effect of a bridge at $0$.
 
 == ==
-\longfigure{figurem1}{Geography in our model}
+\widefigure{topography}{Two riverbanks with a bridge}
+
 
 == Trade costs ==
 Shipment of goods is costly:
-* land shipping over distance $d$ involves iceberg cost $e^{t_{i}d}$,
-* crossing river by boat costs $e^{\tau _{i}^{0}}$,
-* crossing river over bridge $b$ costs $e^{\tau _{i}^{b}}<e^{\tau_{i}^{0}}$.
+* land shipping over distance $d$ involves iceberg cost $e^{td}$,
+* crossing river by boat costs $e^{\tau^{0}}$,
+* crossing river over bridge $b$ costs $e^{\tau^{b}}<e^{\tau^{0}}$.
 
 == Consumption ==
 * Mass of $N$ consumers, freely mobile across space.
 * They value goods produced at each location (Armington): gravity equation of trade.
-* Consumer living at $z$ owns local land, supplies one unit of labor inelastically, and chooses her consumption by maximizing
-\begin{equation*}
-u\left(z\right) = \int_{z'} q_{z'}\left(z \right)^{1-1/\sigma}dz'.
-\end{equation*}
-* Utility-based price index
-\begin{equation*}
-P\left(z\right) = \left[\int_{z'} [p_{z'}\tau(z',z)]^{1-1/\sigma}dz\right]^{\sigma/(\sigma-1)},
-\end{equation*}
-where $\tau(z',z)$ is the minimum transportation cost between $z'$ and $z$.
-	* We are interested in how bridges change $\tau(z',z)$.
+* Representative consumer living at location $r \in S$ has utility function
+\[
+u \left( r \right) = \left[ \int_{S} x_{s} \left( r \right)^{1-1/\sigma} ds \right]^{\sigma/(\sigma-1)} N \left( r \right)^{-\lambda}
+\]
+	* $N^{-\lambda}$: congestion externality ensuring dispersion, $\lambda\ge0$
+* Indirect utility:
+\[
+u \left( r \right) = \frac{w \left( r \right)}{P \left( r \right)} N \left( r \right)^{-\lambda}
+\]
+where $w \left( r \right)$ is the wage at location $r$, and $P \left( r \right)$ is the CES price index.
 
 == Production ==
-* Good $z$ produced by perfectly competitive firms combining labor and land under Cobb--Douglas production technology:
+* Good $s$ produced by perfectly competitive firms using only labor:
 \[
-	{Q(z)}
-= \frac 
-	1
-	{a(z)}
-	L(z)^\alpha
-	N(z)^{1-\alpha}
+X(s) = N(s).
 \]
-* In intensive form,
+* Factory-gate price equals unit cost
+\[
+p(s) = w(s)
+\]
+
+== Location choice ==
+* Price index at location $r$,
 \begin{equation*}
-	\underbrace{q\left(z\right)}_\text{output per unit of land}
-	=
-	\left[ \underbrace{\overline{a}\left(z\right)}_\text{unit cost of production}\right] ^{-1}
-\cdot \left. \underbrace{n\left(z\right) }_\text{labor per unit of land}\right. ^{1-\alpha }
+P\left(r\right) = \left[\int_{s} [p({s})\tau(s,r)]^{1-\sigma}dz\right]^{1/(1-\sigma)},
 \end{equation*}
+where $\tau(s,r)$ is the minimum transportation cost between $s$ and $r$.
+	* We are interested in how bridges change $\tau(s,r)$.
+* Consumers mobility equalizes real wages across locations
+\[
+P \left( r \right) = \bar{u}^{-1} w \left( r \right) N \left( r \right)^{-\lambda}.
+\]
+
 
 == Equilibrium ==
-An equilibrium is a set of functions $p(z)$, $P(z)$, $n(z)$, $w(z)$ and $r$, such that
+An equilibrium is a set of functions $p(z)$, $P(z)$, $n(z)$, and $w(z)$, such that
 1. Utility of workers is maximized and equalized across locations.
 2. Profits are maximized and driven down to zero.
-3. Local land markets clear.
-4. Local and global labor markets clear.
+4. Local labor markets clear.
 5. There is no arbitrage possibility within countries.
 6. There is no arbitrage possibility over the river.
 7. There is no arbitrage possibility over bridges.
@@ -137,23 +141,54 @@ An equilibrium is a set of functions $p(z)$, $P(z)$, $n(z)$, $w(z)$ and $r$, suc
 
 %% discuss equilibrium here
 
+== Equilibrium conditions ==
+* Free mobility:
+\[
+w \left( r \right)^{1-\sigma} N \left( r \right)^{\lambda \left( \sigma - 1 \right)} = \bar{u}^{1-\sigma} \int_{S}  w \left( s \right)^{1-\sigma} \tau \left( s, r \right)^{1-\sigma} ds
+\]
+* Labor market clearing:
+\[
+w \left( r \right)^{\sigma} N \left( r \right) = \bar{u}^{1-\sigma} \int_{S}   w \left( s \right)^{\sigma} N \left( s \right)^{1 - \lambda \left( \sigma - 1 \right)} \tau \left( r, s \right)^{1-\sigma} ds
+\]
+* With symmetric trade costs and $\sigma>1$, local wages are decreasing in population,
+\[
+w \left( r \right) = N \left( r \right)^{\frac{\lambda \left( \sigma-1 \right)}{2 \sigma - 1}}
+\]
+%% check this formula
 
+== Spatial distribution ==
+* Distribution of population characterized by
+\[
+N \left( r \right)^{\gamma_1} = \bar{u}^{1-\sigma}  \int_{S}   N \left( s \right)^{\gamma_2} \tau \left( r, s \right)^{1-\sigma} ds.
+\]
+with $\gamma_1 = 1 + \frac{\lambda\sigma(\sigma - 1)}{2 \sigma - 1}$ and
+$\gamma_2 = 1 - \frac{\lambda(\sigma - 1)^2}{2 \sigma - 1}$.
+* The equilibrium is unique if $\lambda\ge 0$.
 
-= Space warping =
-== How do bridges warp space? ==
-To illustrate how bridges contribute to spatial heterogeneity, we explore a simple example step by step. How does a bridge change
-1. bilateral and multilateral distances?
-2. market access---as a direct result?
-3. market access---due to labor mobility?
+= How bridges warp space =
+== No bridge ==
+* Without a bridge and $\lambda=0$,
+\[
+N(r) = C \cos (\theta r)
+\]
+with $\theta = \sqrt{2\bar u^{1-\sigma}\Delta-\Delta^2}$, $\Delta\equiv t({1-\sigma})$ and $C$ such that $N'(-k) = \Delta N(-k)$.
+* Maximal at $r=0$ ("city").
+* Flat gradient at $r=0$.
+
+== Bridges warp space ==
+* With a bridge, the distribution of population is qualitatively and quantitatively different:
+\[
+N(r) = C_1 \exp (\theta r)+C_2 \exp (-\theta r)
+\]
+with $C_1$ and $C_2$ such that
+	* $N'(-k) = \Delta N(-k)$
+	* $N_{-}'(-k) = \Delta N^+(0)$
+* No longer flat at $r=0$.
 
 == ==
-\longfigure{map_random}{Cities around a bridge (1)}
-\longfigure{acrossriver_random}{Bilateral distance becomes more skewed after bridge}
-\longfigure{change_random}{Winners were already close before the bridge\\
-\small Market access becomes more uneven}
-\longfigure{map_linedancers7}{Cities around a bridge (2)}
-\longfigure{lines_bridgeandnarrow}{Bridges lead to more clustering than a comparable decline in river crossing costs}
-\longfigure{rounds_bridge}{Labor mobility improves bridge location even further}
+\widefigure{cosine-exponential}{Bridge increases agglomeration at a given point}
+\widefigure{spatial-inequality}{This increases spatial inequality}
+\widefigure{first-round}{Which is magnified by endogenous mobility on other side}
 
 == Summary ==
 1. Bridges make market access more skewed in space.
@@ -188,7 +223,6 @@ Snake\ River, Tennessee.
 	* year of building
 	* year of decommissioning (if any)
 	* other characteristics: rail, highway, structure, span
-* For the Hudson, we include the tunnels at Manhattan.
 
 == Population ==
 * Current (1995) population come from Version 1 of the Global Rural-Urban Mapping Project population grid. 

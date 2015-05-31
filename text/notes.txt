@@ -29,3 +29,23 @@ Methods
 - Use survival analysis to model distance between bridges.
 	- space is continuous
 	- once I built a bridge, I am the closest. probability has to be conditioned on no bridge having been found yet at earlier rivermiles (hazard).
+
+Literature
+==========
+- Cite paper on endogenous pointlike CBDs.
+- Read empirical papers on destroyed bridges in Uruguay/Paraguay?
+
+Potential facts we explain better than Allen-Arkolakis
+======================================================
+Qualitative
+-----------
+1. The level of population density goes up around the bridge after the bridge is built.
+2. Within cities, the gradient does not decline with population density. AA predicts that the gradient is flat in the center and steepest at the edges.
+3. The two sides of the river converge in population density after the bridges is built.
+4. Cities with larger area do not have flatter gradients. In AA, US cities would have flatter gradient than EU cities, because the border is farther away. More generally, the shape of the agglomeration is determined by the repelling force of the border in AA, whereas it is driven by the pull of the bridge in AKN.
+
+Quantiative
+-----------
+5. The gradient is higher than predicted by AA. 
+6. Spatial inequality (say, population living in the top 1% of area) is higher than predicted by AA.
+
