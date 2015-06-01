@@ -2,6 +2,25 @@
 
 
 = Introduction =
+
+\longfigure{US_population_map_2}{Agglomeration is very uneven in space}
+== Introduction ==
+* People agglomerate in space to minimize trade costs (broadly defined).
+* Being close to ''one another'' does not explain
+	* ''where'' people locate 
+	* ''magnitude'' of agglomeration.
+...
+* We show that the topology of space and transport infrastructure matters for agglomeration forces.
+* Bridges, in particular, reduce trade costs in a particular point, hence leading to strong agglomeration.
+
+== Spatial inequality ==
+* Holmes and Lee (2010): 46 percent of people live on 1.7 percent of the populated area of the U.S.
+* Within the average MSA, 50 percent of people live on 10 percent of the area.
+== ==
+\widefigure{zipcode-lorenz}{Lorenz curves of population in space}
+
+
+
 \widefigure{upper-black-eddy}{The Upper Black Eddy Bridge on the Delaware River}
 == The Upper Black Eddy Bridge on the Delaware River ==
 \textquotedblleft \lbrack T]his new crossing brought additional business to
@@ -15,53 +34,42 @@ too. It had forty houses, three hotels, and several stores and
 shops.\textquotedblright \bigskip \newline
 (Dale, F.:\ Bridges over the Delaware river. A history of crossings)
 
-== ==
-\longfigure{US_population_map_2}{Agglomeration is very uneven in space}
-
-== Introduction ==
-* People agglomerate in space to minimize trade costs (broadly defined).
-* Being close to ''one another'' does not explain
-	* ''where'' people locate 
-	* ''magnitude'' of agglomeration.
-		* Holmes and Lee (2010): 46 percent of people live on 1.7 percent of the populated area of the U.S.
-...
-* We show that the topology of space matters for agglomeration forces.
-* Bridges, in particular, make market access more uneven, hence leading to strong agglomeration.
-
 == What we do ==
 * We build a theory to explain where people agglomerate in space.
-* Stylized but geographically rich environment: a subset of a plain, divided by a river.
+* Stylized geography: two side of a river.
 	* Trade costly, both inland and across the river.
 	* Crossing the river over a bridge is less costly than crossing it by boat.
-* Building a bridge decreases the cost of crossing the river at a point $\to$ increases concentration of economic activity around that point $\to$ brings about benefits from agglomeration.
+* Building a bridge decreases the cost of crossing the river at a point, increasing concentration of economic activity around that point.
 
 
 == Results ==
-* Model delivers a set of predictions on the spatial distribution of population around rivers and bridges.
-* Conduct two empirical exercises:
-	* use historical data to check the effect of bridges on population growth,
-	* estimate the causal effects of bridges with instrumental variables.
+=== Theory ===
+1. Closed form solutions for a stylized river geometry.
+2. Bridges increase population density in their neighborhood.
+3. Bridges increase spatial inequality, especially in their neighborhood.
+4. The effect of bridges is magnified by trade and labor mobility.
+
+=== Measurement ===
+1. Build a dataset of 19th century US bridges on 12 major rivers. 
+2. Event study shows that bridge areas grow faster ''after'' the bridge.
+3. Estimate the causal effects of bridges with instrumental variables.
 
 == Related literature ==
 === Models with a rich space topology ===
-	* \textit{Ricardian trade}: Fujita, Krugman and Venables (1999), Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012), Co\c{s}ar and Fajgelbaum (2012).
-	* \textit{Neoclassical under Armington assumption}: Fabinger (2011), Allen and Arkolakis (2014).
+	* \textit{Ricardian trade}: Rossi-Hansberg (2005), Desmet and Rossi-Hansberg (2012), Co\c{s}ar and Fajgelbaum (2014).
+	* \textit{Gravity}: Fujita, Krugman and Venables (1999), Fabinger (2011), Allen and Arkolakis (2014).
 
 === Transport infrastructure ===
-	* Baum-Snow, Brandt, Henderson, Turner and Zhang (2013).
-	* Baum-Snow (2007),Donaldson (2012), Donaldson and Hornbeck (2013), Duranton and Turner (2014).
-	* Redding, Sturn, and Wolf (2011).
+	* Baum-Snow, Brandt, Henderson, Turner and Zhang (2013), Co\c{s}ar and Demir (2015).
+	* Baum-Snow (2007), Donaldson (2012), Donaldson and Hornbeck (2013), Duranton and Turner (2014).
+	* Redding, Sturm, and Wolf (2011).
 	* Tompsett (2013).
 
-
-== Our contributions ==
-* We take the geometry of bridges and trade seriously, and show that this matters.
-* We use high-resolution historical data to test our theory.
 
 == Outline ==
 1. A spatial model with bridges
 3. Data on rivers and bridges
-4. Research designs
+4. Preliminary empirical analysis
 6. Conclusion
 
 
@@ -75,9 +83,9 @@ shops.\textquotedblright \bigskip \newline
 
 == Geography: A tale of two banks ==
 * We focus on just the two banks of the river.
+* Many of our results hold for a 2D plain. But:
 	* There may be other mechanisms why people move ''towards'' the river.
 	* We have closed form solutions for the distribution of population.
-	* Favorable to models withouth bridges: agglomeration in the middle.
 * Two banks, $L$ and $R$. River is bounded between $[-k,k]$.
 	* Location is indexed by bank and rivermile, $S=\{L,R\}\times [-k,k]$.
 * We study the effect of a bridge at $0$.
@@ -208,6 +216,7 @@ with $C_1$ and $C_2$ such that
 	* rivers,
 	* (historical) bridges,
 	* (historical) population.
+* Later: controls for railways, canals, geography.
 
 == Rivers ==
 * River geocoordinates from ESRI Map of U.S. Major Waters for Arkansas, Colorado, Columbia,
@@ -240,9 +249,6 @@ Snake\ River, Tennessee.
 
 == ==
 \widefigure{post-offices-1830}{Population and the number of post offices across counties}
-
-
-== ==
 \widefigure{post_offices_in_bridge_buffers}{Bridges and post offices on the Delaware, 1830}
 \longfigure{river-descriptives}{Earliest bridges}
 \widefigure{post-office-count}{Number of post offices over time}
@@ -253,7 +259,7 @@ Snake\ River, Tennessee.
 * We have a number of research designs that address:
 	1. simple equilibrium correlations from the model
 	2. two-way link between bridges and agglomeration
-	3. space warping
+	3. causality of bridges
 
 ==	Cross-sectional correlations ==
 1. Density is higher at river.
@@ -352,7 +358,12 @@ Observations & 892 & 892 \\
 \multicolumn{3}{c}{ *** p$<$0.01, ** p$<$0.05, * p$<$0.1} \\
 \end{tabular}
 
+== Summary ==
+* The causal effect of a bridge is a 4-fold increase in post office density.
+* Much larger than immediate effect estimated in event study.
+* External validity? industrial revolution, urbanization
 
+= Additional patterns =
 ==	Warping of space ==
 1. Clustering at rivers
 2. Two-side correlations
@@ -414,8 +425,17 @@ With agglomeration externalities (not currently modeled) our theory would predic
 
 = Conclusion =
 == Conclusion ==
-* 2D model of location and trade.
+* A simple model of location and trade.
 * Spatial pattern of population around bridges is consistent with the model.
 * Bridge regions grow faster.
 * Two sides of river converge in size after bridge is built.
+* Exogenous crossing points are more dense.
 * Potentially large welfare gains from early bridges.
+
+= Appendix =
+== A bridge on a crossable river ==
+* When the river can be crossed at cost $e^{\tau_0}$, only certain locations will use the bridge.
+* Points within the region $[-0.5(\tau_0-\tau_b)/t,0.5(\tau_0-\tau_b)/t]$ use the bridge for every location.
+== ==
+\widefigure{limited-bridge}{Population distribution with a limited bridge}
+
