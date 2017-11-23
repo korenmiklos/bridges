@@ -1,21 +1,51 @@
 import json
 import csv
-from shapely.geometry import shape, Polygon, MultiPoint, MultiPolygon
+from shapely.geometry import shape, Point, LineString, Polygon, MultiPoint, MultiPolygon
 from shapely import speedups
-import sys
+import sys, math
 from project_geojson import ProjectedFeature
 from quadtree import QuadTree, Feature, point_in_rectangle
+
+def get_angle(pt1, pt2):
+    x_diff = pt2.x - pt1.x
+    y_diff = pt2.y - pt1.y
+    return math.degrees(math.atan2(y_diff, x_diff))
+
+## start and end points of chainage tick
+## get the first end point of a tick
+def get_perpendicular_segment(pt, bearing, length):
+    angle = bearing + 90
+    bearing = math.radians(angle)
+    x1 = pt.x + 0.5*length*math.cos(bearing)
+    y1 = pt.y + 0.5*length*math.sin(bearing)
+    x2 = pt.x - 0.5*length*math.cos(bearing)
+    y2 = pt.y - 0.5*length*math.sin(bearing)
+    return LineString([(x1, y1), (x2, y2)])
 
 def disc_5km(geometry_in_meters):
     return geometry_in_meters.buffer(5000.0)
 
-def get_every_10k_points(line_in_meters):
+def perpendicular_ticks(line_in_meters, step=10000.0, length=5000.0):
+    length = line_in_meters.length
+    previous_distance_covered = 0.0
+    lines = []
+    for point1, point2 in zip(line_in_meters.coords, line_in_meters.coords[1:]):
+        p1 = Point(point1)
+        if line_in_meters.project(p1) >= previous_distance_covered +  step:
+            p2 = Point(point2)
+            bearing = get_angle(p1, p2)
+            tick = get_perpendicular_segment(p1, bearing, length)
+            previous_distance_covered += step
+            lines.append(dict(river_mile=int(previous_distance_covered/1609.3), geometry=tick))
+    return lines
+
+def get_every_10k_points(line_in_meters, step=10000.0):
     length = line_in_meters.length
     covered = 0
     points = []
     while covered<length:
-        points.append(dict(river_mile=int(covered/1600.0), geometry=line_in_meters.interpolate(covered)))
-        covered += 10000.0
+        points.append(dict(river_mile=int(covered/1609.3), geometry=line_in_meters.interpolate(covered)))
+        covered += step
     return points
 
 def polygonize(geometry):
@@ -45,36 +75,16 @@ speedups.enable()
 
 river = sys.argv[1]
 
-geojson = json.load(open("input/us-postal-history/postoffices.geojson"))
-points = []
-for point in geojson['features']:
-    projected = ProjectedFeature(point['geometry'], projection='wgs84').lcc
-    points.append((projected.x, projected.y))
-post_offices = QuadTree(points)
-
-
 river_line_meters = ProjectedFeature(json.load(open("input/rivers/%s/river_midline.geojson" % river))['features'][0]['geometry'], 'wgs84').lcc
-bridges = json.load(open("input/rivers/%s/bridges.geojson" % river))['features']
-bridge_collection = ProjectedFeature(MultiPoint([shape(bridge['geometry']) for bridge in bridges]), projection='wgs84').lcc
-segments = [dict(river_mile=point['river_mile'], 
-    geometry=disc_5km(point['geometry'])) for point in get_every_10k_points(river_line_meters)]
+ticks = perpendicular_ticks(river_line_meters, step=10000.0, length=5000.0)
 water_body_fc = json.load(open("input/rivers/%s/river_poly.geojson" % river))
 water_body = ProjectedFeature(feature_collection_to_multipolygon(water_body_fc), projection='epsg3975').lcc
-predicted_crossing_points = MultiPoint([
-    ProjectedFeature(shape(point['geometry']), projection='epsg3975').lcc for point in 
-    json.load(open("input/rivers/%s/predicted_crossing_points.geojson" % river))['features']])
 
-writer = csv.DictWriter(sys.stdout, fieldnames=['river_mile', 'water_covered_area', 'bridges', 'post_office_count', 'crossing_points'])
+writer = csv.DictWriter(sys.stdout, fieldnames=['river_mile', 'river_width'])
 writer.writeheader()
 
-for segment in segments:
-    water_covered_area = segment['geometry'].intersection(water_body.buffer(0)).area
-    bridges = simple_count(bridge_collection, segment['geometry'])
-    crossing_points = simple_count(predicted_crossing_points, segment['geometry'])
-    post_office_count = post_offices.count_overlapping_points(Feature(geometry=segment['geometry']))
+for segment in ticks:
+    river_width = segment['geometry'].intersection(water_body.buffer(0)).length
     writer.writerow(dict(river_mile=segment['river_mile'], 
-        water_covered_area=water_covered_area/segment['geometry'].area,
-        bridges=bridges,
-        crossing_points=crossing_points,
-        post_office_count=post_office_count
+        river_width=river_width,
         ))
