@@ -36,9 +36,9 @@ Notes:
 
 . save `rivers', replace emptyok
 (note: dataset contains 0 observations)
-(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 no
+(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 no
 > t found)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 
 . 
 . * historical crossing points at following rivermiles
@@ -78,36 +78,36 @@ file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
  13.         save `rivers', replace
  14. }
 (5 vars, 118 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 166 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 112 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 44 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 51 obs)
 (note: variable river was str8, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 44 obs)
 (note: variable river was str6, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 154 obs)
 (note: variable river was str4, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 125 obs)
 (note: variable river was str3, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 130 obs)
 (note: variable river was str5, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 82 obs)
 (note: variable river was str9, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 345 obs)
 (note: variable river was str8, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 (5 vars, 299 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St88282.000001 saved
 
 . 
 . egen river_number = group(river)
