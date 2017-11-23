@@ -6,14 +6,14 @@ from shapely.geometry import asShape
 from shapely.geometry import Point
 
 PROJECTIONS = dict(
-	wgs84 = pyproj.Proj("+init=EPSG:4326"),
-	lcc = pyproj.Proj(proj="lcc"),
-	nhgis = pyproj.Proj("+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"),
+    wgs84 = pyproj.Proj("+init=EPSG:4326"),
+    lcc = pyproj.Proj(proj="lcc"),
+    nhgis = pyproj.Proj("+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"),
     epsg3975 = pyproj.Proj("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
 )
 
 def project_geometry(geometry, tfrom, tto):
-	return transform(lambda x, y: pyproj.transform(PROJECTIONS[tfrom], PROJECTIONS[tto], x, y), geometry)
+    return transform(lambda x, y: pyproj.transform(PROJECTIONS[tfrom], PROJECTIONS[tto], x, y), geometry)
 
 class ProjectedFeature(object):
     def __init__(self, geometry, projection):
@@ -23,7 +23,7 @@ class ProjectedFeature(object):
         if not isinstance(geometry, BaseGeometry):
             # if not shapely geometry, treat as geojson dictionary
             geometry = asShape(geometry)
-    	self.geometry = project_geometry(geometry, projection, 'wgs84')
+        self.geometry = project_geometry(geometry, projection, 'wgs84')
 
     def __getattr__(self, projection):
         '''

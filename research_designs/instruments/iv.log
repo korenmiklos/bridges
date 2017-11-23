@@ -1,7 +1,7 @@
 
   ___  ____  ____  ____  ____ (R)
  /__    /   ____/   /   ____/
-___/   /   /___/   /   /___/   13.0   Copyright 1985-2013 StataCorp LP
+___/   /   /___/   /   /___/   15.0   Copyright 1985-2017 StataCorp LLC
   Statistics/Data Analysis            StataCorp
                                       4905 Lakeway Drive
      MP - Parallel Edition            College Station, Texas 77845 USA
@@ -10,14 +10,15 @@ ___/   /   /___/   /   /___/   13.0   Copyright 1985-2013 StataCorp LP
                                       979-696-4601 (fax)
 
 Single-user 2-core Stata perpetual license:
-       Serial number:  501306004725
+       Serial number:  501506203290
          Licensed to:  Miklos Koren
-                       Central European University
+                       CEU MicroData
 
 Notes:
-      1.  (-v# option or -set maxvar-) 5000 maximum variables
-      2.  Command line editing disabled
-      3.  Stata running in batch mode
+      1.  Stata is running in batch mode.
+      2.  Unicode is supported; see help unicode_advice.
+      3.  More than 2 billion observations are allowed; see help obs_advice.
+      4.  Maximum number of variables is set to 5000; see help set_maxvar.
 
 . do iv 
 
@@ -35,58 +36,87 @@ Notes:
 
 . save `rivers', replace emptyok
 (note: dataset contains 0 observations)
-(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 no
+(note: file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 no
 > t found)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
+
+. 
+. * historical crossing points at following rivermiles
+. local x_connecticut 68 86 144 197
+
+. local x_hudson 42 67 93 154 220
+
+. local x_delaware 128 139 146
+
+. local x_tennessee 190 369 400
+
+. local x_ohio 897 810 626 586 494
+
+. * from 1800 map
+. local x_mississippi 64 313 533 658 881 923 
+
+. local x_missouri 130 353 600 770 1020 1179 1354 1575 2095 2260
+
+. local x_arkansas 112 312 364 757
 
 . 
 . foreach river in `RIVERS' {
   2.         insheet using output/`river'.csv, clear
   3.         gen location = _n
   4.         gen str river = "`river'"
-  5.         append using `rivers'
-  6.         save `rivers', replace
-  7. }
+  5.         
+.         * distance to nearest historical crossing
+.         local crossings : word count `x_`river''
+  6.         forval i=1/`crossings' {
+  7.                 local crossing : word `i' of `x_`river''
+  8.                 gen distance_`i' = abs(river_mile-`crossing')
+  9.         }
+ 10.         capture egen closest_crossing = rmin(distance_*)
+ 11.         capture drop distance_*
+ 12.         
+.         append using `rivers'
+ 13.         save `rivers', replace
+ 14. }
 (5 vars, 118 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 166 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 112 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 44 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 51 obs)
 (note: variable river was str8, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 44 obs)
 (note: variable river was str6, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 154 obs)
 (note: variable river was str4, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 125 obs)
 (note: variable river was str3, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 130 obs)
 (note: variable river was str5, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 82 obs)
 (note: variable river was str9, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 345 obs)
 (note: variable river was str8, now str11 to accommodate using data's values)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 (5 vars, 299 obs)
-file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St02385.000001 saved
+file /var/folders/7b/svcv81g94n3fm6nrj7ckr15c0000gn/T//St85496.000001 saved
 
 . 
 . egen river_number = group(river)
 
 . su river_number
 
-    Variable |       Obs        Mean    Std. Dev.       Min        Max
--------------+--------------------------------------------------------
-river_number |      1670    6.816766    3.190941          1         12
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+river_number |      1,670    6.816766    3.190941          1         12
 
 . local N = r(max)
 
@@ -116,11 +146,11 @@ river_number |      1670    6.816766    3.190941          1         12
 . 
 . reg bridges river_mile_* water_covered_area crossing_points, robust
 
-Linear regression                                      Number of obs =    1670
-                                                       F( 26,  1643) =    6.11
-                                                       Prob > F      =  0.0000
-                                                       R-squared     =  0.0819
-                                                       Root MSE      =  .96684
+Linear regression                               Number of obs     =      1,670
+                                                F(26, 1643)       =       6.11
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0819
+                                                Root MSE          =     .96684
 
 ------------------------------------------------------------------------------
              |               Robust
@@ -175,109 +205,138 @@ crossing_p~s |   .0537433    .051979     1.03   0.301    -.0482087    .1556954
 . label var crossing_points "Number of predicted crossing points"
 
 . 
-. reg bridges water_covered_area L.water_covered_area F.water_covered_area cros
-> sing_points F.crossing_points L.crossing_points river_mile_*, robust
+. * a cycle of potential bridges every 30 miles
+. gen cycle = cos(closest_crossing/30*2*c(pi))
+(533 missing values generated)
 
-Linear regression                                      Number of obs =    1646
-                                                       F( 30,  1615) =    5.50
-                                                       Prob > F      =  0.0000
-                                                       R-squared     =  0.0825
-                                                       Root MSE      =   .9689
+. gen within_10mi = closest_crossing<=10
+
+. 
+. local instruments closest_crossing F.closest_crossing L.closest_crossing wate
+> r_covered_area L.water_covered_area F.water_covered_area
+
+. 
+. reg bridges `instruments' river_mile_*, robust
+note: river_mile_2 omitted because of collinearity
+note: river_mile_sq_2 omitted because of collinearity
+note: river_mile_3 omitted because of collinearity
+note: river_mile_sq_3 omitted because of collinearity
+note: river_mile_10 omitted because of collinearity
+note: river_mile_sq_10 omitted because of collinearity
+note: river_mile_11 omitted because of collinearity
+note: river_mile_sq_11 omitted because of collinearity
+
+Linear regression                               Number of obs     =      1,121
+                                                F(22, 1098)       =       5.51
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.0850
+                                                Root MSE          =     1.0961
 
 ------------------------------------------------------------------------------
              |               Robust
      bridges |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+closest_cr~g |
+         --. |  -.0861537   .0404851    -2.13   0.034    -.1655906   -.0067167
+         F1. |   .0416431    .020616     2.02   0.044     .0011918    .0820944
+         L1. |   .0438666   .0201236     2.18   0.029     .0043816    .0833516
+             |
 water_cove~a |
-         --. |  -.6862793   .3042423    -2.26   0.024     -1.28303   -.0895282
-         L1. |  -.3128909   .1939032    -1.61   0.107    -.6932193    .0674375
-         F1. |   .3976953   .2997338     1.33   0.185    -.1902128    .9856034
+         --. |  -1.221743   .4222492    -2.89   0.004    -2.050249   -.3932362
+         L1. |  -.1935912   .2603028    -0.74   0.457    -.7043383    .3171559
+         F1. |   .6915667   .4571375     1.51   0.131    -.2053951    1.588528
              |
-crossing_p~s |
-         --. |   .0519928   .0538181     0.97   0.334    -.0535679    .1575535
-         F1. |  -.0025765   .0547089    -0.05   0.962    -.1098843    .1047314
-         L1. |   .0457457   .0549643     0.83   0.405    -.0620631    .1535546
-             |
-river_mile_1 |   .0012233   .0009011     1.36   0.175    -.0005441    .0029907
-river_mi~q_1 |  -1.34e-06   1.57e-06    -0.85   0.393    -4.43e-06    1.74e-06
-river_mile_2 |  -.0007823   .0003192    -2.45   0.014    -.0014084   -.0001562
-river_mi~q_2 |   7.79e-07   3.53e-07     2.21   0.027     8.76e-08    1.47e-06
-river_mile_3 |   .0003228    .000781     0.41   0.679    -.0012091    .0018548
-river_mi~q_3 |  -3.46e-07   1.39e-06    -0.25   0.803    -3.07e-06    2.37e-06
-river_mile_4 |   .0169017   .0068027     2.48   0.013     .0035586    .0302447
-river_mi~q_4 |  -.0000597   .0000294    -2.03   0.042    -.0001173   -2.04e-06
-river_mile_5 |    .008972   .0033347     2.69   0.007     .0024313    .0155128
-river_mi~q_5 |  -.0000245   .0000129    -1.90   0.058    -.0000498    8.03e-07
-river_mile_6 |   .0058672   .0029902     1.96   0.050     2.18e-06    .0117323
-river_mi~q_6 |  -.0000197   .0000131    -1.51   0.132    -.0000455    5.98e-06
-river_mile_7 |   .0001893   .0002907     0.65   0.515    -.0003809    .0007595
-river_mi~q_7 |   1.18e-07   2.06e-07     0.57   0.568    -2.87e-07    5.22e-07
-river_mile_8 |   .0002724   .0001832     1.49   0.137    -.0000869    .0006316
-river_mi~q_8 |  -1.65e-07   9.88e-08    -1.67   0.094    -3.59e-07    2.84e-08
-river_mile_9 |  -.0000453   .0009565    -0.05   0.962    -.0019215    .0018308
-river_mi~q_9 |   1.11e-06   1.21e-06     0.92   0.360    -1.27e-06    3.49e-06
-river_m~e_10 |  -.0001332   .0006887    -0.19   0.847    -.0014841    .0012177
-river_m~q_10 |  -1.47e-07   1.08e-06    -0.14   0.891    -2.26e-06    1.96e-06
-river_m~e_11 |  -.0001819   .0006002    -0.30   0.762    -.0013591    .0009953
-river_m~q_11 |   3.59e-07   8.75e-07     0.41   0.682    -1.36e-06    2.08e-06
-river_m~e_12 |   .0010334   .0009948     1.04   0.299    -.0009179    .0029847
-river_m~q_12 |  -2.07e-06   2.13e-06    -0.97   0.331    -6.24e-06    2.11e-06
-       _cons |   .2913138     .06704     4.35   0.000     .1598192    .4228083
+river_mile_1 |   .0008652   .0009982     0.87   0.386    -.0010934    .0028238
+river_mi~q_1 |  -9.93e-07   1.67e-06    -0.60   0.552    -4.27e-06    2.28e-06
+river_mile_2 |          0  (omitted)
+river_mi~q_2 |          0  (omitted)
+river_mile_3 |          0  (omitted)
+river_mi~q_3 |          0  (omitted)
+river_mile_4 |   .0142421   .0068196     2.09   0.037     .0008613    .0276229
+river_mi~q_4 |  -.0000506   .0000292    -1.73   0.083    -.0001078    6.65e-06
+river_mile_5 |   .0073568   .0035849     2.05   0.040     .0003228    .0143908
+river_mi~q_5 |  -.0000188   .0000137    -1.37   0.171    -.0000458    8.15e-06
+river_mile_6 |   .0040368   .0031455     1.28   0.200    -.0021351    .0102087
+river_mi~q_6 |  -.0000148   .0000133    -1.11   0.268    -.0000409    .0000114
+river_mile_7 |  -.0001459   .0003798    -0.38   0.701    -.0008911    .0005993
+river_mi~q_7 |   4.42e-07   2.84e-07     1.56   0.119    -1.15e-07    9.99e-07
+river_mile_8 |   .0001028   .0002272     0.45   0.651    -.0003429    .0005486
+river_mi~q_8 |  -9.71e-08   1.13e-07    -0.86   0.391    -3.19e-07    1.25e-07
+river_mile_9 |  -.0000175   .0010132    -0.02   0.986    -.0020055    .0019705
+river_mi~q_9 |   9.32e-07   1.30e-06     0.71   0.475    -1.63e-06    3.49e-06
+river_m~e_10 |          0  (omitted)
+river_m~q_10 |          0  (omitted)
+river_m~e_11 |          0  (omitted)
+river_m~q_11 |          0  (omitted)
+river_m~e_12 |   .0002731   .0011919     0.23   0.819    -.0020656    .0026117
+river_m~q_12 |  -7.84e-07   2.46e-06    -0.32   0.750    -5.62e-06    4.05e-06
+       _cons |   .4552541   .1125613     4.04   0.000     .2343945    .6761137
 ------------------------------------------------------------------------------
+
+. predict predicted_bridges
+(option xb assumed; fitted values)
+(549 missing values generated)
 
 . outreg2 using output/bridges_first_stage.tex, tex(frag) replace label
 output/bridges_first_stage.tex
 dir : seeout
 
 . 
-. reg has_bridge water_covered_area L.water_covered_area F.water_covered_area c
-> rossing_points F.crossing_points L.crossing_points river_mile_*, robust
+. reg has_bridge `instruments' river_mile_*, robust
+note: river_mile_2 omitted because of collinearity
+note: river_mile_sq_2 omitted because of collinearity
+note: river_mile_3 omitted because of collinearity
+note: river_mile_sq_3 omitted because of collinearity
+note: river_mile_10 omitted because of collinearity
+note: river_mile_sq_10 omitted because of collinearity
+note: river_mile_11 omitted because of collinearity
+note: river_mile_sq_11 omitted because of collinearity
 
-Linear regression                                      Number of obs =    1646
-                                                       F( 30,  1615) =    8.00
-                                                       Prob > F      =  0.0000
-                                                       R-squared     =  0.1165
-                                                       Root MSE      =  .39226
+Linear regression                               Number of obs     =      1,121
+                                                F(22, 1098)       =       7.74
+                                                Prob > F          =     0.0000
+                                                R-squared         =     0.1223
+                                                Root MSE          =     .41454
 
 ------------------------------------------------------------------------------
              |               Robust
   has_bridge |      Coef.   Std. Err.      t    P>|t|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
+closest_cr~g |
+         --. |  -.0162806   .0097883    -1.66   0.097    -.0354864    .0029252
+         F1. |   .0078436   .0050357     1.56   0.120    -.0020371    .0177244
+         L1. |   .0081559   .0050737     1.61   0.108    -.0017993    .0181111
+             |
 water_cove~a |
-         --. |  -.2097683   .1346551    -1.56   0.119    -.4738854    .0543488
-         L1. |  -.1326174   .1125774    -1.18   0.239    -.3534304    .0881957
-         F1. |   .0837313   .1101662     0.76   0.447    -.1323524    .2998151
+         --. |   -.390071   .1743565    -2.24   0.025    -.7321806   -.0479613
+         L1. |   .0170918   .1401436     0.12   0.903    -.2578877    .2920713
+         F1. |   .1010986   .1440139     0.70   0.483    -.1814749     .383672
              |
-crossing_p~s |
-         --. |  -.0125103   .0236864    -0.53   0.597    -.0589696     .033949
-         F1. |   .0015155    .022211     0.07   0.946      -.04205    .0450809
-         L1. |   .0198565   .0221702     0.90   0.371    -.0236289    .0633419
-             |
-river_mile_1 |   .0005644   .0004302     1.31   0.190    -.0002793    .0014081
-river_mi~q_1 |  -5.88e-07   7.31e-07    -0.80   0.421    -2.02e-06    8.46e-07
-river_mile_2 |  -.0007056   .0001904    -3.70   0.000    -.0010791    -.000332
-river_mi~q_2 |   7.70e-07   2.33e-07     3.30   0.001     3.12e-07    1.23e-06
-river_mile_3 |   .0003032   .0004482     0.68   0.499    -.0005758    .0011822
-river_mi~q_3 |  -4.69e-07   7.99e-07    -0.59   0.558    -2.04e-06    1.10e-06
-river_mile_4 |   .0061851   .0020609     3.00   0.003     .0021427    .0102275
-river_mi~q_4 |  -.0000182   9.73e-06    -1.87   0.061    -.0000373    8.48e-07
-river_mile_5 |   .0054448   .0015127     3.60   0.000     .0024778    .0084117
-river_mi~q_5 |  -.0000139   6.27e-06    -2.22   0.026    -.0000262   -1.64e-06
-river_mile_6 |   .0035504   .0020017     1.77   0.076    -.0003757    .0074765
-river_mi~q_6 |  -9.73e-06   9.61e-06    -1.01   0.311    -.0000286    9.11e-06
-river_mile_7 |  -.0000151   .0001116    -0.14   0.892     -.000234    .0002037
-river_mi~q_7 |   6.75e-08   7.00e-08     0.96   0.335    -6.98e-08    2.05e-07
-river_mile_8 |   .0000299   .0000879     0.34   0.734    -.0001425    .0002023
-river_mi~q_8 |  -3.45e-08   4.60e-08    -0.75   0.453    -1.25e-07    5.56e-08
-river_mile_9 |  -.0000556   .0003013    -0.18   0.854    -.0006466    .0005355
-river_mi~q_9 |   5.28e-07   3.85e-07     1.37   0.170    -2.27e-07    1.28e-06
-river_m~e_10 |  -.0001037   .0003407    -0.30   0.761     -.000772    .0005646
-river_m~q_10 |  -5.80e-08   5.32e-07    -0.11   0.913    -1.10e-06    9.85e-07
-river_m~e_11 |  -.0001783   .0003172    -0.56   0.574    -.0008004    .0004437
-river_m~q_11 |   3.07e-07   4.69e-07     0.66   0.512    -6.13e-07    1.23e-06
-river_m~e_12 |   .0006581   .0006542     1.01   0.315    -.0006251    .0019412
-river_m~q_12 |  -1.38e-06   1.52e-06    -0.91   0.363    -4.36e-06    1.60e-06
-       _cons |   .2019424   .0319836     6.31   0.000     .1392086    .2646762
+river_mile_1 |   .0002008   .0004805     0.42   0.676    -.0007419    .0011436
+river_mi~q_1 |  -1.42e-07   7.81e-07    -0.18   0.856    -1.67e-06    1.39e-06
+river_mile_2 |          0  (omitted)
+river_mi~q_2 |          0  (omitted)
+river_mile_3 |          0  (omitted)
+river_mi~q_3 |          0  (omitted)
+river_mile_4 |    .004864   .0021269     2.29   0.022     .0006908    .0090372
+river_mi~q_4 |  -.0000139   9.84e-06    -1.41   0.158    -.0000332    5.41e-06
+river_mile_5 |   .0043599   .0016129     2.70   0.007     .0011952    .0075246
+river_mi~q_5 |  -.0000105   6.55e-06    -1.60   0.109    -.0000233    2.35e-06
+river_mile_6 |   .0023246   .0020304     1.14   0.253    -.0016594    .0063086
+river_mi~q_6 |  -5.91e-06   9.59e-06    -0.62   0.538    -.0000247    .0000129
+river_mile_7 |  -.0002463   .0001643    -1.50   0.134    -.0005688    .0000762
+river_mi~q_7 |   2.52e-07   1.23e-07     2.04   0.041     9.97e-09    4.94e-07
+river_mile_8 |  -.0000988    .000113    -0.87   0.382    -.0003206     .000123
+river_mi~q_8 |   1.92e-08   5.57e-08     0.34   0.730    -9.00e-08    1.28e-07
+river_mile_9 |  -.0001832   .0003202    -0.57   0.567    -.0008114     .000445
+river_mi~q_9 |   5.69e-07   4.06e-07     1.40   0.162    -2.28e-07    1.37e-06
+river_m~e_10 |          0  (omitted)
+river_m~q_10 |          0  (omitted)
+river_m~e_11 |          0  (omitted)
+river_m~q_11 |          0  (omitted)
+river_m~e_12 |   .0001126   .0007216     0.16   0.876    -.0013033    .0015284
+river_m~q_12 |  -4.83e-07   1.62e-06    -0.30   0.766    -3.67e-06    2.70e-06
+       _cons |   .2880248   .0509949     5.65   0.000     .1879663    .3880832
 ------------------------------------------------------------------------------
 
 . outreg2 using output/bridges_first_stage, tex(frag) append label
@@ -285,112 +344,122 @@ output/bridges_first_stage.tex
 dir : seeout
 
 .  
-. ivregress 2sls log_post_office_count (bridges = water_covered_area L.water_co
-> vered_area F.water_covered_area crossing_points F.crossing_points L.crossing_
-> points) river_mile_*, robust
+. ivregress 2sls log_post_office_count (bridges = `instruments') river_mile_*, 
+> robust
+note: river_mile_2 omitted because of collinearity
+note: river_mile_sq_2 omitted because of collinearity
+note: river_mile_3 omitted because of collinearity
+note: river_mile_sq_3 omitted because of collinearity
+note: river_mile_10 omitted because of collinearity
+note: river_mile_sq_10 omitted because of collinearity
+note: river_mile_11 omitted because of collinearity
+note: river_mile_sq_11 omitted because of collinearity
 
-Instrumental variables (2SLS) regression               Number of obs =    1155
-                                                       Wald chi2(25) =  847.16
-                                                       Prob > chi2   =  0.0000
-                                                       R-squared     =  0.3675
-                                                       Root MSE      =  .57912
+Instrumental variables (2SLS) regression          Number of obs   =        892
+                                                  Wald chi2(17)   =     549.00
+                                                  Prob > chi2     =     0.0000
+                                                  R-squared       =     0.2112
+                                                  Root MSE        =     .65994
 
 ------------------------------------------------------------------------------
              |               Robust
 log_post_o~t |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-     bridges |   .2316948   .1251211     1.85   0.064    -.0135381    .4769278
-river_mile_1 |   -.002819   .0005821    -4.84   0.000      -.00396   -.0016781
-river_mi~q_1 |   2.58e-06   9.11e-07     2.83   0.005     7.89e-07    4.36e-06
-river_mile_2 |  -.0038248   .0007381    -5.18   0.000    -.0052714   -.0023782
-river_mi~q_2 |   3.15e-06   7.64e-07     4.13   0.000     1.65e-06    4.65e-06
-river_mile_3 |  -.0017772   .0006561    -2.71   0.007    -.0030632   -.0004913
-river_mi~q_3 |   1.63e-06   1.10e-06     1.47   0.140    -5.36e-07    3.80e-06
-river_mile_4 |   .0032871   .0032804     1.00   0.316    -.0031424    .0097166
-river_mi~q_4 |  -.0000153   .0000142    -1.08   0.282    -.0000431    .0000125
-river_mile_5 |   .0110207   .0022479     4.90   0.000     .0066149    .0154265
-river_mi~q_5 |  -.0000372   8.10e-06    -4.60   0.000    -.0000531   -.0000214
-river_mile_6 |   .0183264   .0027068     6.77   0.000      .013021    .0236317
-river_mi~q_6 |  -.0000864   .0000141    -6.13   0.000     -.000114   -.0000587
-river_mile_7 |  -.0004697   .0001833    -2.56   0.010    -.0008291   -.0001104
-river_mi~q_7 |   9.26e-08   1.18e-07     0.78   0.434    -1.39e-07    3.24e-07
-river_mile_8 |  -.0012356   .0001573    -7.86   0.000    -.0015438   -.0009273
-river_mi~q_8 |   4.56e-07   8.22e-08     5.54   0.000     2.94e-07    6.17e-07
-river_mile_9 |   .0002891   .0004516     0.64   0.522     -.000596    .0011742
-river_mi~q_9 |   5.31e-07   5.68e-07     0.93   0.350    -5.83e-07    1.64e-06
-river_m~e_10 |  -.0017657   .0007238    -2.44   0.015    -.0031842   -.0003471
-river_m~q_10 |   5.04e-07   1.17e-06     0.43   0.665    -1.78e-06    2.79e-06
-river_m~e_11 |  -.0040953   .0006408    -6.39   0.000    -.0053512   -.0028394
-river_m~q_11 |   4.60e-06   1.07e-06     4.28   0.000     2.50e-06    6.71e-06
-river_m~e_12 |  -.0005949   .0010492    -0.57   0.571    -.0026513    .0014616
-river_m~q_12 |  -1.01e-06   2.52e-06    -0.40   0.690    -5.95e-06    3.93e-06
-       _cons |   1.007695   .0691746    14.57   0.000     .8721149    1.143274
+     bridges |   .3710596   .1175355     3.16   0.002     .1406942    .6014251
+river_mile_1 |  -.0031439   .0006464    -4.86   0.000    -.0044109   -.0018769
+river_mi~q_1 |   2.91e-06   1.02e-06     2.85   0.004     9.07e-07    4.92e-06
+river_mile_2 |          0  (omitted)
+river_mi~q_2 |          0  (omitted)
+river_mile_3 |          0  (omitted)
+river_mi~q_3 |          0  (omitted)
+river_mile_4 |   .0007278   .0033063     0.22   0.826    -.0057524    .0072079
+river_mi~q_4 |  -6.30e-06   .0000141    -0.45   0.654    -.0000339    .0000212
+river_mile_5 |   .0094389   .0023895     3.95   0.000     .0047555    .0141224
+river_mi~q_5 |  -.0000328   8.64e-06    -3.80   0.000    -.0000498   -.0000159
+river_mile_6 |    .017534    .002898     6.05   0.000      .011854     .023214
+river_mi~q_6 |  -.0000843   .0000151    -5.60   0.000    -.0001138   -.0000548
+river_mile_7 |  -.0005134   .0002198    -2.34   0.019    -.0009442   -.0000826
+river_mi~q_7 |   7.61e-08   1.40e-07     0.54   0.587    -1.99e-07    3.51e-07
+river_mile_8 |  -.0013269    .000181    -7.33   0.000    -.0016817   -.0009721
+river_mi~q_8 |   5.01e-07   9.17e-08     5.47   0.000     3.22e-07    6.81e-07
+river_mile_9 |   .0002261   .0005565     0.41   0.685    -.0008646    .0013167
+river_mi~q_9 |   4.31e-07   7.01e-07     0.61   0.539    -9.43e-07    1.81e-06
+river_m~e_10 |          0  (omitted)
+river_m~q_10 |          0  (omitted)
+river_m~e_11 |          0  (omitted)
+river_m~q_11 |          0  (omitted)
+river_m~e_12 |  -.0008211   .0011153    -0.74   0.462     -.003007    .0013649
+river_m~q_12 |  -5.55e-07   2.60e-06    -0.21   0.831    -5.66e-06    4.55e-06
+       _cons |   .9835241   .0822836    11.95   0.000     .8222512    1.144797
 ------------------------------------------------------------------------------
 Instrumented:  bridges
-Instruments:   river_mile_1 river_mile_sq_1 river_mile_2 river_mile_sq_2
-               river_mile_3 river_mile_sq_3 river_mile_4 river_mile_sq_4
+Instruments:   river_mile_1 river_mile_sq_1 river_mile_4 river_mile_sq_4
                river_mile_5 river_mile_sq_5 river_mile_6 river_mile_sq_6
                river_mile_7 river_mile_sq_7 river_mile_8 river_mile_sq_8
-               river_mile_9 river_mile_sq_9 river_mile_10 river_mile_sq_10
-               river_mile_11 river_mile_sq_11 river_mile_12 river_mile_sq_12
+               river_mile_9 river_mile_sq_9 river_mile_12 river_mile_sq_12
+               closest_crossing F.closest_crossing L.closest_crossing
                water_covered_area L.water_covered_area F.water_covered_area
-               crossing_points F.crossing_points L.crossing_points
 
 . outreg2 using output/bridges_iv.tex, tex(frag) replace label
 output/bridges_iv.tex
 dir : seeout
 
 . 
-. ivregress 2sls log_post_office_count (has_bridge = water_covered_area L.water
-> _covered_area F.water_covered_area crossing_points F.crossing_points L.crossi
-> ng_points) river_mile_*, robust
+. ivregress 2sls log_post_office_count (has_bridge = `instruments') river_mile_
+> *, robust
+note: river_mile_2 omitted because of collinearity
+note: river_mile_sq_2 omitted because of collinearity
+note: river_mile_3 omitted because of collinearity
+note: river_mile_sq_3 omitted because of collinearity
+note: river_mile_10 omitted because of collinearity
+note: river_mile_sq_10 omitted because of collinearity
+note: river_mile_11 omitted because of collinearity
+note: river_mile_sq_11 omitted because of collinearity
 
-Instrumental variables (2SLS) regression               Number of obs =    1155
-                                                       Wald chi2(25) =  861.33
-                                                       Prob > chi2   =  0.0000
-                                                       R-squared     =  0.3669
-                                                       Root MSE      =  .57936
+Instrumental variables (2SLS) regression          Number of obs   =        892
+                                                  Wald chi2(17)   =     390.75
+                                                  Prob > chi2     =     0.0000
+                                                  R-squared       =          .
+                                                  Root MSE        =     .75678
 
 ------------------------------------------------------------------------------
              |               Robust
 log_post_o~t |      Coef.   Std. Err.      z    P>|z|     [95% Conf. Interval]
 -------------+----------------------------------------------------------------
-  has_bridge |   .5798648   .3668092     1.58   0.114     -.139068    1.298798
-river_mile_1 |  -.0028431   .0006211    -4.58   0.000    -.0040603   -.0016258
-river_mi~q_1 |   2.53e-06   9.37e-07     2.70   0.007     6.93e-07    4.37e-06
-river_mile_2 |  -.0036257   .0007337    -4.94   0.000    -.0050638   -.0021877
-river_mi~q_2 |   2.88e-06   7.71e-07     3.74   0.000     1.37e-06    4.39e-06
-river_mile_3 |  -.0019035   .0006762    -2.81   0.005    -.0032288   -.0005781
-river_mi~q_3 |   1.81e-06   1.16e-06     1.56   0.118    -4.62e-07    4.08e-06
-river_mile_4 |   .0035981   .0035451     1.01   0.310    -.0033501    .0105463
-river_mi~q_4 |  -.0000185   .0000145    -1.27   0.203    -.0000469    9.97e-06
-river_mile_5 |   .0098987   .0028179     3.51   0.000     .0043758    .0154216
-river_mi~q_5 |  -.0000345   9.23e-06    -3.74   0.000    -.0000526   -.0000164
-river_mile_6 |   .0179317   .0030448     5.89   0.000     .0119641    .0238994
-river_mi~q_6 |  -.0000873   .0000157    -5.57   0.000    -.0001181   -.0000566
-river_mile_7 |  -.0004033   .0001893    -2.13   0.033    -.0007744   -.0000321
-river_mi~q_7 |   7.59e-08   1.23e-07     0.62   0.538    -1.65e-07    3.17e-07
-river_mile_8 |   -.001203   .0001598    -7.53   0.000    -.0015162   -.0008897
-river_mi~q_8 |   4.40e-07   8.46e-08     5.20   0.000     2.74e-07    6.06e-07
-river_mile_9 |   .0003573   .0004239     0.84   0.399    -.0004735    .0011882
-river_mi~q_9 |   4.38e-07   5.57e-07     0.79   0.431    -6.53e-07    1.53e-06
-river_m~e_10 |  -.0016087   .0007752    -2.08   0.038    -.0031281   -.0000892
-river_m~q_10 |   2.47e-07   1.22e-06     0.20   0.840    -2.15e-06    2.65e-06
-river_m~e_11 |  -.0041425   .0006648    -6.23   0.000    -.0054455   -.0028394
-river_m~q_11 |   4.62e-06   1.10e-06     4.21   0.000     2.47e-06    6.78e-06
-river_m~e_12 |  -.0007961   .0011105    -0.72   0.473    -.0029727    .0013806
-river_m~q_12 |  -4.75e-07   2.65e-06    -0.18   0.858    -5.68e-06    4.73e-06
-       _cons |   .9596757   .0964272     9.95   0.000     .7706818     1.14867
+  has_bridge |   1.381684   .4530863     3.05   0.002     .4936506    2.269716
+river_mile_1 |  -.0032652   .0008515    -3.83   0.000    -.0049342   -.0015963
+river_mi~q_1 |   2.84e-06   1.33e-06     2.13   0.033     2.22e-07    5.45e-06
+river_mile_2 |          0  (omitted)
+river_mi~q_2 |          0  (omitted)
+river_mile_3 |          0  (omitted)
+river_mi~q_3 |          0  (omitted)
+river_mile_4 |  -.0008866   .0042807    -0.21   0.836    -.0092766    .0075034
+river_mi~q_4 |  -5.31e-06   .0000168    -0.32   0.753    -.0000383    .0000277
+river_mile_5 |   .0054632   .0034549     1.58   0.114    -.0013083    .0122347
+river_mi~q_5 |  -.0000226   .0000118    -1.93   0.054    -.0000457    3.90e-07
+river_mile_6 |   .0165575   .0041847     3.96   0.000     .0083556    .0247594
+river_mi~q_6 |  -.0000872   .0000219    -3.98   0.000    -.0001301   -.0000442
+river_mile_7 |  -.0002714   .0002677    -1.01   0.311    -.0007961    .0002534
+river_mi~q_7 |  -4.89e-08   1.69e-07    -0.29   0.772    -3.80e-07    2.82e-07
+river_mile_8 |  -.0012347   .0002211    -5.59   0.000     -.001668   -.0008014
+river_mi~q_8 |   4.70e-07   1.15e-07     4.09   0.000     2.45e-07    6.96e-07
+river_mile_9 |   .0005696   .0005782     0.99   0.325    -.0005636    .0017028
+river_mi~q_9 |  -1.45e-07   7.46e-07    -0.19   0.846    -1.61e-06    1.32e-06
+river_m~e_10 |          0  (omitted)
+river_m~q_10 |          0  (omitted)
+river_m~e_11 |          0  (omitted)
+river_m~q_11 |          0  (omitted)
+river_m~e_12 |  -.0010702   .0014223    -0.75   0.452    -.0038578    .0017175
+river_m~q_12 |   4.13e-07   3.25e-06     0.13   0.899    -5.96e-06    6.79e-06
+       _cons |    .773461   .1391433     5.56   0.000      .500745    1.046177
 ------------------------------------------------------------------------------
 Instrumented:  has_bridge
-Instruments:   river_mile_1 river_mile_sq_1 river_mile_2 river_mile_sq_2
-               river_mile_3 river_mile_sq_3 river_mile_4 river_mile_sq_4
+Instruments:   river_mile_1 river_mile_sq_1 river_mile_4 river_mile_sq_4
                river_mile_5 river_mile_sq_5 river_mile_6 river_mile_sq_6
                river_mile_7 river_mile_sq_7 river_mile_8 river_mile_sq_8
-               river_mile_9 river_mile_sq_9 river_mile_10 river_mile_sq_10
-               river_mile_11 river_mile_sq_11 river_mile_12 river_mile_sq_12
+               river_mile_9 river_mile_sq_9 river_mile_12 river_mile_sq_12
+               closest_crossing F.closest_crossing L.closest_crossing
                water_covered_area L.water_covered_area F.water_covered_area
-               crossing_points F.crossing_points L.crossing_points
 
 . outreg2 using output/bridges_iv.tex, tex(frag) append label
 output/bridges_iv.tex
