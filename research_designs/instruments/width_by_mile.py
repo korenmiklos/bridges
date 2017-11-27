@@ -76,7 +76,7 @@ speedups.enable()
 river = sys.argv[1]
 
 river_line_meters = ProjectedFeature(json.load(open("input/rivers/%s/river_midline.geojson" % river))['features'][0]['geometry'], 'wgs84').lcc
-ticks = perpendicular_ticks(river_line_meters, step=10000.0, length=5000.0)
+ticks = perpendicular_ticks(river_line_meters, step=1609.3, length=5000.0)
 water_body_fc = json.load(open("input/rivers/%s/river_poly.geojson" % river))
 water_body = ProjectedFeature(feature_collection_to_multipolygon(water_body_fc), projection='epsg3975').lcc
 
