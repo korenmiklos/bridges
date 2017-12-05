@@ -1,0 +1,21 @@
+status,end,name,start,bridge_id,river_stretch,river_mile,longitude,duplicates,distance_to_river_mile,active,latitude,distance_to_closest_bridge,closest_bridge_id,history
+Open to traffic,,BNSF - Colorado River Bridge,1945,1,210,209,-114.4872,,0.255161546,1,34.71811,0.083379,16,Built 1945
+Open to traffic,,Colorado River Bridge,1965,2,835,831,-110.36861,,0.18615026,1,37.89028,65.498761,4,Built 1965
+No longer exists,,Colorado River CO 9 Bridge,1939,3,,1077,-106.37278,,64.41429385,0,40.04194,19.382212,19,Built 1939
+Open to pedestrians and bicycles.,,Colorado Riverway Bridge,2008,4,915,912,-109.57454,,0.226368553,0,38.60426,58.407702,8,Built Spring 2008
+Open to traffic,,De Beque Bridge,1945,5,1030,1029,-108.19306,,0.471452473,1,39.34081,6.035992,20,Built 1945
+Lost,2013,Dotsero Bridge,1934,6,,1077,-107.06312,,20.01391641,0,39.65008,15.604811,10,Built 1934-35; replaced 2013
+Replaced by new bridge,1989,Fifth Street Bridge,1933,7,1000,997,-108.56558,11,0.102696069,0,39.05429,0.020971,11,Built 1933 by the Wisconsin Steel & Iron Works; replaced 1989
+Closed to all traffic,,Fruita Bridge,1906,8,990,986,-108.73136,,0.070078495,0,39.13686,10.544482,11,Built 1906 by the M.J. Patterson Construction Co.
+Open to traffic,,Glen Canyon Bridge,1958,9,685,680,-111.48415,,0.130698122,1,36.93535,11.507663,13,Built 1958
+Open to traffic,,Glenwood Springs Viaduct,1953,10,,1077,-107.32444,,6.044516103,1,39.54778,4.503889,18,Built 1953; rehabilitated 1969
+Replaced by new bridge,1933,Grand Junction State Bridge,1886,11,1000,997,-108.56597,7,0.08626614,0,39.05431,0.020971,7,Built 1886; replaced by the Fifth Street Bridge in 1933
+Open to traffic,,Mike O'Callaghan - Pat Tillman Memorial Bridge,2010,12,315,311,-114.74173,,0.827138175,1,36.01087,90.465193,1,Opened on October 19; 2010 as a bypass route for Hoover Dam and for the Dept. of Homeland Security
+Open to pedestrians only,1995,Navajo Bridge,1929,13,670,668,-111.6317,,0.346051133,0,36.81784,11.507663,9,Built 1927-1929; bypassed by parallel bridge in 1995
+Open to traffic,,Ocean to Ocean Highway Bridge,1914,14,25,24,-114.61563,,0.07876268,1,32.72881,137.440227,15,Built 1914; rehabilitated 1943; rehabilitated again in 2002.
+Closed to all traffic,1947,Old Trails Arch Bridge,1916,15,210,209,-114.48493,,0.233646395,0,34.71503,0.166074,16,Completed Feb. 20; 1916; traffic diverted May 21; 1947; bridge converted to carry natural gas pipeline
+Replaced by new I-40 bridge,1978,Red Rock Bridge,1890,16,210,209,-114.48657,,0.226811539,0,34.71702,0.083379,1,Built in 1890 as RR bridge; converted to car bridge 1947; Replaced 1966; Demolished 1978.
+Closed to all traffic,,Rifle Bridge,1908,17,1060,1057,-107.78168,,0.323311732,0,39.52781,19.482584,20,Built 1908
+Closed to all traffic,,South Canon Bridge,1915,18,1080,1077,-107.40706,,1.837028639,0,39.56161,4.503889,10,Built 1914-15 by the Missouri Valley Bridge & Iron Co.
+No longer exists,,State Bridge,1890,19,,1077,-106.64897,,45.60505156,0,39.85792,19.382212,3,Built 1890 by the Missouri Valley Bridge & Iron Co. under a $5;790 state contract
+bypassed by new bridge,1985,Una Bridge,1910,20,1040,1036,-108.1025,,0.471177403,0,39.39306,6.035992,5,Built 1910; bypassed by new bridge in 1985

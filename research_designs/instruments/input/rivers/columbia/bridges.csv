@@ -1,0 +1,33 @@
+status,end,name,start,bridge_id,river_stretch,notes,river_mile,longitude,duplicates,distance_to_river_mile,active,latitude,distance_to_closest_bridge,closest_bridge_id,id,history
+Open to traffic,,Astoria-Megler Bridge,1966,1,,,1,-123.84937,2,23.3985995,1,46.19045,0.984421645,2,missing,Built 1966
+Open to traffic,,Beebe Bridge,1962,3,485,,481,-119.9728,4,0.334787246,1,47.81464,0.083708674,4,BH 34204 ,Built 1962
+Replaced by a new bridge,1963,Beebe Bridge (Old),1919,4,485,,481,-119.97404,3,0.259340786,0,47.81376,0.083708674,3,BH 54894 ,Built 1919; Removed 1963
+Open to traffic,,Blue Bridge,1954,5,305,,303,-119.14167,,0.533684395,1,46.22,1.72200327,15,BH 34141 ,Built 1954; rehabilitated 1986
+Open to traffic,,BNSF - Celilo Bridge,1912,6,165,,163,-120.98159,,0.263890681,1,45.64846,7.281677815,30,BH 38514 ,Built 1912
+Open to traffic,,BNSF - Columbia River Bridge,1908,7,70,,66,-122.69029,,0.447984935,1,45.62557,0.880859394,20,BH 34185 ,Built 1908
+Open to traffic,,BNSF - Kennewick-Pasco Bridge,1887,8,305,,301,-119.09733,,0.199685188,1,46.21528,0.409453335,29,BH 51749 ,Built 1887
+Open to traffic,,BNSF - Kettle Falls Bridge,1941,9,690,http://en.wikipedia.org/wiki/Kettle_Falls_Bridges,689,-118.11726,25,0.216755218,1,48.62595,0.021728347,25,BH 44734 ,missing
+Open to traffic,,BNSF - Oregon Slough Bridge,1908,10,70,,66,-122.70278,,0.538738983,1,45.615,0.947453543,7,BH 39786 ,Built 1908
+Open to traffic,,BNSF - Rock Island Bridge,1892,11,435,,433,-120.15372,,0.083170008,1,47.36686,7.277394744,16,BH 38536 ,Originally built for the Great Northern Railway in 1892; the main span was reinforced in 1925
+Open to traffic,,Bridge of the Gods,1926,12,110,,109,-121.90111,,0.031029263,1,45.66222,19.9900288,18,missing,Built 1926; Raised 1940
+Open to traffic,,Bridgeport Bridge,1951,13,525,,520,-119.65333,,0.252337928,1,48.00167,19.64481262,3,BH 34205 ,Built 1951
+Open to traffic,,Coulee Dam Bridge,1935,14,575,,571,-118.98235,,0.43259143,1,47.96534,0.661663014,17,missing,Built 1935
+Open to traffic,,Ed Hendler Bridge,1978,15,305,http://en.wikipedia.org/wiki/Cable_Bridge,302,-119.10628,29,0.379771099,1,46.21536,0.257277352,29,BH 34143 ,Built 1978
+Open to traffic,,George Sellar Bridge,1950,16,445,,441,-120.29581,28,0.011414427,1,47.40975,0.345746401,28,BH 36815 ,Built 1950
+Open to traffic,,Grand Coulee Dam Bridge,1941,17,575,,572,-118.98341,,0.192443226,1,47.95579,0.661663014,14,BH 34217 ,Built 1941
+Open to traffic,,Hood River - White Salmon Bridge,1924,18,135,,131,-121.49472,,0.451012975,1,45.71806,18.70191839,31,missing,Built 1924; 1938 Lift span added and bridge raised as a result of the construction of Bonneville Dam.
+Open to traffic,,I-5 - Interstate Bridge (Northbound),1917,19,70,19,67,-122.675,,0.319901227,1,45.61778,0.03326679,20,missing,Built 1917; Main span modification 1958
+Open to traffic,,I-5 - Interstate Bridge (Southbound),1958,20,70,20,67,-122.67556,,0.314325484,1,45.61806,0.03326679,19,missing,Built 1958
+Open to traffic,,I-82 - Umatilla Bridge,1955,21,260,,255,-119.32611,,0.445595271,1,45.92667,22.11145883,5,missing,Built 1955; rehabilitated 1990
+Open to pedestrians only,,Iron Horse Trail - Beverly Bridge,1909,22,390,,388,-119.94202,,0.323443694,1,46.83381,7.673200932,33,missing,Built 1909
+Open to traffic,,Julia Butler Hansen Bridge,1939,23,5,,1,-123.38333,,3.7325753,1,46.19667,3.216167422,35,BH 34580 ,Built 1939; rehabilitated 1987
+Open to traffic,,Kettle Falls Bridge,1929,25,690,http://en.wikipedia.org/wiki/Kettle_Falls_Bridges,689,-118.11718,9,0.228975548,1,48.62564,0.021728347,9,missing,Built 1941
+Open to traffic,,Lewis & Clark Bridge,1929,26,25,,24,-122.96413,,0.439721443,1,46.10223,20.2860559,35,missing,Built 1929; rehabilitated 2003
+Open to traffic,,Northport Bridge,1897,27,725,http://en.wikipedia.org/wiki/Northport_Bridge,722,-117.77673,,0.335482743,1,48.92237,25.68829758,9,missing,Built 1949
+Open to pedestrians,,Old Wenatchee Bridge,1908,28,445,,441,-120.29731,16,0.347465225,1,47.41465,0.345746401,16,BH 44747 ,Built 1908; bypassed by new highway bridge in 1950
+Replaced by new bridge,1990,Pasco - Kennewick Bridge,1922,29,305,,302,-119.10422,15,0.370188979,0,46.2188,0.257277352,15,BH 48487 ,Built 1922; Bypassed 1978; Demolished March 1990
+Open to traffic,,Sam Hill Memorial Bridge,1962,30,175,,171,-120.83605,,0.354491781,1,45.67604,7.281677815,6,missing,Built 1962; Deck and rail replacement 2008
+Open to traffic,,The Dalles Bridge,1954,31,155,,154,-121.13944,,0.149023498,1,45.61028,8.070150258,6,missing,Built 1954
+Open to traffic,,UP - Burbank-Kennewick Bridge,1924,32,300,,296,-119.01712,,0.308029784,1,46.17884,4.588514743,8,BH 51748 ,Built 1924; rehabilitated 1930; 1952; vertical lift added 1977
+Open to traffic,,Vantage Bridge,1927,33,400,http://en.wikipedia.org/wiki/Vantage_Bridge,397,-119.96705,,0.570983604,1,46.94354,7.673200932,22,BH 34359 ,Built 1962
+Open to traffic,,Vernita Bridge,1965,34,365,,362,-119.7328,,0.026691634,1,46.64202,16.54538773,22,BH 34142 ,Built 1965

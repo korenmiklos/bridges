@@ -4,4 +4,6 @@ iv.log: segments
 segments: $(foreach river,$(RIVERS),output/$(river).csv) 
 	touch $@
 output/%.csv: input/rivers/%/river_midline.geojson input/rivers/%/river_poly.geojson input/rivers/%/predicted_crossing_points.geojson instruments_by_segment.py project_geojson.py
+input/%/bridges.csv: input/%/bridges.geojson geojson2csv.py
+	python2.7 geojson2csv.py < $< > $@
 	python2.7 width_by_mile.py $(notdir $(basename $@)) > $@

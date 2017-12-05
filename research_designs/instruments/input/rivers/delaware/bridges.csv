@@ -1,0 +1,40 @@
+status,end,name,start,bridge_id,river_stretch,river_mile,longitude,duplicates,distance_to_river_mile,active,latitude,distance_to_closest_bridge,closest_bridge_id,id,history
+Open to traffic,,Amtrak Delaware River Bridge,1903,1,135,133.0,-74.77,,0.284168471,1,40.20667,0.246379119,27.0,missing,Built 1903
+Open to traffic,,Benjamin Franklin Bridge,1926,2,105,100.0,-75.135,,0.114384858,1,39.95333,3.349780606,43.0,missing,Built 1926; rehabilitated 1984
+Open to traffic,,Burlington-Bristol Bridge,1931,3,120,118.0,-74.86961,,0.20429449,1,40.08147,0.024820115,4.0,missing,Built 1931; rehabilitated 1996
+Open to traffic,,Calhoun Street Bridge,1884,5,135,134.0,-74.77833,,0.243726987,1,40.22,0.869350559,27.0,missing,Built 1884 by the Phoenix Bridge Co.; rehabilitated 2010
+Open to traffic,,Centre Bridge,1814,8,155,152.0,-74.97833,,0.096253327,1,40.40333,3.113971293,28.0,missing,http://en.wikipedia.org/wiki/Centre_Bridge%E2%80%93Stockton_Bridge
+Open to traffic,,CNYK - Delaware River Bridge,,10,260,258.0,-74.74158,,0.322607494,1,41.40653,3.34975,16.0,BH 48645 ,missing
+Open to traffic,,Cochecton Dam Road Bridge,1819,11,300,298.0,-75.06694,,0.270324111,1,41.70444,2.453685075,40.0,missing,http://books.google.hu/books?id=dDDDUlaQUYgC&pg=PA128&lpg=PA128&dq=Cochecton++Bridge+Delaware+River&source=bl&ots=WsHf_X133i&sig=fYrmlWZbvm831uQvGQhGOhbNHcU&hl=en&sa=X&ei=y05qU5qjDIeu0QW40oCQBg&ved=0CCoQ6AEwAA#v=onepage&q=Cochecton%20%20Bridge%20Delaware%20River&f=false
+Open to traffic,,Commodore Barry Bridge,1974,12,85,82.0,-75.37136,,0.090078208,1,39.8284,12.63050415,19.0,BH 39019 ,Built 1974
+Open to traffic,,Delaware Aqueduct,1848,14,280,277.0,-74.98556,,0.42359464,1,41.48167,3.781172221,17.0,BH 38205 ,Built 1848 by John A. Roebling to carry the Delaware & Hudson Canal; later converted for highway traffic; rehabilitated 1985
+Open to traffic,,Delaware River Bridge,1842,15,170,168.0,-75.09833,,0.337431943,1,40.56667,5.196794868,36.0,missing,Built 1933 by the McClintic-Marshall Co.
+Open to traffic,,Delaware River Bridge,1939,16,260,255.0,-74.69667,,0.213023654,1,41.37167,3.34975,10.0,missing,Built 1939
+Demolished and replaced.,,Delaware River Bridge,1941,17,275,273.0,-74.91306,,0.478993984,0,41.475,3.781172221,14.0,missing,Built 1941
+Open to traffic,,Delaware River Bridge,1937,18,330,330.0,-75.29129,,1.262411517,1,41.95214,12.76711736,23.0,missing,Built 1937
+Open to traffic,,Delaware River Memorial Bridge,1951,19,70,69.0,-75.53,,0.661259212,1,39.69222,12.63050415,12.0,BH 48884 ,Built 1951; rehabilitated 1970
+Open to vehicular traffic only (no pedestrians allowed),,Dingman's Ferry Bridge,1836,20,240,239.0,-74.85926,,0.327460011,1,41.22002,6.731732003,30.0,missing,http://en.wikipedia.org/wiki/Dingman's_Ferry_Bridge
+Abandoned,,DL&W; - Delaware River Bridge,,21,210,206.0,-75.07552,,0.45575688,0,40.89997,0.046994435,26.0,BH 57105 ,missing
+Open to traffic,,Easton-Phillipsburg Toll Bridge,1937,22,185,184.0,-75.20361,,0.042980554,1,40.69453,0.210597368,33.0,missing,Built 1937; rehabilitated 1990
+Open to traffic,,Kellam-Stalker Road Bridge,1936,23,315,312.0,-75.11333,24,0.032469379,1,41.82333,0.001240092,24.0,missing,Built 1936; rehabilitated 1990
+Open to traffic,,Kellams Bridge,1890,24,315,312.0,-75.11331,23,0.033536169,1,41.82334,0.001240092,23.0,missing,Built 1890; rehabilitated 1959
+Open to traffic,,L&H;/CNJ - Delaware River Bridge,,25,185,184.0,-75.20309,,0.357184937,1,40.68896,0.105947656,29.0,BH 53671 ,missing
+Replaced by a new bridge,,Lackawanna - Delaware River Bridge (Old),1902,26,210,205.0,-75.07515,,0.423905802,0,40.89935,0.046994435,21.0,BH 57434 ,http://en.wikipedia.org/wiki/Lackawanna_Old_Road
+Open to traffic,,Lower Trenton Bridge,1806,27,135,133.0,-74.76833,,0.366168978,1,40.21,0.246379119,1.0,missing,http://en.wikipedia.org/wiki/Lower_Trenton_Bridge
+Open to pedestrians,,Lumberville-Raven Rock Pedestrian Bridge,1856,28,160,156.0,-75.03721,,0.284583482,1,40.40791,3.113971293,8.0,BH 43575 ,http://en.wikipedia.org/wiki/Lumberville_%E2%80%93_Raven_Rock_Bridge
+Abandoned,,LV - Delaware River Bridge,,29,185,184.0,-75.20236,,0.461294791,0,40.68753,0.105947656,25.0,BH 53675 ,missing
+Open to traffic,,Milford-Montague Toll Bridge,1889,30,250,246.0,-74.8,,0.180411728,1,41.30667,6.731732003,20.0,missing,http://en.wikipedia.org/wiki/Milford%E2%80%93Montague_Toll_Bridge
+Open to traffic,,Narrowsburg Bridge,1811,31,295,290.0,-75.06167,,0.025392701,1,41.61,3.512083829,9.0,missing,http://en.wikipedia.org/wiki/Narrowsburg%E2%80%93Darbytown_Bridge
+Open to traffic,,New Hope-Lambertville Bridge,1814,32,150,149.0,-74.94667,,0.349901107,1,40.365,3.128927755,8.0,missing,http://en.wikipedia.org/wiki/New_Hope_%E2%80%93_Lambertville_Bridge
+Open to two-lane traffic with a 3 ton weight limit,,Northampton Street Bridge,1806,33,185,184.0,-75.205,,0.171342851,1,40.69167,0.210597368,22.0,missing,http://en.wikipedia.org/wiki/Northampton_Street_Bridge
+Open to traffic with 4 Ton Weight Limit,,Pond Eddy Bridges,1870,34,270,266.0,-74.81992,,0.370032534,1,41.43922,4.644900946,10.0,missing,http://en.wikipedia.org/wiki/Pond_Eddy_Bridge
+Open to pedestrians only,,Portland-Columbia Pedestrian Bridge,1869,35,210,208.0,-75.09549,,0.333427165,1,40.9242,1.972314172,21.0,BH 52827 ,http://en.wikipedia.org/wiki/Portland%E2%80%93Columbia_Pedestrian_Bridge
+Open to traffic,,Riegelsville Bridge,1837,36,180,175.0,-75.19037,,0.046003143,1,40.59443,5.196794868,15.0,missing,http://en.wikipedia.org/wiki/Riegelsville_Bridge
+Open to traffic,,Riverton-Belvidere Bridge,1836,37,200,198.0,-75.085,,0.188600789,1,40.82833,4.933939072,26.0,missing,http://en.wikipedia.org/wiki/Riverton%E2%80%93Belvidere_Bridge
+Open,,SEPTA - Delaware River Bridge,1912,39,140,137.0,-74.825,,0.109540678,0,40.24167,0.64475258,45.0,BH 25359 ,Built 1912
+Open to traffic,,Skinners Falls Bridge,1902,40,300,296.0,-75.05889,,0.422514809,1,41.66944,2.453685075,11.0,missing,Built 1902 by the American Bridge Co.
+Open to traffic,,Tacony-Palmyra Bridge,1929,41,110,107.0,-75.04333,,0.169279457,1,40.01167,2.438577234,13.0,missing,Built 1929
+Open to traffic,,Turnpike Connector Bridge,1956,42,125,121.0,-74.83056,,0.234378242,1,40.11709,3.211941688,3.0,missing,Built 1956
+Open to traffic,,Walt Whitman Bridge,1957,43,100,97.0,-75.13,,0.292229961,1,39.905,3.349780606,2.0,missing,Built 1957; rehabilitated 1998
+Open to traffic,,Washington Crossing Delaware River Bridge,1834,44,145,142.0,-74.86833,,0.229208545,1,40.295,2.850490241,38.0,missing,http://en.wikipedia.org/wiki/Washington_Crossing_Bridge
+Destroyed by flood,1959,Yardley-Wilburtha Bridge,1835,45,140,138.0,-74.83585,38,0.209195692,0,40.24597,0.64475258,39.0,BH 42214 ,http://en.wikipedia.org/wiki/Yardley-Wilburtha_Bridge

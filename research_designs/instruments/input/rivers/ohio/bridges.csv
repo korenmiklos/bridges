@@ -1,0 +1,95 @@
+status,end,name,start,bridge_id,river_stretch,river_mile,longitude,duplicates,distance_to_river_mile,active,latitude,distance_to_closest_bridge,closest_bridge_id,id,history
+Open to traffic; two lanes; one way southbound,,12th Street Bridge,1930,1,660,658,-82.64085,,0.502595747,1,38.48444,0.057211852,2,missing,Built 1930; rehabilitated 1986
+Open to traffic; two lanes; one way northbound,,13th Street Bridge,1985,2,660,659,-82.63985,,0.458554821,1,38.48417,0.057211852,1,missing,Built 1985
+Open to pedestrians,,Aetnaville Bridge,1891,3,895,892,-80.73659,,0.285781092,1,40.08001,0.84260632,96,BH 43551 ,Built 1891; closed to traffic December 1988
+Open to traffic,,Ambridge-Woodlawn Bridge,1927,4,970,966,-80.23667,,0.392230236,1,40.59167,4.848678266,55,missing,Built 1927 by the American Bridge Co.
+Open to railroad traffic,,Beaver Bridge,1878,7,960,957,-80.29103,,0.216132743,1,40.69311,1.243876958,51,BH 42908 ,http://en.wikipedia.org/wiki/Beaver_Bridge_(Ohio_River)
+Closed to all traffic,1991,Bellaire Toll Bridge,1926,8,890,887,-80.73878,92,0.276127993,0,40.01513,0.230830608,92,BH 36178 ,http://en.wikipedia.org/wiki/Bellaire_Bridge
+Open to pedestrians only,,Big Four Bridge,1895,9,375,373,-85.7393,,0.203691741,1,38.26603,0.221136002,38,BH 18821 ,Originally built 1895 by the Louisville & Jefferson Bridge Co. Bought by Cleveland; Cincinnati; Chicago Railroad after construction. Rebuilt 1929 using existing stone piers. Approches scrapped 1974.
+Open to eight total lanes of traffic,,Big Mac Bridge,1977,10,515,510,-84.4952,,0.375133177,1,39.10079,0.235213216,74,missing,Constructed started 1971; opened to limited traffic 1977; dedicated 1981; entire I-471 project completed 1985
+Open to traffic,,Blennerhassett Island Bridge,2008,11,795,793,-81.64665,,0.425551247,1,39.2738,4.218325155,70,BH 37144 ,Opened June 13; 2008
+Open to two-lane traffic,,Bob Cummings Bridge,1966,12,255,251,-86.74414,,0.191435717,1,37.90348,15.82709225,97,missing,Opened December 21; 1966
+Open to traffic,,Brandenburg Bridge,1967,13,330,329,-86.19583,,0.479149017,1,38.01972,27.08028575,79,missing,Built 1967; rehabilitated 1997
+Open to traffic,,Brent Spence Bridge,1963,14,510,509,-84.5225,,0.310541664,1,39.09056,0.16682754,17,BH 27602 ,Built 1963
+Open to two-lane traffic,,Brookport Bridge,1929,15,45,44,-88.62915,,0.482284504,1,37.11465,3.446386519,69,missing,Built 1929
+Open,,Browns Island Back Channel Bridge,1942,16,925,920,-80.60589,,0.506808806,0,40.42417,3.203312091,33,BH 54335 ,http://www.bridgemapper.com/bridge_list.php
+Open to railroad traffic,,C&O; Railroad Bridge,1889,17,510,509,-84.51964,,0.153236668,1,39.09151,0.037404374,23,BH 27603 ,http://en.wikipedia.org/wiki/C&O_Railroad_Bridge
+Open to two-lane traffic,,Cairo Ohio River Bridge,1937,18,5,1,-89.14577,,0.276574901,1,36.99403,2.582692351,25,missing,Built 1937; rehabilitated 1979
+Open to traffic,,Carroll C. Cropper Bridge,1977,19,490,486,-84.82581,,0.067297089,1,39.10407,10.94886763,5,missing,Built 1977
+No longer exists,1992,Central Bridge,1891,21,515,510,-84.5011,87,0.107129498,0,39.09561,0.019682822,87,BH 18740 ,Built 1891 by the King Bridge Co.; demolished using explosives in 1992
+Lost 1969,,Chester Bridge,1897,22,940,938,-80.57235,41,0.307616477,0,40.61225,0.741963786,41,BH 44404 ,Built 1897
+Open to traffic,,Clay Wade Bailey Bridge,1974,23,510,509,-84.51917,,0.128310386,1,39.09111,0.037404374,17,BH 18853 ,Built 1974
+Open to railroad traffic,,CN - Metropolis Bridge,1917,24,40,37,-88.74204,,0.138740884,1,37.14461,3.12666346,69,BH 15525 ,Built 1917 by the American Bridge Co. under the direction of engineers C. H. Cartlidge and Ralph Modjeski
+Open to railroad traffic,,CN Cairo Bridge,1949,25,5,4,-89.17532,30,0.227256683,1,37.02302,0.0,30,BH 15009 ,Built 1949-52; replacing the original bridge
+Open to traffic,,CNTP Ohio River Bridge,1922,26,510,507,-84.54194,,0.493042937,1,39.09833,0.020742184,31,BH 43291 ,Built 1922 using the existing piers from a 1877 bridge
+Built 1894,,CSX - Ohio River Bridge,1894,27,980,977,-80.08201,,0.343300508,0,40.49201,2.064289806,49,BH 57207 ,Built 1894
+Open to traffic,,CSX Ohio River Bridge,1870,28,800,797,-81.56695,,0.201849155,1,39.27166,0.029508114,71,BH 43808 ,Crosses Ohio River between Parkersburg; WV; and Belpre; OH. Constructed between 1868-1870 by B&O; railroad. Longest in world upon completion at 7140 feet.
+Open to traffic,,East End Bridge,1985,29,680,676,-82.38988,,0.074226304,1,38.43366,5.373221514,95,BH 35040 ,Built 1985
+Replaced by the current bridge; reusing many of the piers in the process,1949,First Cairo Railroad Bridge,1889,30,5,4,-89.17532,25,0.227256683,0,37.02302,0.0,25,BH 15012 ,Built 1889 under engineer George S. Morison; replaced 1949-52
+Superstructure replaced,1922,First Cincinnati Southern Railroad Bridge,1877,31,510,507,-84.54204,,0.486944332,0,39.09804,0.020742184,26,BH 44720 ,Built 1869-1877; superstructure replaced by current bridge in 1922
+Replaced by new bridge,,First Henderson Bridge,1885,32,175,172,-87.59526,37,0.043521709,0,37.84591,0.224525663,37,BH 49751 ,Built 1885; replaced by the current railroad bridge just to the south
+Demolished,,Fort Steuben Bridge,1928,33,920,915,-80.615,,0.274485665,0,40.37833,0.207552065,56,missing,Built 1928 by the Dravo Contracting Co.; rehabilitated 1972; closed 2008. Imploded Feb. 21; 2012.
+Open to traffic,,George Rogers Clark Memorial Bridge,1929,34,375,372,-85.75147,,0.112229358,1,38.26407,0.442331507,42,missing,Built 1929 by the American Bridge Co.; tolls removed 1946; rehabilitated 1958
+Open to two-lane traffic,,Glover Cary Bridge,1940,35,220,219,-87.10917,,0.253404374,1,37.78083,9.3085173,97,missing,Opened Sept. 1940
+Open to traffic,,Greenup Dam Ohio River Bridge,1986,36,640,638,-82.85852,,0.323154505,1,38.64731,7.440730198,77,BH 44748 ,Built 1986
+Open to traffic,,Henderson Bridge,1932,37,175,172,-87.59927,32,0.185420866,1,37.84664,0.224525663,32,BH 36154 ,Built 1932 by the American Bridge Co. ; replacing an earlier 1885 bridge
+Under construction,,I-65 North Bridge,2016,38,375,373,-85.74299,,0.424508603,0,38.26467,0.024346472,42,BH 57875 ,Built 2016
+Under construction,,I265 East End Bridge,2016,39,385,381,-85.64252,,0.320982335,0,38.34462,7.551144822,9,BH 57876 ,Built 2016
+Open to traffic,,Ironton-Russell Bridge,1922,40,655,654,-82.68846,,0.246092929,1,38.53213,4.181339566,1,BH 27840 ,Built 1922; owned by the Kentucky State Highway Department
+Open to traffic,,Jennings Randolph Memorial Bridge,1977,41,940,939,-80.56176,22,0.038902626,1,40.61937,0.741963786,22,BH 42966 ,Built 1977
+Open to traffic,,John F. Kennedy Memorial Bridge,1963,42,375,373,-85.74333,,0.447759895,1,38.26444,0.024346472,38,missing,Built 1963 by the Allied Structural Steel Company
+Open to railroad traffic; southbound vehicle lane open to railroad employees; and the prospect of full scale vehicle use of bridge is in the works due to closeure of the Sherman Minton Bridge,,K&TI; - Ohio River Bridge,1886,43,370,369,-85.80079,,0.27193754,1,38.28124,1.136302332,79,BH 18829 ,First bridge built 1886; reconstructed 1912; road deck partially collapsed and closed to northbound traffic. Company employees can use southbound lane.
+Open to traffic,,Kanawha & Michigan Railroad Bridge,1919,44,720,716,-82.14127,,0.043614969,1,38.84609,0.140590488,81,BH 54374 ,Built 1919
+Open to railroad traffic,,LIRC - Falls of the Ohio Bridge,1870,45,375,371,-85.76494,,0.222592646,1,38.26907,0.808268966,34,BH 18824 ,Built in 1867-70 for the Louisville & Nashville and the Jeffersonville; Madison and Indianapolis Railroad; reconstructed in 1919
+All main spans demolished.,2013,Madison-Milton Bridge,1928,46,420,418,-85.37011,54,0.282608065,0,38.72838,0.193419895,54,BH 16383 ,Built 1928-29; rehabilitated 1997; imploded August 2013
+Open to traffic,,Market Street Bridge,1905,47,915,914,-80.60873,,0.337229898,1,40.35815,0.72896454,66,missing,Built 1905 by the Ohio Steel Erection Company; rehabilitated 1981 and 2011
+Open to traffic,,Markland Dam Bridge,1978,48,445,444,-84.96444,,0.238863949,1,38.77667,22.11189097,46,missing,Built 1978
+Open to traffic,,McKees Rocks Bridge,1931,49,980,979,-80.0482,,0.007282532,1,40.4768,1.006848598,61,missing,Built 1931; rehabilitated 1987
+Open to traffic,,Memorial Toll Bridge,1955,50,800,798,-81.56238,,0.067935787,1,39.28328,0.839248311,28,BH 35699 ,Built 1955
+Open to traffic,,Monaca-East Rochester Bridge,1959,51,960,958,-80.2673,,0.13031394,1,40.6925,1.243876958,7,missing,Built 1959; rehabilitated 1993
+Open to traffic,,Moundsville Bridge,1986,52,885,880,-80.75393,,0.306844253,1,39.91369,6.823997439,92,BH 36177 ,Built 1986
+Open to traffic,,Neville Island Bridge,1976,53,975,974,-80.135,,0.316436943,1,40.51,3.048887582,27,missing,Built 1976; rehabilitated 2008
+Open to traffic,,New Madison-Milton Bridge,2014,54,420,418,-85.37204,46,0.279999891,1,38.72602,0.193419895,46,BH 49970 ,Opened to traffic on April 17; 2014 after being slid onto it's permanent piers a week prior.
+Open to traffic,,New Sewickley Bridge,1911,55,975,971,-80.19,,0.504483708,1,40.53111,3.236104486,53,missing,http://en.wikipedia.org/wiki/Sewickley_Bridge
+Open to traffic,,New Steubenville Bridge,1990,56,920,915,-80.61174,86,0.107226399,1,40.37664,0.170944753,86,BH 35027 ,Built 1990
+Open to traffic,,New U.S. Grant Cable-Stayed Suspension Bridge,2006,57,625,624,-82.99722,68,0.104284013,1,38.72722,0.0,68,missing,Cable stayed suspension bridge replaced earlier true wire suspension bridge at same location. Construction started 25 June 2001 and finished 16 October 2006 at a cost of $28;434;495.93
+Open to traffic,,New Williamstown Bridge,1992,58,815,810,-81.44833,98,0.347576059,1,39.40833,0.125560694,98,BH 35703 ,Built 1992
+Open to toll traffic,,Newell Toll Bridge,1905,59,940,937,-80.58898,,0.226061961,1,40.62003,1.024553111,22,missing,Built 1905; rehabilitated 1954
+Open to traffic,,Norfolk-Southern Ohio River Bridge,1892,60,670,666,-82.57312,,0.41694061,1,38.40564,4.734737303,95,BH 44754 ,http://www.progressiverailroading.com/norfolk_southern/article/Norfolk-Southern-marks-Ohio-River-bridge-centennial-anniversary--35401
+Open to traffic,,NS - Ohio Connecting Railroad Bridge,1890,61,985,980,-80.04275,,0.052113932,1,40.46283,1.006848598,49,BH 47043 ,http://en.wikipedia.org/wiki/Ohio_Connecting_Railroad_Bridge
+Open to traffic,,Ohio River Back Channel Bridge,1928,62,830,826,-81.20844,,0.271999593,1,39.39099,0.373836582,85,BH 35451 ,Built 1928
+Open to traffic,,Ohio River Bridge,1959,63,855,854,-80.86384,,0.093785456,1,39.65922,9.76038042,84,BH 35681 ,Built 1959; rehabilitated 1998
+Open to traffic,,Ohio River I-275 Bridge,1979,64,520,518,-84.43028,,0.122190033,1,39.05694,4.599194006,74,missing,Built 1979
+Open to traffic,,Ohio River I-77 Bridge,1965,65,815,811,-81.42895,,0.352172024,1,39.40516,1.057544562,58,BH 28557 ,Built 1965
+Open to traffic,,Ohio River Railroad Bridge,,66,915,913,-80.6109,,0.08771208,1,40.34773,0.72896454,47,BH 54318 ,missing
+Open to traffic,,Ohio River US 27 Bridge No. 2,1995,67,515,510,-84.50139,,0.107605477,1,39.09611,0.018202616,87,missing,Built 1995
+Replaced by new bridge,2006,Old U. S. Grant Bridge,1927,68,625,624,-82.99722,57,0.104284013,0,38.72722,0.0,57,missing,Built 1927; rehabilitated 1979; replaced 2006
+Open to four lanes of traffic,,Paducah Bridge,1973,69,45,40,-88.68692,,0.072969252,1,37.13379,3.12666346,24,missing,Built 1973
+No longer exists,1980,Parkersburg Suspension Bridge,1916,70,800,797,-81.56825,,0.127509633,0,39.2672,0.286422931,71,BH 43940 ,Built 1916; Demolished 1980; Replaced by the Parkersburg-Belpre Bridge
+Open to traffic,,Parkersburg-Belpre Bridge,1978,71,800,797,-81.56705,,0.172939751,1,39.27124,0.029508114,28,BH 43941 ,Built 1978
+Open to traffic,,Pike Island Lock and Dam,1965,72,900,897,-80.70223,,0.423383362,1,40.15113,5.238598607,3,BH 43675 ,Built between 1959 and 1965 to replace Locks & Dams 10 and 11
+Imploded April 21; 2009,,Pomeroy-Mason Bridge,1928,73,735,730,-82.04333,,0.322000304,0,39.01333,12.6977988,44,missing,Built 1928; rehabilitated 1976. Imploded April 21; 2009
+Open to pedestrian traffic only,,Purple People Bridge,1872,74,515,510,-84.49775,,0.14020988,1,39.09802,0.235213216,10,BH 27612 ,First built 1872 as a Whipple through truss bridge; reconstructed 1897; railroad service discontinued 1987; closed to road traffic 2001; rehabilitated and reopened to pedestrians 2003
+Open to traffic,,Ravenswood Bridge,1981,75,765,760,-81.75709,,0.372495153,1,38.93642,16.26771752,73,BH 35341 ,http://en.wikipedia.org/wiki/Ravenswood_Bridge
+Rehabilitation Completed,,Roebling Suspension Bridge,1866,76,510,509,-84.50947,,0.398593495,0,39.09231,0.503429732,21,missing,Built 1866 by John A. Roebling. Rehabilitated 1955.
+Open to traffic,,Sciotoville Bridge,1917,77,635,630,-82.88577,,0.461727543,1,38.75288,6.262516722,57,BH 38455 ,Built 1914-17 under the direction of Gustav Lindenthal; opened to railroad traffic July 31; 1917
+Open to traffic,,Shawneetown Bridge,1955,78,125,120,-88.13263,,0.116096956,1,37.69138,15.63176527,20,missing,Built 1955
+Reopend on Feb 18th after being Closed by order of Gov. Mitch Daniels after inspections found crack in a load bearing portion of the structure.,,Sherman Minton Bridge,1961,79,370,368,-85.82143,,0.385809507,0,38.27842,1.136302332,43,missing,Built 1961; rehabilitated 1997 and 2011/12
+Open to traffic,,Shippingport Bridge,1968,80,950,948,-80.43056,,0.338529563,1,40.62556,6.334208984,90,missing,Built 1968
+Collapsed and replaced by new bridge,,Silver Bridge,1928,81,720,716,-82.14375,,0.129987827,0,38.84545,0.140590488,44,BH 38387 ,Built 1928; collasped on December 15; 1967; killing 46 people. Replaced by a new bridge in 1969.
+Open to traffic,,Silver Memorial Bridge,1969,82,720,715,-82.14629,,0.175744222,1,38.83336,0.846451045,81,BH 35340 ,Built 1969
+Open to traffic,,Simon Kenton Memorial Bridge,1931,83,575,571,-83.75944,,0.408202,1,38.65,2.680256153,89,missing,Built 1931; Bypassed by the cable-stayed William H. Harsha Bridge in 2000; rehabed in 2003-2004
+Open to traffic,,St. Marys Bridge,1928,85,830,826,-81.21487,,0.115320802,1,39.38885,0.373836582,62,BH 35452 ,http://www.bridgemeister.com/bridge.php?bid=159
+Open to traffic,,Steubenville Railroad Bridge,1865,86,920,915,-80.60869,56,0.127321263,1,40.37579,0.170944753,56,BH 43552 ,Built in 1936 replacing an 1865 bridge
+Open to traffic,,Taylor-Southgate Bridge,1995,87,515,510,-84.50125,21,0.105656487,1,39.09587,0.018202616,67,BH 45523 ,Built in 1995 to replace the old Central Bridge
+Open to traffic,,Twin Bridges,1932,88,190,189,-87.55056,,0.345173822,1,37.90417,4.706068083,32,missing,Northbound bridge built 1932; southbound built 1965
+Open to traffic,,US 62/68 Ohio River Bridge,2000,89,570,569,-83.78208,,0.42171618,1,38.68453,2.680256153,83,missing,Built 2000
+Open to traffic,,Vanport Bridge,1970,90,955,954,-80.33,,0.420990325,1,40.67639,2.345960965,7,missing,Built 1970; rehabilitated 1985
+Open to traffic,,Vietnam Veterans Memorial Bridge,1978,91,895,890,-80.73064,,0.210531212,1,40.0499,1.414072369,96,BH 36307 ,Built 1978
+Open to traffic,,WE - Ohio River Bridge (Bellaire),1871,92,890,887,-80.73946,8,0.045384068,1,40.01183,0.230830608,8,missing,Built 1871; Ohio River truss spans replaced 1905 by the American Bridge Co.
+Open to traffic,,WE Ohio River Bridge,1904,93,915,910,-80.60164,,0.174913397,1,40.31043,2.622936219,66,BH 54319 ,Built 1904
+Open to traffic,,West End Bridge,1930,94,985,981,-80.02722,,0.413443879,1,40.44639,1.398895448,61,missing,Built 1930; rehabilitated 1991
+Open to traffic,,West End Bridge,1968,95,675,670,-82.48701,,0.529446156,1,38.41761,4.734737303,60,BH 35039 ,Built 1968; rehabilitated 1998
+Open to traffic,,Wheeling Suspension Bridge,1849,96,895,891,-80.72714,,0.320557227,1,40.07019,0.84260632,3,missing,Built 1849; collapsed May 17; 1854; temporary bridge reopened July 26; 1854; permanent bridge reopened July 1860; improvements made 1871-72; 1886; 1922; 1930; 1956 and other years
+Open to four-lane traffic,,William H. Natcher Bridge,2002,97,230,229,-87.03444,,0.104191846,1,37.90194,9.3085173,35,missing,Opened October 21; 2002
+Replaced by new bridge,1992,Williamstown-Marietta Bridge,1903,98,815,810,-81.44812,58,0.380055943,0,39.41014,0.125560694,58,BH 43939 ,Built 1903; Replaced 1992

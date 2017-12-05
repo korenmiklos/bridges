@@ -1,0 +1,55 @@
+status,end,name,latitude,bridge_id,river_stretch,river_mile,longitude,start,distance_to_river_mile,active,distance_to_closest_bridge,closest_bridge_id,history
+Open to traffic,,Amtrak - Old Saybrook-Old Lyme Bridge,41.3108,1,5,3,-72.34848,1907,0.505558726,1,11.41571736,22,Built 1907
+Open to traffic,,Anna Hunt Marsh Bridge,42.85167,2,130,128,-72.55528,1804,0.42804767,1,0.255872061,10,http://www.crjc.org/heritagebridges.htm#Hinsdale
+Open to traffic,,Arrigoni Bridge,41.56896,3,35,30,-72.64853,1895,0.760655943,1,0.161183128,40,http://en.wikipedia.org/wiki/Arrigoni_Bridge
+Open to traffic,,Beechers Falls Bridge,45.00778,4,,282,-71.50722,1885,26.07183333,1,1.208837098,41,http://www.crjc.org/heritagebridges.htm#Beecher Falls
+Replaced by a new bridge,1982,Bellows Falls Arch Bridge,43.13792,5,155,151,-72.44845,1905,0.387577598,0,0.106888844,35,Built 1905; damaged by flooding in 1936; closed to traffic 1971; demolished 1982
+Removed but not replaced,,BM - Connecticut River Bridge,42.73731,6,120,119,-72.46237,,0.215700348,0,1.764441399,42,missing
+Open to traffic,,Bulkeley Bridge,41.76928,7,50,45,-72.66556,1810,0.75721615,1,0.655678847,21,http://en.wikipedia.org/wiki/Bulkeley_Bridge
+Open to traffic,,Calvin Coolidge Memorial Bridge,42.33611,8,90,87,-72.61806,1937,1.330862546,1,0.130284888,38,Built 1937; rehabilitated 2003
+Open to pedestrians only,,Canalside Rail-Trail - Connecticut River Bridge,42.57936,9,105,104,-72.57469,1880,1.090032751,1,0.263682833,27,Built 1880; Warrens added 1936
+Open to traffic,,Charles Dana Bridge,42.8508,10,130,128,-72.55037,1920,0.268314686,1,0.255872061,2,Built 1920; rehabilitated 1988
+Open to traffic,,Cheshire Bridge,43.26044,11,165,160,-72.4273,1897,0.180935687,1,8.499693722,24,http://www.crjc.org/heritagebridges.htm#Cheshire
+Replaced by a new bridge,,Chesire Connecticut River Covered Bridge,43.13341,12,155,151,-72.44398,,0.082797748,0,0.238673056,49,
+Open to Pedestrians,,Chesterfield-Brattleboro Bridge,42.88389,13,135,131,-72.55167,1888,0.504368368,1,2.233685947,2,http://www.crjc.org/heritagebridges.htm#Chesterfield
+Open to traffic,,Columbia Covered Bridge 45-05-02 / 29-04-07,44.85278,14,,282,-71.55139,1912,15.32448004,1,10.20861257,41,Built 1912; rehabilitated 1981
+Open to traffic,,Connecticut River Bridge,44.49583,15,275,271,-71.59444,1950,0.363561366,1,3.762751051,34,Built 1950 by the American Bridge Co.
+Open to traffic,,Connecticut River Bridge,44.15361,16,235,230,-72.04056,1928,0.470183049,1,0.053315039,50,Built 1928; rehabilitated 2003
+Open to traffic,,Connecticut River Bridge,43.90667,17,215,211,-72.13917,1937,0.050454085,1,5.096578139,18,Built 1937; rehabilitated 2002
+Open to traffic,,Connecticut River Bridge,43.97778,18,220,217,-72.11194,1929,0.479148152,1,5.096578139,17,Built 1929; rehabilitated 1993
+Closed to all traffic,2001,Connecticut River Railroad Bridge,44.15444,19,235,231,-72.04083,1906,0.439972133,0,0.017356888,50,Built 1906 for train and car traffic; closed to car traffic 1917; closed to trains in 2001
+Open to one-lane traffic,,Cornish-Windsor Covered Bridge 45-14-14 / 29-10-09,43.47368,20,180,176,-72.3837,1796,0.16127748,1,12.70368673,52,http://www.crjc.org/heritagebridges.htm#Cheshire
+Open to traffic,,CSO - Connecticut River Bridge,41.77714,21,50,45,-72.65843,1873,0.520798282,1,0.655678847,7,Built ca. 1873 by the Hartford; Providence and Fishkill Railroad
+Open to traffic,,East Haddam Bridge,41.45163,22,20,16,-72.46363,1913,0.433098044,1,11.41571736,1,Built 1913; rehabilitated 1999
+Open to traffic,,East Thetford Road Bridge,43.81194,23,205,203,-72.18278,1896,0.462579699,1,6.896396718,17,http://www.crjc.org/heritagebridges.htm#E. Thetford
+Replaced by a new bridge,,Fitchburg Connecticut River Bridge,43.13805,24,155,151,-72.44432,,0.279301257,0,0.063112521,48,missing
+Closed to all traffic,,Fletcher Road Bridge,45.04917,25,,282,-71.39194,1876,29.77626989,0,6.314126562,4,Built 1876
+Open to traffic,,French King Bridge,42.59694,26,110,108,-72.49583,1931,0.614882345,1,3.077697264,28,Built 1931; rehabilitated 1992
+Open to traffic,,General Pierce Bridge,42.58028,27,105,104,-72.57972,1866,1.335604311,1,0.263682833,9,http://en.wikipedia.org/wiki/General_Pierce_Bridge
+Open to traffic,,Gill-Montague Bridge,42.61083,28,110,107,-72.55333,1878,1.64797763,1,2.43069071,9,http://en.wikipedia.org/wiki/Gill%E2%80%93Montague_Bridge
+Open to traffic?,,GMCR Connecticut River Stone Arch Bridge,43.13557,29,155,151,-72.43997,1899,0.168739054,1,0.020094126,49,Built 1899
+Open to traffic,,Janice Peaslee Bridge,44.65167,30,285,282,-71.5625,1893,1.808002749,1,10.88168277,15,Built 1893; rehabilitated 2005
+Destroyed by collision,1936,Littleton-Waterford Bridge,44.3123,31,255,251,-71.86328,1890,1.722917689,0,9.718728353,53,Built 1890; Lost to an ice jam in 1936
+Open to traffic,,McIndoe Falls Bridge,44.26139,32,240,238,-72.05889,1803,0.393204721,1,1.749345559,33,http://www.crjc.org/heritagebridges.htm#McIndoe
+Open to traffic,,Monroe - Barnet Bridge,44.28667,33,245,240,-72.05694,1828,0.359748123,1,1.749345559,32,http://www.crjc.org/heritagebridges.htm#Barnet
+Open to traffic,,Mt. Orne Covered Bridge 45-05-03 / 29-04-08,44.46064,34,270,267,-71.65269,1865,0.53969284,1,3.762751051,15,http://www.nh.gov/nhdhr/bridges/p57.html
+Open to traffic,,NECR - Connecticut River Bridge,43.13791,35,155,151,-72.44633,1930,0.315495486,1,0.041671951,48,Built 1930
+Open to traffic,,NECR Connecticut River Bridge,42.7062,36,120,117,-72.4592,,0.473319169,1,0.521815868,42,missing
+Open to traffic,,North End Bridge,42.10861,37,75,70,-72.61444,1924,0.406235298,1,0.001720624,39,Built 1924
+Open to pedestrians and bicyclists,,Norwottuck Rail Trail - Connecticut River Bridge,42.33791,38,90,87,-72.6173,1887,1.279227635,1,0.130284888,8,Built 1887; retrofitted for pedestrian use in 1992
+Replaced by a new bridge,1924,Old North End Bridge,42.10863,39,75,70,-72.61446,1877,0.405214732,0,0.001720624,37,Built 1877 Replaced 1924
+Open to traffic,,PW - Connecticut River Bridge,41.56678,40,35,30,-72.64742,1910,0.828284931,1,0.161183128,3,Built 1910
+Open to pedestrians,,Rail-Trail Connecticut River Bridge,44.99969,41,,282,-71.52916,,25.46948101,1,1.208837098,4,missing
+Closed to all traffic,,Schell Bridge,42.71258,42,120,117,-72.4537,1903,0.072617829,0,0.521815868,36,Built 1903
+Open to traffic,,South End Bridge,42.08139,43,70,67,-72.58306,1954,0.129396949,1,1.361834469,44,Built 1954
+Open to traffic,,Springfield Memorial Bridge,42.09889,44,70,68,-72.59528,1805,0.487166571,1,1.189846289,37,http://en.wikipedia.org/wiki/Memorial_Bridge_(Massachusetts)
+Open to traffic,,ST - Connecticut River Bridge,42.56269,45,105,103,-72.55603,1909,0.395840483,1,1.492691833,9,Built 1909?
+Open to traffic,,ST - Warehouse Point Bridge,41.94333,46,60,57,-72.61352,1903,0.244762072,1,9.666365471,43,Built 1903
+Open to traffic,,Sunderland Bridge,42.46722,47,100,96,-72.585,1937,0.244560103,1,6.759345023,45,Built 1937; rehabilitated 1994
+Replaced by a new bridge,,Tucker Toll Covered Bridge 45-13-54x / 29-03-22x,43.13779,48,155,151,-72.44552,1840,0.286598159,0,0.041671951,35,Built 1840
+Open to traffic,,Vilas Bridge,43.13528,49,155,151,-72.44,1785,0.156867161,1,0.020094126,29,http://www.crjc.org/heritagebridges.htm#Vilas
+Deck truss,,WACR - Connecticut River Bridge,44.15438,50,235,231,-72.04049,1805,0.448795861,0,0.017356888,19,http://www.crjc.org/heritagebridges.htm#Woodsville
+Replaced by new bridge,,Walpole-Westminster Bridge,43.08417,51,150,147,-72.43306,1807,0.437834185,0,3.446466399,12,http://www.crjc.org/heritagebridges.htm#Westminster
+Open to traffic,,West Lebanon-Hartford Bridge,43.65056,52,195,190,-72.31444,1802,0.262233474,1,12.70368673,20,http://www.crjc.org/heritagebridges.htm#Wleb
+Open to pedestrians,,Whitcomb Bridge,44.41056,53,265,262,-71.7225,1928,0.062533777,1,4.882093333,34,Built 1928 by the Berlin Construction Co.; Bypassed in 1997
+Open to traffic,,Willimansett Bridge,42.19498,54,80,76,-72.60124,1891,0.300141027,1,6.00453094,39,Built 1891

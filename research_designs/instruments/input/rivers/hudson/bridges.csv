@@ -1,0 +1,25 @@
+status,end,name,latitude,bridge_id,river_stretch,river_mile,longitude,start,distance_to_river_mile,active,distance_to_closest_bridge,closest_bridge_id,id,history
+Open to traffic,,Alfred H. Smith Memorial Bridge,42.50816,1,145,144,-73.77383,1924,0.447154706,1,0.548623304,3,missing,Built 1924
+Open to traffic,,Bear Mountain Bridge,41.31972,2,55,52,-73.98417,1924,0.173261109,1,17.87753665,22,missing,Built 1924; rehabilitated 1977
+Open to traffic,,Berkshire Spur Bridge,42.50639,3,145,144,-73.76333,1958,0.63403631,1,0.548623304,1,missing,Built 1958; rehabilitated 1994
+Open to pedestrians only,,Dix Bridge,43.11667,4,195,192,-73.57667,1895,0.133173344,1,0.981660755,11,missing,Built 1895; Closed 1995
+Closed to all traffic,,Fenimore Bridge,43.29749,5,210,206,-73.58973,1906,0.189461111,0,2.629269592,9,missing,Built 1906; rehabilitated 1973
+Open to a total of 14 lanes of traffic,,George Washington Bridge,40.85159,6,15,14,-73.95248,1931,0.271673019,1,5.362994299,19,missing,Opened to traffic October 25; 1931; lower level opened August 29; 1962
+Replaced by a new bridge,,Green Island Bridge,42.73595,7,165,161,-73.69086,1832,0.11095963,1,2.47532558,8,BH 52624 ,http://en.wikipedia.org/wiki/Green_Island_Bridge
+Open to traffic,,Hudson River Bridge,42.70111,8,160,159,-73.70222,1932,0.472534924,1,2.47532558,7,missing,Built 1932; rehabilitated 1966
+No longer exists,2004,Hudson River Bridge,43.30556,9,210,209,-73.64083,1915,0.350491153,0,2.629269592,5,missing,Built 1915; replaced 2004
+Open to traffic,,Hudson River Bridge,43.30444,10,235,232,-73.83278,1932,0.192008759,1,0.985479404,15,missing,Built 1932; rehabilitated 1973
+Open to traffic,,Hudson River Bridge,43.12861,11,195,193,-73.58722,1917,0.034528839,1,0.981660755,4,missing,Built 1917; rehabilitated 1973
+No longer exists,2003,Hudson River Bridge,43.66167,12,265,262,-73.89833,1920,0.036201536,0,4.983666898,14,missing,Built 1920; replaced 2003
+Open to traffic,,Hudson River Bridge,43.47972,13,250,248,-73.81833,1941,0.433927863,1,11.31080572,15,missing,Built 1941; rehabilitated 1995
+Open to traffic,,Hudson River Bridge,43.69972,14,275,270,-73.98306,1930,0.47715521,1,4.983666898,12,missing,Built 1930; rehabilitated 1974
+Open to traffic,,Hudson River Bridge,43.31694,15,235,233,-73.84222,1931,0.213966598,1,0.985479404,10,missing,Built 1931; rehabilitated 1990
+Open to traffic,,Kingston-Rhinecliff Bridge,41.97722,16,105,101,-73.94528,1957,0.309352445,1,17.68054035,20,missing,Built 1957; rehabilitated 2002
+Open to traffic,,Lincoln Tunnel,40.7652,17,10,6,-74.0161,1937,0.513879748,1,1.692297316,19,BH 59014 ,Center tube opened 1937; north tube opened 1945; south tube opened 1957.
+Open to traffic,,Mid Hudson Bridge,41.70278,18,85,81,-73.94694,1930,0.053887736,1,0.543761908,24,missing,Built 1930; rehabilitated 1989
+Abandoned,,NYC 69th Street Transfer Bridge,40.77923,19,10,8,-73.98959,1911,0.378978534,0,1.692297316,17,missing,Built 1911
+Open to traffic,,Rip Van Winkle Bridge,42.22333,20,125,121,-73.85083,1935,0.251284461,1,17.68054035,16,missing,Built 1935; rehabilitated 1993
+Open to traffic,,Stillwater Bridge,42.93861,21,180,177,-73.65167,1930,0.32655971,1,10.42493698,23,missing,Built 1930; rehabilitated 1993
+Open to seven lanes of traffic,,Tappan Zee Bridge,41.06989,22,35,30,-73.89469,1955,0.234394493,1,15.38155106,6,missing,Opened to traffic December 15; 1955
+Open to traffic,,Union Bridge,42.78861,23,170,165,-73.67389,1804,0.032930997,1,3.738910647,7,missing,http://en.wikipedia.org/wiki/Troy%E2%80%93Waterford_Bridge
+Open to pedestrians,,Walkway Over The Hudson State Park Bridge,41.71063,24,85,82,-73.94619,1888,0.463937712,1,0.543761908,18,missing,Built 1888 by the Union Bridge Co.; closed to railroad traffic May 8; 1974 due to fire; reopened to pedestrians on Oct. 3; 2009
