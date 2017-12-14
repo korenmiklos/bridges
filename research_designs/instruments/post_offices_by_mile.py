@@ -53,11 +53,15 @@ water_body = Feature(geometry=river_bank(ProjectedFeature(feature_collection_to_
 
 relevant_post_offices = post_offices.get_overlapping_points(water_body)
 
-writer = csv.DictWriter(sys.stdout, fieldnames=['river_mile', 'po_from', 'po_to'])
+writer = csv.DictWriter(sys.stdout, fieldnames=['river_mile', 'po_from', 'po_to', 'distance_to_river'])
 writer.writeheader()
 
 for po in relevant_post_offices:
-    row = dict(river_mile=river_line_meters.project(shape(po['geometry']))/1609.3)
+    point = shape(po['geometry'])
+    row = {}
+    row['river_mile'] = river_line_meters.project(point)/1609.3
+    # distance to water body polygon in meters
+    row['distance_to_river'] = point.distance(ProjectedFeature(feature_collection_to_multipolygon(water_body_fc), projection='epsg3975').lcc)
     row['po_from'] = po['properties']['from']
     row['po_to'] = po['properties']['to']
 
