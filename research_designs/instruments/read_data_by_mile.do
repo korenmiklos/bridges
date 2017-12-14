@@ -80,3 +80,6 @@ drop _m
 
 replace river_mile = `resolution'*int(river_mile/`resolution')
 gen ln_river_width = ln(river_width )
+
+gen segment = int(river_mile/20)
+egen river_segment = group(river segment)

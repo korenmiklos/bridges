@@ -49,12 +49,12 @@ forval r=1/`rivers' {
 
 gen exp_to_crossing = exp(-`tau'*closest_crossing)
 
-stcox i.river_code river_mile_* after_steel_* exp_to_crossing  wider`width'm*, nohr
+stcox i.river_code river_mile_* after_steel_* exp_to_crossing  wider`width'm*, nohr vce(cluster river_segment)
 test exp_to_crossing wider`width'm wider`width'mXafter_steel
 /*
-  exp_to_crossing |   .7603109   .1985023     3.83   0.000     .3712536    1.149368
-        wider500m |  -.6043958   .2588313    -2.34   0.020    -1.111696   -.0970958
-wider500mXafter~l |   .7697854   .2823757     2.73   0.006     .2163392    1.323232
+  exp_to_crossing |   .7603109   .2603889     2.92   0.004      .249958    1.270664
+        wider500m |  -.6043958   .2735927    -2.21   0.027    -1.140628   -.0681639
+wider500mXafter~l |   .7697854   .2735517     2.81   0.005      .233634    1.305937
 -----------------------------------------------------------------------------------
 
 . test exp_to_crossing wider`width'm wider`width'mXafter_steel
@@ -63,8 +63,8 @@ wider500mXafter~l |   .7697854   .2823757     2.73   0.006     .2163392    1.323
  ( 2)  wider500m = 0
  ( 3)  wider500mXafter_steel = 0
 
-           chi2(  3) =   22.56
-         Prob > chi2 =    0.0000
+           chi2(  3) =   16.00
+         Prob > chi2 =    0.0011
 */
 
 if ("`outcome'"=="bridge") {
@@ -76,17 +76,17 @@ if ("`outcome'"=="bridge") {
 }
 if ("`outcome'"=="post_office") {
 	merge 1:1 river river_mile period using temp/bridge_hazard_change
-	stcox i.river_code river_mile_* after_steel_* xb, nohr
+	stcox i.river_code river_mile_* after_steel_* xb, nohr vce(cluster river_segment)
 	test xb
 }
 
 /*
-            xb |   .1759664   .0952562     1.85   0.065    -.0107324    .3626651
+            xb |   .1759664   .0930434     1.89   0.059    -.0063953    .3583281
 --------------------------------------------------------------------------------
 .         test xb
 
  ( 1)  xb = 0
 
-           chi2(  1) =    3.41
-         Prob > chi2 =    0.0647
+           chi2(  1) =    3.58
+         Prob > chi2 =    0.0586
 */
