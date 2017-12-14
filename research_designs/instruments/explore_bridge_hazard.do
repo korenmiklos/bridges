@@ -21,6 +21,8 @@ foreach river in arkansas colorado columbia connecticut delaware hudson missouri
 	insheet using temp/post_offices/`river'.csv, clear
 	replace river_mile = int(river_mile)
 	gen str river = "`river'"
+
+	keep if distance_to_river<1000
 	
 	capture drop duplicates
 	collapse (min) first_post_office=po_from, by(river river_mile)
