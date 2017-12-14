@@ -53,6 +53,8 @@ gen ln_river_width = ln(river_width )
 
 bysort river river_mile: gen period = _n
 
+* REDUCED FORM
+replace start = first_post_office
 gen calendar_time = start
 replace calendar_time = 2016 if missing(calendar_time)
 
@@ -97,10 +99,11 @@ sort _t
 forval i=0/1 {
 	replace survival_`i' = 1 in 1
 	replace survival_`i' = survival_`i'[_n-1] if missing(survival_`i')
-	gen hazard_`i' = 100*(survival_`i'[_n-10]-survival_`i'[_n])/survival_`i'[_n-10]
+	gen hazard_`i' = 100*(ln(survival_`i'[_n-10])-ln(survival_`i'[_n]))/(_t-_t[_n-1])
 }
 label var survival_0 "0-2000m"
 label var survival_1 ">2000m" 
 
 line survival_* _t, sort
-graph export output/emergence_of_bridges.png, width(800) replace
+graph export output/emergence_of_post_offices.png, width(800) replace
+save output/post_office_hazards, replace
