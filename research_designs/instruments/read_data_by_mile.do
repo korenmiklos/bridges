@@ -6,6 +6,23 @@ save `bridges', replace emptyok
 save `rivers', replace emptyok
 save `postoffices', replace emptyok
 
+* historical crossing points at following rivermiles
+local x_connecticut 68 86 144 197
+local x_hudson 42 67 93 154 220
+local x_delaware 128 139 146
+local x_tennessee 190 369 400
+local x_ohio 897 810 626 586 494
+* from 1800 map
+local x_mississippi 64 313 533 658 881 923 
+local x_missouri 130 353 600 770 1020 1179 1354 1575 2095 2260
+local x_arkansas 112 312 364 757
+* from 1800 map
+local x_colorado 917 941 
+local x_columbia 277 690
+local x_red 129 373
+local x_snake 1 120 263 590 648 681 749 782 
+
+
 foreach river in arkansas colorado columbia connecticut delaware hudson missouri ohio red snake tennessee mississippi {
 	di "`river'"
 	insheet using input/rivers/`river'/bridges.csv, clear
@@ -39,6 +56,15 @@ foreach river in arkansas colorado columbia connecticut delaware hudson missouri
 	capture drop duplicates
 	replace river_width = . if river_width==0
 	collapse (min) river_width, by(river river_mile)
+
+	* distance to nearest historical crossing
+	local crossings : word count `x_`river''
+	forval i=1/`crossings' {
+		local crossing : word `i' of `x_`river''
+		gen distance_`i' = abs(river_mile-`crossing')
+	}
+	capture egen closest_crossing = rmin(distance_*)
+	capture drop distance_*
 
 	append using `rivers'
 	save `rivers', replace

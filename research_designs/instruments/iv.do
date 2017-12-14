@@ -15,6 +15,11 @@ local x_ohio 897 810 626 586 494
 local x_mississippi 64 313 533 658 881 923 
 local x_missouri 130 353 600 770 1020 1179 1354 1575 2095 2260
 local x_arkansas 112 312 364 757
+* from 1800 map
+local x_colorado 917 941 
+local x_columbia 277 690
+local x_red 129 373
+local x_snake 1 120 263 590 648 681 749 782 
 
 foreach river in `RIVERS' {
 	insheet using output/`river'.csv, clear

@@ -3,6 +3,8 @@ clear all
 local first_bridge 1780
 local first_steel_bridge 1880
 local width 500
+* corresponds to half life of 10 miles
+local tau 0.069
 local outcome post_office
 
 do read_data_by_mile
@@ -44,21 +46,25 @@ forval r=1/`rivers' {
 	}
 }
 
-stcox i.river_code river_mile_* after_steel_* wider`width'm*, nohr
-test wider`width'm wider`width'mXafter_steel
+
+gen exp_to_crossing = exp(-`tau'*closest_crossing)
+
+stcox i.river_code river_mile_* after_steel_* exp_to_crossing  wider`width'm*, nohr
+test exp_to_crossing wider`width'm wider`width'mXafter_steel
 /*
-        wider500m |  -.0408966   .0850278    -0.48   0.631     -.207548    .1257548
-wider500mXafter~l |    .140974   .1235395     1.14   0.254     -.101159    .3831069
+  exp_to_crossing |   .7603109   .1985023     3.83   0.000     .3712536    1.149368
+        wider500m |  -.6043958   .2588313    -2.34   0.020    -1.111696   -.0970958
+wider500mXafter~l |   .7697854   .2823757     2.73   0.006     .2163392    1.323232
 -----------------------------------------------------------------------------------
 
-. test wider`width'm wider`width'mXafter_steel
+. test exp_to_crossing wider`width'm wider`width'mXafter_steel
 
- ( 1)  wider500m = 0
- ( 2)  wider500mXafter_steel = 0
+ ( 1)  exp_to_crossing = 0
+ ( 2)  wider500m = 0
+ ( 3)  wider500mXafter_steel = 0
 
-           chi2(  2) =    1.40
-         Prob > chi2 =    0.4961
-
+           chi2(  3) =   22.56
+         Prob > chi2 =    0.0000
 */
 
 if ("`outcome'"=="bridge") {
@@ -75,13 +81,12 @@ if ("`outcome'"=="post_office") {
 }
 
 /*
-            xb |   .0855901   .1247685     0.69   0.493    -.1589516    .3301317
+            xb |   .1759664   .0952562     1.85   0.065    -.0107324    .3626651
 --------------------------------------------------------------------------------
 .         test xb
 
  ( 1)  xb = 0
 
-           chi2(  1) =    0.47
-         Prob > chi2 =    0.4927
-
+           chi2(  1) =    3.41
+         Prob > chi2 =    0.0647
 */
