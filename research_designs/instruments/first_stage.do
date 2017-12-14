@@ -3,7 +3,7 @@ clear all
 local first_bridge 1780
 local first_steel_bridge 1880
 local width 500
-local outcome bridge
+local outcome post_office
 
 do read_data_by_mile
 
@@ -47,8 +47,8 @@ forval r=1/`rivers' {
 stcox i.river_code river_mile_* after_steel_* wider`width'm*, nohr
 test wider`width'm wider`width'mXafter_steel
 /*
-        wider500m |  -.6579289   .2571648    -2.56   0.011    -1.161963   -.1538951
-wider500mXafter~l |   .7960611   .2806734     2.84   0.005     .2459513    1.346171
+        wider500m |  -.0408966   .0850278    -0.48   0.631     -.207548    .1257548
+wider500mXafter~l |    .140974   .1235395     1.14   0.254     -.101159    .3831069
 -----------------------------------------------------------------------------------
 
 . test wider`width'm wider`width'mXafter_steel
@@ -56,8 +56,8 @@ wider500mXafter~l |   .7960611   .2806734     2.84   0.005     .2459513    1.346
  ( 1)  wider500m = 0
  ( 2)  wider500mXafter_steel = 0
 
-           chi2(  2) =    8.05
-         Prob > chi2 =    0.0178
+           chi2(  2) =    1.40
+         Prob > chi2 =    0.4961
 
 */
 predict hazard_ratio, hr
