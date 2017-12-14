@@ -60,5 +60,28 @@ wider500mXafter~l |    .140974   .1235395     1.14   0.254     -.101159    .3831
          Prob > chi2 =    0.4961
 
 */
-predict hazard_ratio, hr
-gen ln_hazard_ratio = ln(hazard_ratio)
+
+if ("`outcome'"=="bridge") {
+	predict xb, xb
+	predict hazard_ratio, hr
+	predict survival, basesurv
+	gen ln_hazard_ratio = ln(hazard_ratio)
+	save temp/bridge_hazard_change, replace
+}
+if ("`outcome'"=="post_office") {
+	merge 1:1 river river_mile period using temp/bridge_hazard_change
+	stcox i.river_code river_mile_* after_steel_* xb, nohr
+	test xb
+}
+
+/*
+            xb |   .0855901   .1247685     0.69   0.493    -.1589516    .3301317
+--------------------------------------------------------------------------------
+.         test xb
+
+ ( 1)  xb = 0
+
+           chi2(  1) =    0.47
+         Prob > chi2 =    0.4927
+
+*/

@@ -1,4 +1,5 @@
 local resolution 1
+local proximity 1000
 
 tempfile bridges rivers postoffices
 save `bridges', replace emptyok
@@ -23,7 +24,7 @@ foreach river in arkansas colorado columbia connecticut delaware hudson missouri
 	replace river_mile = int(river_mile)
 	gen str river = "`river'"
 
-	keep if distance_to_river<1000
+	keep if distance_to_river<`proximity'
 	
 	capture drop duplicates
 	collapse (min) first_post_office=po_from, by(river river_mile)
