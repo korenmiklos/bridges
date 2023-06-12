@@ -9,7 +9,8 @@ PROJECTIONS = dict(
 	wgs84 = pyproj.Proj("+init=EPSG:4326"),
 	lcc = pyproj.Proj(proj="lcc"),
 	nhgis = pyproj.Proj("+proj=aea +lat_1=29.5 +lat_2=45.5 +lat_0=37.5 +lon_0=-96 +x_0=0 +y_0=0 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs"),
-    epsg3975 = pyproj.Proj("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
+    	epsg3975 = pyproj.Proj("+proj=cea +lon_0=0 +lat_ts=30 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs"),
+	eov = pyproj.Proj("+proj=somerc +lat_0=47.1443937222222 +lon_0=19.0485717777778 +k_0=0.99993 +x_0=650000 +y_0=200000 +ellps=GRS67 +towgs84=52.17,-71.82,-14.9,0,0,0,0 +units=m +no_defs +type=crs")
 )
 
 def project_geometry(geometry, tfrom, tto):
